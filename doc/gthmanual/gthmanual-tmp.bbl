@@ -1,0 +1,39 @@
+\begin{thebibliography}{GBSK05}
+
+\bibitem[BXZ04]{BRE:XIN:ZHU:2004}
+V.~Brendel, L.~Xing, and W.~Zhu.
+\newblock {Gene Structure Prediction from Consensus Spliced Alignment of
+  Multiple ESTs Matching the Same Genomic Locus}.
+\newblock {\em {Bioinformatics}}, \PrintVol{20}(7):1157--1169, 2004.
+
+\bibitem[GBSK05]{GRE:BRE:SPA:KUR:2005}
+G.~Gremme, V.~Brendel, M.E. Sparks, and S.~Kurtz.
+\newblock {Engineering a Software Tool for Gene Structure Prediction in Higher
+  Organisms}.
+\newblock {\em {Information and Software Technology}},
+  \PrintVol{47}(15):965--978, 2005.
+
+\bibitem[Gre12]{GRE:2012}
+G.~Gremme.
+\newblock {\em {Computational Gene Structure Prediction}}.
+\newblock PhD thesis, University of Hamburg, 2012.
+
+\bibitem[UB00]{USU:BRE:2000}
+J.~Usuka and V.~Brendel.
+\newblock {Gene Structure Prediction by Spliced Alignment of Genomic DNA with
+  Protein Sequences: Increased Accuracy by Differential Splice Site Scoring}.
+\newblock {\em J.\ Mol.\ Biol.}, \PrintVol{297}:1075--1085, 2000.
+
+\bibitem[UZB00]{USU:ZHU:BRE:2000}
+J.~Usuka, W.~Zhu, and V.~Brendel.
+\newblock {Optimal Spliced Alignment of Homologous cDNA to a Genomic DNA
+  Template}.
+\newblock {\em {Bioinformatics}}, \PrintVol{16}(3):203--211, 2000.
+
+\bibitem[ZB03]{ZHU:BRE:2003B}
+W.~Zhu and V.~Brendel.
+\newblock {Identification, Characterization and Molecular Phylogeny of
+  U12-dependent Introns in the \emph{Arabidopsis thaliana} Genome}.
+\newblock {\em Nucleic Acids Res.}, \PrintVol{31}(15):4561--4572, 2003.
+
+\end{thebibliography}

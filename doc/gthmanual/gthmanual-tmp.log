@@ -1,0 +1,1184 @@
+This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015/Debian) (preloaded format=pdflatex 2017.10.1)  7 FEB 2018 17:49
+entering extended mode
+ restricted \write18 enabled.
+ %&-line parsing enabled.
+**gthmanual-tmp
+(./gthmanual-tmp.tex
+LaTeX2e <2016/02/01>
+Babel <3.9q> and hyphenation patterns for 8 language(s) loaded.
+(/usr/share/texlive/texmf-dist/tex/latex/base/article.cls
+Document Class: article 2014/09/29 v1.4h Standard LaTeX document class
+(/usr/share/texlive/texmf-dist/tex/latex/base/size11.clo
+File: size11.clo 2014/09/29 v1.4h Standard LaTeX file (size option)
+)
+\c@part=\count79
+\c@section=\count80
+\c@subsection=\count81
+\c@subsubsection=\count82
+\c@paragraph=\count83
+\c@subparagraph=\count84
+\c@figure=\count85
+\c@table=\count86
+\abovecaptionskip=\skip41
+\belowcaptionskip=\skip42
+\bibindent=\dimen102
+)
+(/usr/share/texlive/texmf-dist/tex/latex/psnfss/times.sty
+Package: times 2005/04/12 PSNFSS-v9.2a (SPQR) 
+)
+(/usr/share/texlive/texmf-dist/tex/latex/tools/verbatim.sty
+Package: verbatim 2014/10/28 v1.5q LaTeX2e package for verbatim enhancements
+\every@verbatim=\toks14
+\verbatim@line=\toks15
+\verbatim@in@stream=\read1
+) (./optionman.sty
+Package: optionman 
+)
+(/usr/share/texlive/texmf-dist/tex/latex/lastpage/lastpage.sty
+Package: lastpage 2015/03/29 v1.2m Refers to last page's name (HMM; JPG)
+)
+(/usr/share/texlive/texmf-dist/tex/latex/hyperref/hyperref.sty
+Package: hyperref 2012/11/06 v6.83m Hypertext links for LaTeX
+
+(/usr/share/texlive/texmf-dist/tex/generic/oberdiek/hobsub-hyperref.sty
+Package: hobsub-hyperref 2012/05/28 v1.13 Bundle oberdiek, subset hyperref (HO)
+
+
+(/usr/share/texlive/texmf-dist/tex/generic/oberdiek/hobsub-generic.sty
+Package: hobsub-generic 2012/05/28 v1.13 Bundle oberdiek, subset generic (HO)
+Package: hobsub 2012/05/28 v1.13 Construct package bundles (HO)
+Package: infwarerr 2010/04/08 v1.3 Providing info/warning/error messages (HO)
+Package: ltxcmds 2011/11/09 v1.22 LaTeX kernel commands for general use (HO)
+Package: ifluatex 2010/03/01 v1.3 Provides the ifluatex switch (HO)
+Package ifluatex Info: LuaTeX not detected.
+Package: ifvtex 2010/03/01 v1.5 Detect VTeX and its facilities (HO)
+Package ifvtex Info: VTeX not detected.
+Package: intcalc 2007/09/27 v1.1 Expandable calculations with integers (HO)
+Package: ifpdf 2011/01/30 v2.3 Provides the ifpdf switch (HO)
+Package ifpdf Info: pdfTeX in PDF mode is detected.
+Package: etexcmds 2011/02/16 v1.5 Avoid name clashes with e-TeX commands (HO)
+Package etexcmds Info: Could not find \expanded.
+(etexcmds)             That can mean that you are not using pdfTeX 1.50 or
+(etexcmds)             that some package has redefined \expanded.
+(etexcmds)             In the latter case, load this package earlier.
+Package: kvsetkeys 2012/04/25 v1.16 Key value parser (HO)
+Package: kvdefinekeys 2011/04/07 v1.3 Define keys (HO)
+Package: pdftexcmds 2011/11/29 v0.20 Utility functions of pdfTeX for LuaTeX (HO
+)
+Package pdftexcmds Info: LuaTeX not detected.
+Package pdftexcmds Info: \pdf@primitive is available.
+Package pdftexcmds Info: \pdf@ifprimitive is available.
+Package pdftexcmds Info: \pdfdraftmode found.
+Package: pdfescape 2011/11/25 v1.13 Implements pdfTeX's escape features (HO)
+Package: bigintcalc 2012/04/08 v1.3 Expandable calculations on big integers (HO
+)
+Package: bitset 2011/01/30 v1.1 Handle bit-vector datatype (HO)
+Package: uniquecounter 2011/01/30 v1.2 Provide unlimited unique counter (HO)
+)
+Package hobsub Info: Skipping package `hobsub' (already loaded).
+Package: letltxmacro 2010/09/02 v1.4 Let assignment for LaTeX macros (HO)
+Package: hopatch 2012/05/28 v1.2 Wrapper for package hooks (HO)
+Package: xcolor-patch 2011/01/30 xcolor patch
+Package: atveryend 2011/06/30 v1.8 Hooks at the very end of document (HO)
+Package atveryend Info: \enddocument detected (standard20110627).
+Package: atbegshi 2011/10/05 v1.16 At begin shipout hook (HO)
+Package: refcount 2011/10/16 v3.4 Data extraction from label references (HO)
+Package: hycolor 2011/01/30 v1.7 Color options for hyperref/bookmark (HO)
+)
+(/usr/share/texlive/texmf-dist/tex/latex/graphics/keyval.sty
+Package: keyval 2014/10/28 v1.15 key=value parser (DPC)
+\KV@toks@=\toks16
+)
+(/usr/share/texlive/texmf-dist/tex/generic/ifxetex/ifxetex.sty
+Package: ifxetex 2010/09/12 v0.6 Provides ifxetex conditional
+)
+(/usr/share/texlive/texmf-dist/tex/latex/oberdiek/auxhook.sty
+Package: auxhook 2011/03/04 v1.3 Hooks for auxiliary files (HO)
+)
+(/usr/share/texlive/texmf-dist/tex/latex/oberdiek/kvoptions.sty
+Package: kvoptions 2011/06/30 v3.11 Key value format for package options (HO)
+)
+\@linkdim=\dimen103
+\Hy@linkcounter=\count87
+\Hy@pagecounter=\count88
+
+(/usr/share/texlive/texmf-dist/tex/latex/hyperref/pd1enc.def
+File: pd1enc.def 2012/11/06 v6.83m Hyperref: PDFDocEncoding definition (HO)
+)
+\Hy@SavedSpaceFactor=\count89
+
+(/usr/share/texlive/texmf-dist/tex/latex/latexconfig/hyperref.cfg
+File: hyperref.cfg 2002/06/06 v1.2 hyperref configuration of TeXLive
+)
+Package hyperref Info: Hyper figures OFF on input line 4443.
+Package hyperref Info: Link nesting OFF on input line 4448.
+Package hyperref Info: Hyper index ON on input line 4451.
+Package hyperref Info: Plain pages OFF on input line 4458.
+Package hyperref Info: Backreferencing OFF on input line 4463.
+Package hyperref Info: Implicit mode ON; LaTeX internals redefined.
+Package hyperref Info: Bookmarks ON on input line 4688.
+\c@Hy@tempcnt=\count90
+
+(/usr/share/texlive/texmf-dist/tex/latex/url/url.sty
+\Urlmuskip=\muskip10
+Package: url 2013/09/16  ver 3.4  Verb mode for urls, etc.
+)
+LaTeX Info: Redefining \url on input line 5041.
+\XeTeXLinkMargin=\dimen104
+\Fld@menulength=\count91
+\Field@Width=\dimen105
+\Fld@charsize=\dimen106
+Package hyperref Info: Hyper figures OFF on input line 6295.
+Package hyperref Info: Link nesting OFF on input line 6300.
+Package hyperref Info: Hyper index ON on input line 6303.
+Package hyperref Info: backreferencing OFF on input line 6310.
+Package hyperref Info: Link coloring OFF on input line 6315.
+Package hyperref Info: Link coloring with OCG OFF on input line 6320.
+Package hyperref Info: PDF/A mode OFF on input line 6325.
+LaTeX Info: Redefining \ref on input line 6365.
+LaTeX Info: Redefining \pageref on input line 6369.
+\Hy@abspage=\count92
+\c@Item=\count93
+\c@Hfootnote=\count94
+)
+
+Package hyperref Message: Driver (autodetected): hpdftex.
+
+(/usr/share/texlive/texmf-dist/tex/latex/hyperref/hpdftex.def
+File: hpdftex.def 2012/11/06 v6.83m Hyperref driver for pdfTeX
+\Fld@listcount=\count95
+\c@bookmark@seq@number=\count96
+
+(/usr/share/texlive/texmf-dist/tex/latex/oberdiek/rerunfilecheck.sty
+Package: rerunfilecheck 2011/04/15 v1.7 Rerun checks for auxiliary files (HO)
+Package uniquecounter Info: New unique counter `rerunfilecheck' on input line 2
+82.
+)
+\Hy@SectionHShift=\skip43
+)
+(./LocalDefs.sty
+Package: LocalDefs 
+ (/usr/share/texlive/texmf-dist/tex/latex/graphics/graphics.sty
+Package: graphics 2016/01/03 v1.0q Standard LaTeX Graphics (DPC,SPQR)
+(/usr/share/texlive/texmf-dist/tex/latex/graphics/trig.sty
+Package: trig 2016/01/03 v1.10 sin cos tan (DPC)
+)
+(/usr/share/texlive/texmf-dist/tex/latex/latexconfig/graphics.cfg
+File: graphics.cfg 2010/04/23 v1.9 graphics configuration of TeX Live
+)
+Package graphics Info: Driver file: pdftex.def on input line 95.
+
+(/usr/share/texlive/texmf-dist/tex/latex/pdftex-def/pdftex.def
+File: pdftex.def 2011/05/27 v0.06d Graphics/color for pdfTeX
+\Gread@gobject=\count97
+))
+(/usr/share/texlive/texmf-dist/tex/latex/base/alltt.sty
+Package: alltt 1997/06/16 v2.0g defines alltt environment
+)
+(/usr/share/texlive/texmf-dist/tex/latex/tools/xspace.sty
+Package: xspace 2014/10/28 v1.13 Space after command names (DPC,MH)
+) (./command.sty
+(/usr/share/texlive/texmf-dist/tex/latex/fancybox/fancybox.sty
+Package: fancybox 2010/05/15 1.4
+
+Style option: `fancybox' v1.4 <2010/05/15> (tvz)
+\@fancybox=\box26
+\shadowsize=\dimen107
+\@Sbox=\box27
+\do@VerbBox=\toks17
+\the@fancyput=\toks18
+\this@fancyput=\toks19
+\EndVerbatimTokens=\toks20
+\Verbatim@Outfile=\write3
+\Verbatim@Infile=\read2
+) (/usr/share/texlive/texmf-dist/tex/latex/base/ifthen.sty
+Package: ifthen 2014/09/29 v1.1c Standard LaTeX ifthen package (DPC)
+)
+(/usr/share/texlive/texmf-dist/tex/latex/base/latexsym.sty
+Package: latexsym 1998/08/17 v2.2e Standard LaTeX package (lasy symbols)
+\symlasy=\mathgroup4
+LaTeX Font Info:    Overwriting symbol font `lasy' in version `bold'
+(Font)                  U/lasy/m/n --> U/lasy/b/n on input line 52.
+) (./biblio.sty)
+(/usr/share/texlive/texmf-dist/tex/latex/tools/array.sty
+Package: array 2014/10/28 v2.4c Tabular extension package (FMi)
+\col@sep=\dimen108
+\extrarowheight=\dimen109
+\NC@list=\toks21
+\extratabsurround=\skip44
+\backup@length=\skip45
+)
+(/usr/share/texlive/texmf-dist/tex/latex/graphics/color.sty
+Package: color 2016/01/03 v1.1b Standard LaTeX Color (DPC)
+
+(/usr/share/texlive/texmf-dist/tex/latex/latexconfig/color.cfg
+File: color.cfg 2007/01/18 v1.5 color configuration of teTeX/TeXLive
+)
+Package color Info: Driver file: pdftex.def on input line 143.
+)
+(/usr/share/texlive/texmf-dist/tex/latex/colortbl/colortbl.sty
+Package: colortbl 2012/02/13 v1.0a Color table columns (DPC)
+\everycr=\toks22
+\minrowclearance=\skip46
+)
+(/usr/share/texlive/texmf-dist/tex/latex/amsfonts/amssymb.sty
+Package: amssymb 2013/01/14 v3.01 AMS font symbols
+
+(/usr/share/texlive/texmf-dist/tex/latex/amsfonts/amsfonts.sty
+Package: amsfonts 2013/01/14 v3.01 Basic AMSFonts support
+\@emptytoks=\toks23
+\symAMSa=\mathgroup5
+\symAMSb=\mathgroup6
+LaTeX Font Info:    Overwriting math alphabet `\mathfrak' in version `bold'
+(Font)                  U/euf/m/n --> U/euf/b/n on input line 106.
+))
+\c@eCounter=\count98
+\c@eqCounter=\count99
+\RewritesToBox=\box28
+\PfhBox=\box29
+\PfvBox=\box30
+)
+(./disstrees.sty) (/usr/share/texlive/texmf-dist/tex/latex/graphics/epsfig.sty
+Package: epsfig 1999/02/16 v1.7a (e)psfig emulation (SPQR)
+
+(/usr/share/texlive/texmf-dist/tex/latex/graphics/graphicx.sty
+Package: graphicx 2014/10/28 v1.0g Enhanced LaTeX Graphics (DPC,SPQR)
+\Gin@req@height=\dimen110
+\Gin@req@width=\dimen111
+)
+\epsfxsize=\dimen112
+\epsfysize=\dimen113
+)
+(/usr/share/texlive/texmf-dist/tex/latex/supertabular/supertabular.sty
+Package: supertabular 2004/02/20 v4.1e the supertabular environment
+\c@tracingst=\count100
+\ST@wd=\dimen114
+\ST@rightskip=\skip47
+\ST@leftskip=\skip48
+\ST@parfillskip=\skip49
+\ST@pageleft=\dimen115
+\ST@headht=\dimen116
+\ST@tailht=\dimen117
+\ST@pagesofar=\dimen118
+\ST@pboxht=\dimen119
+\ST@lineht=\dimen120
+\ST@stretchht=\dimen121
+\ST@prevht=\dimen122
+\ST@toadd=\dimen123
+\ST@dimen=\dimen124
+\ST@pbox=\box31
+))
+Package hyperref Info: Option `pdfnewwindow' set `true' on input line 18.
+\@indexfile=\write4
+\openout4 = `gthmanual-tmp.idx'.
+
+
+Writing index file gthmanual-tmp.idx
+(./author.tex) (./gthmanual-tmp.aux)
+\openout1 = `gthmanual-tmp.aux'.
+
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 30.
+LaTeX Font Info:    ... okay on input line 30.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 30.
+LaTeX Font Info:    ... okay on input line 30.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 30.
+LaTeX Font Info:    ... okay on input line 30.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 30.
+LaTeX Font Info:    ... okay on input line 30.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 30.
+LaTeX Font Info:    ... okay on input line 30.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 30.
+LaTeX Font Info:    ... okay on input line 30.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 30.
+LaTeX Font Info:    ... okay on input line 30.
+LaTeX Font Info:    Try loading font information for OT1+ptm on input line 30.
+
+(/usr/share/texlive/texmf-dist/tex/latex/psnfss/ot1ptm.fd
+File: ot1ptm.fd 2001/06/04 font definitions for OT1/ptm.
+)
+Package lastpage Info: Please have a look at the pageslts package at
+(lastpage)             https://www.ctan.org/pkg/pageslts
+(lastpage)             ! on input line 30.
+\AtBeginShipoutBox=\box32
+Package hyperref Info: Link coloring OFF on input line 30.
+
+(/usr/share/texlive/texmf-dist/tex/latex/hyperref/nameref.sty
+Package: nameref 2012/10/27 v2.43 Cross-referencing by name of section
+
+(/usr/share/texlive/texmf-dist/tex/generic/oberdiek/gettitlestring.sty
+Package: gettitlestring 2010/12/03 v1.4 Cleanup title references (HO)
+)
+\c@section@level=\count101
+)
+LaTeX Info: Redefining \ref on input line 30.
+LaTeX Info: Redefining \pageref on input line 30.
+LaTeX Info: Redefining \nameref on input line 30.
+
+(./gthmanual-tmp.out) (./gthmanual-tmp.out)
+\@outlinefile=\write5
+\openout5 = `gthmanual-tmp.out'.
+
+
+(/usr/share/texlive/texmf-dist/tex/context/base/supp-pdf.mkii
+[Loading MPS to PDF converter (version 2006.09.02).]
+\scratchcounter=\count102
+\scratchdimen=\dimen125
+\scratchbox=\box33
+\nofMPsegments=\count103
+\nofMParguments=\count104
+\everyMPshowfont=\toks24
+\MPscratchCnt=\count105
+\MPscratchDim=\dimen126
+\MPnumerator=\count106
+\makeMPintoPDFobject=\count107
+\everyMPtoPDFconversion=\toks25
+) (/usr/share/texlive/texmf-dist/tex/latex/oberdiek/epstopdf-base.sty
+Package: epstopdf-base 2010/02/09 v2.5 Base part for package epstopdf
+
+(/usr/share/texlive/texmf-dist/tex/latex/oberdiek/grfext.sty
+Package: grfext 2010/08/19 v1.1 Manage graphics extensions (HO)
+)
+Package grfext Info: Graphics extension search list:
+(grfext)             [.png,.pdf,.jpg,.mps,.jpeg,.jbig2,.jb2,.PNG,.PDF,.JPG,.JPE
+G,.JBIG2,.JB2,.eps]
+(grfext)             \AppendGraphicsExtensions on input line 452.
+
+(/usr/share/texlive/texmf-dist/tex/latex/latexconfig/epstopdf-sys.cfg
+File: epstopdf-sys.cfg 2010/07/13 v1.3 Configuration of (r)epstopdf for TeX Liv
+e
+))
+LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <17.28> not available
+(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 32.
+LaTeX Font Info:    Font shape `OT1/ptm/bx/it' in size <17.28> not available
+(Font)              Font shape `OT1/ptm/b/it' tried instead on input line 32.
+LaTeX Font Info:    Try loading font information for U+lasy on input line 32.
+
+(/usr/share/texlive/texmf-dist/tex/latex/base/ulasy.fd
+File: ulasy.fd 1998/08/17 v2.2e LaTeX symbol font definitions
+)
+LaTeX Font Info:    Try loading font information for U+msa on input line 32.
+
+(/usr/share/texlive/texmf-dist/tex/latex/amsfonts/umsa.fd
+File: umsa.fd 2013/01/14 v3.01 AMS symbols A
+)
+LaTeX Font Info:    Try loading font information for U+msb on input line 32.
+
+(/usr/share/texlive/texmf-dist/tex/latex/amsfonts/umsb.fd
+File: umsb.fd 2013/01/14 v3.01 AMS symbols B
+) [1
+
+{/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map}]
+LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <14.4> not available
+(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 33.
+ (./gthmanual-tmp.toc
+LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <10.95> not available
+(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 1.
+LaTeX Font Info:    Try loading font information for OT1+pcr on input line 5.
+
+(/usr/share/texlive/texmf-dist/tex/latex/psnfss/ot1pcr.fd
+File: ot1pcr.fd 2001/06/04 font definitions for OT1/pcr.
+)
+LaTeX Font Info:    Font shape `OT1/pcr/bx/n' in size <10.95> not available
+(Font)              Font shape `OT1/pcr/b/n' tried instead on input line 5.
+LaTeX Font Info:    Font shape `OT1/ptm/bx/sc' in size <10.95> not available
+(Font)              Font shape `OT1/ptm/b/sc' tried instead on input line 32.
+pdfTeX warning (ext4): destination with the same identifier (name{page.1}) has 
+been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.38 ...gthbssmtrain}\xspace }{31}{subsection.9.1}
+                                                   [1])
+\tf@toc=\write6
+\openout6 = `gthmanual-tmp.toc'.
+
+ [2]
+(./gthmanual-tmp.lot)
+\tf@lot=\write7
+\openout7 = `gthmanual-tmp.lot'.
+
+ [3]
+LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <12> not available
+(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 68.
+
+Overfull \hbox (9.84337pt too wide) in paragraph at lines 69--71
+\OT1/ptm/m/n/10.95 The core DP al-go-rithms have been ex-tended by the \OT1/ptm
+/m/it/10.95 in-tron cutout tech-nique \OT1/ptm/m/n/10.95 [[]]
+ []
+
+[4]
+LaTeX Font Info:    Font shape `OT1/ptm/bx/it' in size <12> not available
+(Font)              Font shape `OT1/ptm/b/it' tried instead on input line 92.
+ [5]
+LaTeX Font Info:    Font shape `OT1/pcr/bx/n' in size <14.4> not available
+(Font)              Font shape `OT1/pcr/b/n' tried instead on input line 171.
+ [6] (./optiontable.tex [7] [8]) [9] (./codontrans.tex)
+(./speciestable.tex
+Overfull \hbox (16.43134pt too wide) in paragraph at lines 3--61
+ [] 
+ []
+
+) [10] [11] [12] [13] [14] [15] [16]
+Overfull \hbox (22.80339pt too wide) in paragraph at lines 523--524
+\OT1/ptm/m/n/10.95 ally 1), if their cov-er-age is higher than the ar-gu-ment [
+][] to op-tion [].
+ []
+
+[17] [18] [19] [20] [21]
+LaTeX Font Info:    Try loading font information for OMS+pcr on input line 791.
+
+
+(/usr/share/texlive/texmf-dist/tex/latex/psnfss/omspcr.fd
+File: omspcr.fd 
+)
+LaTeX Font Info:    Font shape `OMS/pcr/m/n' in size <10.95> not available
+(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 791.
+ [22]
+LaTeX Font Info:    Try loading font information for OMS+ptm on input line 846.
+
+
+(/usr/share/texlive/texmf-dist/tex/latex/psnfss/omsptm.fd
+File: omsptm.fd 
+)
+LaTeX Font Info:    Font shape `OMS/ptm/m/n' in size <10.95> not available
+(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 846.
+ [23] [24]
+LaTeX Font Info:    Font shape `OT1/pcr/bx/n' in size <12> not available
+(Font)              Font shape `OT1/pcr/b/n' tried instead on input line 920.
+ [25]
+File: output/gthsplit--alignmentscore--v--gzip-U89959.inter.gz.out  (verbatim)
+
+[26]
+File: output/gthsplit2dim.sh--r-10--v--g-ceres_full.inter.gz.out  (verbatim)
+LaTeX Font Info:    Font shape `OT1/ptm/bx/sc' in size <14.4> not available
+(Font)              Font shape `OT1/ptm/b/sc' tried instead on input line 999.
+
+Overfull \hbox (2.78142pt too wide) in paragraph at lines 1002--1008
+\OT1/ptm/m/n/10.95 With the help of \OT1/pcr/m/n/10.95 gthgetseq \OT1/ptm/m/n/1
+0.95 one can get the used \OT1/ptm/m/sc/10.95 Fasta \OT1/ptm/m/n/10.95 se-quenc
+es from \OT1/ptm/m/it/10.95 Genome-
+ []
+
+[27]
+Overfull \hbox (20.05023pt too wide) in paragraph at lines 1030--1031
+[]\OT1/ptm/m/n/10.95 At least one of the op-tions [], [], [], [],
+ []
+
+File: output/gthgetseq--getcdna--gzip--maxalignmentscore-0.75-ceres_full.inter.
+gz.out  (verbatim)
+
+Overfull \hbox (17.99957pt too wide) in paragraph at lines 1037--1037
+[]\OT1/pcr/m/n/9 $ gthgetseq -getcdna -gzip -maxalignmentscore 0.75 ceres_full.
+inter.gz 
+ []
+
+[28]
+File: output/gthgetseq--getcdna--gzip--maxalignmentscore-0.75-ceres_full.inter.
+gz->-cdna.out  (verbatim)
+
+Overfull \hbox (9.60023pt too wide) in paragraph at lines 1041--1041
+[]\OT1/pcr/m/n/8 $ gthgetseq -getcdna -gzip -maxalignmentscore 0.75 ceres_full.
+inter.gz > cdna 
+ []
+
+
+Overfull \hbox (0.39339pt too wide) in paragraph at lines 1045--1047
+\OT1/pcr/m/n/10.95 gthfilestat \OT1/ptm/m/n/10.95 shows statis-tics about splic
+ed align-ments in \OT1/ptm/m/it/10.95 Genome-Threader \OT1/ptm/m/n/10.95 out-
+ []
+
+
+Overfull \hbox (6.40448pt too wide) in paragraph at lines 1045--1047
+\OT1/ptm/m/n/10.95 put files con-tain-ing in-ter-me-di-ate re-sults. This might
+ be help-ful in get-ting an overview
+ []
+
+File: output/gthfilestat-ceres_sub.inter.gz.out  (verbatim)
+[29]
+File: output/gthbssmfileinfo-human.out  (verbatim)
+ [30] [31]
+File: output/gth--genomic-U89959_genomic.fas--cdna-U89959_ests.fas--gff3out--sk
+ipalignmentout--md5ids.out  (verbatim)
+
+Overfull \hbox (72.00027pt too wide) in paragraph at lines 1139--1139
+[]\OT1/pcr/m/n/8 $ gth -genomic U89959_genomic.fas -cdna U89959_ests.fas -gff3o
+ut -skipalignmentout -md5ids 
+ []
+
+File: output/gthbssmtrain--seqfile-U89959_genomic.fas-arab.gff3.out  (verbatim)
+
+File: output/gthbssmbuild--gtdonor--agacceptor--datapath-training_data--bssmfil
+e-arab.bssm.out  (verbatim)
+
+Overfull \hbox (19.20024pt too wide) in paragraph at lines 1162--1162
+[]\OT1/pcr/m/n/8 $ gthbssmbuild -gtdonor -agacceptor -datapath training_data -b
+ssmfile arab.bssm 
+ []
+
+File: output/gth--bssm-arab--genomic-U89959_genomic.fas--cdna-U89959_ests.fas.o
+ut  (verbatim)
+
+Overfull \hbox (27.77948pt too wide) in paragraph at lines 1174--1177
+\OT1/ptm/m/n/10.95 con-tain-ing the train-ing data. The train-ing data is usu-a
+lly gen-er-ated with \OT1/pcr/m/n/10.95 gthbssmtrain
+ []
+
+[32]
+No file ../scripts/gthclean.sh.
+[33] [34]
+File: output/gth--genomic-NC_003070.fna.gz--cdna-AU236313.gbk.gz.out  (verbatim
+)
+
+Overfull \hbox (24.00024pt too wide) in paragraph at lines 1287--1287
+[]\OT1/pcr/m/n/8 **************************************************************
+******************[] 
+ []
+
+
+Overfull \hbox (273.6004pt too wide) in paragraph at lines 1287--1287
+[]\OT1/pcr/m/n/8 EST Sequence: file=AU236313.gbk.gz, strand=+, description=AU23
+6313 AU236313 RAFL14 Arabidopsis thaliana cDNA clone RAFL14-87-E12 5',[] 
+ []
+
+
+Overfull \hbox (446.40051pt too wide) in paragraph at lines 1287--1287
+[]\OT1/pcr/m/n/8 Genomic Template: file=NC_003070.fna.gz, strand=+, from=382240
+, to=383395, description=gi|42592260|ref|NC_003070.5| Arabidopsis thaliana chro
+mosome 1, complete sequence[] 
+ []
+
+
+Overfull \hbox (19.20024pt too wide) in paragraph at lines 1287--1287
+[] \OT1/pcr/m/n/8 Exon  1   382540   382567 (  28 n);  cDNA      1     28 (  28
+ n); score: 1.000[] 
+ []
+
+
+Overfull \hbox (24.00024pt too wide) in paragraph at lines 1287--1287
+[]  \OT1/pcr/m/n/8 Intron  1   382568   382802 ( 235 n); Pd: 0.050 (s:    0), P
+a: 0.050 (s: 0.95)[] 
+ []
+
+
+Overfull \hbox (19.20024pt too wide) in paragraph at lines 1287--1287
+[] \OT1/pcr/m/n/8 Exon  2   382803   382929 ( 127 n);  cDNA     29    156 ( 128
+ n); score: 0.980[] 
+ []
+
+
+Overfull \hbox (24.00024pt too wide) in paragraph at lines 1287--1287
+[]  \OT1/pcr/m/n/8 Intron  2   382930   383029 ( 100 n); Pd: 0.050 (s: 1.00), P
+a: 0.050 (s: 1.00)[] 
+ []
+
+
+Overfull \hbox (19.20024pt too wide) in paragraph at lines 1287--1287
+[] \OT1/pcr/m/n/8 Exon  3   383030   383100 (  71 n);  cDNA    157    227 (  71
+ n); score: 0.944[] 
+ []
+
+
+Overfull \hbox (9.60023pt too wide) in paragraph at lines 1287--1287
+[]\OT1/pcr/m/n/8 GCGTGTTGTT AAAGAGCTCA CTAGTTGGGT ATGTTTACAA CCTTTTCAAG ATTTCAC
+TTC      382599[] 
+ []
+
+
+Overfull \hbox (9.60023pt too wide) in paragraph at lines 1287--1287
+[]\OT1/pcr/m/n/8 GCGTGTTGTT AAAGAGCTCA CTAGTTGG.. .......... .......... .......
+...          28[] 
+ []
+
+
+Overfull \hbox (9.60023pt too wide) in paragraph at lines 1287--1287
+[]\OT1/pcr/m/n/8 GCTGATGTGC TTTGTTCAGT TACTTCTCCA TTAATTTGTC ACTATTTCTG TCAGAAC
+ACA      382659[] 
+ []
+
+
+Overfull \hbox (9.60023pt too wide) in paragraph at lines 1287--1287
+[]\OT1/pcr/m/n/8 .......... .......... .......... .......... .......... .......
+...          28[] 
+ []
+
+
+Overfull \hbox (9.60023pt too wide) in paragraph at lines 1287--1287
+[]\OT1/pcr/m/n/8 TAGGATAACA CATATCATAT AAGTGCTAGG TCGAGTCTGT TTCCTGTAGT TGGAGCC
+TAT      382719[] 
+ []
+
+
+Overfull \hbox (9.60023pt too wide) in paragraph at lines 1287--1287
+[]\OT1/pcr/m/n/8 .......... .......... .......... .......... .......... .......
+...          28[] 
+ []
+
+
+Overfull \hbox (9.60023pt too wide) in paragraph at lines 1287--1287
+[]\OT1/pcr/m/n/8 CCTCAACTGG TTATAGATAC TAGATTTGTT TCTTTGGTAT TTTTAGTTAT AATTAAT
+TAT      382779[] 
+ []
+
+
+Overfull \hbox (9.60023pt too wide) in paragraph at lines 1287--1287
+[]\OT1/pcr/m/n/8 .......... .......... .......... .......... .......... .......
+...          28[] 
+ []
+
+
+Overfull \hbox (9.60023pt too wide) in paragraph at lines 1287--1287
+[]\OT1/pcr/m/n/8 CTTTCTTCAA ACTTTTGACA CAGGTGATTT ATTCAGAGGA GGAT-CGGAA GCTCAAC
+AAA      382838[] 
+ []
+
+
+Overfull \hbox (9.60023pt too wide) in paragraph at lines 1287--1287
+[]\OT1/pcr/m/n/8 .......... .......... ...GTGATTT ATTCAGAGGA GGATCCGGAA GCTCAAC
+AAA          65[] 
+ []
+
+[35]
+Overfull \hbox (9.60023pt too wide) in paragraph at lines 1287--1287
+[]\OT1/pcr/m/n/8 GATATTACTA TTGGTCTTAT CCAGCGTGAG TTGCTTAGCC TAGCGGAGTA CAATGTC
+CAC      382898[] 
+ []
+
+
+Overfull \hbox (9.60023pt too wide) in paragraph at lines 1287--1287
+[]\OT1/pcr/m/n/8 GATATTACTA TTGGTCTTAT CCAGCGTGAG TTGCTTAGCC TAGCGGAGTA CAATGTC
+CAC         125[] 
+ []
+
+
+Overfull \hbox (9.60023pt too wide) in paragraph at lines 1287--1287
+[]\OT1/pcr/m/n/8 ATGGCGAAGC ATCTTGATGG AGGGAGAAAC AGTATGCTGA ATTGCTTAAC CTTTGTT
+GAT      382958[] 
+ []
+
+
+Overfull \hbox (9.60023pt too wide) in paragraph at lines 1287--1287
+[]\OT1/pcr/m/n/8 ATGGCGAAGC ATCTTGATGG AGGGAGAAAC A......... .......... .......
+...         156[] 
+ []
+
+
+Overfull \hbox (9.60023pt too wide) in paragraph at lines 1287--1287
+[]\OT1/pcr/m/n/8 GTCCTTGTGT GGTAACATTC TTTTTTTGTT TTGGCTAGTG AACTTGTTTT AACAAGT
+TGT      383018[] 
+ []
+
+
+Overfull \hbox (9.60023pt too wide) in paragraph at lines 1287--1287
+[]\OT1/pcr/m/n/8 .......... .......... .......... .......... .......... .......
+...         156[] 
+ []
+
+
+Overfull \hbox (9.60023pt too wide) in paragraph at lines 1287--1287
+[]\OT1/pcr/m/n/8 TTGTTACGCA GAGACCGCAA CTGACTTTGC TATTTCTCTA CTCCAATCCT TGGTCAC
+TGA      383078[] 
+ []
+
+
+Overfull \hbox (9.60023pt too wide) in paragraph at lines 1287--1287
+[]\OT1/pcr/m/n/8 .......... .AGACCGCAA CTGACTTTGC TATTTCTCTA CTCCAATCCT TGGTCAC
+TGA         205[] 
+ []
+
+
+Overfull \hbox (9.60023pt too wide) in paragraph at lines 1287--1287
+[]\OT1/pcr/m/n/8 GGAGTCGAGT GTCATTTCAG AG                                      
+         383100[] 
+ []
+
+
+Overfull \hbox (9.60023pt too wide) in paragraph at lines 1287--1287
+[]\OT1/pcr/m/n/8 GGAGTCNAGT GTCATTTNNT AG                                      
+            227[] 
+ []
+
+
+Overfull \hbox (24.00024pt too wide) in paragraph at lines 1287--1287
+[]\OT1/pcr/m/n/8 --------------------------------------------------------------
+------------------[] 
+ []
+
+[36]
+File: output/gth--species-arabidopsis--genomic-NC_003070.fna.gz--cdna-AU236313.
+gbk.gz--v.out  (verbatim)
+
+Overfull \hbox (9.60023pt too wide) in paragraph at lines 1296--1296
+[]\OT1/pcr/m/n/8 $ gth -species arabidopsis -genomic NC_003070.fna.gz -cdna AU2
+36313.gbk.gz -v 
+ []
+
+
+Overfull \hbox (43.20026pt too wide) in paragraph at lines 1296--1296
+[]\OT1/pcr/m/n/8 $ Arguments: -species arabidopsis -genomic NC_003070.fna.gz -c
+dna AU236313.gbk.gz -v[] 
+ []
+
+[37]
+Overfull \hbox (273.6004pt too wide) in paragraph at lines 1296--1296
+[]\OT1/pcr/m/n/8 # args=-d -v -l 20 -seedlength 18 -exdrop 2 -q AU236313.gbk.gz
+.dna /Users/gordon/work/genometools/doc/gthmanual/NC_003070.fna.gz.dna[] 
+ []
+
+
+Overfull \hbox (33.60025pt too wide) in paragraph at lines 1296--1296
+[]\OT1/pcr/m/n/8 $ alphabet "aAcCgGtTuUnsywrkvbdhmNSYWRKVBDHM" (size 32) mapped
+ to "acgtn" (size 5)[] 
+ []
+
+
+Overfull \hbox (33.60025pt too wide) in paragraph at lines 1296--1296
+[]\OT1/pcr/m/n/8 $ alphabet "aAcCgGtTuUnsywrkvbdhmNSYWRKVBDHM" (size 32) mapped
+ to "acgtn" (size 5)[] 
+ []
+
+
+Overfull \hbox (28.80025pt too wide) in paragraph at lines 1296--1296
+[]\OT1/pcr/m/n/8 # d = distance value (negative=hamming distance, 0=exact, posi
+tive=edit distance)[] 
+ []
+
+
+Overfull \hbox (100.8003pt too wide) in paragraph at lines 1296--1296
+[]\OT1/pcr/m/n/8 $ overall space peak: main=58.05 MB (2.00 bytes/symbol), secon
+dary=214.19 MB (7.38 bytes/symbol)[] 
+ []
+
+
+Overfull \hbox (273.6004pt too wide) in paragraph at lines 1296--1296
+[]\OT1/pcr/m/n/8 # args=-p -v -l 20 -seedlength 18 -exdrop 2 -q AU236313.gbk.gz
+.dna /Users/gordon/work/genometools/doc/gthmanual/NC_003070.fna.gz.dna[] 
+ []
+
+
+Overfull \hbox (33.60025pt too wide) in paragraph at lines 1296--1296
+[]\OT1/pcr/m/n/8 $ alphabet "aAcCgGtTuUnsywrkvbdhmNSYWRKVBDHM" (size 32) mapped
+ to "acgtn" (size 5)[] 
+ []
+
+
+Overfull \hbox (33.60025pt too wide) in paragraph at lines 1296--1296
+[]\OT1/pcr/m/n/8 $ alphabet "aAcCgGtTuUnsywrkvbdhmNSYWRKVBDHM" (size 32) mapped
+ to "acgtn" (size 5)[] 
+ []
+
+[38]
+Overfull \hbox (28.80025pt too wide) in paragraph at lines 1296--1296
+[]\OT1/pcr/m/n/8 # d = distance value (negative=hamming distance, 0=exact, posi
+tive=edit distance)[] 
+ []
+
+
+Overfull \hbox (100.8003pt too wide) in paragraph at lines 1296--1296
+[]\OT1/pcr/m/n/8 $ overall space peak: main=58.06 MB (2.00 bytes/symbol), secon
+dary=214.19 MB (7.38 bytes/symbol)[] 
+ []
+
+
+Overfull \hbox (24.00024pt too wide) in paragraph at lines 1296--1296
+[]\OT1/pcr/m/n/8 **************************************************************
+******************[] 
+ []
+
+
+Overfull \hbox (273.6004pt too wide) in paragraph at lines 1296--1296
+[]\OT1/pcr/m/n/8 EST Sequence: file=AU236313.gbk.gz, strand=+, description=AU23
+6313 AU236313 RAFL14 Arabidopsis thaliana cDNA clone RAFL14-87-E12 5',[] 
+ []
+
+
+Overfull \hbox (446.40051pt too wide) in paragraph at lines 1296--1296
+[]\OT1/pcr/m/n/8 Genomic Template: file=NC_003070.fna.gz, strand=+, from=382240
+, to=383395, description=gi|42592260|ref|NC_003070.5| Arabidopsis thaliana chro
+mosome 1, complete sequence[] 
+ []
+
+
+Overfull \hbox (19.20024pt too wide) in paragraph at lines 1296--1296
+[] \OT1/pcr/m/n/8 Exon  1   382540   382567 (  28 n);  cDNA      1     28 (  28
+ n); score: 1.000[] 
+ []
+
+
+Overfull \hbox (24.00024pt too wide) in paragraph at lines 1296--1296
+[]  \OT1/pcr/m/n/8 Intron  1   382568   382802 ( 235 n); Pd: 0.985 (s:    0), P
+a: 0.999 (s: 0.95)[] 
+ []
+
+
+Overfull \hbox (19.20024pt too wide) in paragraph at lines 1296--1296
+[] \OT1/pcr/m/n/8 Exon  2   382803   382929 ( 127 n);  cDNA     29    156 ( 128
+ n); score: 0.980[] 
+ []
+
+
+Overfull \hbox (24.00024pt too wide) in paragraph at lines 1296--1296
+[]  \OT1/pcr/m/n/8 Intron  2   382930   383029 ( 100 n); Pd: 0.956 (s: 1.00), P
+a: 0.983 (s: 1.00)[] 
+ []
+
+
+Overfull \hbox (19.20024pt too wide) in paragraph at lines 1296--1296
+[] \OT1/pcr/m/n/8 Exon  3   383030   383100 (  71 n);  cDNA    157    227 (  71
+ n); score: 0.944[] 
+ []
+
+
+Overfull \hbox (9.60023pt too wide) in paragraph at lines 1296--1296
+[]\OT1/pcr/m/n/8 GCGTGTTGTT AAAGAGCTCA CTAGTTGGGT ATGTTTACAA CCTTTTCAAG ATTTCAC
+TTC      382599[] 
+ []
+
+
+Overfull \hbox (9.60023pt too wide) in paragraph at lines 1296--1296
+[]\OT1/pcr/m/n/8 GCGTGTTGTT AAAGAGCTCA CTAGTTGG.. .......... .......... .......
+...          28[] 
+ []
+
+
+Overfull \hbox (9.60023pt too wide) in paragraph at lines 1296--1296
+[]\OT1/pcr/m/n/8 GCTGATGTGC TTTGTTCAGT TACTTCTCCA TTAATTTGTC ACTATTTCTG TCAGAAC
+ACA      382659[] 
+ []
+
+
+Overfull \hbox (9.60023pt too wide) in paragraph at lines 1296--1296
+[]\OT1/pcr/m/n/8 .......... .......... .......... .......... .......... .......
+...          28[] 
+ []
+
+
+Overfull \hbox (9.60023pt too wide) in paragraph at lines 1296--1296
+[]\OT1/pcr/m/n/8 TAGGATAACA CATATCATAT AAGTGCTAGG TCGAGTCTGT TTCCTGTAGT TGGAGCC
+TAT      382719[] 
+ []
+
+
+Overfull \hbox (9.60023pt too wide) in paragraph at lines 1296--1296
+[]\OT1/pcr/m/n/8 .......... .......... .......... .......... .......... .......
+...          28[] 
+ []
+
+
+Overfull \hbox (9.60023pt too wide) in paragraph at lines 1296--1296
+[]\OT1/pcr/m/n/8 CCTCAACTGG TTATAGATAC TAGATTTGTT TCTTTGGTAT TTTTAGTTAT AATTAAT
+TAT      382779[] 
+ []
+
+
+Overfull \hbox (9.60023pt too wide) in paragraph at lines 1296--1296
+[]\OT1/pcr/m/n/8 .......... .......... .......... .......... .......... .......
+...          28[] 
+ []
+
+
+Overfull \hbox (9.60023pt too wide) in paragraph at lines 1296--1296
+[]\OT1/pcr/m/n/8 CTTTCTTCAA ACTTTTGACA CAGGTGATTT ATTCAGAGGA GGAT-CGGAA GCTCAAC
+AAA      382838[] 
+ []
+
+
+Overfull \hbox (9.60023pt too wide) in paragraph at lines 1296--1296
+[]\OT1/pcr/m/n/8 .......... .......... ...GTGATTT ATTCAGAGGA GGATCCGGAA GCTCAAC
+AAA          65[] 
+ []
+
+[39]
+Overfull \hbox (9.60023pt too wide) in paragraph at lines 1296--1296
+[]\OT1/pcr/m/n/8 GATATTACTA TTGGTCTTAT CCAGCGTGAG TTGCTTAGCC TAGCGGAGTA CAATGTC
+CAC      382898[] 
+ []
+
+
+Overfull \hbox (9.60023pt too wide) in paragraph at lines 1296--1296
+[]\OT1/pcr/m/n/8 GATATTACTA TTGGTCTTAT CCAGCGTGAG TTGCTTAGCC TAGCGGAGTA CAATGTC
+CAC         125[] 
+ []
+
+
+Overfull \hbox (9.60023pt too wide) in paragraph at lines 1296--1296
+[]\OT1/pcr/m/n/8 ATGGCGAAGC ATCTTGATGG AGGGAGAAAC AGTATGCTGA ATTGCTTAAC CTTTGTT
+GAT      382958[] 
+ []
+
+
+Overfull \hbox (9.60023pt too wide) in paragraph at lines 1296--1296
+[]\OT1/pcr/m/n/8 ATGGCGAAGC ATCTTGATGG AGGGAGAAAC A......... .......... .......
+...         156[] 
+ []
+
+
+Overfull \hbox (9.60023pt too wide) in paragraph at lines 1296--1296
+[]\OT1/pcr/m/n/8 GTCCTTGTGT GGTAACATTC TTTTTTTGTT TTGGCTAGTG AACTTGTTTT AACAAGT
+TGT      383018[] 
+ []
+
+
+Overfull \hbox (9.60023pt too wide) in paragraph at lines 1296--1296
+[]\OT1/pcr/m/n/8 .......... .......... .......... .......... .......... .......
+...         156[] 
+ []
+
+
+Overfull \hbox (9.60023pt too wide) in paragraph at lines 1296--1296
+[]\OT1/pcr/m/n/8 TTGTTACGCA GAGACCGCAA CTGACTTTGC TATTTCTCTA CTCCAATCCT TGGTCAC
+TGA      383078[] 
+ []
+
+
+Overfull \hbox (9.60023pt too wide) in paragraph at lines 1296--1296
+[]\OT1/pcr/m/n/8 .......... .AGACCGCAA CTGACTTTGC TATTTCTCTA CTCCAATCCT TGGTCAC
+TGA         205[] 
+ []
+
+
+Overfull \hbox (9.60023pt too wide) in paragraph at lines 1296--1296
+[]\OT1/pcr/m/n/8 GGAGTCGAGT GTCATTTCAG AG                                      
+         383100[] 
+ []
+
+
+Overfull \hbox (9.60023pt too wide) in paragraph at lines 1296--1296
+[]\OT1/pcr/m/n/8 GGAGTCNAGT GTCATTTNNT AG                                      
+            227[] 
+ []
+
+
+Overfull \hbox (24.00024pt too wide) in paragraph at lines 1296--1296
+[]\OT1/pcr/m/n/8 --------------------------------------------------------------
+------------------[] 
+ []
+
+[40]
+File: output/gth--v--frompos-1--topos-200000--inverse--force--o-arab_mapping.tx
+t--cdna-CeresTigr.gz--species-arabidopsis--genomic-NC_003070.fna.gz.out  (verba
+tim)
+
+Overfull \hbox (288.00041pt too wide) in paragraph at lines 1307--1307
+[]\OT1/pcr/m/n/8 $ gth -v -frompos 1 -topos 200000 -inverse -force -o arab_mapp
+ing.txt -cdna CeresTigr.gz -species arabidopsis -genomic NC_003070.fna.gz 
+ []
+
+[41]
+File: output/gth--species-human--genomic-hs_ref_chr21.fa.gz--cdna-NM_003253.gbk
+.out  (verbatim)
+
+Overfull \hbox (7.19958pt too wide) in paragraph at lines 1318--1318
+[]\OT1/pcr/m/n/9 $ gth -species human -genomic hs_ref_chr21.fa.gz -cdna NM_0032
+53.gbk 
+ []
+
+File: output/gth--introncutout--introndistri--species-human--genomic-hs_ref_chr
+21.fa.gz--cdna-NM_003253.gbk.out  (verbatim)
+
+Overfull \hbox (100.8003pt too wide) in paragraph at lines 1324--1324
+[]\OT1/pcr/m/n/8 $ gth -introncutout -introndistri -species human -genomic hs_r
+ef_chr21.fa.gz -cdna NM_003253.gbk 
+ []
+
+[42]
+Overfull \hbox (30.45143pt too wide) in paragraph at lines 1335--1336
+\OT1/ptm/m/n/10.95 align-ments and only re-com-pute the \OT1/ptm/m/it/10.95 con
+-sen-sus spliced align-ments \OT1/ptm/m/n/10.95 us-ing \OT1/pcr/m/n/10.95 gthco
+nsensus\OT1/ptm/m/n/10.95 . 
+ []
+
+File: output/gth--intermediate--xmlout--gzip--o-ceres.inter.gz--genomic-NC_0030
+70.fna.gz--cdna-CeresTigr.gz--frompos-300000--topos-500000--inverse.out  (verba
+tim)
+
+Overfull \hbox (288.00041pt too wide) in paragraph at lines 1345--1345
+[]\OT1/pcr/m/n/8 $ gth -intermediate -xmlout -gzip -o ceres.inter.gz -genomic N
+C_003070.fna.gz -cdna CeresTigr.gz -frompos 300000 -topos 500000 -inverse 
+ []
+
+
+Overfull \hbox (27.45221pt too wide) in paragraph at lines 1347--1349
+[]\OT1/ptm/m/n/10.95 To look at the re-sults stored in the file \OT1/pcr/m/n/10
+.95 ceres.inter.gz\OT1/ptm/m/n/10.95 , we em-ploy \OT1/pcr/m/n/10.95 gthconsens
+us
+ []
+
+File: output/gthconsensus-ceres.inter.gz.out  (verbatim)
+
+Overfull \hbox (244.80038pt too wide) in paragraph at lines 1351--1351
+[]\OT1/pcr/m/n/8 PGS_42592260+_24737-(319898  320145,320252  320296,320380  320
+457,320769  321417,321745  321865,321958  322406,322513  322843)[] 
+ []
+
+
+Overfull \hbox (393.60048pt too wide) in paragraph at lines 1351--1351
+[]\OT1/pcr/m/n/8 PGS_42592260-_40042+ (389646  389410,389301  389226,389138  38
+9050,388940  388851,388760  388716,388609  388539,388406  388268,387672  387584
+,387503  387278)[] 
+ []
+
+File: output/gthfilestat-ceres.inter.gz.out  (verbatim)
+[43]
+File: output/gth--intermediate--xmlout--gzip--o-new.inter.gz--genomic-NC_003070
+.fna.gz--cdna-AU236313.gbk.gz--frompos-300000--topos-500000--inverse.out  (verb
+atim)
+
+Overfull \hbox (292.80042pt too wide) in paragraph at lines 1360--1360
+[]\OT1/pcr/m/n/8 $ gth -intermediate -xmlout -gzip -o new.inter.gz -genomic NC_
+003070.fna.gz -cdna AU236313.gbk.gz -frompos 300000 -topos 500000 -inverse 
+ []
+
+File: output/gthconsensus-ceres.inter.gz-new.inter.gz.out  (verbatim)
+
+Overfull \hbox (244.80038pt too wide) in paragraph at lines 1364--1364
+[]\OT1/pcr/m/n/8 PGS_42592260+_24737-(319898  320145,320252  320296,320380  320
+457,320769  321417,321745  321865,321958  322406,322513  322843)[] 
+ []
+
+
+Overfull \hbox (393.60048pt too wide) in paragraph at lines 1364--1364
+[]\OT1/pcr/m/n/8 PGS_42592260-_40042+ (389646  389410,389301  389226,389138  38
+9050,388940  388851,388760  388716,388609  388539,388406  388268,387672  387584
+,387503  387278)[] 
+ []
+
+LaTeX Font Info:    Font shape `OT1/ptm/bx/it' in size <10.95> not available
+(Font)              Font shape `OT1/ptm/b/it' tried instead on input line 1402.
+
+
+Overfull \hbox (12.04536pt too wide) in paragraph at lines 1402--1407
+ []\OT1/ptm/b/it/10.95 Genome-Threader \OT1/pcr/b/n/10.95 1.0.0 (2007-06-20)\OT
+1/ptm/b/n/10.95 :[] \OT1/ptm/m/n/10.95 Many in-ter-nal changes due to switch
+ []
+
+
+Overfull \hbox (64.1159pt too wide) in paragraph at lines 1412--1414
+ []\OT1/ptm/b/it/10.95 Genome-Threader \OT1/pcr/b/n/10.95 0.9.59 (2007-02-08)\O
+T1/ptm/b/n/10.95 :[] \OT1/ptm/m/n/10.95 The de-fault value for op-tion []
+ []
+
+[44]
+Overfull \hbox (11.82431pt too wide) in paragraph at lines 1419--1420
+ []\OT1/ptm/b/it/10.95 Genome-Threader \OT1/pcr/b/n/10.95 0.9.57 (2006-09-19)\O
+T1/ptm/b/n/10.95 :[] \OT1/ptm/m/n/10.95 The op-tions []
+ []
+
+
+Overfull \hbox (6.22083pt too wide) in paragraph at lines 1433--1434
+ []\OT1/ptm/b/it/10.95 Genome-Threader \OT1/pcr/b/n/10.95 0.9.53 (2006-05-23)\O
+T1/ptm/b/n/10.95 :[] \OT1/pcr/m/n/10.95 gthbssmbuild \OT1/ptm/m/n/10.95 per-for
+ms more
+ []
+
+
+Overfull \hbox (2.16489pt too wide) in paragraph at lines 1436--1437
+ []\OT1/ptm/b/it/10.95 Genome-Threader \OT1/pcr/b/n/10.95 0.9.52 (2006-05-22)\O
+T1/ptm/b/n/10.95 :[] \OT1/ptm/m/n/10.95 The op-tion []
+ []
+
+
+Overfull \hbox (4.79675pt too wide) in paragraph at lines 1438--1439
+ []\OT1/ptm/b/it/10.95 Genome-Threader \OT1/pcr/b/n/10.95 0.9.51 (2006-05-16)\O
+T1/ptm/b/n/10.95 :[] \OT1/ptm/m/n/10.95 The plain pro-tein out-put has been
+ []
+
+
+Overfull \hbox (2.10246pt too wide) in paragraph at lines 1440--1441
+ []\OT1/ptm/b/it/10.95 Genome-Threader \OT1/pcr/b/n/10.95 0.9.50 (2006-05-14)\O
+T1/ptm/b/n/10.95 :[] \OT1/ptm/m/n/10.95 A mi-nor prob-lem con-cern-ing the
+ []
+
+[45]
+Overfull \hbox (6.72388pt too wide) in paragraph at lines 1459--1463
+ []\OT1/ptm/b/it/10.95 Genome-Threader \OT1/pcr/b/n/10.95 0.9.41 (2005-09-21)\O
+T1/ptm/b/n/10.95 :[] \OT1/ptm/m/n/10.95 Com-pu-ta-tion of par-al-o-gous genes
+ []
+
+
+Overfull \hbox (3.79552pt too wide) in paragraph at lines 1465--1469
+ []\OT1/ptm/b/it/10.95 Genome-Threader \OT1/pcr/b/n/10.95 0.9.40 (2005-09-15)\O
+T1/ptm/b/n/10.95 :[] \OT1/ptm/m/n/10.95 The op-tion [] has been
+ []
+
+
+Overfull \hbox (39.35512pt too wide) in paragraph at lines 1465--1469
+\OT1/ptm/m/n/10.95 re-placed by the op-tions [] and []. The tools \OT1/pcr/m/n/
+10.95 gthsplit\OT1/ptm/m/n/10.95 , \OT1/pcr/m/n/10.95 gthsplit2dim.sh\OT1/ptm/m
+/n/10.95 ,
+ []
+
+[46]
+Overfull \hbox (3.9866pt too wide) in paragraph at lines 1510--1511
+ []\OT1/ptm/b/it/10.95 Genome-Threader \OT1/pcr/b/n/10.95 0.9.19\OT1/ptm/b/n/10
+.95 :[] \OT1/ptm/m/n/10.95 The \OT1/pcr/m/n/10.95 gthconsensus \OT1/ptm/m/n/10.
+95 pro-gram has been in-tro-duced. 
+ []
+
+[47]
+Overfull \hbox (5.78706pt too wide) in paragraph at lines 1522--1523
+ []\OT1/ptm/b/it/10.95 Genome-Threader \OT1/pcr/b/n/10.95 0.9.13\OT1/ptm/b/n/10
+.95 :[] \OT1/ptm/m/n/10.95 The op-tions [] and []
+ []
+
+
+Overfull \hbox (20.81705pt too wide) in paragraph at lines 1530--1531
+ []\OT1/ptm/b/it/10.95 Genome-Threader \OT1/pcr/b/n/10.95 0.9.9\OT1/ptm/b/n/10.
+95 :[] \OT1/ptm/m/n/10.95 The op-tions [] and []
+ []
+
+[48]
+Overfull \hbox (54.24019pt too wide) in paragraph at lines 1565--1568
+ []\OT1/ptm/b/it/10.95 Genome-Threader \OT1/pcr/b/n/10.95 0.8.6\OT1/ptm/b/n/10.
+95 :[] \OT1/ptm/m/n/10.95 The fol-low-ing op-tions have been in-tro-duced: [],
+ []
+
+(./gthmanual-tmp.bbl [49]) (./gthmanual-tmp.ind [50] [51
+
+] [52] [53
+
+])
+
+AED: lastpage setting LastPage
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 1588.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 1588.
+(./gthmanual-tmp.aux)
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 1588.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 1588.
+
+Package rerunfilecheck Info: File `gthmanual-tmp.out' has not changed.
+(rerunfilecheck)             Checksum: 9C318208572BC236757566C7D69D0921;3694.
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 1588.
+ )
+(\end occurred inside a group at level 1)
+
+### simple group (level 1) entered at line 1561 ({)
+### bottom level 
+Here is how much of TeX's memory you used:
+ 7131 strings out of 494901
+ 102392 string characters out of 6178617
+ 194206 words of memory out of 5000000
+ 10033 multiletter control sequences out of 15000+600000
+ 51494 words of font info for 119 fonts, out of 8000000 for 9000
+ 14 hyphenation exceptions out of 8191
+ 48i,14n,30p,573b,487s stack positions out of 5000i,500n,10000p,200000b,80000s
+{/usr/share/texlive/texmf-dist/fonts/enc/dvips/base/8r.enc}</us
+r/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/shar
+e/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi8.pfb></usr/share/texli
+ve/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi9.pfb></usr/share/texlive/texm
+f-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/share/texlive/texmf-dist/
+fonts/type1/public/amsfonts/cm/cmr6.pfb></usr/share/texlive/texmf-dist/fonts/ty
+pe1/public/amsfonts/cm/cmr8.pfb></usr/share/texlive/texmf-dist/fonts/type1/publ
+ic/amsfonts/cm/cmsy10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/ams
+fonts/cm/cmsy9.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/c
+m/cmti10.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/courier/ucrb8a.pfb>
+</usr/share/texlive/texmf-dist/fonts/type1/urw/courier/ucrr8a.pfb></usr/share/t
+exlive/texmf-dist/fonts/type1/urw/times/utmb8a.pfb></usr/share/texlive/texmf-di
+st/fonts/type1/urw/times/utmbi8a.pfb></usr/share/texlive/texmf-dist/fonts/type1
+/urw/times/utmr8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/times/utmr
+i8a.pfb>
+Output written on gthmanual-tmp.pdf (54 pages, 287771 bytes).
+PDF statistics:
+ 961 PDF objects out of 1000 (max. 8388607)
+ 880 compressed objects within 9 object streams
+ 206 named destinations out of 1000 (max. 500000)
+ 409 words of extra memory for PDF output out of 10000 (max. 10000000)
+

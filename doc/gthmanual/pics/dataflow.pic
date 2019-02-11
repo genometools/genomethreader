@@ -1,0 +1,92 @@
+.PS
+define mediummodule {ellipse ht 0.5 wid 1.2 $1 $2}
+define largemodule {ellipse ht 0.75 wid 1.8 $1}
+define mediumdata {box ht 0.5 wid 1.2 $1} 
+define largedata {box ht 0.8 wid 1.2 $1}
+
+scale=0.85
+
+down
+
+Parsing:      mediummodule("option" "parsing")
+              move down from bottom of Parsing
+
+Gthcallinfo:  mediumdata("all options" "passed to program")
+              move down from bottom of Gthcallinfo
+
+Loading:      mediummodule("loading" "input files")
+              move down from bottom of Loading
+
+Gthinputinfo: largedata("input files:" "genomic sequence" "reference sequence" "splice site param.") 
+              move down from bottom of Gthinputinfo
+
+Filter:       mediummodule("similarity" "filter")
+              move down from bottom of Filter 
+
+Hits:         mediumdata("List of" "Hits")
+              move left from left of Hits
+
+Parameter:    mediumdata("DP" "parameter")
+              move down 0.6 from bottom of Hits
+
+DP:           largemodule("DP algorithm" "for optimal" "spliced alignment")
+              move right from right of DP
+
+Alignment:    mediumdata("one spliced" "alignment")
+              move up from top of Alignment
+
+Save:         largemodule("spliced alignment" "collection")
+              move up from top of Save
+
+Tree:         mediumdata("binary search tree" "of spliced" "alignments")
+              move up from top of Tree 
+
+Outputfunc:   mediummodule("output spliced" "alignments")
+              move up from top of Outputfunc
+
+Output:       mediumdata("output" "of spliced" "alignments") 
+               move right from right of Gthcallinfo
+#             move right from right of Outputfunc 
+
+# PGL:          mediummodule("compute" "PGLs" dotted)
+#               move up from top of PGL
+
+# PGLOutput:    mediumdata("output" "of PGLs" dotted)
+#               move right from right of Gthcallinfo
+
+BSSM:         mediumdata("BSSM" "parameter" "files")
+              move right from right of BSSM
+
+Mkbssmparam:  mediummodule("mkbssmfiles.x")
+              move left from left of Loading
+
+Indices:      mediumdata("index of" "genomic and" "reference sequence")
+              move up from top of Indices
+
+Mkvtree:      mediummodule("mkvtree.x")
+
+              arrow from Parsing.s to Gthcallinfo.n
+              arrow from Gthcallinfo.s to Loading.n
+              arrow from Loading.s to Gthinputinfo.n
+              arrow from Gthinputinfo.s to Filter.n 
+              arrow from Filter.s to Hits.n
+              arrow from Filter.s to Parameter.n
+              arrow from Parameter.s to DP.n
+              arrow from Hits.s to DP.n "for every" "hit"
+              arrow from DP.e to Alignment.w
+              arrow from Alignment.n to Save.s dashed "possibly"
+              arrow from Save.n to Tree.s 
+              arrow from Tree.n to Outputfunc.s
+#             arrow dotted from Tree.n to PGL.s
+              arrow from Outputfunc.n to Output.s
+#             arrow dotted from PGL.n to PGLOutput.s 
+              arrow from BSSM.s to Loading.e
+              arrow from Mkbssmparam.w to BSSM.e
+              arrow from Indices.e to Loading.w
+              arrow from Mkvtree.s to Indices.n
+              
+
+
+
+
+.PE

@@ -1,0 +1,713 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<!--http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd-->
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<title>GenomeThreader Gene Prediction Software</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="description" content="The GenomeThreader gene prediction software computes gene structure predictions using a similarity-based approach where additional cDNA/EST and/or protein sequences are used to predict gene structures via spliced alignments." />
+<meta name="keywords" content="gene structure prediction, gene prediction, cDNA alignment, EST alignment, protein alignment, cDNA mapping, EST mapping, protein mapping, spliced alignment, consensus spliced alignment, genome annotation, bioinformatics, computational biology" />
+<link rel="stylesheet" type="text/css" href="style.css" />
+</head>
+<body>
+
+<h1><i>GenomeThreader</i> Gene Prediction Software</h1>
+
+<div id="trialbox">
+<ul>
+  <li><a href="download.html">Download <i>GenomeThreader</i>!</a></li>
+</ul>
+</div>
+
+<p>
+<i>GenomeThreader</i> is a software tool to compute gene structure predictions.
+The gene structure predictions are calculated using a similarity-based approach
+where additional cDNA/EST and/or protein sequences are used to predict gene
+structures via spliced alignments.
+
+<i>GenomeThreader</i> was motivated by disabling limitations in
+<a href="http://bioinformatics.iastate.edu/cgi-bin/gs.cgi">
+<i>GeneSeqer</i></a>, a popular gene prediction program which is widely used
+for plant genome annotation.
+</p>
+<h2>Features</h2>
+
+<ul>
+  <li>
+    Intron Cutout Technique: <br/>
+    The intron cutout technique allows to overcome the time and space
+    limitations of the dynamic programming (DP) algorithms used in
+    <a href="http://bioinformatics.iastate.edu/cgi-bin/gs.cgi"><i>GeneSeqer</i></a>,
+    in particular, when applied to organisms containing long introns.
+  </li>
+  <li>
+    Baysian Splice Site Models (BSSMs): <br/>
+    With BSSMs it is possible to assign probabilities to GT donor, GC donor,
+    and AG acceptor sites. This information is used in the DP to get the exact
+    exon/intron boundaries right.
+  </li>
+  <li>
+    Combination of cDNA/EST Based Spliced Alignments with Protein Based Spliced
+    Alignments: <br/>
+    After (spliced) aligning the supplied cDNAs/ESTs and protein sequences onto
+    the genomic template, <i>GenomeThreader</i> computes consensus spliced
+    alignments. Consensus spliced alignments combine several spliced alignments
+    to resolve the complete gene structure and to uncover alternative splicing.
+  </li>
+  <li>
+    Incremental Updates: <br/>
+    When the used cDNA/EST or protein database is updated, a common approach
+    was to redo the complete mapping. With <i>GenomeThreader</i>, you can combine
+    newly computed spliced alignments with precomputed spliced alignments to
+    quickly recompute consensus spliced alignments.
+  </li>
+  <li>
+    XML: <br/>
+    The additional <i>GenomeThreader</i> XML output conforms to our gthXML
+    standard <a href="GenomeThreader.rng.txt">GenomeThreader.rng.txt</a>. With
+    the included script XML2GFF.py, it is possible to convert gthXML output to the
+    <a href="http://www.sanger.ac.uk/software/GFF">GFF</a> format.
+    A variety of gthXML-specific tools can be found
+    <a href="http://brendelgroup.org/mespar1/gthxml/">here</a>.
+  </li>
+  <li>
+    gthDB: <br/>
+    We also <a href="http://brendelgroup.org/mespar1/gthxml/">provide</a>
+    a schema and load script for gthDB, which permits storage
+    and query of <i>GenomeThreader</i> output in a relational format.
+  </li>
+</ul>
+<p>
+References have been omitted for brevity; you can find them and more details on
+the implementation in the <i>GenomeThreader</i>
+<a href="doc/GreBreSpaKur2005.pdf">paper</a>.
+
+How to take advantage of these features and many more is described in depth in
+the <i>GenomeThreader</i> <a href="doc/gthmanual.pdf">manual</a>.
+Please consult the <a href="faq.html">FAQ</a> page for frequently asked
+questions.
+
+All mentioned files and scripts are also part of the <i>GenomeThreader</i>
+distribution (see below).
+</p>
+<h2>Availability</h2>
+<p>
+<i>GenomeThreader</i> is available free of charge.
+You can <a href="download.html">download</a> a copy.
+</p>
+<h2>Examples</h2>
+<ul>
+  <li>
+    Evaluation <a href="gthcases/softeng.html">cases</a> described in Gremme et
+    al. 2005 (see below)
+  </li>
+  <li>
+    A 16.6Kb rice gene structure tractable with <i>GenomeThreader</i> (using
+    both an <a href="gthcases/biggene.gth.cut.txt">intron cutout</a> technique
+    and <a href="gthcases/biggene.gth.nocut.txt">without</a>), but beyond
+    <a href="gthcases/biggene.gsq.txt"><i>GeneSeqer</i></a>'s limitations.
+  </li>
+  <li>
+    A 125Kb intron-containing human
+    <a href="gthcases/bigintron.gth.txt">gene structure</a>.
+  </li>
+  <li>
+    Small samples of gzip'ed
+    <a href="gthcases/small_demo.gth.out.gz">plain text</a> and
+    <a href="gthcases/small_demo.gthxml.out.gz">XML</a>
+    GenomeThreader output.
+  </li>
+</ul>
+
+<h2>Users</h2>
+<p>
+The following sites use <i>GenomeThreader</i>. This list is not intended to be
+comprehensive.
+</p>
+<ul>
+  <li>
+    MIPS (Munich Information Center for Protein Sequences),
+    <a href="http://www.helmholtz-muenchen.de/en/ibis">Institute of Bioinformatics and
+    Systems Biology</a>
+    (for plant genome annotation)
+  </li>
+  <li>
+    <a href="http://www.cosmoss.org/">University of Freiburg,
+    Plant Biotechnology</a> (to annotate <i>Physcomitrella patens</i>)
+  </li>
+  <li>
+    <a href="http://www.plantgdb.org/">PlantGDB</a>
+  </li>
+  <li>
+    <a href="http://waksman.rutgers.edu/">Waksman Institute</a>, Rutgers
+    University
+  </li>
+  <li>
+    <a href="http://sgn.cornell.edu/">SOL Genomics Network (SGN)</a>, Cornell
+    University
+  </li>
+  <li>
+    <a href="http://bioinformatics.psb.ugent.be/">Bioinformatics and
+      evolutionary genomics division, VIB</a>, Gent University
+  </li>
+</ul>
+
+<h2>Citations</h2>
+<p>
+<a name="citations"></a>
+Here are the most important publications citing <i>GenomeThreader</i> (sorted by Journal)
+</p>
+<ol>
+<li>
+  Wang <i>et. al</i>.
+  <a href="http://www.nature.com/ng/journal/v46/n9/full/ng.3044.html">
+  The genome sequence of African rice (<i>Oryza glaberrima</i>) and
+         evidence for independent domestication</a>,
+  <i>Nature Genetics</i>
+  <b>46</b>:982-988, 2014.
+</li>
+<li>
+  Argout <i>et. al</i>.
+  <a href="http://www.nature.com/ng/journal/v43/n2/abs/ng.736.html">
+  The genome of <i>Theobroma cacao</i></a>,
+  <i>Nature Genetics</i>
+  <b>43</b>:101-108, 2011.
+</li>
+<li>
+  The Tomato Genome Consortium
+  <a href="http://www.nature.com/nature/journal/v485/n7400/full/nature11119.html">
+  The tomato genome sequence provides insights into fleshy fruit
+         evolution</a>,
+  <i>Nature</i>
+  <b>485</b>:635-641, 2012.
+</li>
+<li>
+  The International Barley Genome Sequencing Consortium
+  <a href="http://www.nature.com/nature/journal/v491/n7426/full/nature11543.html">
+  A physical, genetic and functional sequence assembly of the barley
+         genome</a>,
+  <i>Nature</i>
+  <b>491</b>:711-716, 2012.
+</li>
+<li>
+  J.M. Cock <i>et. al</i>.
+  <a href="http://www.nature.com/nature/journal/v465/n7298/full/nature09016.html">
+  The <i>Ectocarpus</i> genome and the independent evolution of multicellularity in brown algae</a>,
+  <i>Nature</i>
+  <b>465</b>:617-621, 2010.
+</li>
+<li>
+  The International Brachypodium Initiative
+  <a href="http://www.nature.com/nature/journal/v463/n7282/abs/nature08747.html">
+  Genome sequencing and analysis of the model grass <i>Brachypodium
+         distachyon</i></a>,
+  <i>Nature</i>
+  <b>463</b>:763-768, 2010.
+</li>
+<li>
+  R. Wang <i>et. al</i>.
+  <a href="http://www.nature.com/nature/journal/v459/n7245/full/nature07988.html">
+  <i>PEP1</i> regulates perennial flowering in
+         <i>Arabis alpina</i></a>,
+  <i>Nature</i>
+  <b>459</b>:423-427, 2009.
+</li>
+<li>
+  A.H. Paterson <i>et. al</i>.
+  <a href="http://www.nature.com/nature/journal/v457/n7229/abs/nature07723.html">
+  The <i>Sorghum bicolor</i> genome and the diversification of
+          grasses</a>,
+  <i>Nature</i>
+  <b>457</b>:551-556, 2009.
+</li>
+<li>
+  P. Abad <i>et. al</i>.
+  <a href="http://www.nature.com/nbt/journal/v26/n8/full/nbt.1482.html">
+  Genome sequence of the metazoan plant-parasitic nematode
+         <i>Meloidogyne incognita</i></a>,
+  <i>Nature Biotechnology</i>
+  <b>26</b>:909-915, 2008.
+</li>
+<li>
+  Wang <i>et. al</i>.
+  <a href="http://www.nature.com/ncomms/2014/140219/ncomms4311/full/ncomms4311.html">
+  The <i>Spirodela polyrhiza</i> genome reveals insights into its
+         neotenous reduction fast growth and aquatic lifestyle</a>,
+  <i>Nature Communications</i>
+  <b>5</b> Article number: 3311, 2014.
+</li>
+<li>
+  The International Wheat Genome Sequencing Consortium (IWGSC)
+  <a href="http://www.sciencemag.org/content/345/6194/1251788.short">
+  A chromosome-based draft sequence of the hexaploid bread wheat
+  (<i>Triticum aestivum</i>) genome</a>,
+  <i>Science</i>
+  <b>345</b>(6194), 2014.
+</li>
+<li>
+  Pfeifer <i>et. al</i>.
+  <a href="http://www.sciencemag.org/content/345/6194/1250091.short">
+  Genome interplay in the grain transcriptome of hexaploid bread
+         wheat</a>,
+  <i>Science</i>
+  <b>345</b>(6194), 2014.
+</li>
+<li>
+  R. Bruggmann <i>et. al</i>.
+  <a href="http://genome.cshlp.org/content/16/10/1241.full">
+  Uneven chromosome contraction and expansion in the maize
+         genome</a>,
+  <i>Genome Research</i>
+  <b>16</b>:1241-1251, 2006.
+</li>
+<li>
+  Moreau <i>et. al</i>.
+  <a href="http://www.genomebiology.com/2012/13/8/R74">
+  Gene functionalities and genome structure in
+         <i>Bathycoccus prasinos</i> reflect cellular specializations at the
+         base of the green lineage</a>,
+  <i>Genome Biology</i>
+  <b>13</b>(8):R74, 2012.
+</li>
+<li>
+  Duvick <i>et. al</i>.
+  <a href="http://nar.oxfordjournals.org/content/36/suppl_1/D959.short">
+  PlantGDB: a resource for comparative plant genomics</a>,
+  <i>Nucl. Acids Res.</i>
+  <b>36</b>:D959-D965, 2008.
+</li>
+<li>
+  Nijkamp <i>et. al</i>.
+  <a href="http://bioinformatics.oxfordjournals.org/content/29/22/2826.short">
+  Exploring variation-aware contig graphs for (comparative)
+         metagenomics using MaryGold</a>,
+  <i>Bioinformatics</i>
+  <b>29</b>(22):2826-2834, 2013.
+</li>
+<li>
+  Montalent <i>et. al</i>.
+  <a href="http://bioinformatics.oxfordjournals.org/content/26/9/1254.short">
+  EuG&egrave;ne-maize: a web site for maize gene prediction</a>,
+  <i>Bioinformatics</i>
+  <b>26</b>(9):1254-1255, 2010.
+</li>
+<li>
+  Wang <i>et. al</i>.
+  <a href="http://journals.plos.org/plosone/article?id=10.1371/journal.pone.0040711">
+  Identification and Dissection of Four Major QTL Affecting Milk Fat
+         Content in the German Holstein-Friesian Population</a>,
+  <i>PLOS one</i>
+  <b>7</b>(7):e40711, 2012.
+</li>
+<li>
+  Petre <i>et. al</i>.
+  <a href="http://journals.plos.org/plosone/article?id=10.1371/journal.pone.0044408">
+  RNA-Seq of Early-Infected Poplar Leaves by the Rust Pathogen
+         <i>Melampsora larici-populina</i> Uncovers PtSultr3;5, a
+         Fungal-Induced Host Sulfate Transporter</a>,
+  <i>PLOS one</i>
+  <b>7</b>(8):e44408, 2012.
+</li>
+<li>
+  Grenville-Briggs <i>et. al</i>.
+  <a href="http://journals.plos.org/plosone/article?id=10.1371/journal.pone.0024500">
+  A Molecular Insight into Algal-Oomycete Warfare: cDNA Analysis of
+         Ectocarpus siliculosus Infected with the Basal
+         <i>Oomycete Eurychasma dicksonii</i></a>,
+  <i>PLOS one</i>
+  <b>6</b>(9):e24500, 2011.
+</li>
+<li>
+  Di Filippo <i>et. al</i>.
+  <a href="http://www.sciencedirect.com/science/article/pii/S0378111912002466">
+  Euchromatic and heterochromatic compositional properties
+         emerging from the analysis of <i>Solanum lycopersicum</i> BAC
+         sequences</a>,
+  <i>Gene</i>
+  <b>499</b>(1):176-181, 2012.
+</li>
+<li>
+  Pausch <i>et. al</i>.
+  <a href="http://www.genetics.org/content/187/1/289.short">
+  Genome-Wide Association Study Identifies Two Major Loci Affecting
+         Calving Ease and Growth-Related Traits in Cattle</a>,
+  <i>Genetics</i>
+  <b>187</b>(1):289-297, 2011.
+</li>
+<li>
+  Martin <i>et. al</i>.
+  <a href="http://onlinelibrary.wiley.com/doi/10.1111/j.1438-8677.2008.00174.x/abstract">
+  A uniquely high number of <i>ftsZ</i> genes in the moss
+         <i>Physcomitrella patens</i></a>,
+  <i>Plant Biology</i>
+  <b>11</b>(5):744-750, 2009.
+</li>
+<li>
+  Richardt <i>et. al</i>.
+  <a href="http://link.springer.com/article/10.1007/s11103-009-9550-6">
+  Microarray analysis of the moss <i>Physcomitrella patens</i> reveals
+         evolutionarily conserved transcriptional regulation of salt stress
+         and abscisic acid signalling</a>,
+  <i>Plant Molecular Biology</i>
+  <b>72</b>(1):27-45, 2010.
+</li>
+<li>
+  De Palma <i>et. al</i>.
+  <a href="http://www.sciencedirect.com/science/article/pii/S0176161715002515">
+  Suppression Subtractive Hybridization analysis provides new insights into the tomato (<i>Solanum lycopersicum L.</i>) response to the plant probiotic microorganism <i>Trichoderma longibrachiatum MK1</i></a>,
+  <i>Journal of Plant Physiology</i>
+  <b>190</b>:79-94, 2016.
+</li>
+<li>
+  van der Burgt <i>et. al</i>.
+  <a href="http://onlinelibrary.wiley.com/doi/10.1111/mpp.12072/abstract">
+  Pseudogenization in pathogenic fungi with different host plants and lifestyles might reflect their evolutionary past</a>,
+  <i>Molecular Plant Pathology</i>
+  <b>15</b>(2):133-144, 2014.
+</li>
+<li>
+  M. Calvi&ntilde;o, R. Bruggmann and J. Messing
+  <a href="http://www.springerlink.com/content/w440723u17m50446/">
+  Screen of genes linked to high-sugar content in stems by
+         comparative genomics</a>,
+  <i>Rice</i>
+  <b>1</b>(2):166-176, 2008.
+</li>
+<li>
+  Lin <i>et. al</i>.
+  <a href="http://www.plantcell.org/content/22/8/2545.short">
+  Structural and Functional Divergence of a 1-Mb Duplicated Region in
+         the Soybean (<i>Glycine max</i>) Genome and Comparison to an
+         Orthologous Region from <i>Phaseolus vulgaris</i></a>,
+  <i>The Plant Cell</i>
+  <b>22</b>(8):2545-2561, 2010.
+</li>
+<li>
+  Lelandais-Briere <i>et. al</i>.
+  <a href="http://www.plantcell.org/content/21/9/2780.short">
+  Genome-Wide <i>Medicago truncatula</i> Small RNA Analysis Revealed
+  Novel MicroRNAs and Isoforms Differentially Regulated in Roots and
+  Nodules</a>,
+  <i>The Plant Cell</i>
+  <b>21</b>(9):2780-2896, 2009.
+</li>
+<li>
+  Van de Velde <i>et. al</i>.
+  <a href="http://www.plantcell.org/content/26/7/2729.short">
+  Inference of Transcriptional Networks in <i>Arabidopsis</i> through
+         Conserved Noncoding Sequence Analysis</a>,
+  <i>The Plant Cell</i>
+  <b>26</b>(7):2729-2745, 2009.
+</li>
+<li>
+  Schallau <i>et. al</i>.
+  <a href="http://onlinelibrary.wiley.com/doi/10.1111/j.1365-313X.2010.04188.x/full">
+  Identification and genetic analysis of the APOSPORY locus
+         in <i>Hypericum perforatum</i> L</a>,
+  <i>The Plant Journal</i>
+  <b>62</b>(5):773-784, 2010.
+</li>
+<li>
+  Tang <i>et. al</i>.
+  <a href="http://www.ncbi.nlm.nih.gov/pmc/articles/PMC3408644/">
+  Unleashing the Genome of <i>Brassica Rapa</i></a>,
+  <i>Front Plant Sci.</i>
+  <b>3</b>:172, 2012.
+</li>
+<li>
+  Castagnone-Sereno <i>et. al</i>.
+  <a href="http://www.sciencedirect.com/science/article/pii/S0888754310002132">
+  Data-mining of the <i>Meloidogyne incognita</i> degradome and
+         comparative analysis of proteases in nematodes</a>,
+  <i>Genomics</i>
+  <b>97</b>(1):29-36, 2011.
+</li>
+<li>
+  Pausch <i>et. al</i>.
+  <a href="http://bmcgenomics.biomedcentral.com/articles/10.1186/s12864-015-1483-7">
+  Homozygous haplotype deficiency reveals deleterious mutations
+         compromising reproductive and rearing success in cattle</a>,
+  <i>BMC Genomics</i>
+  <b>16</b>:312, 2015.
+</li>
+<li>
+  Jung <i>et. al</i>.
+  <a href="http://bmcgenomics.biomedcentral.com/articles/10.1186/1471-2164-15-623">
+  A nonsense mutation in <i>PLD4</i> is associated with a zinc
+         deficiency-like syndrome in Fleckvieh cattle</a>,
+  <i>BMC Genomics</i>
+  <b>15</b>:632, 2014.
+</li>
+<li>
+  Ercolano <i>et. al</i>.
+  <a href="http://bmcgenomics.biomedcentral.com/articles/10.1186/1471-2164-15-138">
+  Patchwork sequencing of tomato San Marzano and Vesuviano
+         varieties highlights genome-wide variations</a>,
+  <i>BMC Genomics</i>
+  <b>15</b>:138, 2014.
+</li>
+<li>
+  Venhoranta <i>et. al</i>.
+  <a href="http://www.ncbi.nlm.nih.gov/pmc/articles/PMC4203880/">
+  In frame exon skipping in <i>UBE3B</i> is associated with developmental
+         disorders and increased mortality in cattle</a>,
+  <i>BMC Genomics</i>
+  <b>15</b>:1, 2014.
+</li>
+<li>
+  Zimmer <i>et. al</i>.
+  <a href="http://bmcgenomics.biomedcentral.com/articles/10.1186/1471-2164-14-498">
+  Reannotation and extended community resources for the genome of the
+         non-seed plant <i>Physcomitrella patens</i> provide insights into the
+         evolution of plant gene structures and functions</a>,
+  <i>BMC Genomics</i>
+  <b>14</b>:498, 2013.
+</li>
+<li>
+  Jansen <i>et. al</i>.
+  <a href="http://bmcgenomics.biomedcentral.com/articles/10.1186/1471-2164-14-446">
+  Assessment of the genomic variation in a cattle population by
+         re-sequencing of key animals at low to medium coverage</a>,
+  <i>BMC Genomics</i>
+  <b>14</b>:446, 2013.
+</li>
+<li>
+  Schiffer <i>et. al</i>.
+  <a href="http://bmcgenomics.biomedcentral.com/articles/10.1186/1471-2164-14-923">
+  The genome of <i>Romanomermis culicivorax</i>: revealing fundamental
+         changes in the core developmental genetic toolkit in Nematoda</a>,
+  <i>BMC Genomics</i>
+  <b>14</b>:923, 2013.
+</li>
+<li>
+  Duo <i>et. al</i>.
+  <a href="http://bmcgenomics.biomedcentral.com/articles/10.1186/1471-2164-13-166">
+  Mitochondrial genome evolution in species belonging to the
+         <i>Phialocephala fortinii</i> s.l. - <i>Acephala applanata</i>
+         species complex</a>,
+  <i>BMC Genomics</i>
+  <b>13</b>:166, 2012.
+</li>
+<li>
+  Steuernagel <i>et. al</i>.
+  <a href="http://bmcgenomics.biomedcentral.com/articles/10.1186/1471-2164-10-547">
+  De novo 454 sequencing of barcoded BAC pools for comprehensive gene
+         survey and genome analysis in the complex genome of barley</a>,
+  <i>BMC Genomics</i>
+  <b>10</b>:547, 2009.
+</li>
+<li>
+  Mondego <i>et. al</i>.
+  <a href="http://bmcgenomics.biomedcentral.com/articles/10.1186/1471-2164-9-548">
+  A genome survey of <i>Moniliophthora perniciosa</i> gives new
+         insights into Witches' Broom Disease of cacao</a>,
+  <i>BMC Genomics</i>
+  <b>9</b>:548, 2008.
+</li>
+<li>
+  A. Ballvora <i>et. al</i>.
+  <a href="http://www.biomedcentral.com/1471-2164/8/112">
+  Comparative sequence analysis of <i>Solanum</i> and
+         <i>Arabidopsis</i> in
+         a hot spot for pathogen resistance on potato chromosome V reveals
+         a patchwork of conserved and rapidly evolving genome segments</a>,
+  <i>BMC Genomics</i>
+  <b>8</b>:112, 2007.
+</li>
+<li>
+  Iorizzo <i>et. al</i>.
+  <a href="http://bmcgenet.biomedcentral.com/articles/10.1186/s12863-014-0123-6">
+  A DArT marker-based linkage map for wild potato
+         <i>Solanum bulbocastanum</i> facilitates structural comparisons
+         between <i>Solanum</i> A and B genomes</a>,
+  <i>BMC Genetics</i>
+  <b>15</b>:123, 2014.
+</li>
+<li>
+  Licciardello <i>et. al</i>.
+  <a href="http://bmcplantbiol.biomedcentral.com/articles/10.1186/1471-2229-14-39">
+  Characterization of the glutathione S-transferase gene family through
+         ESTs and expression analyses within common and pigmented cultivars
+         of <i>Citrus sinensis</i> (L.) Osbeck</a>,
+  <i>BMC Plant Biology</i>
+  <b>14</b>:39, 2014.
+</li>
+<li>
+  Sinha <i>et. al</i>.
+  <a href="http://bmcplantbiol.biomedcentral.com/articles/10.1186/1471-2229-10-76">
+  Identification and characterization of <i>NAGNAG</i> alternative
+         splicing in the moss <i>Physcomitrella patens</i></a>,
+  <i>BMC Plant Biology</i>
+  <b>10</b>:76, 2010.
+</li>
+<li>
+  Bazzini <i>et. al</i>.
+  <a href="http://bmcplantbiol.biomedcentral.com/articles/10.1186/1471-2229-10-240">
+  miSolRNA: A tomato micro RNA relational database</a>,
+  <i>BMC Plant Biology</i>
+  <b>10</b>:240, 2010.
+</li>
+<li>
+  D'Agostino <i>et. al</i>.
+  <a href="http://bmcplantbiol.biomedcentral.com/articles/10.1186/1471-2229-9-142">
+  SolEST database: a "one-stop shop" approach to the study
+         of <i>Solanaceae</i> transcriptomes</a>,
+  <i>BMC Plant Biology</i>
+  <b>9</b>:142, 2009.
+</li>
+<li>
+  M.E. Sparks and V. Brendel
+  <a href="http://www.pubmedcentral.nih.gov/articlerender.fcgi?artid=2603428#B30">
+  MetWAMer: eukaryotic translation initiation site prediction</a>,
+  <i>BMC Bioinformatics</i>
+  <b>9</b>:381, 2008.
+</li>
+<li>
+  Chiusano <i>et. al</i>.
+  <a href="http://bmcbioinformatics.biomedcentral.com/articles/10.1186/1471-2105-9-S2-S7">
+  ISOL@: an Italian SOLAnaceae genomics resource</a>,
+  <i>BMC Bioinformatics</i>
+  <b>9</b>(2):57, 2008.
+</li>
+<li>
+  Q. Dong, M.D. Wilkerson and V. Brendel
+  <a href="http://www.pubmedcentral.nih.gov/articlerender.fcgi?artid=1876249">
+  <i>Tracembler</i> - software for in-silico chromosome walking in
+        unassembled genomes</a>,
+  <i>BMC Bioinformatics</i>
+  <b>8</b>:151, 2007.
+</li>
+<li>
+  Flisikowski <i>et. al</i>.
+  <a href="http://onlinelibrary.wiley.com/doi/10.1111/j.1365-2052.2008.01821.x/abstract">
+  Variation in neighbouring genes of the dopaminergic and serotonergic
+         systems affects feather pecking behaviour of laying hens</a>,
+  <i>Animal Genetics</i>
+  <b>40</b>(2):192-199, 2009.
+</li>
+<li>
+  Juling <i>et. al</i>.
+  <a href="http://onlinelibrary.wiley.com/doi/10.1111/j.1365-2052.2008.01743.x/abstract">
+  Characterization of a 320-kb region containing the <i>HEXA</i> gene on
+         bovine chromosome 10 and analysis of its association with BSE
+         susceptibility</a>,
+  <i>Animal Genetics</i>
+  <b>39</b>(4):400-406, 2008.
+</li>
+<li>
+  Foissac <i>et. al</i>.
+  <a href="http://www.ingentaconnect.com/content/ben/cbio/2008/00000003/00000002/art00003">
+  Genome Annotation in Plants and Fungi: EuG&egrave;ene as a Model
+        Platform</a>,
+  <i>Current Bioinformatics</i>
+  <b>3</b>(2), 2008.
+</li>
+<li>
+  Sen <i>et. al</i>.
+  <a href="http://database.oxfordjournals.org/content/2009/bap020.full">
+  MaizeGDB becomes 'sequence-centric'</a>,
+  <i>Database--the journal of biological databases and curation</i>
+  <b>2009</b> bap020, 2009.
+</li>
+<li>
+  Nijkamp <i>et. al</i>.
+  <a href="http://microbialcellfactories.biomedcentral.com/articles/10.1186/1475-2859-11-36">
+  De novo sequencing, assembly and analysis of the genome of the
+         laboratory strain <i>Saccharomyces cerevisiae</i> CEN.PK113-7D,
+         a model for modern industrial biotechnology</a>,
+  <i>Microbial Cell Factories</i>
+  <b>9</b>:548, 2012.
+</li>
+<li>
+  Asp <i>et. al</i>.
+  <a href="http://link.springer.com/article/10.1007/s00438-011-0654-8/">
+  Comparative sequence analysis of <i>VRN1</i> alleles of
+         <i>Lolium perenne</i>
+          with the co-linear regions in barley, wheat, and rice</a>,
+  <i>Molecular Genetics and Genomics</i>
+  <b>286</b>(5):433-447, 2011.
+</li>
+<li>
+  Cohen <i>et. al</i>.
+  <a href="http://rsta.royalsocietypublishing.org/content/371/1983/20120073.short#xref-ref-37-1">
+  RAPPORT: running scientific high-performance computing applications
+         on the cloud</a>,
+  <i>Philos Trans A Math Phys Eng Sci.</i>
+  <b>371</b>:20120073, 2013.
+</li>
+<li>
+  Traini <i>et. al</i>.
+  <a href="http://www.hindawi.com/journals/ijg/2013/257218/abs/">
+  Genome Microscale Heterogeneity among Wild Potatoes Revealed by
+         Diversity Arrays Technology Marker Sequences</a>,
+  <i>International Journal of Genomics</i>
+  <b>Article ID 257218</b>, 2013.
+</li>
+</ol>
+<p>
+If I missed a publication which cites <i>GenomeThreader</i>, please contact
+<a href="mailto:gordon@gremme.org">me</a>.
+</p>
+
+<h2>Developers</h2>
+<p>
+<i>GenomeThreader</i> is being actively developed by the following individuals:
+</p>
+<ul>
+  <li>
+    <a href="http://gremme.org/">Gordon Gremme</a> (primary developer)
+  </li>
+  <li>
+    <a href="http://www.zbh.uni-hamburg.de/en/prof-dr-stefan-kurtz.html">Stefan Kurtz</a> (<a href="http://www.vmatch.de"><i>Vmatch</i></a>,
+    <a href="http://www.vmatch.de"><i>Mkvtree</i></a>, libkurtz)
+  </li>
+  <li>
+    <a href="http://brendelgroup.org/group/volker.php">Volker Brendel</a> (BSSMs, conceptual ideas)
+  </li>
+  <li>
+    <a href="http://brendelgroup.org/mespar1/">Michael E Sparks</a>
+    (BSSMs, gthXML, gthDB)
+  </li>
+</ul>
+
+<h2>Publications</h2>
+<p>
+Please cite the following article in publications about research using
+<i>GenomeThreader</i>:
+</p>
+<ul>
+  <li>
+    G. Gremme, V. Brendel, M.E. Sparks, and S. Kurtz.
+    <a href="doc/GreBreSpaKur2005.pdf">Engineering a software tool for gene
+    structure prediction in higher organisms.</a> <i>Information and Software
+    Technology</i>, <b>47</b>(15):965-978, 2005
+  </li>
+</ul>
+<p>
+For in-depth information about <i>GenomeThreader</i> please refer to the
+following dissertation:
+</p>
+<ul>
+  <li>
+  G. Gremme.  <a href="http://ediss.sub.uni-hamburg.de/volltexte/2013/6237/pdf/Dissertation.pdf">Computational Gene Structure Prediction.</a> Ph.D. thesis, University of Hamburg, 2012
+  </li>
+</ul>
+<div id="footer">
+Copyright &copy; 2003-2018 <a href="mailto:gordon@gremme.org">
+Gordon Gremme</a>. Last update: 2018-02-07
+</div>
+<!-- Piwik -->
+<script type="text/javascript">
+var pkBaseURL = "https://zenlicensemanager.com/piwik/";
+document.write(unescape("%3Cscript src='" + pkBaseURL + "piwik.js' type='text/javascript'%3E%3C/script%3E"));
+</script><script type="text/javascript">
+try {
+var piwikTracker = Piwik.getTracker(pkBaseURL + "piwik.php", 4);
+piwikTracker.trackPageView();
+piwikTracker.enableLinkTracking();
+} catch( err ) {}
+</script><noscript><p><img src="https://zenlicensemanager.com/piwik/piwik.php?idsite=4" style="border:0" alt="" /></p></noscript>
+<!-- End Piwik Tracking Tag -->
+</body>
+</html>

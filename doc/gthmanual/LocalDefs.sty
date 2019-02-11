@@ -1,0 +1,268 @@
+\ProvidesPackage{LocalDefs}
+%\usepackage{german}
+\usepackage[pdftex]{graphics}
+\usepackage{alltt}
+\usepackage{xspace}
+\usepackage{command,disstrees}
+\usepackage{epsfig}
+\usepackage{supertabular}
+
+\newcommand{\Gth}[0]{\textit{Genome\-Threader}\xspace}
+\newcommand{\Hmmer}[0]{\textit{HMMER}\xspace}
+\newcommand{\Callgth}[0]{\texttt{gth}\xspace}
+\newcommand{\Callgthconsensus}[0]{\texttt{gthconsensus}\xspace}
+\newcommand{\Callgthsplit}[0]{\texttt{gthsplit}\xspace}
+\newcommand{\Callgthgetseq}[0]{\texttt{gthgetseq}\xspace}
+\newcommand{\Callgthfilestat}[0]{\texttt{gthfilestat}\xspace}
+\newcommand{\Callgthbssmfileinfo}[0]{\texttt{gthbssmfileinfo}\xspace}
+\newcommand{\Callgthbssmtrain}[0]{\texttt{gthbssmtrain}\xspace}
+\newcommand{\Callgthbssmbuild}[0]{\texttt{gthbssmbuild}\xspace}
+\newcommand{\Callgthclean}[0]{\texttt{gthclean.sh}\xspace}
+\newcommand{\Callgthsplittwodim}[0]{\texttt{gthsplit2dim.sh}\xspace}
+\newcommand{\mkbssmfiles}[0]{\textit{Mkbssmfiles}\xspace}
+\newcommand{\gs}[0]{\textit{GeneSeqer}\xspace}
+\newcommand{\GStwo}[0]{\textit{GeneSeqer2}\xspace}
+\newcommand{\vmatch}[0]{\textit{Vmatch}\xspace}
+\newcommand{\callvmatch}[0]{\texttt{vmatch}\xspace}
+\newcommand{\mkvtree}[0]{\textit{Mkvtree}\xspace}
+\newcommand{\callmkvtree}[0]{\texttt{mkvtree}\xspace}
+\newcommand{\splicepredictor}[0]{\textit{SplicePredictor}\xspace}
+\newcommand{\exdomino}[0]{\textit{Exdomino}\xspace}
+\newcommand{\gap}[0]{\texttt{\symbol{45}}}
+\newcommand{\abinitio}[0]{\textit{ab initio}\xspace}
+\newcommand{\Abinitio}[0]{\textit{Ab initio}\xspace}
+\newcommand{\genscan}[0]{\textit{GENSCAN}\xspace}
+\newcommand{\blast}[0]{\textit{BLAST}\xspace}
+\newcommand{\blastp}[0]{\textit{BLASTP}\xspace}
+\newcommand{\blastx}[0]{\textit{BLASTX}\xspace}
+\newcommand{\clustalw}[0]{\textit{CLUSTAL W}\xspace}
+\newcommand{\fasta}[0]{\textit{FASTA}\xspace}
+\newcommand{\simfour}[0]{\textit{sim4}\xspace}
+\newcommand{\genewise}[0]{\textit{GENEWISE}\xspace}
+\newcommand{\genegenerator}[0]{\textit{GeneGenerator}\xspace}
+\newcommand{\procrustes}[0]{\textit{PROCRUSTES}\xspace}
+\newcommand{\5}[0]{5$^\prime$}
+\newcommand{\3}[0]{3$^\prime$}
+\newcommand{\Adenine}[0]{\texttt{A}}
+\newcommand{\Cytosine}[0]{\texttt{C}}
+\newcommand{\Guanine}[0]{\texttt{G}}
+\newcommand{\Thymine}[0]{\texttt{T}}
+\newcommand{\Undetchar}[0]{\texttt{N}}
+%\newcommand{\comment}[1]{[\textit{#1}]}
+%\newcommand{\comment}[1]{}
+%\newcommand{\note}[1]{[\textit{#1}]}
+\newcommand{\note}[1]{}
+\newcommand{\tobedone}[0]{\emph{To be done.}\xspace}
+\newcommand{\manual}[0]{\href{gthmanual.pdf}{manual}}
+\newcommand{\documentation}[0]{\href{gthdoc.pdf}{documentation}\xspace}
+
+\newcommand{\fgenes}[0]{\textit{FGENES}\xspace}
+\newcommand{\genemark}[0]{\textit{GeneMark.hmm}\xspace}
+\newcommand{\genie}[0]{\textit{Genie}\xspace}
+\newcommand{\hmmgene}[0]{\textit{HMMgene}\xspace}
+\newcommand{\morgan}[0]{\textit{Morgan}\xspace}
+\newcommand{\mzef}[0]{\textit{MZEF}\xspace}
+\newcommand{\cem}[0]{\textit{CEM}\xspace}
+\newcommand{\rosetta}[0]{\textit{ROSETTA}\xspace}
+\newcommand{\sgpone}[0]{\textit{SGP-1}\xspace}
+\newcommand{\slam}[0]{\textit{SLAM}\xspace}
+\newcommand{\twinscan}[0]{\textit{TWINSCAN}\xspace}
+\newcommand{\agenda}[0]{\textit{AGenDa}\xspace}
+
+\newcommand{\splint}[0]{\textit{Splint}\xspace}
+
+\newcommand{\polyA}[0]{poly(A)\xspace}
+\newcommand{\polyT}[0]{poly(T)\xspace}
+\newcommand{\Fastastart}[0]{\texttt{\SY{62}}\xspace}
+\newcommand{\Seqformkeyword}[1]{\texttt{\small #1}\index{#1@\texttt{#1}}}
+\newcommand{\multieditoparray}[0]{mEOParray\xspace}
+
+
+\newcommand{\sensitivity}[0]{S_n}
+\newcommand{\specificity}[0]{S_p}
+
+\newcommand{\intervalset}[0]{I}
+\newcommand{\nucleotidestring}[0]{nuc}
+\newcommand{\exonstring}[0]{ex}
+\newcommand{\exonpredicate}[0]{exon}
+\newcommand{\genestring}[0]{gen}
+\newcommand{\true}[0]{\textit{True}\xspace}
+\newcommand{\false}[0]{\textit{False}\xspace}
+\newcommand{\nucleotidesensitivity}[0]{M_{sens}^{\nucleotidestring}}
+\newcommand{\nucleotidespecificity}[0]{M_{spec}^{\nucleotidestring}}
+\newcommand{\nonnucleotidesensitivity}[0]{\neg\nucleotidesensitivity}
+\newcommand{\nonnucleotidespecificity}[0]{\neg\nucleotidespecificity}
+\newcommand{\exonsensitivity}[0]{M_{sens}^{\exonstring}}
+\newcommand{\exonspecificity}[0]{M_{spec}^{\exonstring}}
+\newcommand{\genesensitivity}[0]{M_{sens}^{\genestring}}
+\newcommand{\genespecificity}[0]{M_{spec}^{\genestring}}
+\newcommand{\plainsensitivity}[0]{M_{sens}}
+\newcommand{\plainspecificity}[0]{M_{spec}}
+\newcommand{\truepositive}[0]{\mathit{TP}}
+\newcommand{\truenegative}[0]{\mathit{TN}}
+\newcommand{\falsepositive}[0]{\mathit{FP}}
+\newcommand{\falsenegative}[0]{\mathit{FN}}
+\newcommand{\cc}[0]{\mathit{CC}}
+\newcommand{\acp}[0]{\mathit{ACP}}
+\newcommand{\ac}[0]{\mathit{AC}}
+\newcommand{\trueexon}[0]{\mathit{TE}}
+\newcommand{\actualexon}[0]{\mathit{AE}}
+\newcommand{\missingexon}[0]{\mathit{ME}}
+\newcommand{\predictedexon}[0]{\mathit{PE}}
+\newcommand{\wrongexon}[0]{\mathit{WE}}
+\newcommand{\truegene}[0]{\mathit{TG}}
+\newcommand{\actualgene}[0]{\mathit{AG}}
+\newcommand{\predictedgene}[0]{\mathit{PG}}
+\newcommand{\missinggene}[0]{\mathit{MG}}
+\newcommand{\wronggene}[0]{\mathit{WG}}
+\newcommand{\gt}[0]{\mathit{GT}}
+\newcommand{\ag}[0]{\mathit{AG}}
+\newcommand{\gtag}[0]{\mathit{GT-AG}}
+
+\newcommand{\computebordersandscoresfunc}[0]{\texttt{computebordersandscores()}\xspace}
+\newcommand{\determinecutoffsfunc}[0]{\texttt{determinecutoffs()}\xspace}
+
+% identifier for basic definitions
+\newcommand{\genseqident}[0]{g}
+\newcommand{\genchar}[0]{g}
+\newcommand{\cdnaseqident}[0]{c}
+\newcommand{\cdnachar}[0]{c}
+\newcommand{\gensubseqleftident}[0]{i}
+\newcommand{\gensubseqrightident}[0]{j}
+\newcommand{\numofexons}[0]{k}
+\newcommand{\numofgenes}[0]{l}
+\newcommand{\leftintervalborder}[0]{a}
+\newcommand{\rightintervalborder}[0]{b}
+\newcommand{\statusfunctionident}[0]{\varrho}
+\newcommand{\exonmappingfunction}[0]{\varphi}
+\newcommand{\genseqlength}[0]{n}
+\newcommand{\cdnaseqlength}[0]{m}
+\newcommand{\coding}[0]{c}
+\newcommand{\noncoding}[0]{\mathit{nc}}
+\newcommand{\counter}[0]{t}
+\newcommand{\predictionchar}[0]{p}
+\newcommand{\realitychar}[0]{r}
+\newcommand{\predictionstatusfunc}[0]{\statusfunctionident_\predictionchar}
+\newcommand{\realitystatusfunc}[0]{\statusfunctionident_\realitychar}
+\newcommand{\predictionexon}[0]{\genseqident_\predictionchar^{\exonstring}(\gensubseqleftident,\gensubseqrightident)}
+\newcommand{\realityexon}[0]{\genseqident_\realitychar^{\exonstring}(\gensubseqleftident,\gensubseqrightident)}
+\newcommand{\adenine}[0]{A}
+\newcommand{\cytosine}[0]{C}
+\newcommand{\guanine}[0]{G}
+\newcommand{\thymine}[0]{T}
+\newcommand{\undetchar}[0]{N}
+\newcommand{\identity}[0]{\sigma}
+\newcommand{\mismatch}[0]{\mu}
+\newcommand{\undetcharweight}[0]{\nu}
+\newcommand{\deletion}[0]{\delta}
+\newcommand{\aligndeffirstseq}[0]{x}
+\newcommand{\aligndefsecondseq}[0]{y}
+
+
+% identifier for DP algorithm
+\newcommand{\probchar}[0]{P}
+\newcommand{\probinitialexonstate}[0]{\transition_{\exon_1}}
+\newcommand{\probdelgen}[0]{\probchar_{\Delta\genseqident}}
+\newcommand{\probdonor}[1]{\probchar_{D(#1)}}
+\newcommand{\probacceptor}[1]{\probchar_{A(#1)}}
+\newcommand{\transition}[0]{\tau}
+\newcommand{\exon}[0]{e}
+\newcommand{\intron}[0]{i}
+\newcommand{\firstcharofA}[0]{X}
+\newcommand{\secondcharofA}[0]{Y}
+\newcommand{\genseqpos}[0]{u}
+\newcommand{\refseqpos}[0]{v}
+\newcommand{\stateseqident}[0]{q}
+\newcommand{\state}[0]{q}
+\newcommand{\statecounter}[0]{w}
+\newcommand{\stateseqlength}[0]{o}
+\newcommand{\splicedoutput}[0]{s}
+\newcommand{\exonmatrix}[0]{E}
+\newcommand{\intronmatrix}[0]{I}
+\newcommand{\Astates}[0]{\Alpha_{\mathit{states}}}
+\newcommand{\wsizezerotransitionweights}[0]{\vartheta}
+\newcommand{\wsizedecreasedoutputweights}[0]{\omega}
+\newcommand{\cutoffsminexonlen}[0]{\kappa}
+\newcommand{\scoreminexonlen}[0]{\lambda}
+\newcommand{\minavgsplicesiteprob}[0]{\zeta}
+\newcommand{\duplicatecheckarg}[0]{\zeta}
+\newcommand{\duplicatecheckmode}[0]{mode\xspace}
+
+
+% identifier for manual
+\newcommand{\Programname}[1]{\texttt{#1}}
+\newcommand{\Environmentvariable}[1]{\texttt{\small #1}\index{#1@\texttt{#1}}}
+\newcommand{\genseqindex}[0]{genseqfiles\xspace}
+\newcommand{\cdnaindex}[0]{cdnafiles\xspace}
+\newcommand{\proteinindex}[0]{proteinfiles\xspace}
+\newcommand{\leadingmode}[0]{leadingmode\xspace}
+\newcommand{\terminalmode}[0]{terminalmode\xspace}
+\newcommand{\relaxedmode}[0]{\texttt{RELAXED}\xspace}
+\newcommand{\strictmode}[0]{\texttt{STRICT}\xspace}
+\newcommand{\minimalmode}[0]{\texttt{MINIMAL}\xspace}
+
+\newcommand{\bssmdir}[0]{BSSMDIR}
+\newcommand{\gthdatadir}[0]{GTHDATADIR}
+\newcommand{\speciesname}[0]{speciesname\xspace}
+\newcommand{\paramfileprefix}[0]{paramfileprefix\xspace}
+\newcommand{\scorematrixname}[0]{scorematrixname\xspace}
+\newcommand{\showintronmaxlen}[0]{maxintronlen\xspace}
+\newcommand{\outputfile}[0]{outputfile}
+\newcommand{\smapfile}[0]{smapfile}
+\newcommand{\frompos}[0]{i\xspace}
+\newcommand{\topos}[0]{j\xspace}
+\newcommand{\width}[0]{w\xspace}
+\newcommand{\minmatchlen}[0]{\ell\xspace}
+\newcommand{\errors}[0]{k\xspace}
+\newcommand{\seedlength}[0]{m\xspace}
+\newcommand{\exdrop}[0]{x\xspace}
+\newcommand{\hdist}[0]{h\xspace}
+\newcommand{\dpminexonlength}[0]{\xi\xspace}
+\newcommand{\dpminintronlength}[0]{\eta\xspace}
+\newcommand{\shortexonpenalty}[0]{\chi\xspace}
+\newcommand{\shortintronpenalty}[0]{\psi\xspace}
+\newcommand{\firstalshown}[0]{n\xspace}
+\newcommand{\minorflength}[0]{o\xspace}
+\newcommand{\autointroncutout}[0]{s\xspace}
+\newcommand{\icinitialdelta}[0]{d\xspace}
+\newcommand{\iciterations}[0]{i\xspace}
+\newcommand{\icdeltaincrease}[0]{di\xspace}
+\newcommand{\icminremintronlen}[0]{r\xspace}
+\newcommand{\Range}[0]{$\Re$\xspace}
+
+\newcommand{\Xdrop}[0]{\mathit{Xdrop}}
+
+%commands for manual
+\newcommand{\Showversionfeatures}[1]{\paragraph{\Gth \texttt{#1}:}}
+
+%format types taken from vmotif.tex
+\newcommand{\Showformattype}[1]{\textsc{#1}\xspace}
+\newcommand{\Fasta}{\Showformattype{Fasta}}
+\newcommand{\EMBL}{\Showformattype{Embl}}
+\newcommand{\SWISSPROT}{\Showformattype{Swissprot}}
+\newcommand{\GENBANK}{\Showformattype{Genbank}}
+
+
+\newenvironment{Output}%
+{%\par%
+ %\addvspace{\medskipamount}%
+ \begin{sloppy}
+ \begin{scriptsize}
+ \begin{alltt}}
+{\end{alltt}%
+ \end{scriptsize}%
+ \end{sloppy}
+ \addvspace{-\medskipamount}
+}
+
+\newenvironment{LargeOutput}%
+{\par%
+ %\addvspace{\medskipamount}%
+ \begin{sloppy}
+ \begin{footnotesize}
+ \begin{alltt}}
+{\end{alltt}%
+ \end{footnotesize}%
+ \end{sloppy}
+ \addvspace{-\medskipamount}
+}

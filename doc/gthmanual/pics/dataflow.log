@@ -1,0 +1,59 @@
+This is TeX, Version 3.14159 (Web2C 7.4.5) (format=latex 2003.9.24)  21 NOV 2003 18:27
+**dataflow.tex
+(./dataflow.tex
+LaTeX2e <2001/06/01>
+Babel <v3.7h> and hyphenation patterns for american, french, german, ngerman, n
+ohyphenation, loaded.
+(/usr/share/texmf/tex/latex/base/article.cls
+Document Class: article 2001/04/21 v1.4e Standard LaTeX document class
+(/usr/share/texmf/tex/latex/base/size12.clo
+File: size12.clo 2001/04/21 v1.4e Standard LaTeX file (size option)
+)
+\c@part=\count79
+\c@section=\count80
+\c@subsection=\count81
+\c@subsubsection=\count82
+\c@paragraph=\count83
+\c@subparagraph=\count84
+\c@figure=\count85
+\c@table=\count86
+\abovecaptionskip=\skip41
+\belowcaptionskip=\skip42
+\bibindent=\dimen102
+)
+(/usr/share/texmf/tex/latex/misc/a4wide.sty
+Package: a4wide 1994/08/30
+
+(/usr/share/texmf/tex/latex/ntgclass/a4.sty
+Package: a4 1999/03/03 v1.2f A4 based page layout
+)) (./dataflow.aux)
+\openout1 = `dataflow.aux'.
+
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 4.
+LaTeX Font Info:    ... okay on input line 4.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 4.
+LaTeX Font Info:    ... okay on input line 4.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 4.
+LaTeX Font Info:    ... okay on input line 4.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 4.
+LaTeX Font Info:    ... okay on input line 4.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 4.
+LaTeX Font Info:    ... okay on input line 4.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 4.
+LaTeX Font Info:    ... okay on input line 4.
+ (./dataflow.inc
+\graph=\box26
+\graphtemp=\dimen103
+) [1
+
+] (./dataflow.aux) ) 
+Here is how much of TeX's memory you used:
+ 227 strings out of 95847
+ 2480 string characters out of 1195962
+ 47402 words of memory out of 1000001
+ 3231 multiletter control sequences out of 10000+50000
+ 3938 words of font info for 15 fonts, out of 500000 for 1000
+ 14 hyphenation exceptions out of 1000
+ 22i,4n,19p,135b,151s stack positions out of 1500i,500n,5000p,200000b,5000s
+
+Output written on dataflow.dvi (1 page, 3932 bytes).

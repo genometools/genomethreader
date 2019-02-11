@@ -1,0 +1,64 @@
+With the help of gthsplit one can split GenomeThreader output files 
+containing intermediate results into multiple sets according to different 
+criteria.
+
+gthsplit is called as follows:
+
+gthsplit [options] intermediate_files
+
+If no intermediate_file is given as input, stdin is used instead. This allows
+to use gthsplit in a UNIX pipe.
+
+gthsplit offers the following options:
+
+-alignmentscore split according to the overall alignment score (scr).
+-coverage       split according to coverage (cov).
+-range          set the precentage range used to create the sets. 
+                the sets are created counting from 100% downwards 
+                (including the upper bound and excluding the lower bound)
+                The default range is 5.
+
+-v
+-gzip
+-bzip2
+
+The following shell script gives an example on how to use gthsplit to split up
+a file ``results'':
+
+#!/bin/sh
+# split up into 4 sets according to coverage
+
+gthsplit -range 25 -coverage results
+
+# produces the files results.cov0-25 results.cov25-50 results.cov50-75 and 
+# results.cov75-100
+
+# split each set into 5 subsets according to the overall alignment score
+
+for suf in cov0-25 cov-25-50 cov50-75 cov75-100
+do
+  gthsplit -range 20 -score results${suf}
+done
+
+# we end up with the following files:
+
+# results.cov0-25.scr0-20
+# results.cov25-50.scr0-20
+# results.cov50-75.scr0-20
+# results.cov75-100.scr0-20
+# results.cov0-25.scr20-40
+# results.cov25-50.scr20-40
+# results.cov50-75.scr20-40
+# results.cov75-100.scr20-40
+# results.cov0-25.scr40-60
+# results.cov25-50.scr40-60
+# results.cov50-75.scr40-60
+# results.cov75-100.scr40-60
+# results.cov0-25.scr60-80
+# results.cov25-50.scr60-80
+# results.cov50-75.scr60-80
+# results.cov75-100.scr60-80
+# results.cov0-25.scr80-100
+# results.cov25-50.scr80-100
+# results.cov50-75.scr80-100
+# results.cov75-100.scr80-100

@@ -1,0 +1,21 @@
+$ gth -v -frompos 1 -topos 200000 -inverse -force -o arab_mapping.txt -cdna CeresTigr.gz -species arabidopsis -genomic NC_003070.fna.gz 
+$ d=-, compute chains for bucket 368/377 (matches in bucket=1)
+$ d=-, compute chains for bucket 369/377 (matches in bucket=1)
+$ d=-, compute chains for bucket 370/377 (matches in bucket=1)
+$ d=-, compute chains for bucket 371/377 (matches in bucket=1)
+$ d=-, compute chains for bucket 372/377 (matches in bucket=1)
+$ d=-, compute chains for bucket 373/377 (matches in bucket=9)
+$ d=-, compute chains for bucket 374/377 (matches in bucket=1)
+$ d=-, compute chains for bucket 375/377 (matches in bucket=2)
+$ d=-, compute chains for bucket 376/377 (matches in bucket=2)
+$ d=-, compute chains for bucket 377/377 (matches in bucket=1)
+$ sort global chains according to reference sequence coverage
+$ calculate spliced alignment for every chain
+$ d=-, compute spliced alignment, genseq=-, chain=1/5, refseq=+
+$ d=-, compute spliced alignment, genseq=-, chain=2/5, refseq=+
+$ d=-, compute spliced alignment, genseq=-, chain=3/5, refseq=+
+$ d=-, compute spliced alignment, genseq=-, chain=4/5, refseq=+
+$ d=-, compute spliced alignment, genseq=-, chain=5/5, refseq=+
+$ output spliced alignments
+$ compute predicted gene locations
+$ output predicted gene locations

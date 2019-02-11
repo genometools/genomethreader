@@ -1,0 +1,1 @@
+$ gth -intermediate -xmlout -gzip -o new.inter.gz -genomic NC_003070.fna.gz -cdna AU236313.gbk.gz -frompos 300000 -topos 500000 -inverse

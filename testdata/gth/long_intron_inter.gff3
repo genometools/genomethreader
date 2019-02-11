@@ -1,0 +1,23 @@
+##gff-version 3
+##sequence-region   foo 1 10318
+##sequence-region   long_intron_genomic_1.fas|2 1 10318
+##sequence-region   long_intron_genomic_2.fas|1 1 10318
+##sequence-region   long_intron_genomic_2.fas|2 1 10318
+foo	gth	gene	8568	10160	0.999	+	.	ID=gene1;Target=2702352 1 1449 +
+foo	gth	exon	8568	9310	0.999	+	.	Parent=gene1
+foo	gth	five_prime_cis_splice_site	9311	9312	0.05	+	.	Parent=gene1
+foo	gth	three_prime_cis_splice_site	9453	9454	0.05	+	.	Parent=gene1
+foo	gth	exon	9455	10160	0.999	+	.	Parent=gene1
+###
+long_intron_genomic_1.fas|2	gth	gene	8568	10160	0.999	+	.	ID=gene2;Target=2702352 1 1449 +
+long_intron_genomic_1.fas|2	gth	exon	8568	9310	0.999	+	.	Parent=gene2
+long_intron_genomic_1.fas|2	gth	five_prime_cis_splice_site	9311	9312	0.05	+	.	Parent=gene2
+long_intron_genomic_1.fas|2	gth	three_prime_cis_splice_site	9453	9454	0.05	+	.	Parent=gene2
+long_intron_genomic_1.fas|2	gth	exon	9455	10160	0.999	+	.	Parent=gene2
+###
+long_intron_genomic_2.fas|1	gth	gene	8568	10160	0.999	+	.	ID=gene3;Target=2702352 1 1449 +
+long_intron_genomic_2.fas|1	gth	exon	8568	9310	0.999	+	.	Parent=gene3
+long_intron_genomic_2.fas|1	gth	five_prime_cis_splice_site	9311	9312	0.05	+	.	Parent=gene3
+long_intron_genomic_2.fas|1	gth	three_prime_cis_splice_site	9453	9454	0.05	+	.	Parent=gene3
+long_intron_genomic_2.fas|1	gth	exon	9455	10160	0.999	+	.	Parent=gene3
+###

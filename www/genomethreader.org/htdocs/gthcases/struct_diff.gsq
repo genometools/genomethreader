@@ -1,0 +1,700 @@
+EST sequence     58 +strand  4187 n (File: 32978993+)
+
+         1  GGTATGCATT TCATCGAACA CCTTGCGATC ACCCTCTCAC CACCGCTACA GATCACCATT
+        61  GTGAGGCTCC CCGGCCGGAG CTGGAGGTTG GAGGGAGTGG AGGAAGAGCC GTGCTGCCGC
+       121  CGTCGCCATA GGGGAAGCCG GGTAGCCGCT GGACATCAAG AAAAGCCGTC AAGCACCTTA
+       181  CGTCGCCGCT GTCTGCCCCT GTCCTGCACC GTGTCGAGCT CCACTTTGCC GCGTTTTGCC
+       241  ATCTCGCCGT CTCGCGAAAT TGTATATCGG TTAGTCGTGA GGCAACGTAT GCAGCTTTCA
+       301  GGAGGTGAAG GTTGATCAAG ATCATATCAA GAATAAGAAC TATCCTAAGC AGAGTATTGA
+       361  AGAGAAGCTA GGTAGGAACG CCGTGGATCT CATCAAGACA AATATGGTGC TTAAAGTCTT
+       421  TGGTGGTAAT CCGTCTGAAA CCAAAGGTGT TCTAAATGTG GAACTAACGG TTGGCAGCAA
+       481  GACTATTCCT ACCACGATTT TTGTCATCGA TGGGAAGGGT TCGTACAACT TGTTGCTTGG
+       541  AAGGGATTGG ATTCATGCCA ATTGTTGCAT CCCTTCGACT ATGCATCAAT GCTTGATTCA
+       601  ATGGCAAGGC GACAAGATAG AGGTCGTGCC GGCCGACAGG TCAGTTAACG TTGCCAGTGC
+       661  CGATTTAGCC CTTTGGGAGA TGGATGGCCT TGATTGTTTA TCTGGAAAAG TCTGGGATGG
+       721  AGATTTTCTA AAAGTGTCCG ATTCTGATAT ACAGCCAATC GAAGATGGAG AACCCAAGCT
+       781  ATTACTTTGA GGGCGTTGTG AAGGGTTCGA ATGTCTACGC TAAGGATACA GTAGATGATC
+       841  TCGATGACAA GCAAGGTCCA GGTTTTATGT CGGCCGATGA TTTGGAGGAA ATAGACATAG
+       901  GTCCAGGCGA TCGGCCAAGG CCGACATTTA TTAGCAAAAA TTTGTCTCCA GAGTTTAGAA
+       961  CCAAGCTGAT AGAGCTCCTA AAAGAGTTTA GAGATTGCTT CGCTTGGGAG TACTACGAGA
+      1021  TTCCCGGACT CAGCCGATCG ATTGTCGAAC ATCGGCTACC TATCAAGCCA GGGGTTAGAC
+      1081  CACGCCAGCA ACCTCCGAGG AGATGCAAAG CTGATATGCT CGAGCCGGTT AAAGCTGAGA
+      1141  TCAAACGATT GTATGATGCT GGTTTTATTC GTCCCTGTCG ATATGCCGAA TGGGTTTCTA
+      1201  GCATAGTTCC AGTTATTAAA AAGAATGGAA GGTCAGGGTG TGCATTGATT TTCGAGATTT
+      1261  GAATAAAGCT ACACCAAAGG ACGAATATCC AATGCCAGTG GCCGATCAAT TAGTTGATGC
+      1321  TGCATCAGGG AACAAAATTT TGAGTTTTAT GGATGGGAAT GCAGGATATA ATCAGATCTT
+      1381  TATGGCTGAG GAAGATATCC ATAAGACGGC TTTTAGATGT CCTGGTGCAA TCGGCTTATT
+      1441  TGAATGGGTC GTCATGACTT TTGGCTTGAA GAGTGCTGGA GCAACATATC AAAGGGCCAT
+      1501  GAATTATATA TATCATGATT TAATCGGCTG GTCGGTTGAA GTCTATATTG ACGATGTGGT
+      1561  TGTTAAATCT AAAGAGGTGG AGGACCACAT AGCCGATTTA AGGAAAGTTT TTGAGAGAAC
+      1621  CAGAAAGTAT GGCTTGAAGA TGAATCCAAC AAAATGTGCT TTTGGTGTGT CGGCCGGCCA
+      1681  GTTTTTGGGG ATTCTTGTTC ATGAAAGGGG GATTGTGGTG ACCCAAAGGA GCGTTAATGC
+      1741  GATCAAGAAA ATTCAGCCCC CAGAAAATAA GACGGAGCTA CAAGAGATGA TCGGCAAGAT
+      1801  AAATTTTGTC AGAAGATTTA TTTCTAATTT GTCTAGAAGG TTGGAATCTT TTACACCCTT
+      1861  ATTGAGGTTA AAAGCCGATC AGCAATTTAC TTGGGGAGCA GAGCAGCAAA GGGCTTTGGA
+      1921  TAATATTAAG GAGTATCTCA GCTCTCCTCC TGTTTTGATT CCTCCACAGA AAGGAATACC
+      1981  GTTTAGGTTA TATTTATCGG CTGGTGAGAA GTCAATCGGC TCGGTGTTGA TTCAAGAGTT
+      2041  GGAGGGGAAG GAGCGAGTTG TATTTTATCT CAGTCGACGG CTCTTGGATG CTGAGACTCG
+      2101  GTATTCTCCT GTGGAGAAGT TATGCTTGTG TCTATATTTT TCGTGTACGA GGTTGAGGCA
+      2161  TTATCTATTA TCTAACGAGT GCACCGTTAT ATGGAAAGCC GATGTAGTCA GGTACATGCT
+      2221  GTCGGCTCCA ATATTAAAGG GACGAGTTGG AAAGTGGATA TTTTCCTTGA CTGAGTTTGA
+      2281  TCTTCGGTAT GAATCACCAA AGGCGATTAA GGGACAAGCT ATAGCCGATT TTATTGTAGA
+      2341  ACATCGTGAT GATTCAATCG GCTCGGTTGA GATAGTGCCA TGGACTTTAT TCTTTGATGG
+      2401  ATCGGTATGT ACTCATGGTT GTGGCATCGG CTTAGTCATA ATTTCCCCTA GGGGGGCATG
+      2461  TTTCGAGTTC GCTTATACTA TTAAACCGTA TGCAACTAAT AATCAAGCTG AATATGAGGC
+      2521  AGTGCTTAAG GGGTTGCAAT TACTCAAGGA AGTTGAAGCC GATACTATTG AAATCATGGG
+      2581  GGATTCTTTG CTAGTAATCA GCCAATTGGC AGGAGAATAT GAATGCAAGA ATGATACATT
+      2641  GATGGTTTAT AATGAGAAGT GCTTGGAACT AATGAAAGAG TTTCAGCTGG TTACTTTGAA
+      2701  GCATGTATCT CGAGAACAAA ATCTTGAAGC TAATGATTTG GCCCAAGGGG CATCGGGGTA
+      2761  TAAGCCGATG ATCAAAGATG TTAAAGTTGA GATTGCAGCA ATGTTAGCCG ATGATTGGAG
+      2821  GTATGATGTG CATCAGTATT TGAGTAATCC ATCTCAATCG GCTTCCAGGA AATTAAGGTA
+      2881  TAGGGCATTA AAGTATACAC TGTTGGATGA TGAGCTTTAT TATCAGACGA TTGATGGGGT
+      2941  ATTACTTAAG TGCTTGAGTG CCGATCAGGC TAAGGTTGCA ATCAGTGAAG TTCACGATGG
+      3001  GATTTGTGGT ATTCATCAAT CAGCTCACAA GATGAAGTGG TTGCTTCGGT GTGTAGGGTA
+      3061  CTTTTGGCCG ACAATGCTGG AGGATTGTTT CAAATATTAT AAGGGATGTC AAGATTGTCA
+      3121  GAAGTTTGGA GCAATTCAGC GAGCACCGGC GTCGGCTATG AATCCTATTA TTAAACCATG
+      3181  GCCGTTCAGA GGTTGGGGAA TTGATATGAT CGGTATGATA AATCCACCAT CGAGTAAAGG
+      3241  GCATAAATTT ATATTGGTGG CAACTGATTA TTTCACCAAG TGGGTAGAGG CGATTCCTTT
+      3301  GAAGAAGGTT GATTCTGGGG ATGCTATTCA ATTCGTTCAG GAACTATTAC TACGGATCAA
+      3361  GGTTCAATCT TCGTGTCCGA TGAGTTTGTT CAGTTTACCG ATAGCGTGGG TATCAAGTTG
+      3421  TTGAATTCTT CACCTTATTA TGCACAAGCT AATGGGCAAG CCGAGGCATC TAATAAAAGT
+      3481  TTGATCAAAT TGATTAAGCG AAAAATTTCT GATTATCCTC GGCAATGACA TACTCGGTTG
+      3541  GCCGAAGCAT TGTGGTCTTA TAGGATGGCC TGTCATGGAT CGATTCAAGT TCCTCCTTAT
+      3601  AAACTTGTTT ATGGACATGA GGCTGTTTTG CTATGGGAAG TTAGAATCGG CTCTCGACGA
+      3661  ACGGAGCTGC AAAACGATTT AACAGCCGAT GAGTATTACA ATCTTATGGC TGATGAGAGG
+      3721  GAGGATTTGG TTCAGTCACG ATTGCGAGCC CTTGCAAAGG TTACTAAGGA TAAGGAACGT
+      3781  GCTGCTCGGC ATTATAATAA GAAAGTTATA TCTAAATATT TTTCGGAAGG AGAACTTGTA
+      3841  TGGAAGCTGA TTTTGCCGAT TGGTACTCGT GATAGTAAAT TCGGCAAGTG GTCGCCGAAT
+      3901  TGGGAGGGAC CATTCCATAT TCATAAGGTT GTGTCTAAGG GAGCATATAT GTTGCAAGGG
+      3961  CTTGACGGCG AAGTTTATGG GCGAGCACTC AATGGTAAAT ATTTGAAGAA ATATTACCCA
+      4021  AGTGTTTGGG TTAACGCATG ATCGGCTACT TTTGCCGATC CATGATAGCC GATGTGTTTA
+      4081  CATAGCCTTG AGCTGGCCGA TATTGTTATA TCGCCCTTAG TTATTTCATA ATTTTATTAA
+      4141  TGCTCTCGAC ATTGTAAAAC TAGGGGGGCA TATATATATC AGCATGC
+
+Predicted gene structure (within gDNA segment 588224 to 575129):
+
+ Exon  1     584190     584157 (  34 n);  cDNA    320    349 (  30 n); score: 0.647
+  Intron  1     584156     582107 (2050 n); Pd: 0.959 (s:    0), Pa: 0.000 (s:    0)
+ Exon  2     582106     582093 (  14 n);  cDNA    350    363 (  14 n); score: 0.714
+  Intron  2     582092     580854 (1239 n); Pd: 0.000 (s:    0), Pa: 0.714 (s: 0.82)
+ Exon  3     580853     577875 (2979 n);  cDNA    364   3342 (2979 n); score: 0.863
+  Intron  3     577874     577844 (  31 n); Pd: 0.000 (s: 0.85), Pa: 0.000 (s: 0.86)
+ Exon  4     577843     577082 ( 762 n);  cDNA   3343   4104 ( 762 n); score: 0.882
+  Intron  4     577081     577013 (  69 n); Pd: 0.512 (s: 0.90), Pa: 0.000 (s: 0.82)
+ Exon  5     577012     576929 (  84 n);  cDNA   4105   4187 (  83 n); score: 0.786
+
+MATCH	OSchr10-v3-	32978993+	0.865	3873	0.925	C
+PGS_OSchr10-v3-_32978993+	(584190  584157,582106  582093,580853  577875,577843  577082,577012  576929)
+
+Alignment (genomic DNA sequence = upper lines):
+
+GATCAAATCA ACTGGCACGC TCACATATCC GAAGGCGAGT TCTGGACCTG CACTGGAGTT       584131
+||||| |||| |  |  |      || |||||  |||                             
+GATCATATCA A--G-AATAA GAAC-TATCC TAAG...... .......... ..........          349
+
+
+AAGCAGATCT CCCAGGCCTC GTGTTTTCTG TCAACACGCT TTTGGCACGC CCATTGGGAC       584071
+                                                                  
+.......... .......... .......... .......... .......... ..........          349
+
+
+TGATTAGAAG TCAGAAAGCA GTTTTCCTCA TGGCCGAGAA GCCGCCACCA TCGCCGTCTT       584011
+                                                                  
+.......... .......... .......... .......... .......... ..........          349
+
+
+CGGCTAGCCC AGGTTCTGTT AAAGAGAAGA TCCAGCAATT AGACCTATCT GAGGTTAATG       583951
+                                                                  
+.......... .......... .......... .......... .......... ..........          349
+
+
+AGGGCAACGT CATGACCATC ACTCTGGACA AATTGACACC TGATCAGAAG GAGTTTGAAG       583891
+                                                                  
+.......... .......... .......... .......... .......... ..........          349
+
+
+CAATGATGCA GCAAGCACGG AACCAGTTCT TGAACTCATT CATGCAGACC CGCAAGGGAA       583831
+                                                                  
+.......... .......... .......... .......... .......... ..........          349
+
+
+CAGTGGTGCA AAAGTATCAG GTGCGAGTAG TGGCTGATGT CCCCGGGACC GGTTCTTCCA       583771
+                                                                  
+.......... .......... .......... .......... .......... ..........          349
+
+
+AGGATGGGGA GATGAAACAA GCCTTAGGTG GCTCGGCTCA ACCGAGCAAC AAAGGTGCTA       583711
+                                                                  
+.......... .......... .......... .......... .......... ..........          349
+
+
+CAAATGGATC GGCTCAGGAG AATCAGGGTG ACCACTCTCA AGGAGTACAT GGAGTTCAAG       583651
+                                                                  
+.......... .......... .......... .......... .......... ..........          349
+
+
+GTGATGGCAC TCAGGGGCCA CGAGGAGGAA GTCTTAATCA AGATGGCAGT GCGTCACAGG       583591
+                                                                  
+.......... .......... .......... .......... .......... ..........          349
+
+
+AATTTTTCAA TAATTTTCAA GACCGGGTTG ACTATGCTGT GCACAATGCT TTCATCAATC       583531
+                                                                  
+.......... .......... .......... .......... .......... ..........          349
+
+
+AATCTGGGGT ATTAGTCAAT ACCTTGTCAA ACATGATGAA GTCAATAGCC GATGGTTCAA       583471
+                                                                  
+.......... .......... .......... .......... .......... ..........          349
+
+
+TAGCTAAACA TCAGGCTGCA GGCCCAGTTT ATTTGCCAGG AGGTACCTTT CCGAATTATC       583411
+                                                                  
+.......... .......... .......... .......... .......... ..........          349
+
+
+GGCCTTTGGT CACCGATATT CATCCACCTA TTCAAGCGGT TCCTCCCATT GCATCATCAG       583351
+                                                                  
+.......... .......... .......... .......... .......... ..........          349
+
+
+CCTAGCCGAC GGCGCCGGTA TCGATTTCCC CATCTACTCC GTCAATGTCG GCACCAGGTC       583291
+                                                                  
+.......... .......... .......... .......... .......... ..........          349
+
+
+AGCTGGTTAA TCCTCGGCAG TTGATGAGAG AGAACCCACA GCATAGTGGG CAGGTTGCGA       583231
+                                                                  
+.......... .......... .......... .......... .......... ..........          349
+
+
+ATCGGCTAAC GCAGGATCAG GTTGCTACCA TGTTTCTACC ACTTCAACCT ACTGTTGATC       583171
+                                                                  
+.......... .......... .......... .......... .......... ..........          349
+
+
+TAGTCCAGCA GCAGCCGATT CAACAAACAC CCCCAATCCA ACAGGTCGTA CAACCAATTC       583111
+                                                                  
+.......... .......... .......... .......... .......... ..........          349
+
+
+AGCAACAGGT TGTGCAGTCA GTTGAACAAA CGCCACCAAG GCAGCAGATT GTACATCCGA       583051
+                                                                  
+.......... .......... .......... .......... .......... ..........          349
+
+
+TTCAGCAGAC GCCATCAAGA CAGCAGACTA TCCAACCGAT TCACCAGCAA GGCTTGATGA       582991
+                                                                  
+.......... .......... .......... .......... .......... ..........          349
+
+
+ATCCATCGGC TGGGCAACAT ACTCTGAATC AGGTTGTTCC AGAGCATTTG GTCCATCACG       582931
+                                                                  
+.......... .......... .......... .......... .......... ..........          349
+
+
+TGCAGCTGGA TCATACGGTA GTACCTCAGA TTGTCCCTGA GCACTTGGTA CGAAATATTC       582871
+                                                                  
+.......... .......... .......... .......... .......... ..........          349
+
+
+AGCCAAACTA GCAGAATTAC CAGGGGGGCA ATTTAAGTTA TCAATATCAA CCTCCTTCCC       582811
+                                                                  
+.......... .......... .......... .......... .......... ..........          349
+
+
+CGCAAGACCA ATATCAGCAA GGGGGATTAA TTCAGCCTCA ATTTGCTCCT CAGTACAGTC       582751
+                                                                  
+.......... .......... .......... .......... .......... ..........          349
+
+
+AATTCGAGCC CATGCAGCAA CAATCGCAAG GAGCAGCTCA ACAACGACCG TGGGCCGATG       582691
+                                                                  
+.......... .......... .......... .......... .......... ..........          349
+
+
+TAATTGCTGA CGTGATGAGG GAACAGTTCG GGCTTAAACC AAAAGAGACT GGAAATTTAT       582631
+                                                                  
+.......... .......... .......... .......... .......... ..........          349
+
+
+ACTGACAACC GTATCCTGAA GGGTTTGAGA GAGTCCCTCT CCCTAACCGG TTCAAAGTTC       582571
+                                                                  
+.......... .......... .......... .......... .......... ..........          349
+
+
+CAGATTTTTC AAAATTCTCG GGGCAAGATA GTACATCGAC TTATGAGCAT ATTAGCCGAT       582511
+                                                                  
+.......... .......... .......... .......... .......... ..........          349
+
+
+TTTTAGCTCA GTGTGGTGAA GCATCGGCTG TGGATGCCTT GAGGGTTAGG TTGTTCCGGT       582451
+                                                                  
+.......... .......... .......... .......... .......... ..........          349
+
+
+TGTCTTTGGC TGGATCGGCT TTTACTTGGT TTTCTGCTTT ACCCTATGGG TTGATTAACA       582391
+                                                                  
+.......... .......... .......... .......... .......... ..........          349
+
+
+GCTGGGCCGA TCTGGAGAAG CAGTTTCATA GCTATTTCTA TAGTGGGGTA CATGAGATGA       582331
+                                                                  
+.......... .......... .......... .......... .......... ..........          349
+
+
+AGTTGTACAA TTTGACAGCA ATCAAGCAAA GACACGACGA GCCCGTGCAT GAATATATTC       582271
+                                                                  
+.......... .......... .......... .......... .......... ..........          349
+
+
+AGAGGTTCAG AGAGATGAGG AATAAGTTCA TTAGCTTGAG CTTAACTGAT GCCCAGATAG       582211
+                                                                  
+.......... .......... .......... .......... .......... ..........          349
+
+
+CCGATTTGGC TTTTCAGGGT ATGATTGCTC CGATCAGGGA GAAATTCTCG TCTGAAGACT       582151
+                                                                  
+.......... .......... .......... .......... .......... ..........          349
+
+
+TTGAAAGCTT ACCGCATCTT ACACAAAAGG TAACTTTGCA CGAGCAGAGG TTTGCTGAAG       582091
+                                                |||||   |||  ||   
+.......... .......... .......... .......... ....CAGAGT ATTGAAGA..          363
+
+
+CTAGGAGGAA TTCTAGGAAG GTTAATCATG TCTGTTCTTA TATGTGTGGA TCGGACGATG       582031
+                                                                  
+.......... .......... .......... .......... .......... ..........          363
+
+
+AGGATGATGA TTCTGAGATA GCTGCAGCCG AGTGGGTAAG GAGCAAAAAG GTTATGCCAT       581971
+                                                                  
+.......... .......... .......... .......... .......... ..........          363
+
+
+GCCAATGGGT GAAGAATTCT GGAAAAGAAG AGAGGTATGA TTTTGATATT ACCAAGGCTG       581911
+                                                                  
+.......... .......... .......... .......... .......... ..........          363
+
+
+ACAAGATTTT TGATCTATTA CTCTGGGAAA TGCAAATTCA GCTCCCTGCT GGTCATACTA       581851
+                                                                  
+.......... .......... .......... .......... .......... ..........          363
+
+
+TTCCATCGGC TGAGGAATTA GGCAAGAAAA GGTATTGCAA GTGGCACAAT TCTGGATCTC       581791
+                                                                  
+.......... .......... .......... .......... .......... ..........          363
+
+
+ATACTACCAA TGATGGCAAG GTCTTTAGGC AGCAGATCCA ATCGGCTATC GAAGGAGGCA       581731
+                                                                  
+.......... .......... .......... .......... .......... ..........          363
+
+
+AAATCAAATT TGATGATTCC AAGAAGCCGA TGAAGGTTGA TGGTAATCCT TTTCCCGTAA       581671
+                                                                  
+.......... .......... .......... .......... .......... ..........          363
+
+
+ATATGGTTCA TACAGCTGGC CAAACAGCCG ATGGGGGCCG TGCAAGGGGT TTTCAAATGA       581611
+                                                                  
+.......... .......... .......... .......... .......... ..........          363
+
+
+ATTCGGCTAA GATCATCAAT AAGTACCAAA GGAAGTATAA TAAACAACAG GAGAAGCATT       581551
+                                                                  
+.......... .......... .......... .......... .......... ..........          363
+
+
+ACGAGGAAGG TGATGATGGT TTCGATCCTC ATTGGGGTTG TGAGTTCTTT AGATTTTGTT       581491
+                                                                  
+.......... .......... .......... .......... .......... ..........          363
+
+
+GGAATGAGGG TATGAGGCTG CCATATATTG AAGACTATCC TGGATGCGGT AACGTTGCAG       581431
+                                                                  
+.......... .......... .......... .......... .......... ..........          363
+
+
+AGAGTTCAAG CCGGTCGTAT ATTAAGGGCA ATCGACTGAA GCATGCAAGG GTTCCTGTTC       581371
+                                                                  
+.......... .......... .......... .......... .......... ..........          363
+
+
+ATCAAAGATT GGGCCCGGTA AATCAGGATC ATGACCCGGA GGATGATGAA AACAGGAAGA       581311
+                                                                  
+.......... .......... .......... .......... .......... ..........          363
+
+
+CTCAATGGTG TCCTCCTGGC ATATTTACAA AGAATCAGAA GAGAAGGGTT CAAAGATTGA       581251
+                                                                  
+.......... .......... .......... .......... .......... ..........          363
+
+
+GAAACTGAGA ACGCTTGCAG GAGGTCGAGC AAGAGATCAA TCAACGGCTA AAGAAAACAA       581191
+                                                                  
+.......... .......... .......... .......... .......... ..........          363
+
+
+AGCCGAAGCA GGAATGGCGC GTTAAGAAAC AAGCTCCTGT AGCCGATGAA GCAAAGAGAT       581131
+                                                                  
+.......... .......... .......... .......... .......... ..........          363
+
+
+TGGCCAAAGG GAAAGGCATT GTGATTGCGT CGGTTAACAT GGTTTTTACC TTGCCAGCCG       581071
+                                                                  
+.......... .......... .......... .......... .......... ..........          363
+
+
+AATTTAGGAT CGACCAAGCC GATGTTGAGG AAACAGAAGA AGAATAGGCT AAATTGATTC       581011
+                                                                  
+.......... .......... .......... .......... .......... ..........          363
+
+
+TATCACCAGA ACAAGCAGTC TTTAAAAAGC CCGAGGGTGC AGAGAATCGG CATCTTAAAC       580951
+                                                                  
+.......... .......... .......... .......... .......... ..........          363
+
+
+CATTGTATAT AAATGACTAT GTTAATGGGA AGCCGATGTC TAAGATGATG GTCGATGGTG       580891
+                                                                  
+.......... .......... .......... .......... .......... ..........          363
+
+
+GAGCTGCATT AAATTTGATG CTTTATGCTA CGTTCAGGAA GTTGGGTAGA AACGCCGAAG       580831
+                                        ||| | | |||||  |||||||  | 
+.......... .......... .......... .......GAA GCTAGGTAGG AACGCCGTGG          386
+
+
+ATCTCATCAA AACAAACATG GTACTCAAAG ACTTTGGTGG CAATCCATCA GAAACCAAGG       580771
+||||||||||  ||||| ||| || || ||||  |||||||||  ||||| ||  |||||||| | 
+ATCTCATCAA GACAAATATG GTGCTTAAAG TCTTTGGTGG TAATCCGTCT GAAACCAAAG          446
+
+
+GTGTTCTAAA TGTGGAGCTG ACAGTCGGCG GTAAGACTAT TCCTACTACG TTTTTTGTCA       580711
+|||||||||| |||||| ||  || || |||  | |||||||| |||||| |||  ||||||||| 
+GTGTTCTAAA TGTGGAACTA ACGGTTGGCA GCAAGACTAT TCCTACCACG ATTTTTGTCA          506
+
+
+TCGATGGGAA GGGTTCTTAC AGTTTGTTGC TTGGAAGGGA TTGGGTTCAT GCCAATTGTT       580651
+|||||||||| |||||| ||| |  ||||||| |||||||||| |||| ||||| |||||||||| 
+TCGATGGGAA GGGTTCGTAC AACTTGTTGC TTGGAAGGGA TTGGATTCAT GCCAATTGTT          566
+
+
+GTATTCCTTC AACCATGCAT CAATGCTTGA TCCAATGGCA AGGCGACAAG ATAGAAATCG       580591
+| || |||||  || |||||| |||||||||| | |||||||| |||||||||| |||||  ||| 
+GCATCCCTTC GACTATGCAT CAATGCTTGA TTCAATGGCA AGGCGACAAG ATAGAGGTCG          626
+
+
+TGCCAGCCGA CAGGTCAGTC AATGTTGCTA GTGCCAATTT AGCTCTTTGG GAGATGGACG       580531
+|||| ||||| |||||||||  || ||||| | ||||| |||| ||| |||||| |||||||| | 
+TGCCGGCCGA CAGGTCAGTT AACGTTGCCA GTGCCGATTT AGCCCTTTGG GAGATGGATG          686
+
+
+GCCTTGATTG TTTATCCGGC AAAGTTTGGG ATGGAGATTT TCTAAAAGTG TCCGATTCTG       580471
+|||||||||| |||||| ||  ||||| |||| |||||||||| |||||||||| |||||||||| 
+GCCTTGATTG TTTATCTGGA AAAGTCTGGG ATGGAGATTT TCTAAAAGTG TCCGATTCTG          746
+
+
+ATATACAGCC AATTGAAGAT GGAGAACCCA AGCTATTACT TTGAGGGCAT CGTGGAGGGT       580411
+|||||||||| ||| |||||| |||||||||| |||||||||| |||||||| |  ||| ||||| 
+ATATACAGCC AATCGAAGAT GGAGAACCCA AGCTATTACT TTGAGGGCGT TGTGAAGGGT          806
+
+
+TCAAACGTCT ACACCAAGGA CACAGTAGAT GATCTCGATG ACAAGCAAGG TCAAGGTTTT       580351
+|| || |||| || | |||||  ||||||||| |||||||||| |||||||||| || ||||||| 
+TCGAATGTCT ACGCTAAGGA TACAGTAGAT GATCTCGATG ACAAGCAAGG TCCAGGTTTT          866
+
+
+ATGTCGGCCG ATGATTTGGA AGACATAGAT ATAGGTCCAG GCGATCGGCC GAGGCCGACA       580291
+|||||||||| ||||||||||  || |||||  |||||||||| ||||||||||  ||||||||| 
+ATGTCGGCCG ATGATTTGGA GGAAATAGAC ATAGGTCCAG GCGATCGGCC AAGGCCGACA          926
+
+
+TTTATTAGTC AGAATTTATC TTCAGAGTTT AGAACCAAGC TGATAGAGCT CTTGAAAGAA       580231
+||||||||   | ||||| || | |||||||| |||||||||| |||||||||| | | |||||  
+TTTATTAGCA AAAATTTGTC TCCAGAGTTT AGAACCAAGC TGATAGAGCT CCTAAAAGAG          986
+
+
+TTTAGGGATT GCTTCGCTTG GCAATATTAT GAGATGCCTG GACTCAGCCG ATCGATTGTT       580171
+||||| |||| |||||||||| | | || ||  ||||| || | |||||||||| |||||||||  
+TTTAGAGATT GCTTCGCTTG GGAGTACTAC GAGATTCCCG GACTCAGCCG ATCGATTGTC         1046
+
+
+GAACATCGGC TACCTACCGA ACCAGGGGTT AGGCCACATC AACAACCTCC TAGGAGATGC       580111
+|||||||||| |||||| | |  ||||||||| || ||||  | | ||||||||  ||||||||| 
+GAACATCGGC TACCTATCAA GCCAGGGGTT AGACCACGCC AGCAACCTCC GAGGAGATGC         1106
+
+
+AAAGCTGACA TGCTCGAACC TGTCAAGGCT GAGATTAAGT GCTTATATGA TGCTAGTTTT       580051
+|||||||| | ||||||| ||  || || ||| ||||| ||   | || ||||| |||| ||||| 
+AAAGCTGATA TGCTCGAGCC GGTTAAAGCT GAGATCAAAC GATTGTATGA TGCTGGTTTT         1166
+
+
+ATTCGTCGTT GCCGATATGC CGAATGGGTT TCTAGCATAG TTCCTGTTAT CAAGAAGAAC       579991
+|||||||  | | |||||||| |||||||||| |||||||||| |||| |||||  || |||||  
+ATTCGTCCCT GTCGATATGC CGAATGGGTT TCTAGCATAG TTCCAGTTAT TAAAAAGAAT         1226
+
+
+GGCAAGGAGA GGGTGTGCAT TGATTTTAGA GATTTGAATA AAGCTACTCC AAAGGACGAA       579931
+|| ||||  | |||||||||| ||||||| || |||||||||| ||||||| || |||||||||| 
+GG-AAGGTCA GGGTGTGCAT TGATTTTCGA GATTTGAATA AAGCTACACC AAAGGACGAA         1285
+
+
+TATCCAATGC CAGTGGCCGA TCAGTTGGTT GATGCTGCTT CAGGATATAA GATATTAAGT       579871
+|||||||||| |||||||||| ||| || ||| |||||||| | ||||  | ||  || || ||| 
+TATCCAATGC CAGTGGCCGA TCAATTAGTT GATGCTGCAT CAGGGAACAA AATTTTGAGT         1345
+
+
+TTTATGGATG GAAATGTGGG ATATAATCAA ATCTTTATGG CTGAAGAAGA TATCCATAAG       579811
+|||||||||| | ||||  || |||||||||  |||||||||| |||| ||||| |||||||||| 
+TTTATGGATG GGAATGCAGG ATATAATCAG ATCTTTATGG CTGAGGAAGA TATCCATAAG         1405
+
+
+ACGGCTTTCA GGTGTCCTAG TGCAATCGGC TTGTTTGAGT GGGTTGTAAT GACTTTCGGC       579751
+|||||||| | | |||||| | |||||||||| || ||||| | |||| || || |||||| ||| 
+ACGGCTTTTA GATGTCCTGG TGCAATCGGC TTATTTGAAT GGGTCGTCAT GACTTTTGGC         1465
+
+
+TTAAAGAGTG CTGGAGCTAC GTACCAAAGA GCTATGAATT ATATATATCA TGATTTAATC       579691
+|| ||||||| ||||||| ||  || |||||  || ||||||| |||||||||| |||||||||| 
+TTGAAGAGTG CTGGAGCAAC ATATCAAAGG GCCATGAATT ATATATATCA TGATTTAATC         1525
+
+
+AGCTGGTTGG TTGAAGTCTA CATTGATGAT GTGGTTGTTA AGTCTAAAGA AATAGAAGAC       579631
+ |||||| || ||||||||||  ||||| ||| |||||||||| | ||||||||   | || ||| 
+GGCTGGTCGG TTGAAGTCTA TATTGACGAT GTGGTTGTTA AATCTAAAGA GGTGGAGGAC         1585
+
+
+CACATTGCCG ATTTAAGAAA GGTTTTCGAG AGGACCAGGA AATATGGCTT GAAGATGAAT       579571
+||||| |||| ||||||| ||  ||||| ||| || ||||| | | |||||||| |||||||||| 
+CACATAGCCG ATTTAAGGAA AGTTTTTGAG AGAACCAGAA AGTATGGCTT GAAGATGAAT         1645
+
+
+CCGACAAAGT GTGCTTTTGG CGTATCGGCT GGCCAGTTCT TGGGATTTCT TGTTCATGAG       579511
+|| ||||| | ||||||||||  || |||||  |||||||| | ||||  |||| |||||||||  
+CCAACAAAAT GTGCTTTTGG TGTGTCGGCC GGCCAGTTTT TGGGGATTCT TGTTCATGAA         1705
+
+
+AGGGGGATTG AAATAACTCA GAGAAGTATC AATGTGATCA AGATGATTAA ACCTCCGGAG       579451
+||||||||||    | || ||  || ||  |  |||| ||||| |||  ||| |  || || ||  
+AGGGGGATTG TGGTGACCCA AAGGAGCGTT AATGCGATCA AGAAAATTCA GCCCCCAGAA         1765
+
+
+GACAAGACAG AATTGCAGGA GATGATCGGC AAAATTAATT TTGTTCGAAG GTTTATTTCT       579391
+ | ||||| | |  | || || |||||||||| || || |||| ||||  ||||  ||||||||| 
+AATAAGACGG AGCTACAAGA GATGATCGGC AAGATAAATT TTGTCAGAAG ATTTATTTCT         1825
+
+
+AATTTGTCTG GAAGGTTAGA ACCTTTTACA CCATTATTGA GATTGAAGGC CGATCAGCAA       579331
+|||||||||  ||||||| || | |||||||| || ||||||| | || || || |||||||||| 
+AATTTGTCTA GAAGGTTGGA ATCTTTTACA CCCTTATTGA GGTTAAAAGC CGATCAGCAA         1885
+
+
+TCTACTTGGG GGGCAGAACA ACAGAAGGCT TTGGATAATA TTAAGGAATA TTTGAGTTCC       579271
+| |||||||| | ||||| ||  || | |||| |||||||||| ||||||| || | | || ||  
+TTTACTTGGG GAGCAGAGCA GCAAAGGGCT TTGGATAATA TTAAGGAGTA TCTCAGCTCT         1945
+
+
+CCTCCAGTTT TGATTCCTCC ACAGAAAGGA ATACCTTTTT GGTTATATTT ATCGGCCGGT       579211
+||||| |||| |||||||||| |||||||||| ||||| |||  |||||||||| |||||| ||| 
+CCTCCTGTTT TGATTCCTCC ACAGAAAGGA ATACCGTTTA GGTTATATTT ATCGGCTGGT         2005
+
+
+GATAAGTCAA TCGGCTCGGT CTTCATTCAG AAGCTTGAAG GAAAAGAGAG GGTTGTGTTC       579151
+|| ||||||| ||||||||||  || |||||   || | || | | || ||| |  ||||| ||  
+GAGAAGTCAA TCGGCTCGGT GTTGATTCAA GAGTTGGAGG GGAAGGAGCG AGTTGTATTT         2065
+
+
+TATTTAAGTC GTCGGCTCTT GGATGCAGAG ACTAGATATT CCCCTGTGGA GGAGTTATGC       579091
+||| | |||| | |||||||| |||||| ||| ||| | |||| | |||||||| | |||||||| 
+TATCTCAGTC GACGGCTCTT GGATGCTGAG ACTCGGTATT CTCCTGTGGA GAAGTTATGC         2125
+
+
+TTGTGTTTAT ATTTTTGATG TATGAGGTTA AGACATTATC TACTGTCCAA TGAATGTACT       579031
+|||||| ||| ||||||  || || ||||||  || ||||||| || | || ||  || || ||  
+TTGTGTCTAT ATTTTTCGTG TACGAGGTTG AGGCATTATC TATTATCTAA CGAGTGCACC         2185
+
+
+ATCATATGCA AGGCCGATGT TGTCAAGTAT ATGTTATCGG CTCCTATTCT GAAAGGAAGG       578971
+ | ||||| | | ||||||||  |||| |||  ||| | |||| |||| ||  |  || ||| |  
+GTTATATGGA AAGCCGATGT AGTCAGGTAC ATGCTGTCGG CTCCAATATT AAAGGGACGA         2245
+
+
+ATTGGAAAGT GGATATTTTC ATTGACTGAG TTTGATCTTT GGTATGAGTC ACAGAAGGCG       578911
+ ||||||||| ||||||||||  ||||||||| |||||||||  ||||||| || ||  |||||| 
+GTTGGAAAGT GGATATTTTC CTTGACTGAG TTTGATCTTC GGTATGAATC ACCAAAGGCG         2305
+
+
+ATCAAAGGAC AAGCTATAGC TAATTTTATT GTTGACCATC GTGATGATTC TATCGGCTTG       578851
+|| || |||| ||||||||||   |||||||| || || |||| ||||||||||  ||||||| | 
+ATTAAGGGAC AAGCTATAGC CGATTTTATT GTAGAACATC GTGATGATTC AATCGGCTCG         2365
+
+
+GTTGAGGTTG TGTTGTGGAC TTTATTTTTT GATGGGTCAG TCTGTACTCA TGGTTGTGGT       578791
+|||||| | | ||   ||||| |||||| ||| ||||| || | | |||||||| |||||||||  
+GTTGAGATAG TGCCATGGAC TTTATTCTTT GATGGATCGG TATGTACTCA TGGTTGTGGC         2425
+
+
+ATCGGCTTAG TTATAATCTC CCCTCGGGGG GCATGCTTTG AGTTTGCCTA TACTATTAAA       578731
+|||||||||| | ||||| || |||| ||||| ||||| || | |||| || || |||||||||| 
+ATCGGCTTAG TCATAATTTC CCCTAGGGGG GCATGTTTCG AGTTCGCTTA TACTATTAAA         2485
+
+
+CCTTATGCAA CTAATAATCA AGCAGAGTAT GAGGCAGTTC TTAAGGGGTT GCAATTACTC       578671
+|| ||||||| |||||||||| ||| || ||| |||||||| | |||||||||| |||||||||| 
+CCGTATGCAA CTAATAATCA AGCTGAATAT GAGGCAGTGC TTAAGGGGTT GCAATTACTC         2545
+
+
+AAGGAAGTTC AAGCTGATAC TATTGAAATC ATGGGGGATT CTTTGTTGGT GATCAGTCAA       578611
+|||||||||  |||| ||||| |||||||||| |||||||||| ||||| | ||  ||||| ||| 
+AAGGAAGTTG AAGCCGATAC TATTGAAATC ATGGGGGATT CTTTGCTAGT AATCAGCCAA         2605
+
+
+TTGGCAGGAG AATATGAATG TATGAATGAT ACGTTGATAG TTTATAATGA CAAGTGCCAA       578551
+|||||||||| ||||||||||  | ||||||| || ||||| | ||||||||||  ||||||    
+TTGGCAGGAG AATATGAATG CAAGAATGAT ACATTGATGG TTTATAATGA GAAGTGCTTG         2665
+
+
+GAATTGATGA AGGAATTTCG GCTAGTAACT TTGAAGCATG TATCTCGAGA GCAGAATATT       578491
+||| | |||| | || ||||  ||| || ||| |||||||||| ||||||||||  || ||| || 
+GAACTAATGA AAGAGTTTCA GCTGGTTACT TTGAAGCATG TATCTCGAGA ACAAAATCTT         2725
+
+
+GAAGCTAATG ATTTAGCCCA AGGGGCATCG GGATATAAGC CGATGATCAA AGATGTTCAG       578431
+|||||||||| |||| ||||| |||||||||| || ||||||| |||||||||| ||||||| |  
+GAAGCTAATG ATTTGGCCCA AGGGGCATCG GGGTATAAGC CGATGATCAA AGATGTTAAA         2785
+
+
+ATTTAAGTTG CTGTCACAAC AGCCGATGAT TGGAGATATG ATGTCTATCG GTATTTACGG       578371
+ || |  ||| | |  |     |||||||||| ||||| |||| ||||  |||  ||||||  |  
+GTTGAGATTG CAGCAATGTT AGCCGATGAT TGGAGGTATG ATGTGCATCA GTATTTGAGT         2845
+
+
+GATCCATCTC AATCGGTTTC TTGGAAGTTA AGATATAAAA CGTTGAAGTA TACATTGTTG       578311
+ ||||||||| |||||| |||   |||| ||| || ||||    | || ||||| |||| ||||| 
+AATCCATCTC AATCGGCTTC CAGGAAATTA AGGTATAGGG CATTAAAGTA TACACTGTTG         2905
+
+
+GACGATGAGC TTTATTATCG GACGATTGAT GGGGTGTTGC TGAAATGTTT GAGTGCCGAT       578251
+|| ||||||| |||||||||  |||||||||| ||||| || | | || || || |||||||||| 
+GATGATGAGC TTTATTATCA GACGATTGAT GGGGTATTAC TTAAGTGCTT GAGTGCCGAT         2965
+
+
+CAGGCAAAAG TTGCAATCAG TGAAATTCAT GAAGGGATAT GTGGCACTCA TCAATCGGCT       578191
+||||| || | |||||||||| |||| ||||  || ||||| | |||| | ||| |||||| ||| 
+CAGGCTAAGG TTGCAATCAG TGAAGTTCAC GATGGGATTT GTGGTATTCA TCAATCAGCT         3025
+
+
+CATAAAATGA AGTGGCTGCT TCGACGTGCT GGATACTTTT GGCCGACGAT GCTGGAGGAT       578131
+|| || |||| ||||| |||| |||  |||   || ||||||| ||||||| || |||||||||| 
+CACAAGATGA AGTGGTTGCT TCGGTGTGTA GGGTACTTTT GGCCGACAAT GCTGGAGGAT         3085
+
+
+TGTTTCAGAT ATTATAAAGG TTGTCAAGAT TGTCAGAAAT TTGGAGCGAT CCAGAGAGCG       578071
+||||||| || ||||||| ||  ||||||||| |||||||| | ||||||| ||  ||| ||||  
+TGTTTCAAAT ATTATAAGGG ATGTCAAGAT TGTCAGAAGT TTGGAGCAAT TCAGCGAGCA         3145
+
+
+CCGGCATCGA CTACGAATCC TATTATTAAA TCATGGCCGT TTAGAGGTTG GGGAATTGAT       578011
+||||| |||  ||| |||||| ||||||||||  ||||||||| | |||||||| |||||||||| 
+CCGGCGTCGG CTATGAATCC TATTATTAAA CCATGGCCGT TCAGAGGTTG GGGAATTGAT         3205
+
+
+ATGATCAGCA TGATTAATCC ACCGTCAAGT AAAGGGTATA AGTTTATATT GGTGGCAACC       577951
+|||||| | | |||| ||||| ||| || ||| |||||| ||| | |||||||| |||||||||  
+ATGATCGGTA TGATAAATCC ACCATCGAGT AAAGGGCATA AATTTATATT GGTGGCAACT         3265
+
+
+GATTATTTTA CCAAGTGGGT AGAGGCGATT CCTTTGAAGA AAGTTGATTC T-GGGATGCT       577892
+|||||||| | |||||||||| |||||||||| |||||||||| | |||||||| | |||||||| 
+GATTATTTCA CCAAGTGGGT AGAGGCGATT CCTTTGAAGA AGGTTGATTC TGGGGATGCT         3325
+
+
+ATACAGTTTG TTCAAGAGCA TATAATCTAT CGATTTGGTA TCCCTCAAAC CGTTACGACT       577832
+|| || || | |||| ||                                  ||   |||| ||  
+ATTCAATTCG TTCAGGA... .......... .......... ........AC TATTACTACG         3354
+
+
+GACCAAGGTT CAATTTTCGT GTCTGATGAG TTTGTTCAGT TTGCCGATAG CATGGGAATC       577772
+|| ||||||| |||| ||||| ||| |||||| |||||||||| || ||||||| | |||| ||| 
+GATCAAGGTT CAATCTTCGT GTCCGATGAG TTTGTTCAGT TTACCGATAG CGTGGGTATC         3414
+
+
+AAATTGTTGA ATTCTTCACC GTATTATACA CAAGCTAATG GGCAGGCCGA GGCATCTAAC       577712
+|| ||||||| ||||||||||  |||||| || |||||||||| |||| ||||| |||||||||  
+AAGTTGTTGA ATTCTTCACC TTATTATGCA CAAGCTAATG GGCAAGCCGA GGCATCTAAT         3474
+
+
+AAGAGCTTGA TCAAGTTGAT TAAGAGGAAG ATTTCTGATT ATCCTCGGCA ATGGCATACT       577652
+|| || |||| |||| ||||| |||| | ||  |||||||||| |||||||||| ||| |||||| 
+AAAAGTTTGA TCAAATTGAT TAAGCGAAAA ATTTCTGATT ATCCTCGGCA ATGACATACT         3534
+
+
+CGTTTAGCCG AAGCATTGTG GTCTTATCGG ATGGCTTGTC ATGGATCGAC ACAGGTTCCT       577592
+|| || |||| |||||||||| ||||||| || ||||| |||| |||||||||   || |||||| 
+CGGTTGGCCG AAGCATTGTG GTCTTATAGG ATGGCCTGTC ATGGATCGAT TCAAGTTCCT         3594
+
+
+CCTTATAAAC TTGTTTATGG ACATGAAGCT GTTTTGCCAT GGGAAGTTAG AATCGACTCT       577532
+|||||||||| |||||||||| |||||| ||| ||||||| || |||||||||| ||||| |||| 
+CCTTATAAAC TTGTTTATGG ACATGAGGCT GTTTTGCTAT GGGAAGTTAG AATCGGCTCT         3654
+
+
+AGAAGAACGG AATTGCAAAA TGATTTAACA GCCGATGAGT ATTACAACCT TATGGCCGAT       577472
+ || |||||| |  |||||||  ||||||||| |||||||||| ||||||| || |||||| ||| 
+CGACGAACGG AGCTGCAAAA CGATTTAACA GCCGATGAGT ATTACAATCT TATGGCTGAT         3714
+
+
+GAGAGGGAGG ATCTGGTTCA ATCACGGTTA CGAGCCCTTG CAAAGGTTAC CAAGGATAAG       577412
+|||||||||| || |||||||  ||||| ||  |||||||||| ||||||||||  ||||||||| 
+GAGAGGGAGG ATTTGGTTCA GTCACGATTG CGAGCCCTTG CAAAGGTTAC TAAGGATAAG         3774
+
+
+GAGCGAGTTG CTTGGCATTA TAACAAGAAA GTAGTGCCCA AAGATTTTTC GGAAGGTGAA       577352
+|| || | || || ||||||| ||| |||||| ||  |  | | || ||||||| |||||| ||| 
+GAACGTGCTG CTCGGCATTA TAATAAGAAA GTTATATCTA AATATTTTTC GGAAGGAGAA         3834
+
+
+CTTGTATGGA AGTTAATTTT GTCGATTGGG ACTCGGGATA GCAAATTCAG CAAATGGTCG       577292
+|||||||||| || | ||||| | |||||||  ||||| |||| | |||||| | ||| |||||| 
+CTTGTATGGA AGCTGATTTT GCCGATTGGT ACTCGTGATA GTAAATTCGG CAAGTGGTCG         3894
+
+
+CCAAATTGGG AAGGACCGTT CCAAATTCAT AAGGTGGTAT CTAAGGGGGC TTACATGTTG       577232
+|| ||||||| | ||||| || ||| |||||| ||||| || | ||||||| ||  || |||||| 
+CCGAATTGGG AGGGACCATT CCATATTCAT AAGGTTGTGT CTAAGGGAGC ATATATGTTG         3954
+
+
+CAAGGACTCG ATGGAGAAGT TTATGGCAGA GCACTAAATG GCAAATACTT GAAGAAATAT       577172
+||||| || | | || ||||| ||||||  || ||||| |||| | ||||| || |||||||||| 
+CAAGGGCTTG ACGGCGAAGT TTATGGGCGA GCACTCAATG GTAAATATTT GAAGAAATAT         4014
+
+
+TACCCAAGTG TTTGGGTTAA CGCATGATCG GCTGATGTTG CCGATGCATG ATAGCCGATG       577112
+|||||||||| |||||||||| |||||||||| |||  | ||| ||||| |||| |||||||||| 
+TACCCAAGTG TTTGGGTTAA CGCATGATCG GCTACTTTTG CCGATCCATG ATAGCCGATG         4074
+
+
+TGTTTACATT GCCTTGAGAT GACCGATATG GTTATATCGC ACTTAGTTCT TTTCATATTG       577052
+|||||||||  |||||||| | | |||||||                                   
+TGTTTACATA GCCTTGAGCT GGCCGATATT .......... .......... ..........         4104
+
+
+TAATCGGTTG TGGTTTGCCG ATGTGCAATG GTCGATATGG TTATATTGCC CTTAGTCGTT       576992
+                                          | |||||| ||| ||||||   | 
+.......... .......... .......... .........G TTATATCGCC CTTAGT-TAT         4124
+
+
+TTTATAATTT TATCAATGTT TTTGACATTG TAAAATTAGG GGGGCACATA CATGGAAAAT       576932
+|| ||||||| ||| |||| |  | ||||||| ||||| |||| |||||| |||  ||   |    
+TTCATAATTT TATTAATGCT CTCGACATTG TAAAACTAGG GGGGCATATA TATATCAGCA         4184
+
+
+TGC       576929
+|||
+TGC         4187
+
+

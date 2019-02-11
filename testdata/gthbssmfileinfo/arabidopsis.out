@@ -1,0 +1,4 @@
+$ the specified BSSM parameter file contains the following models:
+$ GT donor sites   = True (seven-class)
+$ GC donor sites   = True (seven-class)
+$ AG acceptor sites= True (seven-class)

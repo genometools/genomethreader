@@ -1,0 +1,229 @@
+Compute similarity-based gene structure predictions (spliced alignments)
+using cDNA/EST and/or protein sequences and assemble the resulting spliced
+alignments to consensus spliced alignments.
+
+-genomic           specify input files containing genomic sequences
+                   mandatory option
+-cdna              specify input files containing cDNA/EST sequences
+-protein           specify input files containing protein sequences
+-species           specify species to select splice site model which is most
+                   appropriate; possible species:
+                   "human"
+                   "mouse"
+                   "rat"
+                   "chicken"
+                   "drosophila"
+                   "nematode"
+                   "fission_yeast"
+                   "aspergillus"
+                   "arabidopsis"
+                   "maize"
+                   "rice"
+                   "medicago"
+                   default: undefined
+-bssm              read bssm parameter from file in the path given by the
+                   environment variable BSSMDIR
+                   default: undefined
+-scorematrix       read amino acid substitution scoring matrix from file in the
+                   path given by the environment variable GTHDATADIR
+                   default: BLOSUM62
+-translationtable  set the codon translation table used for codon translation in
+                   matching, DP, and output
+                   default: 1
+-f                 analyze only forward strand of genomic sequences
+                   default: no
+-r                 analyze only reverse strand of genomic sequences
+                   default: no
+-cdnaforward       align only forward strand of cDNAs
+                   default: no
+-frompos           analyze genomic sequence from this position
+                   requires -topos or -width; counting from 1 on
+                   default: 0
+-topos             analyze genomic sequence to this position
+                   requires -frompos; counting from 1 on
+                   default: 0
+-width             analyze only this width of genomic sequence
+                   requires -frompos
+                   default: 0
+-v                 be verbose
+                   default: no
+-xmlout            show output in XML format
+                   default: no
+-gff3out           show output in GFF3 format
+                   default: no
+-md5ids            show MD5 fingerprints as sequence IDs
+                   default: no
+-o                 redirect output to specified file
+                   default: undefined
+-gzip              write gzip compressed output file
+                   default: no
+-bzip2             write bzip2 compressed output file
+                   default: no
+-force             force writing to output file
+                   default: no
+-skipalignmentout  skip output of spliced alignments
+                   default: no
+-mincutoffs        show full spliced alignments
+                   i.e., cutoffs mode for leading and terminal bases is MINIMAL
+                   default: no
+-showintronmaxlen  set the maximum length of a fully shown intron
+                   If set to 0, all introns are shown completely
+                   default: 120
+-minorflen         set the minimum length of an ORF to be shown
+                   default: 64
+-startcodon        require than an ORF must begin with a start codon
+                   default: no
+-finalstopcodon    require that the final ORF must end with a stop codon
+                   default: no
+-showseqnums       show sequence numbers in output
+                   default: no
+-pglgentemplate    show genomic template in PGL lines 
+                   (switch off for backward compatibility)
+                   default: yes
+-gs2out            output in old GeneSeqer2 format
+                   default: no
+-maskpolyatails    mask poly(A) tails in cDNA/EST files
+                   default: no
+-proteinsmap       specify smap file used for protein files
+                   default: protein
+-noautoindex       do not create indices automatically
+                   except for the .dna.* files used for the DP.
+                   existence is not tested before an index is actually used!
+                   default: no
+-createindicesonly stop program flow after the indices have been created
+                   default: no
+-skipindexcheck    skip index check (in preprocessing phase)
+                   default: no
+-minmatchlen       specify minimum match length (cDNA matching)
+                   default: 20
+-seedlength        specify the seed length (cDNA matching)
+                   default: 18
+-exdrop            specify the Xdrop value for edit distance extension (cDNA
+                   matching)
+                   default: 2
+-prminmatchlen     specify minimum match length (protein matches)
+                   default: 24
+-prseedlength      specify seed length (protein matching)
+                   default: 10
+-prhdist           specify Hamming distance (protein matching)
+                   default: 4
+-online            run the similarity filter online without using the complete
+                   index (increases runtime)
+                   default: no
+-inverse           invert query and index in vmatch call
+                   default: no
+-exact             use exact matches in the similarity filter
+                   default: no
+-gcmaxgapwidth     set the maximum gap width for global chains
+                   defines approximately the maximum intron length
+                   set to 0 to allow for unlimited length
+                   in order to avoid false-positive exons (lonely exons) at the
+                   sequence ends, it is very important to set this parameter
+                   appropriately!
+                   default: 1000000
+-gcmincoverage     set the minimum coverage of global chains regarding to the
+                   reference sequence
+                   default: 50
+-paralogs          compute paralogous genes (different chaining procedure)
+                   default: no
+-enrichchains      enrich genomic sequence part of global chains with additional
+                   matches
+                   default: no
+-introncutout      enable the intron cutout technique
+                   default: no
+-fastdp            use jump table to increase speed of DP calculation
+                   default: no
+-autointroncutout  set the automatic intron cutout matrix size in megabytes and
+                   enable the automatic intron cutout technique
+                   default: 0
+-icinitialdelta    set the initial delta used for intron cutouts
+                   default: 50
+-iciterations      set the number of intron cutout iterations
+                   default: 2
+-icdeltaincrease   set the delta increase during every iteration
+                   default: 50
+-icminremintronlen set the minimum remaining intron length for an intron to be
+                   cut out
+                   default: 10
+-nou12intronmodel  disable the U12-type intron model
+                   default: no
+-u12donorprob      set the probability for perfect U12-type donor sites
+                   default: 0.99
+-u12donorprob1mism set the prob. for U12-type donor w. 1 mismatch
+                   default: 0.90
+-probies           set the initial exon state probability
+                   default: 0.50
+-probdelgen        set the genomic sequence deletion probability
+                   default: 0.03
+-identityweight    set the pairs of identical characters weight
+                   default: 2.00
+-mismatchweight    set the weight for mismatching characters
+                   default: -2.00
+-undetcharweight   set the weight for undetermined characters
+                   default: 0.00
+-deletionweight    set the weight for deletions
+                   default: -5.00
+-dpminexonlen      set the minimum exon length for the DP
+                   default: 5
+-dpminintronlen    set the minimum intron length for the DP
+                   default: 50
+-shortexonpenal    set the short exon penalty
+                   default: 100.00
+-shortintronpenal  set the short intron penalty
+                   default: 100.00
+-wzerotransition   set the zero transition weights window size
+                   default: 80
+-wdecreasedoutput  set the decreased output weights window size
+                   default: 80
+-leadcutoffsmode   set the cutoffs mode for leading bases
+                   can be either RELAXED, STRICT, or MINIMAL
+                   default: RELAXED
+-termcutoffsmode   set the cutoffs mode for terminal bases
+                   can be either RELAXED, STRICT, or MINIMAL
+                   default: STRICT
+-cutoffsminexonlen set the cutoffs minimum exon length
+                   default: 5
+-scoreminexonlen   set the score minimum exon length
+                   default: 50
+-minaveragessp     set the minimum average splice site prob.
+                   default: 0.50
+-duplicatecheck    criterion used to check for spliced alignment duplicates,
+                   choose from none|id|desc|seq|both
+                   default: both
+-minalignmentscore set the minimum alignment score for spliced alignments to be
+                   included into the set of spliced alignments
+                   default: 0.00
+-maxalignmentscore set the maximum alignment score for spliced alignments to be
+                   included into the set of spliced alignments
+                   default: 1.00
+-mincoverage       set the minimum coverage for spliced alignments to be
+                   included into the set of spliced alignments
+                   default: 0.00
+-maxcoverage       set the maximum coverage for spliced alignments to be
+                   included into the set of spliced alignments
+                   default: 9999.99
+-intermediate      stop after calculation of spliced alignments and output
+                   results in reusable XML format. Do not process this output
+                   yourself, use the ``normal'' XML output instead!
+                   default: no
+-sortags           sort alternative gene structures according to the weighted
+                   mean of the average exon score and the average splice site
+                   probability
+                   default: no
+-sortagswf         set the weight factor for the sorting of AGSs
+                   default: 1.00
+-exondistri        show the exon length distribution
+                   default: no
+-introndistri      show the intron length distribution
+                   default: no
+-refseqcovdistri   show the reference sequence coverage distribution
+                   default: no
+-first             set the maximum number of spliced alignments per genomic DNA
+                   input. Set to 0 for unlimited number.
+                   default: 0
+-help              display help for basic options and exit
+-help+             display help for all options and exit
+-version           display version information and exit
+
+For detailed information, please refer to the manual of GenomeThreader.
+Report bugs to <gordon@gremme.org>.

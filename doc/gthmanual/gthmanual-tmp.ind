@@ -1,0 +1,239 @@
+\begin{theindex}
+
+  \item \textit  {$\Re $\xspace  }, \hyperpage{26, 27}
+  \item \textit  {$t$}, \hyperpage{10}
+
+  \indexspace
+
+  \item alternative gene structure, \hyperpage{23}
+    \subitem overall score, \hyperpage{23}
+  \item \textit  {arg}, \hyperpage{30, 31}
+
+  \indexspace
+
+  \item BSSM parameter
+    \subitem options, \hyperpage{10}
+  \item \texttt  {BSSMDIR}, \hyperpage{6}, \hyperpage{10}, 
+		\hyperpage{30}
+
+  \indexspace
+
+  \item \textit  {cdnafiles\xspace  }, \hyperpage{6, 7}, \hyperpage{9}
+  \item consensus spliced alignment, \hyperpage{23}
+  \item coverage, \hyperpage{21}
+
+  \indexspace
+
+  \item \textit  {d\xspace  }, \hyperpage{17, 18}
+  \item \texttt  {DE}, \hyperpage{9}
+  \item \texttt  {DEFINITION}, \hyperpage{9}
+  \item description
+    \subitem \EMBL, \hyperpage{9}
+    \subitem \Fasta, \hyperpage{9}
+    \subitem \GENBANK, \hyperpage{9}
+    \subitem \SWISSPROT, \hyperpage{9}
+  \item \textit  {di\xspace  }, \hyperpage{18}
+  \item \textit  {dir}, \hyperpage{30}, \hyperpage{33}
+
+  \indexspace
+
+  \item \EMBL, \hyperpage{9}
+  \item error code, \hyperpage{7}
+  \item exit code, \hyperpage{24}
+
+  \indexspace
+
+  \item \textit  {file}, \hyperpage{31}, \hyperpage{33}
+  \item \textit  {file ...}, \hyperpage{31}
+
+  \indexspace
+
+  \item \GENBANK, \hyperpage{9}
+  \item \textit  {genseqfiles\xspace  }, \hyperpage{6, 7}, 
+		\hyperpage{9}
+  \item \texttt  {GTHDATADIR}, \hyperpage{6}, \hyperpage{10}
+  \item \texttt  {GTHNOFLOCK}, \hyperpage{6}
+  \item \textit  {gw}, \hyperpage{17}
+
+  \indexspace
+
+  \item \textit  {i\xspace  }, \hyperpage{18}
+  \item \texttt  {ID}, \hyperpage{9, 10}
+  \item incremental update, \hyperpage{24}
+  \item incremental updates, \hyperpage{23}
+  \item intermediate file, \hyperpage{25}
+  \item intron cutout technique, \hyperpage{17}
+
+  \indexspace
+
+  \item \textit  {leadingmode\xspace  }, \hyperpage{20}
+  \item \texttt  {LOCUS}, \hyperpage{9, 10}
+
+  \indexspace
+
+  \item \textit  {maxintronlen\xspace  }, \hyperpage{13}
+  \item \textit  {mc}, \hyperpage{17}
+  \item \textit  {mode\xspace  }, \hyperpage{21, 22}
+  \item multiple fasta, \hyperpage{9}
+
+  \indexspace
+
+  \item \textit  {n}, \hyperpage{31}
+
+  \indexspace
+
+  \item Option
+    \subitem \texttt  {-agacceptor}, \hyperpage{33}
+    \subitem \texttt  {-alignmentscore}, \hyperpage{26}
+    \subitem \texttt  {-autointroncutout}, \hyperpage{17}
+    \subitem \texttt  {-bssmfile}, \hyperpage{33}
+    \subitem \texttt  {-bssm}, \hyperpage{10}
+    \subitem \texttt  {-bzip2}, \hyperpage{13}
+    \subitem \texttt  {-b}, \hyperpage{27}
+    \subitem \texttt  {-cdnaforward}, \hyperpage{12}
+    \subitem \texttt  {-cdna}, \hyperpage{9}
+    \subitem \texttt  {-coverage}, \hyperpage{26}
+    \subitem \texttt  {-createindicesonly}, \hyperpage{15}
+    \subitem \texttt  {-cutoffsminexonlen}, \hyperpage{20}
+    \subitem \texttt  {-cutoff}, \hyperpage{31}
+    \subitem \texttt  {-datapath}, \hyperpage{33}
+    \subitem \texttt  {-deletionweight}, \hyperpage{19}
+    \subitem \texttt  {-dpminexonlength}, \hyperpage{19}
+    \subitem \texttt  {-dpminintronlength}, \hyperpage{19}
+    \subitem \texttt  {-duplicatecheck}, \hyperpage{21}
+    \subitem \texttt  {-enrichchains}, \hyperpage{17}
+    \subitem \texttt  {-exact}, \hyperpage{16}
+    \subitem \texttt  {-exdrop}, \hyperpage{16}
+    \subitem \texttt  {-exondistri}, \hyperpage{24}
+    \subitem \texttt  {-extracttype}, \hyperpage{31}
+    \subitem \texttt  {-fastdp}, \hyperpage{17}
+    \subitem \texttt  {-filtertype}, \hyperpage{30}
+    \subitem \texttt  {-finalstopcodon}, \hyperpage{14}
+    \subitem \texttt  {-first}, \hyperpage{24}
+    \subitem \texttt  {-force}, \hyperpage{13}
+    \subitem \texttt  {-frompos}, \hyperpage{12}
+    \subitem \texttt  {-f}, \hyperpage{12}, \hyperpage{27}
+    \subitem \texttt  {-gcdonor}, \hyperpage{30}, \hyperpage{33}
+    \subitem \texttt  {-gcmaxgapwidth}, \hyperpage{17}
+    \subitem \texttt  {-gcmincoverage}, \hyperpage{17}
+    \subitem \texttt  {-genomic}, \hyperpage{9}
+    \subitem \texttt  {-getcdnacomp}, \hyperpage{28}
+    \subitem \texttt  {-getcdna}, \hyperpage{28}
+    \subitem \texttt  {-getgenomiccomp}, \hyperpage{28}
+    \subitem \texttt  {-getgenomic}, \hyperpage{28}
+    \subitem \texttt  {-getproteincomp}, \hyperpage{28}
+    \subitem \texttt  {-getprotein}, \hyperpage{28}
+    \subitem \texttt  {-gff3out}, \hyperpage{13}
+    \subitem \texttt  {-goodexoncount}, \hyperpage{31}
+    \subitem \texttt  {-gs2out}, \hyperpage{14}
+    \subitem \texttt  {-gtdonor}, \hyperpage{33}
+    \subitem \texttt  {-gzip}, \hyperpage{13}
+    \subitem \texttt  {-g}, \hyperpage{27}
+    \subitem \texttt  {-help+}, \hyperpage{24}
+    \subitem \texttt  {-help}, \hyperpage{24}
+    \subitem \texttt  {-icdeltaincrease}, \hyperpage{18}
+    \subitem \texttt  {-icinitialdelta}, \hyperpage{17}
+    \subitem \texttt  {-iciterations}, \hyperpage{18}
+    \subitem \texttt  {-icminremintronlen}, \hyperpage{18}
+    \subitem \texttt  {-identityweight}, \hyperpage{19}
+    \subitem \texttt  {-intermediate}, \hyperpage{23}
+    \subitem \texttt  {-introncutout}, \hyperpage{17}
+    \subitem \texttt  {-introndistri}, \hyperpage{24}
+    \subitem \texttt  {-inverse}, \hyperpage{16}
+    \subitem \texttt  {-leadcutoffsmode}, \hyperpage{20}
+    \subitem \texttt  {-maskpolyatails}, \hyperpage{14}
+    \subitem \texttt  {-matchdesc}, \hyperpage{31}
+    \subitem \texttt  {-maxalignmentscore}, \hyperpage{21}
+    \subitem \texttt  {-maxcoverage}, \hyperpage{21}
+    \subitem \texttt  {-md5ids}, \hyperpage{13}
+    \subitem \texttt  {-minalignmentscore}, \hyperpage{21}
+    \subitem \texttt  {-minaveragessp}, \hyperpage{21}
+    \subitem \texttt  {-mincoverage}, \hyperpage{21}
+    \subitem \texttt  {-mincutoffs}, \hyperpage{13}
+    \subitem \texttt  {-minmatchlen}, \hyperpage{16}
+    \subitem \texttt  {-minorflength}, \hyperpage{14}
+    \subitem \texttt  {-mismatchweight}, \hyperpage{19}
+    \subitem \texttt  {-noautoindex}, \hyperpage{15}
+    \subitem \texttt  {-nou12intronmodel}, \hyperpage{18}
+    \subitem \texttt  {-online}, \hyperpage{16}
+    \subitem \texttt  {-outdir}, \hyperpage{30}
+    \subitem \texttt  {-o}, \hyperpage{13}
+    \subitem \texttt  {-paralogs}, \hyperpage{17}
+    \subitem \texttt  {-pglgentemplate}, \hyperpage{14}
+    \subitem \texttt  {-prhdist}, \hyperpage{16}
+    \subitem \texttt  {-prminmatchlen}, \hyperpage{16}
+    \subitem \texttt  {-probdelgen}, \hyperpage{19}
+    \subitem \texttt  {-probies}, \hyperpage{19}
+    \subitem \texttt  {-proteinsmap}, \hyperpage{15}
+    \subitem \texttt  {-protein}, \hyperpage{9}
+    \subitem \texttt  {-prseedlength}, \hyperpage{16}
+    \subitem \texttt  {-range}, \hyperpage{26}
+    \subitem \texttt  {-refseqcovdistri}, \hyperpage{24}
+    \subitem \texttt  {-regionmapping}, \hyperpage{31}
+    \subitem \texttt  {-r}, \hyperpage{12}, \hyperpage{27}
+    \subitem \texttt  {-scorematrix}, \hyperpage{10}
+    \subitem \texttt  {-scoreminexonlen}, \hyperpage{20}
+    \subitem \texttt  {-seedlength}, \hyperpage{16}
+    \subitem \texttt  {-seed}, \hyperpage{31}
+    \subitem \texttt  {-seqfiles}, \hyperpage{31}
+    \subitem \texttt  {-seqfile}, \hyperpage{31}
+    \subitem \texttt  {-shortexonpenal}, \hyperpage{20}
+    \subitem \texttt  {-shortintronpenal}, \hyperpage{20}
+    \subitem \texttt  {-showintronmaxlen}, \hyperpage{13}
+    \subitem \texttt  {-showseqnums}, \hyperpage{14}
+    \subitem \texttt  {-skipalignmentout}, \hyperpage{13}
+    \subitem \texttt  {-skipindexcheck}, \hyperpage{15}
+    \subitem \texttt  {-sortagswf}, \hyperpage{23}
+    \subitem \texttt  {-sortags}, \hyperpage{23}
+    \subitem \texttt  {-species}, \hyperpage{10}
+    \subitem \texttt  {-startcodon}, \hyperpage{14}
+    \subitem \texttt  {-termcutoffsmode}, \hyperpage{20}
+    \subitem \texttt  {-topos}, \hyperpage{12}
+    \subitem \texttt  {-translationtable}, \hyperpage{10}
+    \subitem \texttt  {-u12donorprob1mism}, \hyperpage{18}
+    \subitem \texttt  {-u12donorprob}, \hyperpage{18}
+    \subitem \texttt  {-undetcharweight}, \hyperpage{19}
+    \subitem \texttt  {-usedesc}, \hyperpage{31}
+    \subitem \texttt  {-version}, \hyperpage{24}
+    \subitem \texttt  {-v}, \hyperpage{13}, \hyperpage{27}
+    \subitem \texttt  {-wdecreasedoutput}, \hyperpage{20}
+    \subitem \texttt  {-width}, \hyperpage{12}
+    \subitem \texttt  {-wzerotransition}, \hyperpage{20}
+    \subitem \texttt  {-xmlout}, \hyperpage{13}
+  \item \textit  {outputfile}, \hyperpage{13, 14}
+
+  \indexspace
+
+  \item \textit  {paramfile}, \hyperpage{10}
+  \item \textit  {paramfileprefix\xspace  }, \hyperpage{10}
+  \item \texttt  {PATH}, \hyperpage{6}
+  \item predicted gene location, \hyperpage{23}, \hyperpage{25}
+  \item predicted gene structure, \hyperpage{25}
+  \item \textit  {proteinfiles\xspace  }, \hyperpage{6, 7}, 
+		\hyperpage{9}
+
+  \indexspace
+
+  \item \textit  {r\xspace  }, \hyperpage{18}
+
+  \indexspace
+
+  \item \textit  {s}, \hyperpage{31}
+  \item \textit  {s\xspace  }, \hyperpage{17}
+  \item \textit  {scorematrixname\xspace  }, \hyperpage{10}
+  \item \textit  {smapfile}, \hyperpage{15}
+  \item \textit  {speciesname\xspace  }, \hyperpage{10}
+  \item spliced alignment
+    \subitem consensus, \hyperpage{25}
+  \item \SWISSPROT, \hyperpage{9}
+
+  \indexspace
+
+  \item \textit  {terminalmode\xspace  }, \hyperpage{20}
+  \item \textit  {type}, \hyperpage{30, 31}
+
+  \indexspace
+
+  \item \textit  {wf}, \hyperpage{23}
+
+\end{theindex}

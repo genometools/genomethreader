@@ -1,0 +1,4 @@
+AuthType Basic
+AuthName "Download GenomeThreader"
+AuthUserFile htdocs/distributions/.htpasswd
+Require valid-user

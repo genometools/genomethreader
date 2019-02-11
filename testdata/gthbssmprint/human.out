@@ -1,0 +1,8 @@
+BSSMPARAMVERSION is 2
+
+Is the GT donor model set? -> True
+Is the GC donor model set? -> False
+
+Is the AG acceptor model set? -> True
+
+Cannot report model parameterization for two-class BSSMs.

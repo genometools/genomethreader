@@ -1,0 +1,73 @@
+$ GenomeThreader 0.9.38 (2005-06-24 17:37:20)
+$ Date run: 2005-08-10 20:42:10
+$ Splice Site Model: Bayesian
+$
+$ genomicfile      = "OSchr10"
+$ referencefile    = "LIBc9"
+$ species          = "rice"
+$ proteinsmap      = "protein"
+$ scorematrix      = "BLOSUM62"
+$ bssmfile         = "rice"
+$ searchmode       = (forward=True,reverse=True)
+$ frompos          =          1 (non-df.)
+$ topos            =     600000 (non-df.)
+$ width            =          0 (default)
+$ verbose          =      False (default)
+$ gs2out           =      False (default)
+$ showintronmaxlen =        120 (default) maximum length of a fully shown intron
+$ minorflen        =         64 (default) minimum length of an ORF to be shown
+$ minmatchlen      =         45 (non-df.) minimum match length
+$ seedlength       =         30 (non-df.) the seed length
+$ exdrop           =          2 (default) the xdrop value for edit distance
+$ online           =      False (default) run the similarity filter online
+$ inverse          =       True (non-df.) invert query and index in vmatch call
+$ exact            =      False (default) use exact matches
+$ noautoindex      =      False (default) do not create indices automatically
+$ maskpolyatails   =       True (non-df.) mask poly(A) tails in cDNA/EST files
+$ maxnumofmatches  =          0 (default) maximum number of matches
+$ matchnumdistri   =      False (default) show the distribution of matches
+$ chainlocal       =          1 (default) local chains (according to L1-model).
+$ uselocalchaining =      False (default) enable local chaining
+$ chainwf          =   0.500000 (default) weight factor > 0.0 for local chaining
+$ gcmaxgapwidth    =      50000 (non-df.) maximum gap width for global chains
+$ gcmincoverage    =         15 (non-df.) minimum coverage of global chains
+$ introncutout     =       True (non-df.) enable the intron cutout technique
+$ autointroncutout =          0 (default) automatic intron cutout matrix size
+$ icinitialdelta   =         50 (default) initial delta used for intron cutouts
+$ iciterations     =          2 (default) number of intron cutout iterations
+$ icdeltaincrease  =         50 (default) delta increase during every iteration
+$ icminremintronlen=         10 (default) minimum remaining intron length
+$ nou12intronmodel =      False (default) disable the U12-type intron model
+$ u12donorprob     =   0.990000 (default) probability for perfect U12-type donor
+$ u12donorprob1mism=   0.900000 (default) prob. for U12-type donor w. 1 mismatch
+$ probies          =   0.500000 (default) initial exon state probability
+$ probdelgen       =   0.030000 (default) genomic sequence deletion probability
+$ identityweight   =   2.000000 (default) pairs of identical characters weight
+$ mismatchweight   =  -2.000000 (default) weight for mismatching characters
+$ undetcharweight  =   0.000000 (default) weight for undetermined characters
+$ deletionweight   =  -5.000000 (non-df.) weight for deletions
+$ dpminexonlen     =          5 (default) minimum exon length for the DP
+$ dpminintronlen   =         50 (default) minimum intron length for the DP
+$ shortexonpenal   =        100 (default) short exon penalty
+$ shortintronpenal =        100 (default) short intron penalty
+$ wzerotransition  =         80 (default) zero transition weights window size
+$ wdecreasedoutput =         80 (default) decreased output weights window size
+$ leadcutoffsmode  =    RELAXED (default) cutoffs mode for leading bases
+$ termcutoffsmode  =     STRICT (default) cutoffs mode for terminal bases
+$ cutoffsminexonlen=          5 (default) cutoffs minimum exon length
+$ scoreminexonlen  =         50 (default) score minimum exon length
+$ minaveragessp    =   0.500000 (default) minimum average splice site prob.
+$ intermediate     =      False (default) stop after calc. of spliced alignments
+$ sortags          =      False (default) sort alternative gene structures
+$ sortagswf        =   1.000000 (default) weight factor for the sorting of AGSs
+$ first            =          0 (default) maximum number of spliced alignments
+$
+$ special output characters for starting lines:
+$ GTHINFOCHAR      = $ (info line)
+$ VMATCHCHAR       = # (mkvtree and vmatch output)
+$
+$ the specified BSSM parameter file contains the following models:
+$ GT donor sites   = True
+$ GC donor sites   = True
+$ AG acceptor sites= True
+$

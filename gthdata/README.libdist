@@ -1,0 +1,29 @@
+How to compile GenomeThreader with your own libgenometools.a:
+-------------------------------------------------------------
+
+1.) Put genometools and gthlibdist in _parallel_ directories. For example:
+
+/home/gordon/gthlibs-1.6.0-Linux_x86_64-64bit
+/home/gordon/genomeotools
+
+(The latter directory must be named genometools)
+
+2.) Compile libgenometools.a:
+
+$ cd /home/gordon/genometools
+$ make cairo=no curses=no 64bit=yes
+
+3.) Link GenomeThreader
+
+$ /home/gordon/gthlibs-1.6.0-Linux_x86_64-64bit
+$ make
+
+The gth and gthconsensus binaries will be in the bin/ directory.
+Copy your license file there to run them.
+
+Typical development cycle:
+--------------------------
+
+1.) Source code: edit files in genometools/src/gth
+2.) Recompile: repeat steps 2.) and 3.) from above
+3.) Re-run: call bin/gth

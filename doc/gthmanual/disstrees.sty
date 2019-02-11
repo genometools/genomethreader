@@ -1,0 +1,181 @@
+%Stefan Kurtz, 1995
+\newcommand{\Scriptstyle}[1]{${\scriptstyle #1}$}
+\def\cacTree{
+   \put(0,0){\circle{3}}%
+   \put(0,-1){\vector(0,-1){16}}%
+   \put(-2,-8){\makebox(0,0)[r]{\Scriptstyle{c}}}%
+   \put(0,-18){\circle{3}}%
+   \put(0,-19){\vector(0,-1){16}}%
+   \put(-2,-26){\makebox(0,0)[r]{\Scriptstyle{a}}}%
+   \put(0,-36){\circle{3}}%
+   \put(0,-37){\vector(0,-1){16}}%
+   \put(-2,-44){\makebox(0,0)[r]{\Scriptstyle{c}}}%
+   \put(0,-54){\circle{3}}%
+}
+\def\cabcacTree{
+   \put(0,0){\circle{3}}%
+   \put(0,-1){\vector(0,-1){16}}%
+   \put(-2,-8){\makebox(0,0)[r]{\Scriptstyle{c}}}%
+   \put(0,-18){\circle{3}}%
+   \put(0,-19){\vector(0,-1){16}}%
+   \put(-2,-26){\makebox(0,0)[r]{\Scriptstyle{a}}}%
+   \put(0,-36){\circle{3}}%
+   \put(0,-37){\vector(0,-1){16}}%
+   \put(-2,-44){\makebox(0,0)[r]{\Scriptstyle{b}}}%
+   \put(0,-54){\cacTree}%
+}
+\def\bcabcacTree{
+   \put(0,0){\circle{3}}%
+   \put(0,-1){\vector(0,-1){16}}%
+   \put(-2,-8){\makebox(0,0)[r]{\Scriptstyle{b}}}%
+   \put(0,-18){\cabcacTree}%
+}
+\newcommand{\LeftEdge}[2]{
+  \put(0,0){\circle{3}}
+  \put(-1,-1){\vector(-1,-1){30}}
+  \put(-16,-12){\makebox(0,0)[r]{\Scriptstyle{#1}}}%
+  \put(-32,-32){#2}
+}
+\newcommand{\RightEdge}[2]{
+  \put(0,0){\circle{3}}
+  \put(1,-1){\vector(1,-1){30}}
+  \put(16,-12){\makebox(0,0)[l]{\Scriptstyle{#1}}}%
+  \put(32,-32){#2}
+}
+\newcommand{\Leaf}[2][]{
+  \put(0,0){\circle#1{3}}%
+  \put(1,-3){\makebox(0,0)[l]{\Scriptstyle{#2}}}%
+}
+\newcommand{\True}{
+  \put(0,0){\circle*{3}}%
+}
+\newcommand{\UnTree}[4][]{
+  \put(0,0){\circle#1{3}}
+  \put(0,-1){\vector(0,-1){#2}}
+  \count1=#2
+  \divide\count1 by 2
+  \multiply\count1 by -1
+  \put(-2,\count1){\makebox(0,0)[r]{\Scriptstyle{#3}}}%
+  \count1=#2
+  \advance\count1 by 2
+  \multiply\count1 by -1
+  \put(0,\count1){#4}
+}
+\newcommand{\UnTreeWithLabel}[4]{
+  \put(0,0){\circle{3}}
+  \put(0,-1){\vector(0,-1){#1}}
+  \count1=#1
+  \divide\count1 by 2
+  \multiply\count1 by -1
+  \put(-2,\count1){\makebox(0,0)[r]{\Scriptstyle{#2}}}%
+  \count1=#1
+  \advance\count1 by 2
+  \multiply\count1 by -1
+  \put(0,\count1){#3}
+  \put(1,2){\makebox(0,0)[l]{\Scriptstyle{#4}}}
+}
+
+\newcommand{\BinTree}[8]{
+  \put(0,0){\circle#8{3}}
+  \count1=#1
+  \count2=#2
+  \put(1,-1){\vector(\count1,-1){\count2}}
+  \multiply\count1 by -1
+  \put(-1,-1){\vector(\count1,-1){\count2}}
+  \put(1,2){\makebox(0,0)[l]{\Scriptstyle{#3}}}
+  \count2=#2
+  \divide\count2 by 2
+  \multiply\count2 by -1
+  \put(\count2,-12){\makebox(0,0)[r]{\Scriptstyle{#4}}}%
+  \count2=#2
+  \advance\count2 by 2
+  \multiply\count2 by -1
+  \put(\count2,-32){#5}
+  \count2=#2
+  \divide\count2 by 2
+  \put(\count2,-12){\makebox(0,0)[l]{\Scriptstyle{#6}}}%
+  \count2=#2
+  \advance\count2 by 2
+  \put(\count2,-32){#7}
+}
+
+\newcommand{\SmallBinTree}[6][]{\BinTree{1}{30}{#2}{#3}{#4}{#5}{#6}{#1}}
+\newcommand{\MedBinTree}[6][]{\BinTree{2}{60}{#2}{#3}{#4}{#5}{#6}{#1}}
+\newcommand{\BigBinTree}[6][]{\BinTree{3}{90}{#2}{#3}{#4}{#5}{#6}{#1}}
+\newcommand{\HugeBinTree}[6][]{\BinTree{4}{120}{#2}{#3}{#4}{#5}{#6}{#1}}
+
+\newcommand{\SmallTernary}[9][]{\BinTree{1}{30}{#2}{#3}{#4}{#8}{#9}{#1}\UnTree{#5}{#6}{#7}}
+\newcommand{\BigTernary}[9][]{\BinTree{2}{60}{#2}{#3}{#4}{#8}{#9}{#1}\UnTree{#5}{#6}{#7}}
+\newcommand{\MedTernary}[9][]{\BinTree{3}{90}{#2}{#3}{#4}{#8}{#9}{#1}\UnTree{#5}{#6}{#7}}
+\newcommand{\HugeTernary}[9][]{\BinTree{4}{120}{#2}{#3}{#4}{#8}{#9}{#1}\UnTree{#5}{#6}{#7}}
+\newcommand{\SuperHugeTernary}[9][]{\BinTree{4}{180}{#2}{#3}{#4}{#8}{#9}{#1}\UnTree{#5}{#6}{#7}}
+
+\newcommand{\Sentinel}[0]{\mathtt{\symbol{36}}}
+\newcommand{\Shownode}[3]{\fbox{${\scriptscriptstyle #1}$\footnotesize -${\scriptscriptstyle [#2..#3]}$}}
+\newcommand{\PutShownode}[3]{\Leaf{\put(-22,-27){\Shownode{#1}{#2}{#3}}}}
+\newcommand{\Subbintree}[5]{\SmallBinTree{#5}{#1}{\Leaf{#3}}{#2}{\Leaf{#4}}}
+\newcommand{\Ternsubtree}[3]{\put(0,-22){\MedTernary{}{}{#1}{30}{}{#2}{}{#3}\put(-21,9){\Shownode{1}{0}{5}}}}
+\newcommand{\Treetoa}[9]{%
+\put(0,-15){\MedTernary{\put(-10,0){#7}}%
+            {a}{\Subbintree{ac..\Sentinel}{ca..\Sentinel}{#1}{#2}{#8}}%
+            {30}{ca}{\Subbintree{aa..\Sentinel}{ta..\Sentinel}{#3}{#4}{#9}}%
+            {t}{\Subbintree{aa\Sentinel}{\Sentinel}{#5}{#6}{#8}}}}
+
+\newcommand{\Suffixtreeacaaacatat}[0]{%
+%\fbox{
+\begin{picture}(535,120)(0,0)%
+\put(270,68){%
+\put(51,45){\vector(1,0){180}}%
+\put(232,45){\Leaf{}}%
+\put(142,47){\Scriptstyle{\Sentinel}}%
+\put(50,45){\SuperHugeTernary{}{a}{\Treetoa{}{}{}{}{}{}{}{}{}}{45}{ca}{\Subbintree{aa..\Sentinel}{}{ta..\Sentinel}{}}{t}{\put(0,-15){\Subbintree{at\Sentinel}{\Sentinel}{}{}{}}}}}%
+\end{picture}%
+%}
+}
+
+\newcommand{\Suffixtreeacaaacatatwithpositions}[0]{%
+%\fbox{
+\begin{picture}(535,120)(0,0)%
+\put(270,68){%
+\put(51,45){\vector(1,0){180}}%
+\put(232,45){\Leaf{10}}%
+\put(142,47){\Scriptstyle{\Sentinel}}%
+\put(50,45){\SuperHugeTernary{}{a}{\Treetoa{2}{3}{0}{4}{6}{8}{}{}{}}{45}{ca}{\Subbintree{aa..\Sentinel}{ta..\Sentinel}{1}{5}{}}{t}{\put(0,-15){\Subbintree{at\Sentinel}{\Sentinel}{7}{9}{}}}}}%
+\end{picture}%
+%}
+}
+
+\newcommand{\Suffixtreeacaaacatatwithpositionsandlcps}[0]{%
+%\fbox{
+\begin{picture}(535,120)(0,0)%
+\put(270,68){%
+\put(51,45){\vector(1,0){180}}%
+\put(232,45){\Leaf{10}}%
+\put(142,47){\Scriptstyle{\Sentinel}}%
+\put(50,45){\SuperHugeTernary{}{a}{\Treetoa{2}{3}{0}{4}{6}{8}{1}{\mbox{2}}{\mbox{3}}}{45}{ca}{\Subbintree{aa..\Sentinel}{ta..\Sentinel}{1}{5}{\mbox{2}}}{t}{\put(0,-15){\Subbintree{at\Sentinel}{\Sentinel}{7}{9}{\mbox{1}}}}}}%
+\end{picture}%
+%}
+}
+
+\newcommand{\Lcpintervaltreeacaaacatat}[0]{
+%\fbox{
+\begin{picture}(320,125)(15,-60)%
+\put(220,45){\put(-22,9){\Shownode{0}{0}{10}}\MedTernary{}{}{\Leaf{}\Ternsubtree{\PutShownode{2}{0}{1}}{\PutShownode{3}{2}{3}}{\PutShownode{2}{4}{5}}}{30}{}{\PutShownode{2}{6}{7}}{}{\PutShownode{1}{8}{9}}}%
+\end{picture}%
+%}
+}
+
+%Example:
+
+%\documentclass[12pt]{article}
+%\usepackage{disstrees}
+%\begin{document}
+%\begin{center}
+%\begin{picture}(200,75)(-80,-65)
+%\HugeBinTree{(T,T)}{\$}{\Leaf{(F,F)}}
+%              {c}{\MedBinTree{(T,T)}{\$}{\Leaf{(F,F)}}{c\$}{\Leaf{(F,F)}}}
+%\UnTree{15}{a}{\SmallBinTree{(F,F)}{acc\$}{\Leaf{(F,F)}}{cc\$}{\Leaf{(F,F)}}}
+%\put(122,-32){\UnTree{34}{aacc\$}{\Leaf{(T,F)}}}
+%\end{picture}
+%\end{center}
+%\end{document}

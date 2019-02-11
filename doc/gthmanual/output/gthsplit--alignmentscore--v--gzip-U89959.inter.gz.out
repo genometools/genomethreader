@@ -1,0 +1,8 @@
+$ gthsplit -alignmentscore -v -gzip U89959.inter.gz
+$ process all intermediate output files
+$ process file 1/1: U89959.inter.gz
+$ split file created: U89959.inter.scr70-75.gz (size=1)
+$ split file created: U89959.inter.scr80-85.gz (size=11)
+$ split file created: U89959.inter.scr85-90.gz (size=18)
+$ split file created: U89959.inter.scr90-95.gz (size=25)
+$ split file created: U89959.inter.scr95-100.gz (size=144)

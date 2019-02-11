@@ -1,0 +1,7 @@
+##gff-version 3
+##sequence-region   2702352 8001 10000
+2702352	gth	gene	8568	9876	.	+	.	ID=gene1
+2702352	gth	mRNA	8568	9876	.	+	.	ID=mRNA1;Parent=gene1;Target=2702352 1 1309 +
+2702352	gth	exon	8568	9876	1	+	.	Parent=mRNA1
+2702352	gth	CDS	8608	9384	.	+	0	ID=CDS1;Parent=mRNA1
+###

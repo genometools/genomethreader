@@ -1,0 +1,4 @@
+$ gth -species human -genomic hs_ref_chr21.fa.gz -cdna NM_003253.gbk 
+$ important messages:
+$ 1 matrix allocations failed
+$ 1 undetermined spliced alignments

@@ -1,0 +1,752 @@
+<citations>
+<citation>
+  <key>TOM:2012</key>
+  <author>The Tomato Genome Consortium</author>
+  <url>http://www.nature.com/nature/journal/v485/n7400/full/nature11119.html</url>
+  <title>The tomato genome sequence provides insights into fleshy fruit
+         evolution</title>
+  <journal>Nature</journal>
+  <volume>485</volume>
+  <pages>635-641</pages>
+  <year>2012</year>
+</citation>
+
+<citation>
+  <key>COC:STE:ROU:SCO:ALL:AMO:ANT:ART:AUR:BAD:2010</key>
+  <author>J.M. Cock et. al.</author>
+  <url>http://www.nature.com/nature/journal/v465/n7298/full/nature09016.html</url>
+  <title>The \Species{Ectocarpus} genome and the independent evolution of multicellularity in brown algae</title>
+  <journal>Nature</journal>
+  <volume>465</volume>
+  <pages>617-621</pages>
+  <year>2010</year>
+  <comment>in Supplementary Information</comment>
+  </citation>
+
+<citation>
+  <key>VOG:GAR:MOC:SCHMU:ROK:BEV:BAR:LUC:HAR:LAI:2010</key>
+  <author>The International Brachypodium Initiative</author>
+  <url>http://www.nature.com/nature/journal/v463/n7282/abs/nature08747.html</url>
+  <title>Genome sequencing and analysis of the model grass \Species{Brachypodium
+         distachyon}</title>
+  <journal>Nature</journal>
+  <volume>463</volume>
+  <pages>763-768</pages>
+  <year>2010</year>
+  </citation>
+
+<citation>
+  <key>WAN:FAR:VIN:JOE:SCHOO:TUR:ALO:COU:ALB:2009</key>
+  <author>R. Wang et. al.</author>
+  <url>http://www.nature.com/nature/journal/v459/n7245/full/nature07988.html</url>
+  <title>\Gene{PEP1} regulates perennial flowering in
+         \Species{Arabis alpina}</title>
+  <journal>Nature</journal>
+  <volume>459</volume>
+  <pages>423-427</pages>
+  <year>2009</year>
+  </citation>
+
+<citation>
+  <key>PAT:BOW:BRU:DUB:GRI:GUN:HAB:HEL:MIT:POL:2009</key>
+  <author>A.H. Paterson et. al.</author>
+  <url>http://www.nature.com/nature/journal/v457/n7229/abs/nature07723.html</url>
+  <title>The \Species{Sorghum bicolor} genome and the diversification of
+          grasses</title>
+  <journal>Nature</journal>
+  <volume>457</volume>
+  <pages>551-556</pages>
+  <year>2009</year>
+</citation>
+
+<citation>
+  <key>CAL:BRU:MES:2008</key>
+  <author>M. Calvi&ntilde;o, R. Bruggmann and J. Messing</author>
+  <url>http://www.springerlink.com/content/w440723u17m50446/</url>
+  <title>Screen of genes linked to high-sugar content in stems by
+         comparative genomics</title>
+  <journal>Rice</journal>
+  <volume>1</volume>
+  <number>2</number>
+  <pages>166-176</pages>
+  <year>2008</year>
+</citation>
+
+<citation>
+  <key>SPA:BRE:2008</key>
+  <author>M.E. Sparks and V. Brendel</author>
+  <url>http://www.pubmedcentral.nih.gov/articlerender.fcgi?artid=2603428#B30</url>
+  <title>MetWAMer: eukaryotic translation initiation site prediction</title>
+  <journal>BMC Bioinformatics</journal>
+  <volume>9</volume>
+  <pages>381</pages>
+  <year>2008</year>
+</citation>
+
+<citation>
+  <key>ABA:GOU:AUR:CAS:DAN:DEL:PER:ANT:ART:BLO:2008</key>
+  <author>P. Abad et. al.</author>
+  <url>http://www.nature.com/nbt/journal/v26/n8/full/nbt.1482.html</url>
+  <title>Genome sequence of the metazoan plant-parasitic nematode
+         \Species{Meloidogyne incognita}</title>
+  <journal>Nature Biotechnology</journal>
+  <volume>26</volume>
+  <pages>909-915</pages>
+  <year>2008</year>
+</citation>
+
+ <citation>
+  <key>DON:WIL:BRE:2007</key>
+  <author>Q. Dong, M.D. Wilkerson and V. Brendel</author>
+  <url>http://www.pubmedcentral.nih.gov/articlerender.fcgi?artid=1876249</url>
+  <title>\Program{Tracembler} - software for in-silico chromosome walking in
+        unassembled genomes</title>
+  <journal>BMC Bioinformatics</journal>
+  <volume>8</volume>
+  <pages>151</pages>
+  <year>2007</year>
+</citation>
+
+<citation>
+  <key>BAL:JOE:VIE:ISH:PAA:MEK:BRU:SCHOO:WEI:GEB:2007</key>
+  <author>A. Ballvora et. al.</author>
+  <url>http://www.biomedcentral.com/1471-2164/8/112</url>
+  <title>Comparative sequence analysis of \Species{Solanum} and
+         \Species{Arabidopsis} in
+         a hot spot for pathogen resistance on potato chromosome V reveals
+         a patchwork of conserved and rapidly evolving genome segments</title>
+  <journal>BMC Genomics</journal>
+  <volume>8</volume>
+  <pages>112</pages>
+  <year>2007</year>
+</citation>
+
+<citation>
+  <key>BRU:BHA:GUN:LAI:YOU:PON:WEI:HAB:FUK:DU:2006</key>
+  <author>R. Bruggmann et. al.</author>
+  <url>http://genome.cshlp.org/content/16/10/1241.full</url>
+  <title>Uneven chromosome contraction and expansion in the maize
+         genome</title>
+  <journal>Genome Research</journal>
+  <volume>16</volume>
+  <pages>1241-1251</pages>
+  <year>2006</year>
+</citation>
+
+<citation>
+  <key>MAY:WAU:LAN:CLO:WIS:GRA:MAT:SAT:SCHUL:MUE:2012</key>
+  <author>The International Barley Genome Sequencing Consortium</author>
+  <url>http://www.nature.com/nature/journal/v491/n7426/full/nature11543.html</url>
+  <title>A physical, genetic and functional sequence assembly of the barley
+         genome</title>
+  <journal>Nature</journal>
+  <volume>491</volume>
+  <pages>711-716</pages>
+  <year>2012</year>
+  <use> uses GenomeThreader to anchor Full-length cDNAs and RNA-seq data to
+        repeat masked whole-genome shotgun sequence contigs of the Barley
+        Genome </use>
+</citation>
+
+<citation>
+  <key>WAN:HAB:GUN:GLA:NUS:LUO:LOM:BOR:KER:SHA:2014</key>
+  <author>Wang et. al.</author>
+  <url>http://www.nature.com/ncomms/2014/140219/ncomms4311/full/ncomms4311.html</url>
+  <title>The \Species{Spirodela polyrhiza} genome reveals insights into its
+         neotenous reduction fast growth and aquatic lifestyle</title>
+  <journal>Nature Communications</journal>
+  <volume>5</volume>
+  <number>Article number: 3311</number>
+  <year>2014</year>
+  <use> used Genomethreader for gene annotation by spliced alignments
+        with reference protein and EST sequence </use>
+</citation>
+
+<citation>
+  <key>ARG:SAL:AUR:GUI:DRO:GOU:ALL:CHA:LEG:MAX:2011</key>
+  <author>Argout et. al.</author>
+  <url>http://www.nature.com/ng/journal/v43/n2/abs/ng.736.html</url>
+  <title>The genome of \Species{Theobroma cacao}</title>
+  <journal>Nature Genetics</journal>
+  <volume>43</volume>
+  <pages>101-108</pages>
+  <year>2011</year>
+</citation>
+
+<citation>
+  <key>LEL:NAY:SAL:CAL:FRU:HAR:GOU:CRE:2009</key>
+  <author>Lelandais-Briere et. al.</author>
+  <url>http://www.plantcell.org/content/21/9/2780.short</url>
+  <title>Genome-Wide \Species{Medicago truncatula} Small RNA Analysis Revealed
+  Novel MicroRNAs and Isoforms Differentially Regulated in Roots and
+  Nodules</title>
+  <journal>The Plant Cell</journal>
+  <volume>21</volume>
+  <number>9</number>
+  <pages>2780-2896</pages>
+  <year>2009</year>
+</citation>
+
+<citation>
+  <key>DUV:FU:MUP:SAB:WIL:LAW:LUS:BRE:2008</key>
+  <author>Duvick et. al.</author>
+  <url>http://nar.oxfordjournals.org/content/36/suppl_1/D959.short</url>
+  <title>PlantGDB: a resource for comparative plant genomics</title>
+  <journal>Nucl. Acids Res.</journal>
+  <volume>36</volume>(suppl 1)
+  <pages>D959-D965</pages>
+  <year>2008</year>
+</citation>
+
+<citation>
+  <key>MAY:ROG:DOL:POZ:EVE:FEU:GIL:FRI:LUK:SOU:2014</key>
+  <author>The International Wheat Genome Sequencing Consortium (IWGSC)</author>
+  <url>http://www.sciencemag.org/content/345/6194/1251788.short</url>
+  <title>A chromosome-based draft sequence of the hexaploid bread wheat
+  (\Species{Triticum aestivum}) genome</title>
+  <journal>Science</journal>
+  <volume>345</volume>
+  <number>6194</number>
+  <year>2014</year>
+</citation>
+
+<citation>
+  <key>MON:CAR:COS:FOR:PAR:RIN:COT:CAR:CUN:CAR:2008</key>
+  <author>Mondego et. al.</author>
+  <url>http://bmcgenomics.biomedcentral.com/articles/10.1186/1471-2164-9-548</url>
+  <title>A genome survey of \Species{Moniliophthora perniciosa} gives new
+         insights into Witches' Broom Disease of cacao</title>
+  <journal>BMC Genomics</journal>
+  <volume>9</volume>
+  <pages>548</pages>
+  <year>2008</year>
+</citation>
+
+<citation>
+  <key>NIJ:VAN:DAT:DEK:BOS:LUT:DAR:VON:NIE:HEI:2012</key>
+  <author>Nijkamp et. al.</author>
+  <url>http://microbialcellfactories.biomedcentral.com/articles/10.1186/1475-2859-11-36</url>
+  <title>De novo sequencing, assembly and analysis of the genome of the
+         laboratory strain \Species{Saccharomyces cerevisiae} CEN.PK113-7D,
+         a model for modern industrial biotechnology</title>
+  <journal>Microbial Cell Factories</journal>
+  <volume>9</volume>
+  <pages>548</pages>
+  <year>2012</year>
+</citation>
+
+<citation>
+  <key>RIC:TIM:LAN:QUD:COR:RES:REN:FRA:2010</key>
+  <author>Richardt et. al.</author>
+  <url>http://link.springer.com/article/10.1007/s11103-009-9550-6</url>
+  <title>Microarray analysis of the moss \Species{Physcomitrella patens} reveals
+         evolutionarily conserved transcriptional regulation of salt stress
+         and abscisic acid signalling</title>
+  <journal>Plant Molecular Biology</journal>
+  <volume>72</volume>
+  <number>1</number>
+  <pages>27-45</pages>
+  <year>2010</year>
+</citation>
+
+<citation>
+  <key>STE:TAU:GUN:SEI:ARI:SCHUL:PET:FEL:GRA:SCHOL:2009</key>
+  <author>Steuernagel et. al.</author>
+  <url>http://bmcgenomics.biomedcentral.com/articles/10.1186/1471-2164-10-547</url>
+  <title>De novo 454 sequencing of barcoded BAC pools for comprehensive gene
+         survey and genome analysis in the complex genome of barley</title>
+  <journal>BMC Genomics</journal>
+  <volume>10</volume>
+  <pages>547</pages>
+  <year>2009</year>
+</citation>
+
+<citation>
+  <key>ZIM:LAN:BUC:ROM:NIS:HAS:VAN:REN:RES:2013</key>
+  <author>Zimmer et. al.</author>
+  <url>http://bmcgenomics.biomedcentral.com/articles/10.1186/1471-2164-14-498</url>
+  <title>Reannotation and extended community resources for the genome of the
+         non-seed plant \Species{Physcomitrella patens} provide insights into the
+         evolution of plant gene structures and functions</title>
+  <journal>BMC Genomics</journal>
+  <volume>14</volume>
+  <pages>498</pages>
+  <year>2013</year>
+</citation>
+
+<citation>
+  <key>PAU:FLI:JUN:EMM:EDE:GOE:FRI:2011</key>
+  <author>Pausch et. al.</author>
+  <url>http://www.genetics.org/content/187/1/289.short</url>
+  <title>Genome-Wide Association Study Identifies Two Major Loci Affecting
+         Calving Ease and Growth-Related Traits in Cattle</title>
+  <journal>Genetics</journal>
+  <volume>187</volume>
+  <number>1</number>
+  <pages>289-297</pages>
+  <year>2011</year>
+</citation>
+
+<citation>
+  <key>FLI:SCHWA:WYS:WEI:PRE:KJA:FRI:2009</key>
+  <author>Flisikowski et. al.</author>
+  <url>http://onlinelibrary.wiley.com/doi/10.1111/j.1365-2052.2008.01821.x/abstract</url>
+  <title>Variation in neighbouring genes of the dopaminergic and serotonergic
+         systems affects feather pecking behaviour of laying hens</title>
+  <journal>Animal Genetics</journal>
+  <volume>40</volume>
+  <number>2</number>
+  <pages>192-199</pages>
+  <year>2009</year>
+</citation>
+
+<citation>
+  <key>FOI:GOU:ROM:MAT:AMS:STE:VAN:ROU:SCHIE:2008</key>
+  <author>Foissac et. al.</author>
+  <url>http://www.ingentaconnect.com/content/ben/cbio/2008/00000003/00000002/art00003</url>
+  <title>Genome Annotation in Plants and Fungi: EuG&egrave;ene as a Model
+        Platform</title>
+  <journal>Current Bioinformatics</journal>
+  <volume>3</volume>
+  <number>2</number>
+  <year>2008</year>
+</citation>
+
+<citation>
+  <key>LIN:STU:HAN:HYT:JAC:2010</key>
+  <author>Lin et. al.</author>
+  <url>http://www.plantcell.org/content/22/8/2545.short</url>
+  <title>Structural and Functional Divergence of a 1-Mb Duplicated Region in
+         the Soybean (\Species{Glycine max}) Genome and Comparison to an
+         Orthologous Region from \Species{Phaseolus vulgaris}</title>
+  <journal>The Plant Cell</journal>
+  <volume>22</volume>
+  <number>8</number>
+  <pages>2545-2561</pages>
+  <year>2010</year>
+</citation>
+
+<citation>
+  <key>MOR:VER:COU:DER:ROM:GRI:VAN:POU:KAT:HOH:2012</key>
+  <author>Moreau et. al.</author>
+  <url>http://www.genomebiology.com/2012/13/8/R74</url>
+  <title>Gene functionalities and genome structure in
+         \Species{Bathycoccus prasinos} reflect cellular specializations at the
+         base of the green lineage</title>
+  <journal>Genome Biology</journal>
+  <volume>13</volume>
+  <number>8</number>
+  <pages>R74</pages>
+  <year>2012</year>
+</citation>
+
+<citation>
+  <key>SEN:AND:SCHAE:HAR:SPA:DUV:BRE:CAN:CAM:LAW:2009</key>
+  <author>Sen et. al.</author>
+  <url>http://database.oxfordjournals.org/content/2009/bap020.full</url>
+  <title>MaizeGDB becomes &#39;sequence-centric&#39;</title>
+  <journal>Database--the journal of biological databases and curation</journal>
+  <volume>2009</volume>
+  <number>bap020</number>
+  <year>2009</year>
+</citation>
+
+<citation>
+  <key>WAN:WUR:PAU:JUN:REI:TET:THA:FRI:2012</key>
+  <author>Wang et. al.</author>
+  <url>http://journals.plos.org/plosone/article?id=10.1371/journal.pone.0040711</url>
+  <title>Identification and Dissection of Four Major QTL Affecting Milk Fat
+         Content in the German Holstein-Friesian Population</title>
+  <journal>PLOS one</journal>
+  <volume>7</volume>
+  <number>7</number>
+  <pages>e40711</pages>
+  <year>2012</year>
+</citation>
+
+<citation>
+  <key>SCHAL:ARZ:JOH:HAE:KOS:BLA:ALT:HAB:BAR:BAE:2010</key>
+  <author>Schallau et. al.</author>
+  <url>http://onlinelibrary.wiley.com/doi/10.1111/j.1365-313X.2010.04188.x/full</url>
+  <title>Identification and genetic analysis of the APOSPORY locus
+         in \Species{Hypericum perforatum} L</title>
+  <journal>The Plant Journal</journal>
+  <volume>62</volume>
+  <number>5</number>
+  <pages>773-784</pages>
+  <year>2010</year>
+</citation>
+
+<citation>
+  <key>PET:MOR:TIS:HAC:DAS:POU:DEL:MAR:ROU:KOH:2012</key>
+  <author>Petre et. al.</author>
+  <url>http://journals.plos.org/plosone/article?id=10.1371/journal.pone.0044408</url>
+  <title>RNA-Seq of Early-Infected Poplar Leaves by the Rust Pathogen
+         \Species{Melampsora larici-populina} Uncovers PtSultr3;5, a
+         Fungal-Induced Host Sulfate Transporter</title>
+  <journal>PLOS one</journal>
+  <volume>7</volume>
+  <number>8</number>
+  <pages>e44408</pages>
+  <year>2012</year>
+</citation>
+
+<citation>
+  <key>GRE:GAC:STR:STE:KUE:VAN:2011</key>
+  <author>Grenville-Briggs et. al.</author>
+  <url>http://journals.plos.org/plosone/article?id=10.1371/journal.pone.0024500</url>
+  <title>A Molecular Insight into Algal-Oomycete Warfare: cDNA Analysis of
+         Ectocarpus siliculosus Infected with the Basal
+         \Species{Oomycete Eurychasma dicksonii}</title>
+  <journal>PLOS one</journal>
+  <volume>6</volume>
+  <number>9</number>
+  <pages>e24500</pages>
+  <year>2011</year>
+</citation>
+
+<citation>
+  <key>WAN:YU:HAB:MAR:FAN:GOI:ZUC:SON:KUD:AMM:2014</key>
+  <author>Wang et. al.</author>
+  <url>http://www.nature.com/ng/journal/v46/n9/full/ng.3044.html</url>
+  <title>The genome sequence of African rice (\Species{Oryza glaberrima}) and
+         evidence for independent domestication</title>
+  <journal>Nature Genetics</journal>
+  <volume>46</volume>
+  <pages>982-988</pages>
+  <year>2014</year>
+</citation>
+
+<citation>
+  <key>JAN:AIG:PAU:WYS:ECK:BEN:GRA:WIE:STR:MEI:2013</key>
+  <author>Jansen et. al.</author>
+  <url>http://bmcgenomics.biomedcentral.com/articles/10.1186/1471-2164-14-446</url>
+  <title>Assessment of the genomic variation in a cattle population by
+         re-sequencing of key animals at low to medium coverage</title>
+  <journal>BMC Genomics</journal>
+  <volume>14</volume>
+  <pages>446</pages>
+  <year>2013</year>
+</citation>
+
+<citation>
+  <key>PFE:KUG:SAN:ZHA:RUD:HVI:MAY:OLS:SEQ:2014</key>
+  <author>Pfeifer et. al.</author>
+  <url>http://www.sciencemag.org/content/345/6194/1250091.short</url>
+  <title>Genome interplay in the grain transcriptome of hexaploid bread
+         wheat</title>
+  <journal>Science</journal>
+  <volume>345</volume>
+  <number>6194</number>
+  <year>2014</year>
+</citation>
+
+<citation>
+  <key>TAN:LYO:2012</key>
+  <author>Tang et. al.</author>
+  <url>http://www.ncbi.nlm.nih.gov/pmc/articles/PMC3408644/</url>
+  <title>Unleashing the Genome of \Species{Brassica Rapa}</title>
+  <journal>Front Plant Sci.</journal>
+  <volume>3</volume>
+  <pages>172</pages>
+  <year>2012</year>
+</citation>
+
+<citation>
+  <key>CHI:DAG:TRA:LIC:RAI:AVE:FRU:MON:2008</key>
+  <author>Chiusano et. al.</author>
+  <url>http://bmcbioinformatics.biomedcentral.com/articles/10.1186/1471-2105-9-S2-S7</url>
+  <title>ISOL@: an Italian SOLAnaceae genomics resource</title>
+  <journal>BMC Bioinformatics</journal>
+  <volume>9</volume>
+  <number>2</number>
+  <pages>57</pages>
+  <year>2008</year>
+</citation>
+
+<citation>
+  <key>DAG:TRA:FRU:CHI:2009</key>
+  <author>D&#39;Agostino et. al.</author>
+  <url>http://bmcplantbiol.biomedcentral.com/articles/10.1186/1471-2229-9-142</url>
+  <title>SolEST database: a &quot;one-stop shop&quot; approach to the study
+         of \Species{Solanaceae} transcriptomes</title>
+  <journal>BMC Plant Biology</journal>
+  <volume>9</volume>
+  <pages>142</pages>
+  <year>2009</year>
+</citation>
+
+<citation>
+  <key>MAR:LAN:HEC:ZIM:VER:RES:2009</key>
+  <author>Martin et. al.</author>
+  <url>http://onlinelibrary.wiley.com/doi/10.1111/j.1438-8677.2008.00174.x/abstract</url>
+  <title>A uniquely high number of \Gene{ftsZ} genes in the moss
+         \Species{Physcomitrella patens}</title>
+  <journal>Plant Biology</journal>
+  <volume>11</volume>
+  <number>5</number>
+  <pages>744-750</pages>
+  <year>2009</year>
+</citation>
+
+<citation>
+  <key>ASP:BYR:GUN:BRU:MAY:AND:XU:GRE:LEN:LUE:2011</key>
+  <author>Asp et. al.</author>
+  <url>http://link.springer.com/article/10.1007/s00438-011-0654-8/</url>
+  <title>Comparative sequence analysis of \Gene{VRN1} alleles of
+         \Species{Lolium perenne}
+          with the co-linear regions in barley, wheat, and rice</title>
+  <journal>Molecular Genetics and Genomics</journal>
+  <volume>286</volume>
+  <number>5</number>
+  <pages>433-447</pages>
+  <year>2011</year>
+</citation>
+
+<citation>
+  <key>SIN:ZIM:BOL:LAN:RES:PLA:REN:BAC:2010</key>
+  <author>Sinha et. al.</author>
+  <url>http://bmcplantbiol.biomedcentral.com/articles/10.1186/1471-2229-10-76</url>
+  <title>Identification and characterization of \Gene{NAGNAG} alternative
+         splicing in the moss \Species{Physcomitrella patens}</title>
+  <journal>BMC Plant Biology</journal>
+  <volume>10</volume>
+  <pages>76</pages>
+  <year>2010</year>
+</citation>
+
+<citation>
+  <key>SCHIF:KRO:KRA:KOU:KUM:CAM:NSA:STA:MOR:HEG:2013</key>
+  <author>Schiffer et. al.</author>
+  <url>http://bmcgenomics.biomedcentral.com/articles/10.1186/1471-2164-14-923</url>
+  <title>The genome of \Species{Romanomermis culicivorax}: revealing fundamental
+         changes in the core developmental genetic toolkit in Nematoda</title>
+  <journal>BMC Genomics</journal>
+  <volume>14</volume>
+  <pages>923</pages>
+  <year>2013</year>
+</citation>
+
+<citation>
+  <key>COH:FIL:WOO:BAU:HON:JAC:BUT:COL:DAR:FUC:2013</key>
+  <author>Cohen et. al.</author>
+  <url>http://rsta.royalsocietypublishing.org/content/371/1983/20120073.short#xref-ref-37-1</url>
+  <title>RAPPORT: running scientific high-performance computing applications
+         on the cloud</title>
+  <journal>Philos Trans A Math Phys Eng Sci.</journal>
+  <volume>371</volume>(1983)
+  <pages>20120073</pages>
+  <year>2013</year>
+</citation>
+
+<citation>
+  <key>DUO:BRU:ZOL:BER:GRU:2012</key>
+  <author>Duo et. al.</author>
+  <url>http://bmcgenomics.biomedcentral.com/articles/10.1186/1471-2164-13-166</url>
+  <title>Mitochondrial genome evolution in species belonging to the
+         \Species{Phialocephala fortinii} s.l. - \Species{Acephala applanata}
+         species complex</title>
+  <journal>BMC Genomics</journal>
+  <volume>13</volume>
+  <pages>166</pages>
+  <year>2012</year>
+</citation>
+
+<citation>
+  <key>CAS:DEL:DAN:PER:ABA:2011</key>
+  <author>Castagnone-Sereno et. al.</author>
+  <url>http://www.sciencedirect.com/science/article/pii/S0888754310002132</url>
+  <title>Data-mining of the \Species{Meloidogyne incognita} degradome and
+         comparative analysis of proteases in nematodes</title>
+  <journal>Genomics</journal>
+  <volume>97</volume>
+  <number>1</number>
+  <pages>29-36</pages>
+  <year>2011</year>
+</citation>
+
+<citation>
+  <key>JUL:SCHWA:FRA:ZIE:GRO:WIL:FRI:2008</key>
+  <author>Juling et. al.</author>
+  <url>http://onlinelibrary.wiley.com/doi/10.1111/j.1365-2052.2008.01743.x/abstract</url>
+  <title>Characterization of a 320-kb region containing the \Gene{HEXA} gene on
+         bovine chromosome 10 and analysis of its association with BSE
+         susceptibility</title>
+  <journal>Animal Genetics</journal>
+  <volume>39</volume>
+  <number>4</number>
+  <pages>400-406</pages>
+  <year>2008</year>
+</citation>
+
+<citation>
+  <key>NIJ:POP:REI:DER:2013</key>
+  <author>Nijkamp et. al.</author>
+  <url>http://bioinformatics.oxfordjournals.org/content/29/22/2826.short</url>
+  <title>Exploring variation-aware contig graphs for (comparative)
+         metagenomics using MaryGold</title>
+  <journal>Bioinformatics</journal>
+  <volume>29</volume>
+  <number>22</number>
+  <pages>2826-2834</pages>
+  <year>2013</year>
+</citation>
+
+<citation>
+  <key>BAZ:ASI:GON:BAS:CON:SOR:FER:ASU:CAR:2010</key>
+  <author>Bazzini et. al.</author>
+  <url>http://bmcplantbiol.biomedcentral.com/articles/10.1186/1471-2229-10-240</url>
+  <title>miSolRNA: A tomato micro RNA relational database</title>
+  <journal>BMC Plant Biology</journal>
+  <volume>10</volume>
+  <pages>240</pages>
+  <year>2010</year>
+</citation>
+
+<citation>
+  <key>JUN:PAU:LAN:SCHWA:MAJ:GOL:FRI:2014</key>
+  <author>Jung et. al.</author>
+  <url>http://bmcgenomics.biomedcentral.com/articles/10.1186/1471-2164-15-623</url>
+  <title>A nonsense mutation in \Gene{PLD4} is associated with a zinc
+         deficiency-like syndrome in Fleckvieh cattle</title>
+  <journal>BMC Genomics</journal>
+  <volume>15</volume>
+  <pages>632</pages>
+  <year>2014</year>
+</citation>
+
+<citation>
+  <key>LIC:DAG:TRA:REC:FRU:CHI:2014</key>
+  <author>Licciardello et. al.</author>
+  <url>http://bmcplantbiol.biomedcentral.com/articles/10.1186/1471-2229-14-39</url>
+  <title>Characterization of the glutathione S-transferase gene family through
+         ESTs and expression analyses within common and pigmented cultivars
+         of \Species{Citrus sinensis} (L.) Osbeck</title>
+  <journal>BMC Plant Biology</journal>
+  <volume>14</volume>
+  <pages>39</pages>
+  <year>2014</year>
+</citation>
+
+<citation>
+  <key>TRA:IOR:MAN:BRA:CAR:FRU:CHI:2013</key>
+  <author>Traini et. al.</author>
+  <url>http://www.hindawi.com/journals/ijg/2013/257218/abs/</url>
+  <title>Genome Microscale Heterogeneity among Wild Potatoes Revealed by
+         Diversity Arrays Technology Marker Sequences</title>
+  <journal>International Journal of Genomics</journal>
+  <volume>Article ID 257218</volume>
+  <year>2013</year>
+</citation>
+
+<citation>
+  <key>MON:JOE:2010</key>
+  <author>Montalent et. al.</author>
+  <url>http://bioinformatics.oxfordjournals.org/content/26/9/1254.short</url>
+  <title>EuG&egrave;ne-maize: a web site for maize gene prediction</title>
+  <journal>Bioinformatics</journal>
+  <volume>26</volume>
+  <number>9</number>
+  <pages>1254-1255</pages>
+  <year>2010</year>
+</citation>
+
+<citation>
+  <key>VAN:HEY:VAN:2014</key>
+  <author>Van de Velde et. al.</author>
+  <url>http://www.plantcell.org/content/26/7/2729.short</url>
+  <title>Inference of Transcriptional Networks in \Species{Arabidopsis} through
+         Conserved Noncoding Sequence Analysis</title>
+  <journal>The Plant Cell</journal>
+  <volume>26</volume>
+  <number>7</number>
+  <pages>2729-2745</pages>
+  <year>2009</year>
+</citation>
+
+<citation>
+  <key>ERC:SAC:FER:DAL:TON:TRA:BAR:ZAG:CHI:BUS:2014</key>
+  <author>Ercolano et. al.</author>
+  <url>http://bmcgenomics.biomedcentral.com/articles/10.1186/1471-2164-15-138</url>
+  <title>Patchwork sequencing of tomato San Marzano and Vesuviano
+         varieties highlights genome-wide variations</title>
+  <journal>BMC Genomics</journal>
+  <volume>15</volume>
+  <pages>138</pages>
+  <year>2014</year>
+</citation>
+
+<citation>
+  <key>VAN:JAS:BAH:DEW:2014</key>
+  <author>van der Burgt et. al.</author>
+  <url>http://onlinelibrary.wiley.com/doi/10.1111/mpp.12072/abstract</url>
+  <title>Pseudogenization in pathogenic fungi with different host plants and lifestyles might reflect their evolutionary past</title>
+  <journal>Molecular Plant Pathology</journal>
+  <volume>15</volume>
+  <number>2</number>
+  <pages>133-144</pages>
+  <year>2014</year>
+</citation>
+
+<citation>
+  <key>DIF:TRA:DAG:FRU:CHI:2012</key>
+  <author>Di Filippo et. al.</author>
+  <url>http://www.sciencedirect.com/science/article/pii/S0378111912002466</url>
+  <title>Euchromatic and heterochromatic compositional properties
+         emerging from the analysis of \Species{Solanum lycopersicum} BAC
+         sequences</title>
+  <journal>Gene</journal>
+  <volume>499</volume>
+  <number>1</number>
+  <pages>176-181</pages>
+  <year>2012</year>
+</citation>
+
+<citation>
+  <key>PAU:SCHWA:BUR:FLI:WUR:JAN:JUN:SCHNI:WIT:FRI:2015</key>
+  <author>Pausch et. al.</author>
+  <url>http://bmcgenomics.biomedcentral.com/articles/10.1186/s12864-015-1483-7</url>
+  <title>Homozygous haplotype deficiency reveals deleterious mutations
+         compromising reproductive and rearing success in cattle</title>
+  <journal>BMC Genomics</journal>
+  <volume>16</volume>
+  <pages>312</pages>
+  <year>2015</year>
+</citation>
+
+<citation>
+  <key>IOR:GAO:MAN:TRA:CHI:KIL:AVE:CAR:BRA:2014</key>
+  <author>Iorizzo et. al.</author>
+  <url>http://bmcgenet.biomedcentral.com/articles/10.1186/s12863-014-0123-6</url>
+  <title>A DArT marker-based linkage map for wild potato
+         \Species{Solanum bulbocastanum} facilitates structural comparisons
+         between \Species{Solanum} A and B genomes</title>
+  <journal>BMC Genetics</journal>
+  <volume>15</volume>
+  <pages>123</pages>
+  <year>2014</year>
+</citation>
+
+<citation>
+  <key>VEN:PAU:FLI:WUR:TAP:RAU:KIN:SCHNI:FRI:LOH:2014</key>
+  <author>Venhoranta et. al.</author>
+  <url>http://www.ncbi.nlm.nih.gov/pmc/articles/PMC4203880/</url>
+  <title>In frame exon skipping in \Gene{UBE3B} is associated with developmental
+         disorders and increased mortality in cattle</title>
+  <journal>BMC Genomics</journal>
+  <volume>15</volume>
+  <pages>1</pages>
+  <year>2014</year>
+</citation>
+
+<citation>
+  <key>DEP:DAG:PRO:BER:LOR:RUO:CAR:CHI:TUC:2016</key>
+  <author>De Palma et. al.</author>
+  <url>http://www.sciencedirect.com/science/article/pii/S0176161715002515</url>
+  <title>Suppression Subtractive Hybridization analysis provides new insights into the tomato (\Species{Solanum lycopersicum L.}) response to the plant probiotic microorganism \Species{Trichoderma longibrachiatum MK1}</title>
+  <journal>Journal of Plant Physiology</journal>
+  <volume>190</volume>
+  <pages>79-94</pages>
+  <year>2016</year>
+</citation>
+</citations>

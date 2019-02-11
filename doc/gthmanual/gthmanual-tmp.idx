@@ -1,0 +1,251 @@
+\indexentry{PATH@\texttt  {PATH}|hyperpage}{6}
+\indexentry{BSSMDIR@\texttt  {BSSMDIR}|hyperpage}{6}
+\indexentry{GTHDATADIR@\texttt  {GTHDATADIR}|hyperpage}{6}
+\indexentry{GTHNOFLOCK@\texttt  {GTHNOFLOCK}|hyperpage}{6}
+\indexentry{GTHNOFLOCK@\texttt  {GTHNOFLOCK}|hyperpage}{6}
+\indexentry{genseqfiles\xspace  @\textit  {genseqfiles\xspace  }|hyperpage}{6}
+\indexentry{cdnafiles\xspace  @\textit  {cdnafiles\xspace  }|hyperpage}{6}
+\indexentry{proteinfiles\xspace  @\textit  {proteinfiles\xspace  }|hyperpage}{6}
+\indexentry{genseqfiles\xspace  @\textit  {genseqfiles\xspace  }|hyperpage}{7}
+\indexentry{cdnafiles\xspace  @\textit  {cdnafiles\xspace  }|hyperpage}{7}
+\indexentry{proteinfiles\xspace  @\textit  {proteinfiles\xspace  }|hyperpage}{7}
+\indexentry{error code|hyperpage}{7}
+\indexentry{genseqfiles\xspace  @\textit  {genseqfiles\xspace  }|hyperpage}{9}
+\indexentry{Option!\texttt  {-genomic}|hyperpage}{9}
+\indexentry{genseqfiles\xspace  @\textit  {genseqfiles\xspace  }|hyperpage}{9}
+\indexentry{cdnafiles\xspace  @\textit  {cdnafiles\xspace  }|hyperpage}{9}
+\indexentry{Option!\texttt  {-cdna}|hyperpage}{9}
+\indexentry{cdnafiles\xspace  @\textit  {cdnafiles\xspace  }|hyperpage}{9}
+\indexentry{proteinfiles\xspace  @\textit  {proteinfiles\xspace  }|hyperpage}{9}
+\indexentry{Option!\texttt  {-protein}|hyperpage}{9}
+\indexentry{proteinfiles\xspace  @\textit  {proteinfiles\xspace  }|hyperpage}{9}
+\indexentry{multiple fasta|hyperpage}{9}
+\indexentry{description!\Fasta|hyperpage}{9}
+\indexentry{EMBL@\EMBL|hyperpage}{9}
+\indexentry{SWISSPROT@\SWISSPROT|hyperpage}{9}
+\indexentry{ID@\texttt  {ID}|hyperpage}{9}
+\indexentry{ID@\texttt  {ID}|hyperpage}{9}
+\indexentry{DE@\texttt  {DE}|hyperpage}{9}
+\indexentry{description!\SWISSPROT|hyperpage}{9}
+\indexentry{description!\EMBL|hyperpage}{9}
+\indexentry{GENBANK@\GENBANK|hyperpage}{9}
+\indexentry{LOCUS@\texttt  {LOCUS}|hyperpage}{9}
+\indexentry{LOCUS@\texttt  {LOCUS}|hyperpage}{9}
+\indexentry{DEFINITION@\texttt  {DEFINITION}|hyperpage}{9}
+\indexentry{description!\GENBANK|hyperpage}{9}
+\indexentry{ID@\texttt  {ID}|hyperpage}{10}
+\indexentry{LOCUS@\texttt  {LOCUS}|hyperpage}{10}
+\indexentry{BSSM parameter!options|hyperpage}{10}
+\indexentry{speciesname\xspace  @\textit  {speciesname\xspace  }|hyperpage}{10}
+\indexentry{Option!\texttt  {-species}|hyperpage}{10}
+\indexentry{speciesname\xspace  @\textit  {speciesname\xspace  }|hyperpage}{10}
+\indexentry{BSSMDIR@\texttt  {BSSMDIR}|hyperpage}{10}
+\indexentry{BSSMDIR@\texttt  {BSSMDIR}|hyperpage}{10}
+\indexentry{paramfileprefix\xspace  @\textit  {paramfileprefix\xspace  }|hyperpage}{10}
+\indexentry{Option!\texttt  {-bssm}|hyperpage}{10}
+\indexentry{paramfileprefix\xspace  @\textit  {paramfileprefix\xspace  }|hyperpage}{10}
+\indexentry{paramfileprefix\xspace  @\textit  {paramfileprefix\xspace  }|hyperpage}{10}
+\indexentry{BSSMDIR@\texttt  {BSSMDIR}|hyperpage}{10}
+\indexentry{paramfile@\textit  {paramfile}|hyperpage}{10}
+\indexentry{scorematrixname\xspace  @\textit  {scorematrixname\xspace  }|hyperpage}{10}
+\indexentry{Option!\texttt  {-scorematrix}|hyperpage}{10}
+\indexentry{scorematrixname\xspace  @\textit  {scorematrixname\xspace  }|hyperpage}{10}
+\indexentry{scorematrixname\xspace  @\textit  {scorematrixname\xspace  }|hyperpage}{10}
+\indexentry{GTHDATADIR@\texttt  {GTHDATADIR}|hyperpage}{10}
+\indexentry{GTHDATADIR@\texttt  {GTHDATADIR}|hyperpage}{10}
+\indexentry{$t$@\textit  {$t$}|hyperpage}{10}
+\indexentry{Option!\texttt  {-translationtable}|hyperpage}{10}
+\indexentry{Option!\texttt  {-f}|hyperpage}{12}
+\indexentry{Option!\texttt  {-r}|hyperpage}{12}
+\indexentry{Option!\texttt  {-cdnaforward}|hyperpage}{12}
+\indexentry{Option!\texttt  {-frompos}|hyperpage}{12}
+\indexentry{Option!\texttt  {-topos}|hyperpage}{12}
+\indexentry{Option!\texttt  {-width}|hyperpage}{12}
+\indexentry{Option!\texttt  {-v}|hyperpage}{13}
+\indexentry{Option!\texttt  {-xmlout}|hyperpage}{13}
+\indexentry{Option!\texttt  {-gff3out}|hyperpage}{13}
+\indexentry{Option!\texttt  {-md5ids}|hyperpage}{13}
+\indexentry{outputfile@\textit  {outputfile}|hyperpage}{13}
+\indexentry{Option!\texttt  {-o}|hyperpage}{13}
+\indexentry{outputfile@\textit  {outputfile}|hyperpage}{13}
+\indexentry{Option!\texttt  {-gzip}|hyperpage}{13}
+\indexentry{Option!\texttt  {-bzip2}|hyperpage}{13}
+\indexentry{Option!\texttt  {-force}|hyperpage}{13}
+\indexentry{outputfile@\textit  {outputfile}|hyperpage}{13}
+\indexentry{outputfile@\textit  {outputfile}|hyperpage}{13}
+\indexentry{Option!\texttt  {-skipalignmentout}|hyperpage}{13}
+\indexentry{Option!\texttt  {-mincutoffs}|hyperpage}{13}
+\indexentry{maxintronlen\xspace  @\textit  {maxintronlen\xspace  }|hyperpage}{13}
+\indexentry{Option!\texttt  {-showintronmaxlen}|hyperpage}{13}
+\indexentry{maxintronlen\xspace  @\textit  {maxintronlen\xspace  }|hyperpage}{13}
+\indexentry{Option!\texttt  {-minorflength}|hyperpage}{14}
+\indexentry{Option!\texttt  {-startcodon}|hyperpage}{14}
+\indexentry{Option!\texttt  {-finalstopcodon}|hyperpage}{14}
+\indexentry{Option!\texttt  {-showseqnums}|hyperpage}{14}
+\indexentry{Option!\texttt  {-pglgentemplate}|hyperpage}{14}
+\indexentry{Option!\texttt  {-gs2out}|hyperpage}{14}
+\indexentry{outputfile@\textit  {outputfile}|hyperpage}{14}
+\indexentry{Option!\texttt  {-maskpolyatails}|hyperpage}{14}
+\indexentry{Option!\texttt  {-proteinsmap}|hyperpage}{15}
+\indexentry{smapfile@\textit  {smapfile}|hyperpage}{15}
+\indexentry{smapfile@\textit  {smapfile}|hyperpage}{15}
+\indexentry{Option!\texttt  {-noautoindex}|hyperpage}{15}
+\indexentry{Option!\texttt  {-createindicesonly}|hyperpage}{15}
+\indexentry{Option!\texttt  {-skipindexcheck}|hyperpage}{15}
+\indexentry{Option!\texttt  {-minmatchlen}|hyperpage}{16}
+\indexentry{Option!\texttt  {-seedlength}|hyperpage}{16}
+\indexentry{Option!\texttt  {-exdrop}|hyperpage}{16}
+\indexentry{Option!\texttt  {-prminmatchlen}|hyperpage}{16}
+\indexentry{Option!\texttt  {-prseedlength}|hyperpage}{16}
+\indexentry{Option!\texttt  {-prhdist}|hyperpage}{16}
+\indexentry{Option!\texttt  {-online}|hyperpage}{16}
+\indexentry{Option!\texttt  {-inverse}|hyperpage}{16}
+\indexentry{Option!\texttt  {-exact}|hyperpage}{16}
+\indexentry{gw@\textit  {gw}|hyperpage}{17}
+\indexentry{Option!\texttt  {-gcmaxgapwidth}|hyperpage}{17}
+\indexentry{gw@\textit  {gw}|hyperpage}{17}
+\indexentry{mc@\textit  {mc}|hyperpage}{17}
+\indexentry{Option!\texttt  {-gcmincoverage}|hyperpage}{17}
+\indexentry{mc@\textit  {mc}|hyperpage}{17}
+\indexentry{Option!\texttt  {-paralogs}|hyperpage}{17}
+\indexentry{mc@\textit  {mc}|hyperpage}{17}
+\indexentry{mc@\textit  {mc}|hyperpage}{17}
+\indexentry{Option!\texttt  {-enrichchains}|hyperpage}{17}
+\indexentry{intron cutout technique|hyperpage}{17}
+\indexentry{Option!\texttt  {-introncutout}|hyperpage}{17}
+\indexentry{Option!\texttt  {-fastdp}|hyperpage}{17}
+\indexentry{s\xspace  @\textit  {s\xspace  }|hyperpage}{17}
+\indexentry{Option!\texttt  {-autointroncutout}|hyperpage}{17}
+\indexentry{s\xspace  @\textit  {s\xspace  }|hyperpage}{17}
+\indexentry{s\xspace  @\textit  {s\xspace  }|hyperpage}{17}
+\indexentry{d\xspace  @\textit  {d\xspace  }|hyperpage}{17}
+\indexentry{Option!\texttt  {-icinitialdelta}|hyperpage}{17}
+\indexentry{d\xspace  @\textit  {d\xspace  }|hyperpage}{17}
+\indexentry{d\xspace  @\textit  {d\xspace  }|hyperpage}{17}
+\indexentry{i\xspace  @\textit  {i\xspace  }|hyperpage}{18}
+\indexentry{Option!\texttt  {-iciterations}|hyperpage}{18}
+\indexentry{i\xspace  @\textit  {i\xspace  }|hyperpage}{18}
+\indexentry{d\xspace  @\textit  {d\xspace  }|hyperpage}{18}
+\indexentry{di\xspace  @\textit  {di\xspace  }|hyperpage}{18}
+\indexentry{d\xspace  @\textit  {d\xspace  }|hyperpage}{18}
+\indexentry{di\xspace  @\textit  {di\xspace  }|hyperpage}{18}
+\indexentry{di\xspace  @\textit  {di\xspace  }|hyperpage}{18}
+\indexentry{Option!\texttt  {-icdeltaincrease}|hyperpage}{18}
+\indexentry{di\xspace  @\textit  {di\xspace  }|hyperpage}{18}
+\indexentry{r\xspace  @\textit  {r\xspace  }|hyperpage}{18}
+\indexentry{Option!\texttt  {-icminremintronlen}|hyperpage}{18}
+\indexentry{r\xspace  @\textit  {r\xspace  }|hyperpage}{18}
+\indexentry{r\xspace  @\textit  {r\xspace  }|hyperpage}{18}
+\indexentry{Option!\texttt  {-nou12intronmodel}|hyperpage}{18}
+\indexentry{Option!\texttt  {-u12donorprob}|hyperpage}{18}
+\indexentry{Option!\texttt  {-u12donorprob1mism}|hyperpage}{18}
+\indexentry{Option!\texttt  {-probies}|hyperpage}{19}
+\indexentry{Option!\texttt  {-probdelgen}|hyperpage}{19}
+\indexentry{Option!\texttt  {-identityweight}|hyperpage}{19}
+\indexentry{Option!\texttt  {-mismatchweight}|hyperpage}{19}
+\indexentry{Option!\texttt  {-undetcharweight}|hyperpage}{19}
+\indexentry{Option!\texttt  {-deletionweight}|hyperpage}{19}
+\indexentry{Option!\texttt  {-dpminexonlength}|hyperpage}{19}
+\indexentry{Option!\texttt  {-dpminintronlength}|hyperpage}{19}
+\indexentry{Option!\texttt  {-shortexonpenal}|hyperpage}{20}
+\indexentry{Option!\texttt  {-shortintronpenal}|hyperpage}{20}
+\indexentry{Option!\texttt  {-wzerotransition}|hyperpage}{20}
+\indexentry{Option!\texttt  {-wdecreasedoutput}|hyperpage}{20}
+\indexentry{leadingmode\xspace  @\textit  {leadingmode\xspace  }|hyperpage}{20}
+\indexentry{Option!\texttt  {-leadcutoffsmode}|hyperpage}{20}
+\indexentry{leadingmode\xspace  @\textit  {leadingmode\xspace  }|hyperpage}{20}
+\indexentry{terminalmode\xspace  @\textit  {terminalmode\xspace  }|hyperpage}{20}
+\indexentry{Option!\texttt  {-termcutoffsmode}|hyperpage}{20}
+\indexentry{terminalmode\xspace  @\textit  {terminalmode\xspace  }|hyperpage}{20}
+\indexentry{Option!\texttt  {-cutoffsminexonlen}|hyperpage}{20}
+\indexentry{Option!\texttt  {-scoreminexonlen}|hyperpage}{20}
+\indexentry{coverage|hyperpage}{21}
+\indexentry{coverage|hyperpage}{21}
+\indexentry{Option!\texttt  {-minalignmentscore}|hyperpage}{21}
+\indexentry{Option!\texttt  {-maxalignmentscore}|hyperpage}{21}
+\indexentry{Option!\texttt  {-mincoverage}|hyperpage}{21}
+\indexentry{Option!\texttt  {-maxcoverage}|hyperpage}{21}
+\indexentry{Option!\texttt  {-minaveragessp}|hyperpage}{21}
+\indexentry{Option!\texttt  {-duplicatecheck}|hyperpage}{21}
+\indexentry{mode\xspace  @\textit  {mode\xspace  }|hyperpage}{21}
+\indexentry{mode\xspace  @\textit  {mode\xspace  }|hyperpage}{22}
+\indexentry{incremental updates|hyperpage}{23}
+\indexentry{Option!\texttt  {-intermediate}|hyperpage}{23}
+\indexentry{predicted gene location|hyperpage}{23}
+\indexentry{consensus spliced alignment|hyperpage}{23}
+\indexentry{Option!\texttt  {-sortags}|hyperpage}{23}
+\indexentry{alternative gene structure|hyperpage}{23}
+\indexentry{alternative gene structure!overall score|hyperpage}{23}
+\indexentry{wf@\textit  {wf}|hyperpage}{23}
+\indexentry{Option!\texttt  {-sortagswf}|hyperpage}{23}
+\indexentry{wf@\textit  {wf}|hyperpage}{23}
+\indexentry{wf@\textit  {wf}|hyperpage}{23}
+\indexentry{wf@\textit  {wf}|hyperpage}{23}
+\indexentry{wf@\textit  {wf}|hyperpage}{23}
+\indexentry{Option!\texttt  {-exondistri}|hyperpage}{24}
+\indexentry{Option!\texttt  {-introndistri}|hyperpage}{24}
+\indexentry{Option!\texttt  {-refseqcovdistri}|hyperpage}{24}
+\indexentry{Option!\texttt  {-first}|hyperpage}{24}
+\indexentry{Option!\texttt  {-help}|hyperpage}{24}
+\indexentry{Option!\texttt  {-help+}|hyperpage}{24}
+\indexentry{Option!\texttt  {-version}|hyperpage}{24}
+\indexentry{exit code|hyperpage}{24}
+\indexentry{incremental update|hyperpage}{24}
+\indexentry{predicted gene structure|hyperpage}{25}
+\indexentry{intermediate file|hyperpage}{25}
+\indexentry{spliced alignment!consensus|hyperpage}{25}
+\indexentry{predicted gene location|hyperpage}{25}
+\indexentry{Option!\texttt  {-alignmentscore}|hyperpage}{26}
+\indexentry{Option!\texttt  {-coverage}|hyperpage}{26}
+\indexentry{$\Re $\xspace  @\textit  {$\Re $\xspace  }|hyperpage}{26}
+\indexentry{Option!\texttt  {-range}|hyperpage}{26}
+\indexentry{$\Re $\xspace  @\textit  {$\Re $\xspace  }|hyperpage}{26}
+\indexentry{$\Re $\xspace  @\textit  {$\Re $\xspace  }|hyperpage}{26}
+\indexentry{$\Re $\xspace  @\textit  {$\Re $\xspace  }|hyperpage}{27}
+\indexentry{Option!\texttt  {-r}|hyperpage}{27}
+\indexentry{Option!\texttt  {-f}|hyperpage}{27}
+\indexentry{Option!\texttt  {-v}|hyperpage}{27}
+\indexentry{Option!\texttt  {-g}|hyperpage}{27}
+\indexentry{Option!\texttt  {-b}|hyperpage}{27}
+\indexentry{Option!\texttt  {-getcdna}|hyperpage}{28}
+\indexentry{Option!\texttt  {-getcdnacomp}|hyperpage}{28}
+\indexentry{Option!\texttt  {-getprotein}|hyperpage}{28}
+\indexentry{Option!\texttt  {-getproteincomp}|hyperpage}{28}
+\indexentry{Option!\texttt  {-getgenomic}|hyperpage}{28}
+\indexentry{Option!\texttt  {-getgenomiccomp}|hyperpage}{28}
+\indexentry{BSSMDIR@\texttt  {BSSMDIR}|hyperpage}{30}
+\indexentry{dir@\textit  {dir}|hyperpage}{30}
+\indexentry{Option!\texttt  {-outdir}|hyperpage}{30}
+\indexentry{arg@\textit  {arg}|hyperpage}{30}
+\indexentry{Option!\texttt  {-gcdonor}|hyperpage}{30}
+\indexentry{type@\textit  {type}|hyperpage}{30}
+\indexentry{Option!\texttt  {-filtertype}|hyperpage}{30}
+\indexentry{n@\textit  {n}|hyperpage}{31}
+\indexentry{Option!\texttt  {-goodexoncount}|hyperpage}{31}
+\indexentry{n@\textit  {n}|hyperpage}{31}
+\indexentry{s@\textit  {s}|hyperpage}{31}
+\indexentry{Option!\texttt  {-cutoff}|hyperpage}{31}
+\indexentry{s@\textit  {s}|hyperpage}{31}
+\indexentry{type@\textit  {type}|hyperpage}{31}
+\indexentry{Option!\texttt  {-extracttype}|hyperpage}{31}
+\indexentry{file@\textit  {file}|hyperpage}{31}
+\indexentry{Option!\texttt  {-seqfile}|hyperpage}{31}
+\indexentry{file ...@\textit  {file ...}|hyperpage}{31}
+\indexentry{Option!\texttt  {-seqfiles}|hyperpage}{31}
+\indexentry{arg@\textit  {arg}|hyperpage}{31}
+\indexentry{Option!\texttt  {-matchdesc}|hyperpage}{31}
+\indexentry{arg@\textit  {arg}|hyperpage}{31}
+\indexentry{Option!\texttt  {-usedesc}|hyperpage}{31}
+\indexentry{file@\textit  {file}|hyperpage}{31}
+\indexentry{Option!\texttt  {-regionmapping}|hyperpage}{31}
+\indexentry{s@\textit  {s}|hyperpage}{31}
+\indexentry{Option!\texttt  {-seed}|hyperpage}{31}
+\indexentry{file@\textit  {file}|hyperpage}{33}
+\indexentry{Option!\texttt  {-bssmfile}|hyperpage}{33}
+\indexentry{file@\textit  {file}|hyperpage}{33}
+\indexentry{dir@\textit  {dir}|hyperpage}{33}
+\indexentry{Option!\texttt  {-datapath}|hyperpage}{33}
+\indexentry{dir@\textit  {dir}|hyperpage}{33}
+\indexentry{Option!\texttt  {-gtdonor}|hyperpage}{33}
+\indexentry{Option!\texttt  {-gcdonor}|hyperpage}{33}
+\indexentry{Option!\texttt  {-agacceptor}|hyperpage}{33}

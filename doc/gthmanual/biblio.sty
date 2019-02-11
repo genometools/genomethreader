@@ -1,0 +1,80 @@
+%\usepackage{url}
+\usepackage{ifthen}
+\let\urlpath\path
+\newcommand{\PrintVol}[1]{\textbf{#1}}
+\newcommand{\LNCS}[1]{Lecture Notes in Computer Science \textbf{#1}, Springer Verlag}
+\newcommand{\LICS}[1]{Proceedings of the #1 Symposium on Logic in Computer Science}
+\newcommand{\CADE}[1]{Proceedings of the #1 Conference on Automated Deduction}
+\newcommand{\POPL}[2]{Proceedings of the #1 ACM Symposium on Principles of Programming Languages, #2}
+\newcommand{\Master}{Master's Thesis (in German)}
+\newcommand{\Recomb}[2]{Proc.\ of the #1 International Conference on Computational Molecular Biology, (RECOMB~#2)}
+
+\newcommand{\Citationexpand}{2}
+%0 means, exand
+%1 means, compress a little bit
+%2 means, compress very much
+
+\newcommand{\CiteCPM}[3]{%
+\ifthenelse{\equal{\Citationexpand}{0}}%
+  {{\rm \cite{#1}}}%
+  {\ifthenelse{\equal{\Citationexpand}{1}}%
+    {Proc.\ of the Annual Symposium on Combinatorial Pattern Matching {\rm (CPM~#2)}}
+    {Proc.\ of {\rm CPM~#2}}, {\rm LNCS #3}}}
+
+%\newcommand{\CiteCPMtwentyzeroone}{\CiteCPM{AMI:LAN:2001}{2001}{2089}}
+\newcommand{\CiteCPMninetytwo}{\CiteCPM{APO:CRO:GAL:MAN:1992}{92}{644}}
+\newcommand{\CiteCPMninetythree}{\CiteCPM{APO:CRO:GAL:MAN:1993}{93}{684}}
+\newcommand{\CiteCPMninetyfour}{\CiteCPM{GUS:1994}{94}{807}}
+\newcommand{\CiteCPMninetyfive}{\CiteCPM{GAL:UKK:1995}{95}{937}}
+\newcommand{\CiteCPMninetysix}{\CiteCPM{HIR:MYE:1996}{96}{1075}}
+\newcommand{\CiteCPMninetyseven}{\CiteCPM{APO:HEI:1997}{97}{1264}}
+\newcommand{\CiteCPMninetyeight}{\CiteCPM{FAR:1998}{98}{1448}}
+\newcommand{\CiteCPMninetynine}{\CiteCPM{CRO:PAT:1999}{99}{1645}}
+\newcommand{\CiteCPMtwentyzerozero}{\CiteCPM{GIA:SAN:2000}{2000}{1848}}
+\newcommand{\CiteCPMtwentyzeroone}{\CiteCPM{AMI:LAN:2001}{2001}{2089}}
+
+\newcommand{\CiteCalgwords}{\ifthenelse{\equal{\Citationexpand}{0}}%
+                           {{\rm \cite{APO:GAL:1985}}}%
+                           {Combinatorial Algorithms on Words, Springer Verlag}}
+
+\newcommand{\CiteWSPninetysix}{\ifthenelse{\equal{\Citationexpand}{0}}%
+                              {{\rm \cite{ZIV:BAE:GUI:1996}}}%
+                              {Proc.\ of Third South American Workshop on String Processing}}
+
+
+\newcommand{\CiteISMBninetythree}{\ifthenelse{\equal{\Citationexpand}{0}}%
+                                {{\rm \cite{HUN:SEA:SHA:1993}}}%
+                                {Proc.\ of ISMB~93}}
+
+\newcommand{\CiteISMBninetyfour}{\ifthenelse{\equal{\Citationexpand}{0}}%
+                                {{\rm \cite{ALT:BRU:KAR:LAT:SEA:1994}}}%
+                                {Proc.\ of ISMB~94}}
+
+\newcommand{\CiteISMBninetyfive}{\ifthenelse{\equal{\Citationexpand}{0}}%
+                                {{\rm \cite{RAW:CLA:ALT:HUN:LEN:WOD:1995}}}%
+                                {Proc.\ of ISMB~95}}
+
+\newcommand{\CiteISMBninetysix}{\ifthenelse{\equal{\Citationexpand}{0}}%
+                                 {{\rm \cite{STA:AGA:GAA:HUN:SMI:1996}}},
+                                 {Proc.\ of ISMB~96}}
+
+\newcommand{\CiteISMBninetyseven}{\ifthenelse{\equal{\Citationexpand}{0}}%
+                                 {{\rm \cite{GAA:KAR:KAR:OUZ:SAN:VAL:1997}}}%
+                                 {Proc.\ of ISMB~97}}
+
+\newcommand{\CiteISMBninetyeight}{\ifthenelse{\equal{\Citationexpand}{0}}%
+                                 {{\rm \cite{GLA:LIT:MAJ:LAT:SAN:SEN:1998}}}%
+                                 {Proc.\ of ISMB~98}}
+
+\newcommand{\CiteISMBninetynine}{\ifthenelse{\equal{\Citationexpand}{0}}%
+                                 {{\rm \cite{LEN:SCHNE:BOR:BRU:GLA:MEW:ZIM:1999}}}%
+                                 {Proc.\ of ISMB~99}}
+
+\newcommand{\CiteISMBtwentyzerozero}{\ifthenelse{\equal{\Citationexpand}{0}}%
+                                 {{\rm \cite{NN}}}%
+                                 {Proceedings of ISMB2000}}
+
+
+\newcommand{\CiteWaterman}{\ifthenelse{\equal{\Citationexpand}{0}}%
+                          {{\rm \cite{WAT:1989}}}%
+                          {Mathematical Methods for DNA Sequences, Waterman, M.S.\ (editor)}}

@@ -1,0 +1,388 @@
+EST Sequence: file=LIBc9, strand=+, description=gi|32986941|dbj|AK101732.1| Oryza sativa (japonica cultivar-group) cDNA clone:J033061G11, full insert sequence
+
+     1  GGCGGGAGGA AGAAGGGAAT CTGATTGCTT CCTTCTTCCT TCTTCGATTC AGAATCACTT
+    61  TGTTTCTTCT TTCTTCTTCT ATCTATCTAT CTACCTGTGG AGACGAGAGG AGAGGAAATC
+   121  TATGGCGTCT CCTCCTTCGC CCTCCGCATC ACGCGCAGTC GCAGTCGAGA GATCACCGGG
+   181  GTTCGGCTTG GAGCCCTCCT CCTCCTCCTC CTCGTCGTCG TCGGCCCCCT CAAGGAATGA
+   241  GCTGCTGACT ATGGTGAAAA AACATTCCCA TTTGATTGGG TGGACAGTTG TTGATGCTGA
+   301  AGATGATGCA TCAGACGTGG GAATGGATGA TCGATTCTGG CATGAAATGC TTGATCTTTT
+   361  CTTCGTGCGT GGTAGGGTTT CAAAGAGGAG GGAAGAGGAT GACCTCGTCT TTTTTGTTAA
+   421  TAATAATATG AAAATGCATG GCCATGGGTT CAACGATAAC ATGGAAGATC CACCTCCTTT
+   481  TTTTGTGAGA AGATGGGCTC CTATGCTTGA AAAGATCAGC AATATAAATT CAGCTGGAGT
+   541  TGATTGGGAG CGTTCATTCT ATTTGAATTT AATTGCTCAC ACATCATACA CTGTTACAGT
+   601  TGCAATATGC AGTGTCAGGG ATCTTCGCAG CCGTGTAGAG AAAAGCAAAC CATTATCACC
+   661  AGTTTATAAG GTCACAAAAA CTGTGTATGC ATCCCCAAGC CGTGTAAATT TTCATCTTGA
+   721  TCGAAGAAAG GCTGTGGAAA CTGTACCTGC ATATCCCAAT ATTTGTTTCT CAGTTGATGA
+   781  CTTCGATGAT ACTTTTGATG CTGTTGTTTT GTCAGACCCC GAACATTGCT ATTGTGTGAT
+   841  TCTCAATGCA CATGATGGGG CAGCTTTTCC TGAAGACACT GAATCGAAGA ATGCCAGCTC
+   901  AAATCTACTA AACACTGGGA GCAACCAAGA AAAACCACCA AAGAGAACAC TCTTCTCAGG
+   961  CTACGTTAGC TACCAAAATG TTCGAGAAGC CTACAATGCT GGCAGATCAC AATTTGGGAG
+  1021  CTTACTCTCA CTCGGGCATG ACCAAACTAA ACTTGATAAA CTTTATATGA GGGGCCCTGA
+  1081  AGGGCGTGGG GAAGTTGAAG TAGCTGTTTC TGGAATTGCA GATCAGAGCC ATGAGAGATC
+  1141  AAAGAAAGAT CCAGGAGATA GCTTTCGAGT CTTTGTTCAT AGGGCAGCTT CTGCTGCATC
+  1201  AAAGCTGGCA AAGCATGCCT ACGAGGCTGC ATCTACCAAC AAACGATTTG ATCATGAGCT
+  1261  TCTGCCTCTG AAATGTTGCT TGATGTCGGT ATCTCTTCCT TGGGACTACA TTGCACATGA
+  1321  CCTGCTACAC AAGGAAACCC CTCCGCTGGA CCTATGAGAG ACTGCGAATT CCCATTGTGC
+  1381  ACCAGAAAGA ATGATATATG TGCATGATTG TGGGAAAGTT TGTGTCCCTT GGGCTCGATA
+  1441  TAGTGTAAGA AAACAGTGAG CAGAGAAGCA GTGCTGCGAT GTACATGTGT ACTTTAAACA
+  1501  GACTAAAACT TGTAGAATTT TCATGTGTGT TTGTACAATG TTGAAAGTAG GCGATGAAAT
+  1561  AATGTAAATA TATATTTTTT TGGTTGTCAT GAGGAAGACT CTTCACTGTT GCC
+
+Genomic Template: file=OSchr10, strand=+, from=206493, to=213903, description=OSchr10-v3	TIGR Release 3.0 chr10|11676 osa1	22698374 bp
+
+Predicted gene structure:
+
+ Exon  1   206792   207031 ( 240 n);  cDNA      1    234 ( 234 n); score: 0.963
+  Intron  1   207032   207746 ( 715 n); Pd: 0.000 (s: 0.94), Pa: 0.999 (s: 1.00)
+ Exon  2   207747   207942 ( 196 n);  cDNA    235    430 ( 196 n); score: 1.000
+  Intron  2   207943   208026 (  84 n); Pd: 0.999 (s: 1.00), Pa: 0.995 (s: 1.00)
+ Exon  3   208027   208101 (  75 n);  cDNA    431    505 (  75 n); score: 1.000
+  Intron  3   208102   208530 ( 429 n); Pd: 0.812 (s: 1.00), Pa: 0.980 (s: 1.00)
+ Exon  4   208531   208637 ( 107 n);  cDNA    506    612 ( 107 n); score: 1.000
+  Intron  4   208638   209190 ( 553 n); Pd: 0.912 (s: 1.00), Pa: 0.955 (s: 0.96)
+ Exon  5   209191   209248 (  58 n);  cDNA    613    670 (  58 n); score: 0.966
+  Intron  5   209249   210180 ( 932 n); Pd: 0.926 (s: 0.96), Pa: 0.972 (s: 1.00)
+ Exon  6   210181   210240 (  60 n);  cDNA    671    730 (  60 n); score: 1.000
+  Intron  6   210241   210317 (  77 n); Pd: 0.992 (s: 1.00), Pa: 0.956 (s: 1.00)
+ Exon  7   210318   210392 (  75 n);  cDNA    731    805 (  75 n); score: 1.000
+  Intron  7   210393   210501 ( 109 n); Pd: 0.989 (s: 1.00), Pa: 0.899 (s: 1.00)
+ Exon  8   210502   210639 ( 138 n);  cDNA    806    943 ( 138 n); score: 1.000
+  Intron  8   210640   211763 (1124 n); Pd: 0.808 (s: 1.00), Pa: 0.986 (s: 1.00)
+ Exon  9   211764   211818 (  55 n);  cDNA    944    998 (  55 n); score: 1.000
+  Intron  9   211819   212131 ( 313 n); Pd: 0.987 (s: 1.00), Pa: 0.980 (s: 1.00)
+ Exon 10   212132   212254 ( 123 n);  cDNA    999   1121 ( 123 n); score: 0.992
+  Intron 10   212255   212642 ( 388 n); Pd: 0.970 (s: 0.98), Pa: 0.986 (s: 1.00)
+ Exon 11   212643   212854 ( 212 n);  cDNA   1122   1333 ( 212 n); score: 1.000
+  Intron 11   212855   213324 ( 470 n); Pd: 0.985 (s: 1.00), Pa: 0.976 (s: 1.00)
+ Exon 12   213325   213604 ( 280 n);  cDNA   1334   1613 ( 280 n); score: 0.996
+
+MATCH	OSchr10-v3+	32986941+	0.992	1619	1.004	C
+PGS_OSchr10-v3+_32986941+	(206792  207031,207747  207942,208027  208101,208531  208637,209191  209248,210181  210240,210318  210392,210502  210639,211764  211818,212132  212254,212643  212854,213325  213604)
+
+Alignment (genomic DNA sequence = upper lines):
+
+TGCGGGAGGA AGAAGGGAAT CTGATTGCTT CCTTCTTCCT TCTTCGATTC AGAATCAATT      206851
+ ||||||||| |||||||||| |||||||||| |||||||||| |||||||||| ||||||| ||
+GGCGGGAGGA AGAAGGGAAT CTGATTGCTT CCTTCTTCCT TCTTCGATTC AGAATCACTT          60
+
+
+TGTTTCTTCT TTCTTCTTCT ATCTATCTAT CTACCTGTGG AGACGAGAGG AGAGGAAATC      206911
+|||||||||| |||||||||| |||||||||| |||||||||| |||||||||| ||||||||||
+TGTTTCTTCT TTCTTCTTCT ATCTATCTAT CTACCTGTGG AGACGAGAGG AGAGGAAATC         120
+
+
+TATGGCGTCT CCTCCTCCTT CGCCCTCCGC ATCACGCGCA GTCGCAGTCG AGAGATCACC      206971
+|||||||  |  ||||||||| |||||||||| |||||||||| |||||||||| ||||||||||
+TATGGCG--T -CTCCTCCTT CGCCCTCCGC ATCACGCGCA GTCGCAGTCG AGAGATCACC         177
+
+
+GAGGTTCGGC TTGGAGCCCT CCTCCTCCTC CTCCTCCTCG TCGTCGTCGG CCCCCTCAAG      207031
+| |||||||| ||||||  |  |||||||||| |||||||||| |||||||||| ||||||||||
+GGGGTTCGGC TTGGAG--C- CCTCCTCCTC CTCCTCCTCG TCGTCGTCGG CCCCCTCAAG         234
+
+
+GTAATCTCTA TCCCCATCCT AATTTTGGAC CCCAACCCTC GCCCCCGCCC CCGCCTGCCA      207091
+                                                                 
+.......... .......... .......... .......... .......... ..........         234
+
+
+// intron part 207092 207631 (540 n) not shown                 //
+
+//........ .......... .......... .......... .......... ........//
+
+
+CACCCAACAA TTCTGGTCGA TTTTGTTTTG AGCCTATCTC CATTTTCTGT AAAAGCATAT      207691
+                                                                 
+.......... .......... .......... .......... .......... ..........         234
+
+
+GTCCTTATAT CCTTTTAAGC ACTTCTCAAC CTTTTGTTTC TTTTTGTCTT TTCAGGAATG      207751
+                                                            |||||
+.......... .......... .......... .......... .......... .....GAATG         239
+
+
+AGCTGCTGAC TATGGTGAAA AAACATTCCC ATTTGATTGG GTGGACAGTT GTTGATGCTG      207811
+|||||||||| |||||||||| |||||||||| |||||||||| |||||||||| ||||||||||
+AGCTGCTGAC TATGGTGAAA AAACATTCCC ATTTGATTGG GTGGACAGTT GTTGATGCTG         299
+
+
+AAGATGATGC ATCAGACGTG GGAATGGATG ATCGATTCTG GCATGAAATG CTTGATCTTT      207871
+|||||||||| |||||||||| |||||||||| |||||||||| |||||||||| ||||||||||
+AAGATGATGC ATCAGACGTG GGAATGGATG ATCGATTCTG GCATGAAATG CTTGATCTTT         359
+
+
+TCTTCGTGCG TGGTAGGGTT TCAAAGAGGA GGGAAGAGGA TGACCTCGTC TTTTTTGTTA      207931
+|||||||||| |||||||||| |||||||||| |||||||||| |||||||||| ||||||||||
+TCTTCGTGCG TGGTAGGGTT TCAAAGAGGA GGGAAGAGGA TGACCTCGTC TTTTTTGTTA         419
+
+
+ATAATAATAT GGTAAACTTC CAATCCTTCT CAGTTCCCCT TATTTTAGCT TACAGTGTTA      207991
+|||||||||| |                                                     
+ATAATAATAT G......... .......... .......... .......... ..........         430
+
+
+TCTTGTATGC TAACTGAGGC TCAATGCTGG TGCAGAAAAT GCATGGCCAT GGGTTCAACG      208051
+                                      ||||| |||||||||| ||||||||||
+.......... .......... .......... .....AAAAT GCATGGCCAT GGGTTCAACG         455
+
+
+ATAACATGGA AGATCCACCT CCTTTTTTTG TGAGAAGATG GGCTCCTATG GTAAATTAAC      208111
+|||||||||| |||||||||| |||||||||| |||||||||| ||||||||||           
+ATAACATGGA AGATCCACCT CCTTTTTTTG TGAGAAGATG GGCTCCTATG ..........         505
+
+
+CAAGACTATC TTCATCAATT TCGATCATAT CAATAAATGC ATGCTTCCCT TTTTGGTAGT      208171
+                                                                 
+.......... .......... .......... .......... .......... ..........         505
+
+
+// intron part 208172 208411 (240 n) not shown                 //
+
+//........ .......... .......... .......... .......... ........//
+
+
+AATTGACTTC CATAAGCTAG TGTTTGGTTC ATAACATACT TTCTACAGAA AAGAAGTCTC      208471
+                                                                 
+.......... .......... .......... .......... .......... ..........         505
+
+
+TGATAATACA TACTAACTCT TGGTTTTTTA TTTGTTCTCC TTTGTTTTAT GTGGAGCAGC      208531
+                                                                |
+.......... .......... .......... .......... .......... .........C         506
+
+
+TTGAAAAGAT CAGCAATATA AATTCAGCTG GAGTTGATTG GGAGCGTTCA TTCTATTTGA      208591
+|||||||||| |||||||||| |||||||||| |||||||||| |||||||||| ||||||||||
+TTGAAAAGAT CAGCAATATA AATTCAGCTG GAGTTGATTG GGAGCGTTCA TTCTATTTGA         566
+
+
+ATTTAATTGC TCACACATCA TACACTGTTA CAGTTGCAAT ATGCAGGTAC GTTTCTGCCA      208651
+|||||||||| |||||||||| |||||||||| |||||||||| ||||||               
+ATTTAATTGC TCACACATCA TACACTGTTA CAGTTGCAAT ATGCAG.... ..........         612
+
+
+GTTCTGTCAA GATATTGCAA GTTTTTATCT AGTATTTATA CTGAATGATT GGCATGCTGT      208711
+                                                                 
+.......... .......... .......... .......... .......... ..........         612
+
+
+// intron part 208712 209071 (360 n) not shown                 //
+
+//........ .......... .......... .......... .......... ........//
+
+
+TTGGGTTCCA ACCAATAACT ATTGTTGTGC AACCTGAGCC TGAGAGCTCT TGTTGTATCA      209131
+                                                                 
+.......... .......... .......... .......... .......... ..........         612
+
+
+TCTTTACCTC CTTAGTTGAT ATATCTGGCA AAGTTAGTTT CTTACAATCT GCTCTACAGT      209191
+                                                                |
+.......... .......... .......... .......... .......... .........T         613
+
+
+GTCAGGGATC TTTGCAGCCG TGCAGAGAAA AGCAAACCAT TATCACCAGT TTATAAGGTA      209251
+|||||||||| || ||||||| || ||||||| |||||||||| |||||||||| |||||||   
+GTCAGGGATC TTCGCAGCCG TGTAGAGAAA AGCAAACCAT TATCACCAGT TTATAAG...         670
+
+
+CTGTACAAGT AAGCATTTCA CGGCACTCCA TCATTTACCA GTGAATCTTA TTACATAGGT      209311
+                                                                 
+.......... .......... .......... .......... .......... ..........         670
+
+
+// intron part 209312 210091 (780 n) not shown                 //
+
+//........ .......... .......... .......... .......... ........//
+
+
+TTGTTGCAAT ACTAGTTACC CTAGCTAAAG TTTAACATGT TTTCGGTATT AAGTAATTAT      210151
+                                                                 
+.......... .......... .......... .......... .......... ..........         670
+
+
+GTCTTAAACT CATTGTCTTA TTAAAACAGG TCACAAAAAC TGTGTATGCA TCCCCAAGCC      210211
+                               | |||||||||| |||||||||| ||||||||||
+.......... .......... .........G TCACAAAAAC TGTGTATGCA TCCCCAAGCC         701
+
+
+GTGTAAATTT TCATCTTGAT CGAAGAAAGG TACTTTTTCC TGGCATTTTC AGTCTCTCTT      210271
+|||||||||| |||||||||| |||||||||                                  
+GTGTAAATTT TCATCTTGAT CGAAGAAAG. .......... .......... ..........         730
+
+
+TTGAAAGAGA TGATGTTTCA GTAAAAATTC CTGTATCTTT GGACAGGCTG TGGAAACTGT      210331
+                                                  |||| ||||||||||
+.......... .......... .......... .......... ......GCTG TGGAAACTGT         744
+
+
+ACCTGCATAT CCCAATATTT GTTTCTCAGT TGATGACTTC GATGATACTT TTGATGCTGT      210391
+|||||||||| |||||||||| |||||||||| |||||||||| |||||||||| ||||||||||
+ACCTGCATAT CCCAATATTT GTTTCTCAGT TGATGACTTC GATGATACTT TTGATGCTGT         804
+
+
+TGTAAGTTCC CATTTCTCAG TATTCTAGCA TATTGTTCAT ATGGATGTAT CTATGATATT      210451
+|                                                                
+T......... .......... .......... .......... .......... ..........         805
+
+
+GCATCGCTTT TGTCATTATA GAATGAAAGT GACCATCTAA ATTTGAGCAG GTTTTGTCAG      210511
+                                                       ||||||||||
+.......... .......... .......... .......... .......... GTTTTGTCAG         815
+
+
+ACCCCGAACA TTGCTATTGT GTGATTCTCA ATGCACATGA TGGGGCAGCT TTTCCTGAAG      210571
+|||||||||| |||||||||| |||||||||| |||||||||| |||||||||| ||||||||||
+ACCCCGAACA TTGCTATTGT GTGATTCTCA ATGCACATGA TGGGGCAGCT TTTCCTGAAG         875
+
+
+ACACTGAATC GAAGAATGCC AGCTCAAATC TACTAAACAC TGGGAGCAAC CAAGAAAAAC      210631
+|||||||||| |||||||||| |||||||||| |||||||||| |||||||||| ||||||||||
+ACACTGAATC GAAGAATGCC AGCTCAAATC TACTAAACAC TGGGAGCAAC CAAGAAAAAC         935
+
+
+CACCAAAGGT CCTCTGCCCT CAAATCTACC AAAACTCTCT CTCTCTCAGA ATTCAGCACT      210691
+||||||||                                                         
+CACCAAAG.. .......... .......... .......... .......... ..........         943
+
+
+TAGTAAATTC TCCGTGTGTC TCAAACTATA GGAGCATTCT GATTTTGTCC CAAATTATTT      210751
+                                                                 
+.......... .......... .......... .......... .......... ..........         943
+
+
+// intron part 210752 211651 (900 n) not shown                 //
+
+//........ .......... .......... .......... .......... ........//
+
+
+CTTGCTTAAA ACATAGTTAC ACTTTAGCAG ATATCCGCTT CTGTAACACA ACTGTATGAA      211711
+                                                                 
+.......... .......... .......... .......... .......... ..........         943
+
+
+GTATATCATA GTTCATTTCT CACCTACATT GCGCTTACTG TGATTATTGC AGAGAACACT      211771
+                                                         ||||||||
+.......... .......... .......... .......... .......... ..AGAACACT         951
+
+
+CTTCTCAGGC TACGTTAGCT ACCAAAATGT TCGAGAAGCC TACAATGGTG AGTCCATCCA      211831
+|||||||||| |||||||||| |||||||||| |||||||||| |||||||              
+CTTCTCAGGC TACGTTAGCT ACCAAAATGT TCGAGAAGCC TACAATG... ..........         998
+
+
+TCTATTTATC TCCAAGGAAA CTATTGTTCA GATGGTCTTA TAAAGTACTT ATGTCCTTTC      211891
+                                                                 
+.......... .......... .......... .......... .......... ..........         998
+
+
+// intron part 211892 212071 (180 n) not shown                 //
+
+//........ .......... .......... .......... .......... ........//
+
+
+TAGGTACCTA CCATTTCATT CCTTCTAGGT TTACATTTCC TGATATGTAC TCTGTTATAG      212131
+                                                                 
+.......... .......... .......... .......... .......... ..........         998
+
+
+CTGGCAGATC ACAATTTGGG AGCTTACTCT CACTCGGGCA TGACCAAACT AAACTTGATA      212191
+|||||||||| |||||||||| |||||||||| |||||||||| |||||||||| ||||||||||
+CTGGCAGATC ACAATTTGGG AGCTTACTCT CACTCGGGCA TGACCAAACT AAACTTGATA        1058
+
+
+AACTTTATAT GAGGGGCCCT GAAGGACGTG GGGAAGTTGA AGTAGCTGTT TCTGGAATTG      212251
+|||||||||| |||||||||| ||||| |||| |||||||||| |||||||||| ||||||||||
+AACTTTATAT GAGGGGCCCT GAAGGGCGTG GGGAAGTTGA AGTAGCTGTT TCTGGAATTG        1118
+
+
+CAGGTCAGTT ATGTTTAGCC TAAGTAGCGA TTTACTGCGT GGGTTGACTC TGGAATATGT      212311
+|||                                                              
+CAG....... .......... .......... .......... .......... ..........        1121
+
+
+TTCACAAGCT TCAAGTTATC TCGCTGTTAC ATGCATTTAC TGTAATGAGT AGGATTTGGG      212371
+                                                                 
+.......... .......... .......... .......... .......... ..........        1121
+
+
+// intron part 212372 212551 (180 n) not shown                 //
+
+//........ .......... .......... .......... .......... ........//
+
+
+ATGCACATTC ATGTCTTGGA TTACCGTAGC TGTGATGATG CAAGTTGTTG ATCCGTCAAA      212611
+                                                                 
+.......... .......... .......... .......... .......... ..........        1121
+
+
+CTCTGACATG GAAATGATTG TCTTTTATTA GATCAGAGCC ATGAGAGATC AAAGAAAGAT      212671
+                                  ||||||||| |||||||||| ||||||||||
+.......... .......... .......... .ATCAGAGCC ATGAGAGATC AAAGAAAGAT        1150
+
+
+CCAGGAGATA GCTTTCGAGT CTTTGTTCAT AGGGCAGCTT CTGCTGCATC AAAGCTGGCA      212731
+|||||||||| |||||||||| |||||||||| |||||||||| |||||||||| ||||||||||
+CCAGGAGATA GCTTTCGAGT CTTTGTTCAT AGGGCAGCTT CTGCTGCATC AAAGCTGGCA        1210
+
+
+AAGCATGCCT ACGAGGCTGC ATCTACCAAC AAACGATTTG ATCATGAGCT TCTGCCTCTG      212791
+|||||||||| |||||||||| |||||||||| |||||||||| |||||||||| ||||||||||
+AAGCATGCCT ACGAGGCTGC ATCTACCAAC AAACGATTTG ATCATGAGCT TCTGCCTCTG        1270
+
+
+AAATGTTGCT TGATGTCGGT ATCTCTTCCT TGGGACTACA TTGCACATGA CCTGCTACAC      212851
+|||||||||| |||||||||| |||||||||| |||||||||| |||||||||| ||||||||||
+AAATGTTGCT TGATGTCGGT ATCTCTTCCT TGGGACTACA TTGCACATGA CCTGCTACAC        1330
+
+
+AAGGTGAAAA CCATCACTAC TTGCAAATGA TATGATTGTT TTGATGTCTA AAATTATTTT      212911
+|||                                                              
+AAG....... .......... .......... .......... .......... ..........        1333
+
+
+TTTGAACTGA AATGTCTAAA ATTGTTGATA ACTATTTTCA TTTTCCTGCT TATTTTTTAG      212971
+                                                                 
+.......... .......... .......... .......... .......... ..........        1333
+
+
+// intron part 212972 213211 (240 n) not shown                 //
+
+//........ .......... .......... .......... .......... ........//
+
+
+ATTGGCTGAA TAATAAGTGG GCTAGTTGCT TCTCAATTTT GAATGCAATC CACTTGACAG      213271
+                                                                 
+.......... .......... .......... .......... .......... ..........        1333
+
+
+AATAGTTCAA GTTGAGTATA TCTAGCTTAC AATATGATCA CGCTATGTAA CAGGAAACCC      213331
+                                                          |||||||
+.......... .......... .......... .......... .......... ...GAAACCC        1340
+
+
+CTCCGCTGGA CCTATGAGAG ACTGCGAATT CCCATTGTGC ACCAGAAAGA ATGATATATG      213391
+|||||||||| |||||||||| |||||||||| |||||||||| |||||||||| ||||||||||
+CTCCGCTGGA CCTATGAGAG ACTGCGAATT CCCATTGTGC ACCAGAAAGA ATGATATATG        1400
+
+
+TGCATGATTG TGGGAAAGTT TGTGTCCCTT GGGCTCGATA TAGTGTAAGA AAACAGTGAG      213451
+|||||||||| |||||||||| |||||||||| |||||||||| |||||||||| ||||||||||
+TGCATGATTG TGGGAAAGTT TGTGTCCCTT GGGCTCGATA TAGTGTAAGA AAACAGTGAG        1460
+
+
+CAGAGAAGCA GTGCTGCGAT GTACATGTGT ACTTTAAACA GACTAAAACT TGTAGAATTT      213511
+|||||||||| |||||||||| |||||||||| |||||||||| |||||||||| ||||||||||
+CAGAGAAGCA GTGCTGCGAT GTACATGTGT ACTTTAAACA GACTAAAACT TGTAGAATTT        1520
+
+
+TCATGTGTGT TTGTACAATG TTGAAAGTAG GCGATGAAAT AATGTAAATA TATATTTTTT      213571
+|||||||||| |||||||||| |||||||||| |||||||||| |||||||||| ||||||||||
+TCATGTGTGT TTGTACAATG TTGAAAGTAG GCGATGAAAT AATGTAAATA TATATTTTTT        1580
+
+
+TGGTTGTCAT GAGGAAGACT CTTCACTGTT GCT                                   213604
+|||||||||| |||||||||| |||||||||| || 
+TGGTTGTCAT GAGGAAGACT CTTCACTGTT GCC                                     1613
+
+

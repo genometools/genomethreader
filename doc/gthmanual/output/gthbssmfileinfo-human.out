@@ -1,0 +1,5 @@
+$ gthbssmfileinfo human
+$ the specified BSSM parameter file contains the following models:
+$ GT donor sites   = True (two-class)
+$ GC donor sites   = False
+$ AG acceptor sites= True (two-class)

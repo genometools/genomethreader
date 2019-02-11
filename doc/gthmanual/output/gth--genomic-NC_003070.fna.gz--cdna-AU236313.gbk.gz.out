@@ -1,0 +1,143 @@
+$ gth -genomic NC_003070.fna.gz -cdna AU236313.gbk.gz
+$ GenomeThreader 1.2.3 (2008-11-15 02:38:08)
+$ Date run: 2008-11-18 11:32:05
+$ Arguments: -genomic NC_003070.fna.gz -cdna AU236313.gbk.gz
+********************************************************************************
+EST Sequence: file=AU236313.gbk.gz, strand=+, description=AU236313 AU236313 RAFL14 Arabidopsis thaliana cDNA clone RAFL14-87-E12 5',
+
+    1  GCGTGTTGTT AAAGAGCTCA CTAGTTGGGT GATTTATTCA GAGGAGGATC CGGAAGCTCA
+   61  ACAAAGATAT TACTATTGGT CTTATCCAGC GTGAGTTGCT TAGCCTAGCG GAGTACAATG
+  121  TCCACATGGC GAAGCATCTT GATGGAGGGA GAAACAAGAC CGCAACTGAC TTTGCTATTT
+  181  CTCTACTCCA ATCCTTGGTC ACTGAGGAGT CNAGTGTCAT TTNNTAG
+
+Genomic Template: file=NC_003070.fna.gz, strand=+, from=382240, to=383395, description=gi|42592260|ref|NC_003070.5| Arabidopsis thaliana chromosome 1, complete sequence
+
+Predicted gene structure:
+
+ Exon  1   382540   382567 (  28 n);  cDNA      1     28 (  28 n); score: 1.000
+  Intron  1   382568   382802 ( 235 n); Pd: 0.050 (s:    0), Pa: 0.050 (s: 0.95)
+ Exon  2   382803   382929 ( 127 n);  cDNA     29    156 ( 128 n); score: 0.980
+  Intron  2   382930   383029 ( 100 n); Pd: 0.050 (s: 1.00), Pa: 0.050 (s: 1.00)
+ Exon  3   383030   383100 (  71 n);  cDNA    157    227 (  71 n); score: 0.944
+
+MATCH	42592260+	AU236313+	0.967	226	0.996	C
+PGS_42592260+_AU236313+	(382540  382567,382803  382929,383030  383100)
+
+Alignment (genomic DNA sequence = upper lines):
+
+GCGTGTTGTT AAAGAGCTCA CTAGTTGGGT ATGTTTACAA CCTTTTCAAG ATTTCACTTC      382599
+|||||||||| |||||||||| ||||||||                                   
+GCGTGTTGTT AAAGAGCTCA CTAGTTGG.. .......... .......... ..........          28
+
+
+GCTGATGTGC TTTGTTCAGT TACTTCTCCA TTAATTTGTC ACTATTTCTG TCAGAACACA      382659
+                                                                 
+.......... .......... .......... .......... .......... ..........          28
+
+
+TAGGATAACA CATATCATAT AAGTGCTAGG TCGAGTCTGT TTCCTGTAGT TGGAGCCTAT      382719
+                                                                 
+.......... .......... .......... .......... .......... ..........          28
+
+
+CCTCAACTGG TTATAGATAC TAGATTTGTT TCTTTGGTAT TTTTAGTTAT AATTAATTAT      382779
+                                                                 
+.......... .......... .......... .......... .......... ..........          28
+
+
+CTTTCTTCAA ACTTTTGACA CAGGTGATTT ATTCAGAGGA GGAT-CGGAA GCTCAACAAA      382838
+                         ||||||| |||||||||| |||| ||||| ||||||||||
+.......... .......... ...GTGATTT ATTCAGAGGA GGATCCGGAA GCTCAACAAA          65
+
+
+GATATTACTA TTGGTCTTAT CCAGCGTGAG TTGCTTAGCC TAGCGGAGTA CAATGTCCAC      382898
+|||||||||| |||||||||| |||||||||| |||||||||| |||||||||| ||||||||||
+GATATTACTA TTGGTCTTAT CCAGCGTGAG TTGCTTAGCC TAGCGGAGTA CAATGTCCAC         125
+
+
+ATGGCGAAGC ATCTTGATGG AGGGAGAAAC AGTATGCTGA ATTGCTTAAC CTTTGTTGAT      382958
+|||||||||| |||||||||| |||||||||| |                               
+ATGGCGAAGC ATCTTGATGG AGGGAGAAAC A......... .......... ..........         156
+
+
+GTCCTTGTGT GGTAACATTC TTTTTTTGTT TTGGCTAGTG AACTTGTTTT AACAAGTTGT      383018
+                                                                 
+.......... .......... .......... .......... .......... ..........         156
+
+
+TTGTTACGCA GAGACCGCAA CTGACTTTGC TATTTCTCTA CTCCAATCCT TGGTCACTGA      383078
+            ||||||||| |||||||||| |||||||||| |||||||||| ||||||||||
+.......... .AGACCGCAA CTGACTTTGC TATTTCTCTA CTCCAATCCT TGGTCACTGA         205
+
+
+GGAGTCGAGT GTCATTTCAG AG                                               383100
+|||||| ||| |||||||    ||
+GGAGTCNAGT GTCATTTNNT AG                                                  227
+
+
+--------------------------------------------------------------------------------
+
+Predicted gene locations (1):
+
+
+PGL   1 (+ strand):      382540     383100
+AGS-1 (382540  382567,382803  382929,383030  383100)
+SCR   (e 1.000  d 0.050 a 0.050,e 0.980  d 0.050 a 0.050,e 0.944)
+
+  Exon  1   382540   382567 (  28 n); score: 1.000
+    Intron  1   382568   382802 ( 235 n);           Pd: 0.050  Pa: 0.050
+  Exon  2   382803   382929 ( 127 n); score: 0.980
+    Intron  2   382930   383029 ( 100 n);           Pd: 0.050  Pa: 0.050
+  Exon  3   383030   383100 (  71 n); score: 0.944
+
+  PGS (382540  382567,382803  382929,383030  383100)	AU236313+
+
+3-phase translation of AGS-1 (+strand):
+
+          .         .         .        :   .         .         .         
+  382540  GCGTGTTGTTAAAGAGCTCACTAGTTGG : GTGATTTATTCAGAGGAGGATCGGAAGCTCAA
+           A  C  C  *  R  A  H  *  L   : G  D  L  F  R  G  G  S  E  A  Q 
+            R  V  V  K  E  L  T  S  W  :  V  I  Y  S  E  E  D  R  K  L  N
+             V  L  L  K  S  S  L  V  G :   *  F  I  Q  R  R  I  G  S  S  
+
+
+          .         .         .         .         .         .         
+  382835  CAAAGATATTACTATTGGTCTTATCCAGCGTGAGTTGCTTAGCCTAGCGGAGTACAATGT
+           Q  R  Y  Y  Y  W  S  Y  P  A  *  V  A  *  P  S  G  V  Q  C 
+            K  D  I  T  I  G  L  I  Q  R  E  L  L  S  L  A  E  Y  N  V
+          T  K  I  L  L  L  V  L  S  S  V  S  C  L  A  *  R  S  T  M  
+
+
+          .         .         .         .     :      .         .         
+  382895  CCACATGGCGAAGCATCTTGATGGAGGGAGAAACA : AGACCGCAACTGACTTTGCTATTTC
+           P  H  G  E  A  S  *  W  R  E  K  Q :   D  R  N  *  L  C  Y  F 
+            H  M  A  K  H  L  D  G  G  R  N   : K  T  A  T  D  F  A  I  S
+          S  T  W  R  S  I  L  M  E  G  E  T  :  R  P  Q  L  T  L  L  F  
+
+
+          .         .         .         .         .     
+  383055  TCTACTCCAATCCTTGGTCACTGAGGAGTCGAGTGTCATTTCAGAG
+           S  T  P  I  L  G  H  *  G  V  E  C  H  F  R  
+            L  L  Q  S  L  V  T  E  E  S  S  V  I  S  E 
+          L  Y  S  N  P  W  S  L  R  S  R  V  S  F  Q   
+
+
+Maximal non-overlapping open reading frames (>= 64 codons)
+
+>42592260+_PGL-1_AGS-1_PPS_1 (382541  382567,382803  382929,383030  383100)	(frame '1';   225 bp,   75 residues) 
+       1  RVVKELTSWV IYSEEDRKLN KDITIGLIQR ELLSLAEYNV HMAKHLDGGR NKTATDFAIS 
+      61  LLQSLVTEES SVISE
+
+
+
+
+$ general statistics:
+$ 1 chain has been computed
+$ 
+$ memory statistics:
+$ 1 spliced alignments have been stored
+$ 1 predicted gene locations have been stored
+$ 0 megabytes was the average size of the backtrace matrix
+$ 2 backtrace matrices have been allocated
+$ 
+$ date finished: 2008-11-18 11:32:07

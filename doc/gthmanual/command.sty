@@ -1,0 +1,467 @@
+%Stefan Kurtz, 1991-1996
+\usepackage{fancybox,ifthen,latexsym,biblio}
+\usepackage{array,color,colortbl,xspace}
+\usepackage{amssymb}
+%\usepackage{europs}
+
+\newcommand{\Integers}{\mathbb{Z}}
+\newcommand{\Nats}{\mathbb{N}}
+\newcommand{\Reals}{\mathbb{R}}
+\newcommand{\Rats}{\mathbb{Q}}
+\newcommand{\Complexes}{\mathbb{C}}
+\newcommand{\Eops}{\mathbb{E}}
+
+%\usepackage{bbm}
+%\newcommand{\Integers}{\mathbbm{Z}}
+%\newcommand{\Nats}{\mathbbm{N}}
+%\newcommand{\Reals}{\mathbbm{R}}
+%\newcommand{\Rats}{\mathbbm{Q}}
+%\newcommand{\Complexes}{\mathbbm{C}}
+%\newcommand{\Eops}{\mathbbm{E}}
+
+\newcounter{eCounter}
+\newcounter{eqCounter}
+\newbox\RewritesToBox
+\newbox\PfhBox
+\newbox\PfvBox
+
+%New Commands
+
+\newcommand{\Alpha}{\mathcal{A}}
+\newcommand{\CNBH}[1][P]{C\!N_{k}(#1)}
+\newcommand{\NBH}[1][P]{N_{k}(#1)}
+%\newcommand{\Email}[1][kurtz]{#1@TechFak.Uni-Bielefeld.DE}
+\newcommand{\Roundup}[1]{\left\lceil#1\right\rceil}
+\newcommand{\Rounddown}[1]{\left\lfloor#1\right\rfloor}
+\newcommand{\BibTeX}{\textsc{Bib}\TeX}
+\newcommand{\BigO}[1]{\mathcal{O}(#1)}
+\newcommand{\Comment}[1]{{}}
+\newcommand{\Ignore}[1]{{}}
+\newcommand{\IgnoreLatex}[1]{{}}
+\newcommand{\DFA}[1]{\mathcal{A}_{#1}}
+\newcommand{\Function}[3]{#1:#2\to#3}
+\newcommand{\EQclass}[1]{\lbrack #1\rbrack}
+\newcommand{\List}[1]{\lbrack #1 \rbrack}
+\newcommand{\Power}[1]{\mathcal{P}(#1)}
+\newcommand{\REV}[1]{{#1^{-1}}}
+\newcommand{\Size}[1]{|#1|}
+\newcommand{\Abs}[1]{\left|#1\right|}
+\newcommand{\Set}[1]{\{#1\}}
+\newcommand{\Subtree}[2]{#1_{#2}}
+\newcommand{\SCT}[1]{${\scriptstyle #1}$}
+\newcommand{\SCS}[1]{{\scriptsize #1}}
+\newcommand{\Over}[2]{\begin{tabular}{@{}l}#1\\#2\end{tabular}}
+\newcommand{\OverOver}[3]{\begin{tabular}{@{}l}#1\\#2\\#3\end{tabular}}
+\newcommand{\Aplus}{\Alpha^{+}}
+\newcommand{\Transition}[3]{#1\RewritesTo{#2}#3}
+\newcommand{\Bif}{ \textbf{if} }
+\newcommand{\Bother}{ \textbf{otherwise} }
+\newcommand{\Bwhere}{ \textbf{where} }
+\newcommand{\BElseIf}{ \textbf{else~if} }
+\newcommand{\Append}{{+\!\!+}}
+\newcommand{\ListDiff}{-\hspace*{-0.1cm}-}
+\newcommand{\Empty}{[\,]}
+\newcommand{\Iff}{if and only if}
+\newcommand{\qGram}{$q$-gram}
+\newcommand{\Strings}{\Alpha^{\ast}}
+
+\newcommand{\BoldVel}{\mbox{\boldmath$\vee$}}
+\newcommand{\BoldTo}{\mbox{\boldmath$\to$}}
+\newcommand{\BoldGets}{\mbox{\boldmath$\gets$}}
+\newcommand{\PSP}[3]{\epsfxsize=#2\epsfysize=#3\centerline{\hbox{\epsfbox{#1.psp}}}
+}
+\newcommand{\EqNum}[2]{\hspace{#1em}\refstepcounter{eqCounter}(\arabic{eqCounter})\label{#2}}
+\newcommand{\Equationlabel}[1]{\refstepcounter{equation}(\arabic{equation})\label{#1}}
+\newcommand{\Fail}{\mbox{{\emph{failure}}}}
+\newcommand{\gsShift}{\mbox{\emph{gsshift}}}
+\newcommand{\Pam}{\emph{Pamelita}\xspace}
+\newcommand{\ACA}{Aho-Corasick Algorithm\xspace}
+\newcommand{\BFA}{Brute Force Algorithm\xspace}
+\newcommand{\KRA}{Karp-Rabin Algorithm\xspace}
+\newcommand{\KMPA}{Knuth-Morris-Pratt Algorithm\xspace}
+\newcommand{\BMA}{Boyer-Moore Algorithm\xspace}
+\newcommand{\BMHA}{Boyer-Moore-Horspool Algorithm\xspace}
+\newcommand{\ECLA}{Chang-Lawler Algorithm\xspace}
+\newcommand{\WFA}{Wagner-Fischer Algorithm\xspace}
+\newcommand{\DTA}{Diagonal Transition Algorithm\xspace}
+\newcommand{\CPA}{Column Partition Algorithm\xspace}
+\newcommand{\QSA}{Quick Search Algorithm\xspace}
+\newcommand{\States}{{\mathcal{S}}}
+\newcommand{\FStates}{{\mathcal{F}}}
+\renewcommand{\SS}{string searching\xspace}
+\newcommand{\ASS}{approximate string searching\xspace}
+\newcommand{\ESS}{exact string searching\xspace}
+\newcommand{\MESS}{multiple exact string searching\xspace}
+\newcommand{\FinAuto}{(\States,\FStates,s_{0},nextstate)}
+\newcommand{\Back}{\vspace{-1em}}
+%\newcommand{\TIS}{that is}
+\newcommand{\ObviousProof}{\begin{Proof} Obvious. \QEDBox \end{Proof}}
+\newcommand{\RoutineProof}{\begin{Proof} Routine. \QEDBox \end{Proof}}
+\newcommand{\Fetch}{\mbox{\emph{fetch}}}
+\newcommand{\Free}{\mbox{\emph{free}}}
+\newcommand{\AddLeaf}{\mbox{\emph{addleaf}}}
+\newcommand{\Undeftree}{\mbox{\emph{Undeftree}}}
+\newcommand{\Edist}{edist_{\delta}}
+\newcommand{\SES}{\mbox{\emph{SES}}}
+\newcommand{\Cdiag}{\mbox{\emph{Cdiag}}}
+\newcommand{\Prefix}{\mbox{\emph{prefix}}}
+\newcommand{\Suffix}{\mbox{\emph{suffix}}}
+\newcommand{\MMD}{\mbox{\emph{mmdist}}}
+\newcommand{\FIP}{\mbox{\emph{fingerprint}}}
+\newcommand{\Cons}{\mbox{\emph{Cons}}}
+\newcommand{\CLprime}{CL$'$}
+\newcommand{\EDtab}{E_{\delta}}
+\newcommand{\Partleft}{\Psi_{lr}}
+\newcommand{\Partright}{\Psi_{rl}}
+\newcommand{\Rplusnull}{\Reals_{0}^{+}}
+\newcommand{\Rplus}{\Reals^{+}}
+\newcommand{\EP}{E\!P}
+\newcommand{\StartPos}{S\!P}
+\newcommand{\CHLW}{Chang and Lawler\xspace}
+\newcommand{\inX}{in\!X}
+\newcommand{\inY}{in\!Y}
+\newcommand{\ALIG}{A}
+\newcommand{\Patternset}{\mathcal{P}}
+\newcommand{\Plength}{\sum_{p\in\Patternset}{\Size{p}}}
+\newcommand{\ACtree}{AC-tree}
+\newcommand{\NOTHING}{{}}
+\newcommand{\PUT}[3]{\put {#3} [Bl] at #1 #2}
+\newcommand{\Infix}[1]{\$#1}
+\newcommand{\Annotation}[1]{\index{annotation!#1}}
+\newcommand{\Keyword}[1]{\index{#1}}
+\newcommand{\Miranda}[1]{\index{#1@\texttt{#1}}}
+\newcommand{\Symbol}[2]{\index{#1@$#2$}}
+\newcommand{\IfCase}[2]{#1&\mbox{if }#2}
+\newcommand{\ElseIf}[2]{#1&\mbox{else if }#2}
+\newcommand{\OtherWise}[1]{#1&\mbox{otherwise}}
+\newcommand{\OVER}[2]{\begin{array}{l}#1/\\#2\end{array}}
+\newcommand{\AddSuffix}[3]{#1[#2\gets #3]}
+\newcommand{\CstCons}[2]{cstCons(#1,#2)}
+\newcommand{\Loc}[2]{loc_{#1}(#2)}
+\newcommand{\SuffixOf}[2]{#1\mbox{ $\int$ }#2}
+\newcommand{\PrefixOf}[2]{#1\mbox{ $\sqsubset$ }#2}
+\newcommand{\SuffixOfCasc}[3]{#1\mbox{ $\int$ }#2\mbox{ $\int$ }#3}
+\newcommand{\Eop}[3][\!]{#2#1\to#1#3}
+\newcommand{\Deletion}[2][\!]{\Eop[#1]{#2}{\varepsilon}}
+\newcommand{\Insertion}[2][\!]{\Eop[#1]{\varepsilon}{#2}}
+\newcommand{\Replacement}[3][\!]{\Eop[#1]{#2}{#3}}
+\newcommand{\Substitution}[3][\!]{\Eop[#1]{#2}{#3}}
+\newcommand{\Mpos}[1]{mp_{#1}}
+\newcommand{\Neighbor}[2]{\mbox{\emph{neighborhood}}_{#1}(#2)}
+\newcommand{\Progname}[1]{{\footnotesize #1}}
+\newcommand{\Oterm}[1]{\begin{array}[t]{@{}l@{}l}\mathcal{O}(#1)\end{array}}
+\newcommand{\ExtA}{extension 1\Keyword{extension 1}}
+\newcommand{\ExtUA}{extension 2\Keyword{extension 2}}
+\newcommand{\Horizontal}{\put(3.3,0){\vector(1,0){33}}}
+\newcommand{\THorizontal}{\put(3.3,0){{\thicklines\vector(1,0){33}}}}
+\newcommand{\Diagonal}{\put(2.5,-2.5){\vector(1,-1){34.5}}}
+\newcommand{\TDiagonal}{\put(2.5,-2.5){{\thicklines\vector(1,-1){34.5}}}}
+\newcommand{\Vertical}{\put(0,-3.3){\vector(0,-1){33}}}
+\newcommand{\TVertical}{\put(0,-3.3){{\thicklines\vector(0,-1){33}}}}
+\newcommand{\Pkeyword}[1]{\textbf{#1}}
+\newcommand{\While}[1]{\Pkeyword{while}\ #1\ \Pkeyword{do}}
+\newcommand{\And}[0]{\Pkeyword{and}}
+\newcommand{\If}[0]{\Pkeyword{if}}
+\newcommand{\Then}[0]{\Pkeyword{then}}
+\newcommand{\Ifthen}[1]{\Pkeyword{if}~#1~\Then}
+\newcommand{\Else}[0]{\Pkeyword{else}}
+\newcommand{\Return}[0]{\Pkeyword{return}}
+\newcommand{\Invariant}[1]{\{~\Pkeyword{invariant}~#1~\}}
+\newcommand{\Block}[2][1cm]{
+\mbox{$\begin{array}[t]{@{\hspace*{#1}}l@{}}#2\end{array}$}}
+\newcommand{\ForLoop}[2]{\Pkeyword{for}~#1~\Pkeyword{to}~#2~\Pkeyword{do}}
+\newcommand{\Binom}[2]{\ensuremath{\left({\renewcommand{\arraystretch}{0.8}\begin{array}{@{}c@{}}#1\\#2\end{array}}\right)}}
+\newcommand{\Listing}[6]{#1#5_{1}#3#5_{2}#3#4#3#5_{#6}#2}
+\newcommand{\Symbolseq}[2][r]{\Listing{}{}{\cdot}{\ldots}{#2}{#1}}
+\newcommand{\Alignment}[3]{[\Eop{#1_{1}}{#2_{1}},\Eop{#1_{2}}{#2_{2}},\ldots,\Eop{#1_{#3}}{#2_{#3}}]}
+\newcommand{\DefEop}[1][]{\Eop{\alpha#1}{\beta#1}}
+\newcommand{\QEDBox}{\hfill\mbox{$\Box$}}
+\newcommand{\Lexp}[2]{\mbox{$\lambda#1\mapsto #2$}}
+\newcommand{\IFT}[2]{\mbox{if }#1\mbox{ then }#2}
+\newcommand{\IFTE}[3]{\mbox{if }#1\mbox{ then }#2\mbox{ else }#3}
+\newcommand{\Backslash}{\texttt{\symbol{92}}}
+\newcommand{\TTdq}{\texttt{\symbol{34}}}
+\newcommand{\Regexp}[1][\Sigma]{\mbox{$R(#1)$}}
+\newcommand{\Language}{\ell}
+\newcommand{\Euro}{\EURofc\xspace}
+
+\newcommand{\Muster}[2]{\par\textbf{L"osung zu Aufgabe \Blatt.\ref{#1}:} #2\par}
+
+\newcommand{\Figure}[3]{\begin{figure}%
+  \par%
+  \hspace*{0pt}\hrulefill\hspace*{0pt}%
+  ~\caption{#1}%
+  \label{#2}%
+  #3%
+  \par%
+  \hspace*{0pt}\hrulefill\hspace*{0pt}%
+  \end{figure}
+}
+
+\newcommand{\Table}[3]{\begin{table}%
+  \par%
+  \hspace*{0pt}\hrulefill\hspace*{0pt}%
+  ~\caption{#1}%
+  \label{#2}%
+  #3%
+  \par%
+  \hspace*{0pt}\hrulefill\hspace*{0pt}%
+  \end{table}
+}
+
+\newcommand{\RewritesTo}[1]{%
+  \mbox{$\,$%
+  \setbox\RewritesToBox=\hbox{\vphantom{$\scriptstyle{#1}$}%
+  \hphantom{\vbox{\hbox{$\scriptstyle{#1}$}\hbox to 2ex{}}\hbox to 0.8ex{}}}%
+  \raise0.7ex\hbox{\raise\the\dp\RewritesToBox\hbox to \the\wd\RewritesToBox{%
+  \hfill$\scriptstyle{#1}$\hfill\hbox to 0.6ex{}}}%
+  \hbox to -\the\wd\RewritesToBox{}%
+  \raise0.5ex\hbox{\unitlength\the\wd\RewritesToBox\begin{picture}(1,0)\put(0,0){\vector(1,0){1}}\end{picture}}%
+  $\,$}}
+
+\newcommand{\RPfeil}[1]{%
+  \mbox{$\,$%
+  \setbox\PfhBox=\hbox{\vphantom{$#1$}%
+  \hphantom{\vbox{\hbox{$#1$}\hbox to 2ex{}}\hbox to 0.8ex{}}}%
+  \setbox\PfvBox=\vbox spread 0.15mm {$#1$}%
+  \hbox{\raise\the\dp\PfhBox\hbox to \the\wd\PfhBox{%
+  \hfill$#1$\hfill\hbox to 0.6ex{}}}%
+  \hbox to -\the\wd\PfhBox{}%
+  \raise\ht\PfvBox%
+  \hbox{\unitlength\the\wd\PfhBox\begin{picture}(1,0)\put(0,0){\vector(1,0){1}}\end{picture}}%
+  $\,$}%
+}
+
+\newcommand{\LPfeil}[1]{\mbox{%
+  \setbox\PfhBox=\hbox{$\,\,#1$\,}%
+  \raise\ht\PfhBox\hbox{\raise1pt\hbox{%
+  \unitlength\the\wd\PfhBox\begin{picture}(0,0)\put(1,0){\vector(-1,0){1}}\end{picture}}}%
+  \box\PfhBox}%
+}
+
+\newcommand{\Gnuplot}[4]{
+  \par
+  \vspace*{0.5cm}
+  \centerline{\makebox(0,0)[l]{\vspace*{#3pt}\(\Size{\Alpha}=#2\)}}
+  \vspace*{-0.8cm}
+  \epsfxsize=5.5cm% Hoehe
+  \epsfysize=\textwidth% Breite
+  \centerline{\hbox{\rotate[r]{\epsfbox{#1.#2.psp}}}}
+  \vspace*{-0.25cm}
+  \centerline{\hspace*{3.5em}$#4$}
+}
+
+\newcommand{\FigureNoline}[3]{\begin{figure}[p]%
+  \vspace*{-0.9cm}
+  ~\caption{#1}%
+  \label{#2}%
+  #3%
+  \par%
+  \end{figure}
+}
+
+\newcommand{\Pcompl}[3]{
+  \put(#1,7){\makebox(0,0)[t]{$\overbrace{\hspace{#2}}$}}
+  \put(#1,11){\makebox(0,0)[t]{\SCT{x_{#3}}}}
+}
+
+\newcommand{\Pmarked}[2]{
+  \count1=#1
+  \advance\count1 by -2
+  \put(\count1,8){\makebox(0,0)[l]{\SCT{a_{#2}}}}
+}
+
+\newcommand{\Tcompl}[3]{
+  \put(#1,0){\makebox(0,0)[t]{$\underbrace{\hspace{#2}}$}}
+  \put(#1,-5){\makebox(0,0)[t]{\SCT{w_{#3}}}}
+}
+
+\newcommand{\Tdiff}[2]{
+  \put(#1,-25){\vector(0,1){15}}
+  \put(#1,-26){\makebox(0,0)[t]{\SCT{d(#2)}}}
+}
+
+\newcommand{\Tvector}[2]{
+  \put(#1,-25){\vector(0,1){15}}
+  \put(#1,-26){\makebox(0,0)[t]{\SCT{#2}}}
+}
+
+\newcommand{\Tmarked}[2]{
+  \count1=#1
+  \advance\count1 by -2
+  \put(\count1,-8){\makebox(0,0)[l]{\SCT{c_{#2}}}}
+}
+
+\newcommand{\FunDefRight}[2][ll]{%
+  \left\{%
+  \begin{array}{#1}#2\end{array}\right.%
+}
+
+\newcommand{\FunDef}[3][ll]{%
+  #2=\left\{%
+  \begin{array}{#1}#3\end{array}\right.%
+}
+
+\newcommand{\FunDefWhere}[4][ll]{%
+  \setbox1=\hbox{$#2=\left\{\right.$}%
+  \dimen1=\wd1%
+  \FunDef[#1]{#2}{#3}\\%
+  \hspace*{\dimen1}\begin{array}{l@{}l}\mbox{where }#4\end{array}%
+}
+
+\newcommand{\FunDefOneEqWhere}[3]{%
+  \setbox1=\hbox{$#1=$}%
+  \dimen1=\wd1%
+  #1=#2\\%
+  {\hspace*{\dimen1}\begin{array}{l@{}l}\mbox{where }#3\end{array}}%
+}
+
+\newcommand{\FunDefOneEq}[1]{%
+  \begin{array}{@{}l}#1\end{array}%
+}
+
+\newcommand{\RomanLabels}{
+  \renewcommand{\labelenumi}{$(\roman{enumi})$}
+  \renewcommand{\theenumi}{$(\roman{enumi})$}
+}
+\newcommand{\ArabicLabels}{
+  \renewcommand{\labelenumi}{$(\arabic{enumi})$}
+  \renewcommand{\theenumi}{(\arabic{enumi})}
+}
+\newcommand{\BibLabels}{
+  \renewcommand{\labelenumi}{\mbox{[\arabic{enumi}]}}
+  \renewcommand{\theenumi}{\mbox{[\arabic{enumi}]}}
+}
+\newcommand{\AlphaLabels}{
+  \renewcommand{\labelenumi}{$(\alph{enumi})$}
+  \renewcommand{\theenumi}{(\alph{enumi})}
+}
+
+\newcommand{\FinalVersion}[1]{
+%
+\typeout{****This version contains page numbers and an extra header for the first page. It will be removed for the camera ready copy.****}
+\begin{picture}(0,0)
+\put(0,0){\makebox(330,210)[rt]{{\small\textsc{\begin{tabular}{r}#1\end{tabular}}}}}
+\end{picture}
+\pagestyle{plain}
+}
+
+\newcommand{\Threeset}[3]{\left\{\begin{array}%
+                          {@{\hspace*{3pt}}l@{\hspace*{3pt}}}%
+                          #1\\#2\\#3\end{array}\right\}}
+
+\newcommand{\Twomin}[2]{\min\left\{\begin{array}%
+                                   {@{\hspace*{3pt}}l@{\hspace*{3pt}}}%
+                                   #1\\#2\end{array}\right\}}
+
+\newcommand{\EqnAlign}[2]{%
+  \setbox1=\vbox{$\begin{array}{@{}l@{}l}#2\end{array}$}%
+  \dimen1=\ht1%
+  \divide\dimen1 by 2
+  \raisebox{\dimen1}{#1}&\begin{array}{@{}l@{}l}#2\end{array}}
+
+\newcommand{\Eqnarray}[2][@{}l@{~}c@{~}l@{}]{\begin{array}{#1}#2\end{array}}
+
+\newcommand{\Alignrows}[3]{\begin{array}{*{#1}{c}}#2\\#3\end{array}}
+\newcommand{\Leftcurly}[1]{\left\{#1\right.}
+\newcommand{\Arraystretch}[1]{\renewcommand{\arraystretch}{#1}}
+\newcommand{\UniBi}{Universit{\"a}t Bielefeld}
+\newcommand{\UNIaddress}{\UniBi\\
+                         Postfach 100\,131\\
+                         33501 Bielefeld\\ 
+                         Germany}
+\newcommand{\BiBiServ}{Bielefelder-Bioinformatik-Server\xspace}
+\newcommand{\AGPI}{Arbeitsgruppe Praktische Informatik\xspace}
+\newcommand{\PBS}[1]{\let\temp=\\#1\let\\=\temp}
+\newcommand{\UniD}{Universit{\"a}t D{\"u}sseldorf\xspace}
+
+\newcommand{\SY}[1]{\symbol{#1}}
+\newcommand{\FILEINFO}[3]{%
+\markright{\textsf{#1, #2, #3}}
+\pagestyle{myheadings}
+}
+
+\newcommand{\Alrows}[2][0.8]{\begin{center}
+                        \begin{texttt}{
+                        \renewcommand{\arraystretch}{#1}
+                        \begin{tabular}{@{}l@{}l@{}}
+                        #2
+                        \end{tabular}
+                        }
+                        \end{texttt}
+                        \end{center}}
+
+\newcommand{\FragSolution}[3]{\begin{minipage}{0.4\linewidth}
+                              $\bullet$~~Beispiel #1:~~~Fragmente:
+                              \Alrows{#2}
+                              \end{minipage}
+                              \begin{minipage}{0.4\linewidth}
+                              Antwort:
+                              \Alrows[0.7]{#3}
+                              \end{minipage}
+}
+
+\newcommand{\Fragmentassembly}[2]{\begin{minipage}{0.4\linewidth}
+                                  fragments:
+                                  \Alrows{#1}
+                                  \end{minipage}
+                                  \begin{minipage}{0.4\linewidth}
+                                  answer:
+                                  \Alrows[0.7]{#2}
+                                  \end{minipage}
+}
+
+\newcommand{\Ffwd}[1]{\mbox{$\to$}&~~#1}
+\newcommand{\Fbwd}[1]{\mbox{$\gets$}&~~#1}
+\newcommand{\Fres}[1]{&~~#1}
+\newcommand{\Sigmastar}[1][]{\Sigma#1^{\ast}}
+\newcommand{\Gammastar}[1][]{\Gamma#1^{\ast}}
+\newcommand{\Sigmaplus}[1][]{\Sigma#1^{+}}
+\newcommand{\Nsub}[2]{#1_{\mathrm{#2}}}
+\newcommand{\Prefixes}[1]{\mathit{Prefixes}(#1)}
+\newcommand{\Suffixes}[1]{\mathit{Suffixes}(#1)}
+\newcommand{\Factors}[1]{\mathit{Factors}(#1)}
+\newcommand{\Delsym}[2]{\mathit{delete}_{#1}(#2)}
+\newcommand{\Esub}{\Nsub{\Eops}{sub}}
+\newcommand{\Edel}{\Nsub{\Eops}{del}}
+\newcommand{\Eins}{\Nsub{\Eops}{ins}}
+\newcommand{\Ereg}{\Nsub{\Eops}{reg}}
+\newcommand{\Dash}{{\raise-0.8pt\hbox{\texttt{-}}}}
+\newcommand{\Del}[2][\!]{\Eop[#1]{#2}{\Dash}}
+\newcommand{\Ins}[2][\!]{\Eop[#1]{\Dash}{#2}}
+\newcommand{\Sub}[3][\!]{\Eop[#1]{#2}{#3}}
+\newcommand{\PlusDash}[2]{\mbox{$\hspace*{-2pt}\mskip\thickmuskip\raise1.25ex%
+                          \hbox{\Dash}\kern-#1{#2}$}}
+\newcommand{\Pluseps}[1]{#1_{\varepsilon}}
+\newcommand{\DSigma}{\PlusDash{0.65em}{\Sigma}}
+\newcommand{\DGamma}{\PlusDash{0.6em}{\Gamma}}
+\newcommand{\DAlpha}{\,\PlusDash{0.9em}{\Alpha}}
+\newcommand{\Sigmaeps}[1][]{\Pluseps{\Sigma#1}}
+\newcommand{\DSigmaeps}[1][]{\Pluseps{\DSigma#1}}
+\newcommand{\Gammaeps}[1][]{\Pluseps{\Gamma#1}}
+\newcommand{\DGammaeps}[1][]{\Pluseps{\DGamma#1}}
+\newcommand{\Sigmasub}{\Nsub{\sigma}{sub}}
+\newcommand{\Altconst}{|}
+\newcommand{\Alt}[2]{#1\Altconst#2}
+\newcommand{\ConcatAutoconst}{\Append}
+\newcommand{\ConcatAuto}[2]{#1\ConcatAutoconst#2}
+\newcommand{\UnionAutoSet}[1]{\bigcup #1}
+\newcommand{\UnionAutoPair}[2]{#1\cup#2}
+\newcommand{\ClosureAuto}[1]{\Star{#1}}
+\newcommand{\Dollar}{\texttt{\symbol{36}}}
+\newcommand{\SNT}{\mathtt{\symbol{36}}}
+\newcommand{\CONCOP}[1][M]{\ast_{\!#1}}
+\newcommand{\CONCNL}[1][M]{1_{\!#1}}
+\newcommand{\CONCFOLD}[1][M]{{\textstyle\prod_{\CONCNL[#1]}^{\CONCOP[#1]}}}
+\newcommand{\ALTOP}[1][M]{+_{\!#1}}
+\newcommand{\ALTNL}[1][M]{0_{\!#1}}
+\newcommand{\CONCM}[1][M]{(#1,\CONCNL[#1],\CONCOP[#1])}
+\newcommand{\ALTFOLD}[1][M]{{\textstyle\sum_{\ALTNL[#1]}^{\ALTOP[#1]}}}
+\newcommand{\ALTM}[1][M]{(M,\ALTNL[#1],\ALTOP[#1])}
+
+\newcommand{\AtHome}[1]{\IfFileExists{/homes/kurtz/.techfak}{}{#1}}
+\newcommand{\NotAtHome}[1]{\IfFileExists{/homes/kurtz/.techfak}{#1}{}}
+
+\newcolumntype{G}{>{\columncolor[gray]{.9}}r}
+\newcommand{\Grey}[1]{\multicolumn{1}{|G|}{#1}}
+

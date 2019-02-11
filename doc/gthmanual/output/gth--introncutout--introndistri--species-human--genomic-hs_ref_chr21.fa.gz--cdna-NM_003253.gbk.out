@@ -1,0 +1,30 @@
+$ gth -introncutout -introndistri -species human -genomic hs_ref_chr21.fa.gz -cdna NM_003253.gbk 
+
+
+
+
+$ length distribution of all introns:
+88: 1 (prob=0.0357,cumulative=0.0357)
+304: 1 (prob=0.0357,cumulative=0.0714)
+574: 1 (prob=0.0357,cumulative=0.1071)
+1112: 1 (prob=0.0357,cumulative=0.1429)
+2134: 1 (prob=0.0357,cumulative=0.1786)
+2370: 1 (prob=0.0357,cumulative=0.2143)
+3060: 1 (prob=0.0357,cumulative=0.2500)
+3182: 1 (prob=0.0357,cumulative=0.2857)
+3684: 1 (prob=0.0357,cumulative=0.3214)
+4080: 1 (prob=0.0357,cumulative=0.3571)
+4354: 1 (prob=0.0357,cumulative=0.3929)
+4984: 1 (prob=0.0357,cumulative=0.4286)
+5076: 1 (prob=0.0357,cumulative=0.4643)
+5390: 1 (prob=0.0357,cumulative=0.5000)
+5632: 1 (prob=0.0357,cumulative=0.5357)
+5706: 1 (prob=0.0357,cumulative=0.5714)
+6081: 1 (prob=0.0357,cumulative=0.6071)
+7032: 1 (prob=0.0357,cumulative=0.6429)
+7602: 1 (prob=0.0357,cumulative=0.6786)
+8136: 1 (prob=0.0357,cumulative=0.7143)
+9748: 1 (prob=0.0357,cumulative=0.7500)
+10534: 1 (prob=0.0357,cumulative=0.7857)
+13820: 1 (prob=0.0357,cumulative=0.8214)
+17355: 1 (prob=0.0357,cumulative=0.8571)

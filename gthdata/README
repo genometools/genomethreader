@@ -1,0 +1,24 @@
+This directory contains the binary distribution of GenomeThreader (gth).
+All rights reserved. Do not distribute.
+
+It contains the following directories
+
+bin/    contains the binary files and shell scripts
+data/   contains some example data
+doc/    contains the manual
+
+To be able to work with GenomeThreader include bin/ in your path
+and set the following environment variables (also explained in the
+manual in doc/), e.g.:
+
+setenv $BSSMDIR         "${HOME}/gth/bin/bssm"
+
+and
+
+setenv $GTHDATADIR      "${HOME}/gth/bin/gthdata"
+
+If you have problems with file locking via NFS (for example you get an error
+message like this: cannot flock: No locks available), then you can disable file
+locking by setting the environment variable GTHNOFLOCK to any value.
+
+For example, GTHNOFLOCK=yes

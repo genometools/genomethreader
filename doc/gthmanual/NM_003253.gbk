@@ -1,0 +1,221 @@
+LOCUS       NM_003253               5521 bp    mRNA    linear   PRI 23-AUG-2004
+DEFINITION  Homo sapiens T-cell lymphoma invasion and metastasis 1 (TIAM1),
+            mRNA.
+ACCESSION   NM_003253
+VERSION     NM_003253.1  GI:4507500
+KEYWORDS    .
+SOURCE      Homo sapiens (human)
+  ORGANISM  Homo sapiens
+            Eukaryota; Metazoa; Chordata; Craniata; Vertebrata; Euteleostomi;
+            Mammalia; Eutheria; Primates; Catarrhini; Hominidae; Homo.
+REFERENCE   1  (bases 1 to 5521)
+  AUTHORS   Servitja,J.M., Marinissen,M.J., Sodhi,A., Bustelo,X.R. and
+            Gutkind,J.S.
+  TITLE     Rac1 function is required for Src-induced transformation. Evidence
+            of a role for Tiam1 and Vav2 in Rac activation by Src
+  JOURNAL   J. Biol. Chem. 278 (36), 34339-34346 (2003)
+   PUBMED   12810717
+  REMARK    GeneRIF: Vav2 and Tiam1 may act as downstream effectors of Src,
+            thereby regulating Rac1-dependent pathways that participate in
+            Src-induced cell transformation
+REFERENCE   2  (bases 1 to 5521)
+  AUTHORS   Otsuki,Y., Tanaka,M., Kamo,T., Kitanaka,C., Kuchino,Y. and
+            Sugimura,H.
+  TITLE     Guanine nucleotide exchange factor, Tiam1, directly binds to c-Myc
+            and interferes with c-Myc-mediated apoptosis in rat-1 fibroblasts
+  JOURNAL   J. Biol. Chem. 278 (7), 5132-5140 (2003)
+   PUBMED   12446731
+  REMARK    GeneRIF: Tiam1 is c-Myc regulator, working in the nuclei to control
+            c-Myc-related apoptosis
+REFERENCE   3  (bases 1 to 5521)
+  AUTHORS   Crompton,A.M., Foley,L.H., Wood,A., Roscoe,W., Stokoe,D.,
+            McCormick,F., Symons,M. and Bollag,G.
+  TITLE     Regulation of Tiam1 nucleotide exchange activity by pleckstrin
+            domain binding ligands
+  JOURNAL   J. Biol. Chem. 275 (33), 25751-25759 (2000)
+   PUBMED   10835422
+REFERENCE   4  (bases 1 to 5521)
+  AUTHORS   Chen,H. and Antonarakis,S.E.
+  TITLE     Localization of a human homolog of the mouse Tiam-1 gene to
+            chromosome 21q22.1
+  JOURNAL   Genomics 30 (1), 123-127 (1995)
+   PUBMED   8595894
+REFERENCE   5  (bases 1 to 5521)
+  AUTHORS   Michiels,F., Habets,G.G., Stam,J.C., van der Kammen,R.A. and
+            Collard,J.G.
+  TITLE     A role for Rac in Tiam1-induced membrane ruffling and invasion
+  JOURNAL   Nature 375 (6529), 338-340 (1995)
+   PUBMED   7753201
+REFERENCE   6  (bases 1 to 5521)
+  AUTHORS   Habets,G.G., van der Kammen,R.A., Stam,J.C., Michiels,F. and
+            Collard,J.G.
+  TITLE     Sequence of the human invasion-inducing TIAM1 gene, its
+            conservation in evolution and its expression in tumor cell lines of
+            different tissue origin
+  JOURNAL   Oncogene 10 (7), 1371-1376 (1995)
+   PUBMED   7731688
+REFERENCE   7  (sites)
+  AUTHORS   Habets,G.G., van der Kammen,R.A., Jenkins,N.A., Gilbert,D.J.,
+            Copeland,N.G., Hagemeijer,A. and Collard,J.G.
+  TITLE     The invasion-inducing TIAM1 gene maps to human chromosome band
+            21q22 and mouse chromosome 16
+  JOURNAL   Cytogenet. Cell Genet. 70 (1-2), 48-51 (1995)
+   PUBMED   7736788
+COMMENT     PROVISIONAL REFSEQ: This record has not yet been subject to final
+            NCBI review. The reference sequence was derived from U16296.1.
+FEATURES             Location/Qualifiers
+     source          1..5521
+                     /organism="Homo sapiens"
+                     /mol_type="mRNA"
+                     /db_xref="taxon:9606"
+                     /chromosome="21"
+                     /map="21q22.11"
+     gene            1..5521
+                     /gene="TIAM1"
+                     /db_xref="GeneID:7074"
+                     /db_xref="LocusID:7074"
+                     /db_xref="MIM:600687"
+     CDS             474..5249
+                     /gene="TIAM1"
+                     /function="T-lymphoma invasion and metastasis inducing"
+                     /note="human T-lymphoma invasion and metastasis inducing
+                     TIAM1 protein;
+                     go_function: protein binding [goid 0005515] [evidence
+                     IEA];
+                     go_function: receptor signaling protein activity [goid
+                     0005057] [evidence IEA];
+                     go_function: Rho guanyl-nucleotide exchange factor
+                     activity [goid 0005089] [evidence TAS] [pmid 10835422];
+                     go_process: intracellular signaling cascade [goid 0007242]
+                     [evidence IEA]"
+                     /codon_start=1
+                     /product="T-cell lymphoma invasion and metastasis 1"
+                     /protein_id="NP_003244.1"
+                     /db_xref="GI:4507501"
+                     /db_xref="GeneID:7074"
+                     /db_xref="LocusID:7074"
+                     /db_xref="MIM:600687"
+                     /translation="MGNAESQHVEHEFYGEKHASLGRNDTSRSLRLSHKTRRTRHASS
+                     GKVIHRNSEVSTRSSSTPSIPQSLAENGLEPFSQDGTLEDFGSPIWVDRVDMGLRPVS
+                     YTDSSVTPSVDSSIVLTAASVQSMPDTEESRLYGDDATYLAEGGRRQHSYTSNGPTFM
+                     ETASFKKKRSKSADIWREDSLEFSLSDLSQEHLTSNEEILGSAEEKDCEEARGMETRA
+                     SPRQLSTCQRANSLGDLYAQKNSGVTANMGPGSKFAGYCRNLVSDIPNLANHKMPPAA
+                     AEETPPYSNYNTLPCRKSHCLSEGATNPQISHSNSMQGRRAKTTQDVNAGEGSEFADS
+                     GIEGATTDTDLLSRRSNATNSSYSPTTGRAFVGSDSGSSSTGDAARQGVYENFRRELE
+                     MSTTNSESLEEAGSAHSDEQSSGTLSSPGQSDILLTAAQGTVRKAGALAVKNFLVHKK
+                     NKKVESATRRKWKHYWVSLKGCTLFFYESDGRSGIDHNSIPKHAVWVENSIVQAVPEH
+                     PKKDFVFCLSNSLGDAFLFQTTSQTELENWITAIHSACATAVARHHHKEDTLRLLKSE
+                     IKKLEQKIDMDEKMKKMGEMQLSSVTDSKKKKTILDQIFVWEQNLEQFQMDLFRFRCY
+                     LASLQGGELPNPKRLLAFASRPTKVAMGRLGIFSVSSFHALVAARTGETGVRRRTQAM
+                     SRSASKRRSRFSSLWGLDTTSKKKQGRPSINQVFGEGTEAVKKSLEGIFDDIVPDGKR
+                     EKEVVLPNVHQHNPDCDIWVHEYFTPSWFCLPNNQPALTVVRPGDTARDTLELICKTH
+                     QLDHSAHYLRLKFLIENKMQLYVPQPEEDIYELLYKEIEICPKVTHSIHIEKSDTAAD
+                     TYGFSLSSVEEDGIRRLYVNSVKETGLASKKGLKAGDEILEINNRAADALNSSMLKDF
+                     LSQPSLGLLVRTYPELEEGVELLESPPHRVDGPADLDESPLAFLTSNPGHSLCSEQGS
+                     SAETAPEETEGPDLESSDETDHSSKSTEQVAAFCRSLHEMNPSDQNPSPQDSTGPQLA
+                     TMRQLSDADNVRKVICELLETERTYVKDLNCLMERYLKPLQKETFLTQDELDVLFGNL
+                     TEMVEFQVEFLKTLEDGVRLVPDLEKLEKVDQFKKVLFSLGGSFLYYADRFKLYSAFC
+                     AIHTKVPKVLVKAKTDTAFKAFLDAQNPKQQHSSTLESYLIKPIQRILKYPLLLRELF
+                     ALTDAESEEHYHLDVAIKTMNKVASHINEMQKIHEEFGAVFDQLIAEQTGEKKEVADL
+                     SMGDLLLHTTVIWLNPPASLGKWKKEPELAAFVFKTAVVLVYKDGSKQKKKLVGSHRL
+                     SIYEDWDPFRFRHMIPTEALQVRALASADAEANAVCEIVHVKSESEGRPERVFHLCCS
+                     SPESRKDFLKAVHSILRDKHRRQLLKTESLPSSQQYVPFGGKRLCALKGARPAMSRAV
+                     SAPSKSLGRRRRRLARNRFTIDSDAVSASSPEKESQQPPGGGDTDRWVEEQFDLAQYE
+                     EQDDIKETDILSDDDEFCESVKGASVDRDLQERLQATSISQRERGRKTLDSHASRMAQ
+                     LKKQAALSGINGGLESASEEVIWVRREDFAPSRKLNTEI"
+ORIGIN      
+        1 cgccccgcat cgtgcccggc cccgtcgcgg agatcccgga cgaccgtcgc gggttgatgg
+       61 tcgcattcca gatgtaaaca gcttcagaag cctgacggtc atatggtaga atcactgtgg
+      121 actgagaccc acctttctag acctgaagcc caggaggagg aagaggaggc tggttggtac
+      181 catgggcata atgctctgaa tcctagtctc tcacctagta tgtgagcagt ccctgcagat
+      241 ggcccatttg gagatcttga caaagcctct tctgtttcca atggggtttt tggcgcattc
+      301 tcacagactt agatgaaact gtgatggcca ccgcaggggg caggtgctga catcgtcccc
+      361 agccctgtgg ctgttcatcc ggacatcatt tccaacctca atatctaaat gccacagtgc
+      421 tcttggagca agttgggctg gggaccactg ttgcctttta agaccataaa accatgggaa
+      481 acgcagaaag tcaacatgta gagcacgagt tttatggaga aaagcatgcc agcctggggc
+      541 gcaacgacac ttcccgctcc ctgcgcctct cgcacaagac gcggaggacc aggcacgctt
+      601 cctcggggaa ggtgatccac aggaactccg aagtgagcac ccgatccagc agcaccccca
+      661 gcatccccca gtccctggct gaaaatggcc tggagccctt ctcccaagat ggtaccctag
+      721 aagacttcgg gagccccatc tgggtggacc gagtggacat gggcttgaga cctgtgtctt
+      781 acactgactc ttctgtcact cccagcgtag acagcagcat cgtcctcaca gcagcctctg
+      841 tgcagagcat gccagacact gaggagagca ggctttacgg ggatgacgct acatatttgg
+      901 ctgagggagg caggaggcag cattcctata catccaatgg gcccactttc atggagacgg
+      961 cgagctttaa gaagaaacgc tccaaatctg cagacatctg gcgggaggac agcctggaat
+     1021 tctcactctc tgatctgagc caagaacatt taacaagcaa cgaagaaatc ttgggttccg
+     1081 ccgaagagaa ggactgcgag gaggctcggg ggatggaaac gcgggcgagt ccgcggcagc
+     1141 tcagcacctg tcagagagcc aattccttgg gtgacttgta tgctcagaaa aactctggag
+     1201 tgacagcaaa catggggccg gggagcaaat ttgcaggcta ctgtcggaat ttggtgtctg
+     1261 atattcccaa tcttgcaaac cataagatgc caccagctgc tgctgaagag actcctccgt
+     1321 acagtaatta taacacactt ccctgtagga aatctcactg tctctctgaa ggtgccacca
+     1381 acccacaaat tagccatagc aacagcatgc aaggcagaag agctaaaaca actcaggatg
+     1441 ttaatgcagg cgagggcagt gagtttgcag acagtgggat tgaaggggcc actaccgaca
+     1501 cggacctcct gtccaggcga tctaatgcca ccaactccag ctactcaccc accacaggcc
+     1561 gggcctttgt gggcagcgac agcggcagca gctccaccgg ggatgcggct cgtcaggggg
+     1621 tgtacgagaa cttccggcgg gagctggaga tgagcaccac caacagcgag agcctggagg
+     1681 aggccggctc tgcgcacagc gatgagcaga gcagcggcac cctgagctct ccgggccagt
+     1741 cggacatcct gctgaccgcc gcacagggca cggtgcgcaa ggccggcgcc ctggccgtca
+     1801 agaacttcct ggtgcacaag aagaacaaga aggtggagtc agccacccgg aggaagtgga
+     1861 agcactactg ggtgtccctg aaaggatgca cgctattttt ctacgagagc gacggcaggt
+     1921 ctgggataga ccacaacagc atccccaaac acgccgtctg ggtggagaac agcattgtgc
+     1981 aggctgtgcc tgagcacccc aagaaggact ttgtcttctg cctcagcaat tccctgggtg
+     2041 atgccttcct ttttcagacc actagccaga cggagcttga aaactggatc accgccatcc
+     2101 actctgcctg cgccactgcg gtcgcgaggc accaccacaa ggaagacacg ctccgactcc
+     2161 tgaaatcaga gatcaaaaaa ctggaacaga agattgacat ggatgaaaag atgaagaaaa
+     2221 tgggtgaaat gcagctgtct tcagtcactg actcaaagaa aaagaaaaca atattagatc
+     2281 agatctttgt ctgggagcaa aatctcgagc agttccaaat ggacctgttt cgtttccgct
+     2341 gttatttagc cagccttcag ggtggggagc tgccaaaccc caaaaggctt ctcgcttttg
+     2401 caagtcgacc aacgaaagtg gccatgggcc gccttggaat cttttcggta tcatcgtttc
+     2461 atgccctggt ggcagcacgc actggtgaaa ctggagtgag aagacgtact caggccatgt
+     2521 ccagatccgc gagcaagcga aggagcaggt tttcttctct gtggggtctg gatactacct
+     2581 ccaaaaagaa gcagggacgg ccaagcatca atcaggtgtt tggagaggga accgaagctg
+     2641 taaagaaatc tttagaggga atatttgatg acattgttcc agatggcaag agggagaaag
+     2701 aagtggtctt acctaacgtt caccagcaca accctgactg cgacatttgg gtccacgagt
+     2761 atttcactcc atcctggttc tgtctgccca ataatcagcc tgccctgacg gtcgtccggc
+     2821 caggcgacac tgcacgggac accctggagc tgatttgcaa gacacatcaa ctggatcatt
+     2881 ctgctcatta cctgcgcctg aaatttctaa tagaaaacaa aatgcagctc tatgttccac
+     2941 agcccgagga agacatctat gagctgctgt acaaagaaat tgaaatctgt ccaaaagtca
+     3001 ctcacagcat ccacattgag aagtcagata cagctgctga tacttacggg ttttcacttt
+     3061 cttctgtgga agaagatggt attcgaaggc tgtacgtgaa tagtgtgaag gaaaccggtt
+     3121 tagcttccaa gaaaggcctg aaagcaggag atgagattct tgagatcaat aatcgtgctg
+     3181 ctgacgccct gaactcttct atgctcaaag atttcctctc acaaccctcg ctgggcctcc
+     3241 tggtgaggac ctaccccgag ctggaggaag gagtggagct gctggaaagc ccgccccacc
+     3301 gagtggacgg ccctgccgac cttgacgaga gccccctcgc ctttctcacc agcaacccag
+     3361 ggcacagcct ttgcagcgag cagggcagca gtgctgagac cgctccagag gagaccgagg
+     3421 ggccagactt ggaatcctca gatgagactg atcacagcag caagagtaca gaacaggtgg
+     3481 ccgcattttg ccgcagtttg catgagatga acccctctga ccagaaccca tctcctcagg
+     3541 actccacggg gcctcagctg gcgaccatga gacaactctc ggatgcagat aacgtgcgca
+     3601 aggtgatctg cgagctcctg gagacggagc gcacctacgt gaaggattta aactgtctta
+     3661 tggagagata cctaaagcct cttcaaaaag aaacttttct cacccaggat gagcttgacg
+     3721 tgctttttgg aaatttaacg gaaatggtag agtttcaagt agaattcctt aaaactctag
+     3781 aagatggagt gagactggta cctgatttgg aaaagcttga gaaggttgat caatttaaga
+     3841 aagtgctgtt ctctctgggg ggatcattcc tgtattatgc tgaccgcttc aagctctaca
+     3901 gtgccttctg cgccatccac acaaaagttc ccaaggtcct ggtgaaagcc aagacagaca
+     3961 cggctttcaa ggcattcttg gatgcccaga acccgaagca gcagcactca tccacgctgg
+     4021 agtcgtacct catcaagccc atccagagga tcctcaagta cccacttctg ctcagggagc
+     4081 tgttcgccct gaccgatgcg gagagcgagg agcactacca cctggacgtg gccatcaaga
+     4141 ccatgaacaa ggttgccagt cacatcaatg agatgcagaa aatccatgaa gagtttgggg
+     4201 ctgtgtttga ccagctgatt gctgaacaga ctggtgagaa aaaagaggtt gcagatctga
+     4261 gcatgggaga cctgcttttg cacactaccg tgatctggct gaacccgccg gcctcgctgg
+     4321 gcaagtggaa aaaggaacca gagttggcag cattcgtctt caaaactgct gtggtccttg
+     4381 tgtataaaga tggttccaaa cagaagaaga aacttgtagg atctcacagg ctttccattt
+     4441 atgaggactg ggaccccttc agatttcgac acatgatccc cacggaagcg ctgcaggttc
+     4501 gagctttggc gagtgcagat gcagaggcaa atgccgtgtg tgaaattgtc catgtaaaat
+     4561 ccgagtctga agggaggccg gagagggtct ttcacttgtg ctgcagctcc ccagagagcc
+     4621 gaaaggattt cctaaaggct gtgcattcaa tcctgcgtga taagcacaga agacagctcc
+     4681 tcaaaaccga gagccttccc tcatcccagc aatatgtccc ttttggaggc aaaagattgt
+     4741 gtgcactgaa gggggccagg ccggccatga gcagggcagt gtctgcccca agcaagtctc
+     4801 ttgggaggag gaggcggcgg ctggctcgaa acaggtttac cattgattct gatgccgtct
+     4861 ccgcaagcag cccggagaaa gagtcccagc agccccccgg tggtggggac actgaccgat
+     4921 gggtagagga gcagtttgat cttgctcagt atgaggagca agatgacatc aaggagacag
+     4981 acatcctcag tgacgatgat gagttctgtg agtccgtgaa gggtgcctca gtggacagag
+     5041 acctgcagga gcggcttcag gccacctcca tcagtcagcg ggaaagaggc cggaaaaccc
+     5101 tggatagtca cgcgtcccgc atggcacagc tcaagaagca agctgccctg tcggggatca
+     5161 atggaggcct ggagagcgca agcgaggaag tcatttgggt taggcgtgaa gactttgccc
+     5221 cctccaggaa actgaacact gagatctgac tgcgtcacct gccccgtaga gaatgtgtgt
+     5281 agatacttcc tgccctaact ctgcccaccc tcctgtaccg tcgacaagaa tgtcccctta
+     5341 ggtcgcgctc ttgcacacac ggttttggca gctgacttgg ttctgaagcc atgtagccac
+     5401 ccaactttgt cattttcaac aacatcagaa agaattgatc agaatcccaa ataaaaccca
+     5461 aaagtgtcta atgtattcat tcattagcta actaaaagcc caaaaaagac aagacaccca
+     5521 g
+//
+

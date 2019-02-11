@@ -1,0 +1,993 @@
+$ GenomeThreader 0.9.32 (2005-04-20 15:14:06)
+$ Date run: 2005-04-20 16:53:15
+$ Splice Site Model: Bayesian
+$
+$ genomicfile      = "OSchr10"
+$ referencefile    = "long_intron.fna"
+$ species          = "rice"
+$ proteinsmap      = "protein"
+$ scorematrix      = "BLOSUM62"
+$ bssmfile         = "rice"
+$ searchmode       = (forward=True,reverse=True)
+$ frompos          =          0 (default)
+$ topos            =          0 (default)
+$ width            =          0 (default)
+$ verbose          =       True (non-df.)
+$ gs2out           =      False (default)
+$ showintronmaxlen =        120 (default) maximum length of a fully shown intron
+$ minorflen        =         64 (default) minimum length of an ORF to be shown
+$ minmatchlen      =         20 (default) minimum match length
+$ seedlength       =         18 (default) the seed length
+$ exdrop           =          2 (default) the xdrop value for edit distance
+$ online           =      False (default) run the similarity filter online
+$ inverse          =      False (default) invert query and index in vmatch call
+$ exact            =      False (default) use exact matches
+$ noautoindex      =      False (default) do not create indices automatically
+$ maskpolyatails   =      False (default) mask poly(A) tails in cDNA/EST files
+$ maxnumofmatches  =          0 (default) maximum number of matches
+$ matchnumdistri   =      False (default) show the distribution of matches
+$ chainlocal       =          1 (default) local chains (according to L1-model).
+$ uselocalchaining =      False (default) enable local chaining
+$ chainwf          =   0.500000 (default) weight factor > 0.0 for local chaining
+$ gcmaxgapwidth    =    1000000 (default) maximum gap width for global chains
+$ gcfilterthreshold=         50 (default) threshold for filter of global chains
+$ introncutout     =      False (default) enable the intron cutout technique
+$ autointroncutout =          0 (default) automatic intron cutout matrix size
+$ icinitialdelta   =         50 (default) initial delta used for intron cutouts
+$ iciterations     =          2 (default) number of intron cutout iterations
+$ icdeltaincrease  =         50 (default) delta increase during every iteration
+$ icminremintronlen=         10 (default) minimum remaining intron length
+$ probies          =   0.500000 (default) initial exon state probability
+$ probdelgen       =   0.030000 (default) genomic sequence deletion probability
+$ identityweight   =   2.000000 (default) pairs of identical characters weight
+$ mismatchweight   =  -2.000000 (default) weight for mismatching characters
+$ undetcharweight  =   0.000000 (default) weight for undetermined characters
+$ deletionweight   =  -4.000000 (default) weight for deletions
+$ dpminexonlen     =          5 (default) minimum exon length for the DP
+$ dpminintronlen   =         50 (default) minimum intron length for the DP
+$ shortexonpenal   =        100 (default) short exon penalty
+$ shortintronpenal =        100 (default) short intron penalty
+$ wzerotransition  =         80 (default) zero transition weights window size
+$ wdecreasedoutput =         80 (default) decreased output weights window size
+$ leadcutoffsmode  =    RELAXED (default) cutoffs mode for leading bases
+$ termcutoffsmode  =     STRICT (default) cutoffs mode for terminal bases
+$ cutoffsminexonlen=          5 (default) cutoffs minimum exon length
+$ scoreminexonlen  =         50 (default) score minimum exon length
+$ minaveragessp    =   0.500000 (default) minimum average splice site prob.
+$ intermediate     =      False (default) stop after calc. of spliced alignments
+$ sortags          =      False (default) sort alternative gene structures
+$ sortagswf        =   1.000000 (default) weight factor for the sorting of AGSs
+$ first            =          0 (default) maximum number of spliced alignments
+$
+$ special output characters for starting lines:
+$ GTHINFOCHAR      = $ (info line)
+$ VMATCHCHAR       = # (mkvtree and vmatch output)
+$
+********************************************************************************
+EST Sequence: file=long_intron.fna, strand=+, description=gi|37988995|dbj|AK119372.1| Oryza sativa (japonica cultivar-group) cDNA clone:001-132-A02, full insert sequence
+
+     1  ACACAAACAG GTCAACCCCT TCTCAGTTCT CACCCTGCTA GGCTGCTAGA CCCTCTCTTC
+    61  CTCATCATTC CTACCAGATA AACAGAGAAA GAAAAGGTCT CATAGCATAG GAACCAACGA
+   121  GGCAGGACGG CAGGAGGCCT GTTCCTTGAG GTGTCTAGCC TGGAGTGCTT GCCACTAGGA
+   181  GTGAGGCAGC GAAGGGGACA TGGTTGCTGG CGGCGGAGTC AATTTGATGG TGACGACTGT
+   241  ATGCGGTGGG TCTCGACCAG TAGCGACGGG AAAGAAGGCG TGTTCCCCGG CCGACGGCGA
+   301  GGAGGCGCCG TCCCCTCGGC GGCGGGGTGA AGGCCTGCAG ATGAAGGTAG TAGCAGCCCA
+   361  GGCGGCGGTG AAAATCAAGA GACGAGGCGG AGGAGGCTAG CGTGACGTTA GGGAAAAAGG
+   421  CGGGTCCAGA TCGGCGCAGG CCCAGTGGAC ATGGAAGAGA GGGCCGACGA GATGAGGCTC
+   481  CATGCTAGTA GTGGAGACCT GGACGGAGGG CGCTCGATCT GACCAGATCG AGTCAGCGGC
+   541  GGTGGTTGGA GACGCCTTGA TGTAGCCACG CGAAAAAGAT GATTTTTCGC TCCTCGTAGG
+   601  CTGAGAAGAC GCGGGAGCGT AGGATTGGGA ATGGGAGAGG AGCCCTCACT CAGCCTCAGT
+   661  ATTGAGAGCG AATATTACGG GATAGAAACT CCACAAGTTT AGCATCCGAG GGAGAAGATC
+   721  TGCATGGGTT GCATCGGAGC TTCAAAGGTT CTTAATTACT TTTAGTCAGA CATGCAAGAG
+   781  CTGCTGGAAA TACTTGGCAG CTCTGGTTGT TTATTCGCTC AAGATAGTGT TGGTTCTCTT
+   841  TCCTTGCTGC GAAGCTTGCT GTTTCAGTCT ATTGTTTAAT TAGGGGTTGA TATTGCTCTG
+   901  GTTTCCCTGC CTTTTCCCCT TCCTGTCAGT TCGGTCTGCC TTTGTGCTGA AGATTCCATA
+   961  TGGCGCATGT ACTGATTTCA CAGCTATCGT TTGGAGATTC AAACAAAAGA ATCCTTGCAA
+  1021  GGGTCTCCAG GCTATGGAAC TTTACTGATC TCAACAATCA TACAAAAATT TTCCACACTG
+  1081  ATCTTGTCTT ACTCGATGAA ATGGGGACTA GCATACATGC CCAAATTTAC CCCCCTATAA
+  1141  CAGAAAAGAT GAAACCTCTC CTTAAGGAAG AAAAGGTTTA CTACATTGAC TCATTCACTG
+  1201  TTAGGGCTGC AAACAGAACA TACAGGCCAG TTGCAAACAA CCTAATGATC CTCTTCAGTA
+  1261  AATGGACAAC ACTTGAAGAA CACATTAATG TCCCTCCTCA TTTCCCTGGT ATTACATTTT
+  1321  CACTGACACC ATTCGAAGAT GTTCCTTCCC TTGTCGAGAA AAATTCATTC TACGTTGGTA
+  1381  ATAACATACT TTTATTGTGT TACAATTATT GTTATATACA TCTTCTGCAA TGCCATATCA
+  1441  TTTTATTAAA CTTATATGCC ATATCACTGA AGTTGGTGCA GTCACTACTA TACGTCCTAA
+  1501  GTCCAGAAAC GCTGAGAGCT TAAAAAGGAC ATTACAGATC CGCGATGCAA GCAATTCAAC
+  1561  TCTTCCTGTC ACACTCTGGG GAGAAAGAGC AACCTCTTTT GATGCTAATG ACATATACAA
+  1621  TGCTGGTCAA ACTCAAGCTC AAGTTGTTGT GTTTGTTGGA ACACTTGTGA AAGATTACAG
+  1681  AGGATTAGGC CTTACACTAA CTGGAAGCTC ACCATGCAAA TGGTATATTA ATCTAAATAT
+  1741  TCCTGAAGTA GCAGAACTAA ATGAGAGCTT TAGCACAAAC TTTCAGCCAA TCAAGTGGGT
+  1801  TGATGAGCCT GCTACAGGAT ACAACCAGGA TGTACCAGAA GAAAAGAGTA TTGCAGAAAT
+  1861  CCTTAATATC AACCCTCACA AACACAAGGG AACATGTTTT ATAGTAAATG TGACTGTCAG
+  1921  AAGGATATGT AATGAATATT CTTGGTGGTA CAATTCATGT TGAATGTGCT ACAAAACTTC
+  1981  AAAACCATAT GGCTCTAGCT ACAGATGCTC CAGCTATTCT AACATCGGAA TACCAGATCC
+  2041  AAGGTACAAA GTAGTATTAA TTTCCGGCGA TGATGATGCT AATGCTACAT TTATCCTTTT
+  2101  CGGAAGGATC GCACAACGGC TACTACGCAG GCCCATAGAA TCTCTCATTG AAGAAAATCC
+  2161  ACCAAACAGT GAATACATTC CAAGTGAAAT CACGTCACTT ATTGGCAGCA ATTTTCCATG
+  2221  GAATGTTAGC TTTACACGGG ATACTGTTAT GAGAAGTCAA GAGTGCCTAC AAGTTAATAG
+  2281  CATTATATCC GCTGGTGCTT CAAACCAACC ACTACTCCTT ATGTCCCCAG ATGCTTCACA
+  2341  AGTGACATCA GCTATTGTCT CAGCAACCTC AAGCAGCTCT GTCCAAACAG CACCAACACC
+  2401  AAATGAAACA AGCAATGAAT CACAGCAGCC CATTCAACCA AGACAAACCA TCTCAACACC
+  2461  AACCAAGTTC ACTATCGCTC AGGGAACACA GGACACCCCA ACTAGCAAAT CAAGTTCTTC
+  2521  AACACCTACC AAGAAAAGCA TTGTCTCAGT GTCTCACATG CAGTCTAGCA GGACCAAACC
+  2581  TAAAACTGAT GATAAGCCCA AAACTGACAC AAAAGCTGAA GAAAACATCT CACATGATAA
+  2641  ATCTTCAATT GTTGTCCTGC CTGATACTGC TGAAAATATG GGAAAGGGAC TACCAGAAAC
+  2701  TGCTGAAGAA GCCAAACAAG CAACCCCATC CTTCCCTACA CATACCCCAG CCAAAAAAAG
+  2761  AGGAAGGCCT ACACCTACAG CAACACCTCC GGTTGCTAAG AAATTGTTCA AGGATGGTGC
+  2821  CAAGCAAAAA GGCAATGACA GCTCTTAATT CATCTACACA ATGAATGAGT TGTCGACGTG
+  2881  CAATCCATCT CAAGACTTTT GCTTATATAT ATGTACAAAG CTATGTCCCA GCTAGAAGAC
+  2941  AGATGGCAGT TGTGAAATTA CCCAGGACTA AAGAACCAAG ATCTTTTGTT CATGGCTTTT
+  3001  TGTCATGATT ATCATTGTAT ATAAGTGTTG CCTTATCT
+
+Genomic Template: file=OSchr10, strand=-, from=495380, to=478168, description=OSchr10-v3	TIGR Release 3.0 chr10|11676 osa1	22698374 bp
+
+Predicted gene structure:
+
+ Exon  1   495080   494371 ( 710 n);  cDNA      1    709 ( 709 n); score: 0.977
+  Intron  1   494370   494240 ( 131 n); Pd: 0.000 (s: 0.96), Pa: 0.988 (s: 1.00)
+ Exon  2   494239   494156 (  84 n);  cDNA    710    793 (  84 n); score: 0.964
+  Intron  2   494155   491176 (2980 n); Pd: 0.001 (s: 0.94), Pa: 0.000 (s:    0)
+ Exon  3   491175   491169 (   7 n);  cDNA    794    800 (   7 n); score: 1.000
+  Intron  3   491168   491056 ( 113 n); Pd: 0.932 (s:    0), Pa: 0.545 (s: 0.96)
+ Exon  4   491055   490904 ( 152 n);  cDNA    801    952 ( 152 n); score: 0.980
+  Intron  4   490903   481471 (9433 n); Pd: 0.999 (s: 1.00), Pa: 0.996 (s: 1.00)
+ Exon  5   481470   481320 ( 151 n);  cDNA    953   1103 ( 151 n); score: 0.987
+  Intron  5   481319   481229 (  91 n); Pd: 0.998 (s: 0.96), Pa: 0.996 (s: 1.00)
+ Exon  6   481228   480759 ( 470 n);  cDNA   1104   1551 ( 448 n); score: 0.940
+  Intron  6   480758   480606 ( 153 n); Pd: 0.968 (s: 0.98), Pa: 0.001 (s: 1.00)
+ Exon  7   480605   480440 ( 166 n);  cDNA   1552   1710 ( 159 n); score: 0.892
+  Intron  7   480439   480385 (  55 n); Pd: 0.001 (s: 0.68), Pa: 0.581 (s: 0.78)
+ Exon  8   480384   480323 (  62 n);  cDNA   1711   1767 (  57 n); score: 0.823
+  Intron  8   480322   480219 ( 104 n); Pd: 0.966 (s: 0.88), Pa: 0.851 (s: 0.98)
+ Exon  9   480218   480098 ( 121 n);  cDNA   1768   1888 ( 121 n); score: 0.992
+  Intron  9   480097   480004 (  94 n); Pd: 0.984 (s: 1.00), Pa: 0.985 (s: 0.98)
+ Exon 10   480003   479849 ( 155 n);  cDNA   1889   2043 ( 155 n); score: 0.955
+  Intron 10   479848   479763 (  86 n); Pd: 0.952 (s: 0.92), Pa: 0.998 (s: 0.96)
+ Exon 11   479762   479207 ( 556 n);  cDNA   2044   2596 ( 553 n); score: 0.969
+  Intron 11   479206   479124 (  83 n); Pd: 0.996 (s: 0.98), Pa: 0.790 (s: 0.96)
+ Exon 12   479123   479040 (  84 n);  cDNA   2597   2680 (  84 n); score: 0.952
+  Intron 12   479039   478976 (  64 n); Pd: 0.995 (s: 0.96), Pa: 0.802 (s: 1.00)
+ Exon 13   478975   478896 (  80 n);  cDNA   2681   2760 (  80 n); score: 0.975
+  Intron 13   478895   478818 (  78 n); Pd: 0.917 (s: 0.96), Pa: 0.945 (s: 1.00)
+ Exon 14   478817   478737 (  81 n);  cDNA   2761   2841 (  81 n); score: 0.975
+  Intron 14   478736   478665 (  72 n); Pd: 0.996 (s: 0.96), Pa: 0.001 (s: 0.98)
+ Exon 15   478664   478468 ( 197 n);  cDNA   2842   3038 ( 197 n); score: 0.985
+
+MATCH	OSchr10-v3-	37988995+	0.962	3069	1.010	C
+PGS_OSchr10-v3-_37988995+	(495080  494371,494239  494156,491175  491169,491055  490904,481470  481320,481228  480759,480605  480440,480384  480323,480218  480098,480003  479849,479762  479207,479123  479040,478975  478896,478817  478737,478664  478468)
+
+Alignment (genomic DNA sequence = upper lines):
+
+ACACAAACAG GTCAACCCCT TCTCAGTTCT CACCCTGCTA GGCTGCTAGA CCCTCTCTTC      495021
+|||||||||| |||||||||| |||||||||| |||||||||| |||||||||| ||||||||||
+ACACAAACAG GTCAACCCCT TCTCAGTTCT CACCCTGCTA GGCTGCTAGA CCCTCTCTTC          60
+
+
+CTCCTCATTC CTACCAGATA AACAGAGAAA GAAAAGGTCT CATAGCATAG GAACCAACGA      494961
+||| |||||| |||||||||| |||||||||| |||||||||| |||||||||| ||||||||||
+CTCATCATTC CTACCAGATA AACAGAGAAA GAAAAGGTCT CATAGCATAG GAACCAACGA         120
+
+
+GGCAGGACGG CAGGAGGCCT GTTCGCTTGA GGTGTCTAGC CTGGAGTGCT TGCCACTAGG      494901
+|||||||||| |||||||||| |||| ||||| |||||||||| |||||||||| ||||||||||
+GGCAGGACGG CAGGAGGCCT GTTC-CTTGA GGTGTCTAGC CTGGAGTGCT TGCCACTAGG         179
+
+
+AGTGAGGCAG CGAAGGGGAC ATGGTTGCTG GCGGCGGAGT CAATTTGATG GTGACGACTG      494841
+|||||||||| |||||||||| |||||||||| |||||||||| |||||||||| ||||||||||
+AGTGAGGCAG CGAAGGGGAC ATGGTTGCTG GCGGCGGAGT CAATTTGATG GTGACGACTG         239
+
+
+TATGCGGTGG GTCTCGACCA GTAGTGACGA GGAAGAAGGC GTGTTCCCCG GCCGACGGCG      494781
+|||||||||| |||||||||| |||| ||||  | |||||||| |||||||||| ||||||||||
+TATGCGGTGG GTCTCGACCA GTAGCGACGG GAAAGAAGGC GTGTTCCCCG GCCGACGGCG         299
+
+
+AGGAGGCGCC GTCCCCTCGG CGGCGGGGTG AAGGCCTGCA GACGAAGGTA GTAGCAGCCC      494721
+|||||||||| |||||||||| |||||||||| |||||||||| || ||||||| ||||||||||
+AGGAGGCGCC GTCCCCTCGG CGGCGGGGTG AAGGCCTGCA GATGAAGGTA GTAGCAGCCC         359
+
+
+AGGCGGCGGT GAAAATCAAG AGACGAGGCG GAGGAGGCTA GCGTGACGTT AGGGAAAAAG      494661
+|||||||||| |||||||||| |||||||||| |||||||||| |||||||||| ||||||||||
+AGGCGGCGGT GAAAATCAAG AGACGAGGCG GAGGAGGCTA GCGTGACGTT AGGGAAAAAG         419
+
+
+GTGGGTCCAG ATCGGCGCAG GCCCAGTGGA CATGGATGAG AGGGCCGACG AGATGAGGCT      494601
+| |||||||| |||||||||| |||||||||| |||||| ||| |||||||||| ||||||||||
+GCGGGTCCAG ATCGGCGCAG GCCCAGTGGA CATGGAAGAG AGGGCCGACG AGATGAGGCT         479
+
+
+CCATGCTAGC AGTGGAGACC TGGACGGAGG GCGCTCGATC TGACCAGATC GAGTCAGCGG      494541
+|||||||||  |||||||||| |||||||||| |||||||||| |||||||||| ||||||||||
+CCATGCTAGT AGTGGAGACC TGGACGGAGG GCGCTCGATC TGACCAGATC GAGTCAGCGG         539
+
+
+CGGTGGTTGG AGACGCCTTG ACATAGCCAC GCGAAAAAGA TGATTTTTCA CTCCTCGCAG      494481
+|||||||||| |||||||||| |  ||||||| |||||||||| |||||||||  ||||||| ||
+CGGTGGTTGG AGACGCCTTG ATGTAGCCAC GCGAAAAAGA TGATTTTTCG CTCCTCGTAG         599
+
+
+GCTGAGAAGA CGCGGGAGCG TAGGATTGGG AATAGGAGAG GAGCCCTCAC TCAGCCTCAG      494421
+|||||||||| |||||||||| |||||||||| ||| |||||| |||||||||| ||||||||||
+GCTGAGAAGA CGCGGGAGCG TAGGATTGGG AATGGGAGAG GAGCCCTCAC TCAGCCTCAG         659
+
+
+TATTGAGAGC GAATATTACA GGATAGAAAC TCCACAAGTT TAGCATCTGA ATAGGAAATC      494361
+|||||||||| |||||||||  |||||||||| |||||||||| ||||||| ||           
+TATTGAGAGC GAATATTACG GGATAGAAAC TCCACAAGTT TAGCATCCGA ..........         709
+
+
+TATTGGAGCA TATTTTTTTA AAGTAAAATC CTCAAAAATT AAGATTCATT GCTGCTCTTC      494301
+                                                                 
+........... .......... .......... .......... .......... ..........         709
+
+
+CTTTCGATGG TGTTCAATCT TGATTGCTTA TTGATTTGCT TTGATCTTTC CATTTTGTTA      494241
+                                                                 
+........... .......... .......... .......... .......... ..........         709
+
+
+GGGGAGAAGA TCTGCATGGG TTGCATCGGA GCTTCAAAGG TTCTTAATTA CTTTTAGTTA      494181
+ ||||||||| |||||||||| |||||||||| |||||||||| |||||||||| |||||||| |
+..GGGAGAAGA TCTGCATGGG TTGCATCGGA GCTTCAAAGG TTCTTAATTA CTTTTAGTCA         768
+
+
+GACGTGCAAG AGCTGCTGGA AATATGTCAC GCCCGAAAAT TCACTAGTAA TTTTCGAACT      494121
+||| |||||| |||||||||| ||||                                       
+GACATGCAAG AGCTGCTGGA AATAC..... .......... .......... ..........         793
+
+
+TATTTGTGCA TAAAACTCTC ATCCAGGAAT TAGCCGAAGT ACACAAACTG ACAATTCAAT      494061
+                                                                 
+........... .......... .......... .......... .......... ..........         793
+
+
+// intron part 494060 491241 (2820 n) not shown                //
+
+//........ .......... .......... .......... .......... ........//
+
+
+TTCTAATAAT GATTTATTAA ATAATTTATA AATCCTAAGA CGAAAATCAG GATGTGACAA      491181
+                                                                 
+........... .......... .......... .......... .......... ..........         793
+
+
+AATACTTGGC AGGTAATTTC AGTTCATCCT TCTGTTCAGT CTGGCATTTC TCTGAGGAGT      491121
+     ||||| ||                                                    
+......TTGGC AG........ .......... .......... .......... ..........         800
+
+
+TCTTCTACTG TTACGCGTTA GATTTAAACT TGCTAGTGTC TAACCATGAT GTTTGTACCA      491061
+                                                                 
+........... .......... .......... .......... .......... ..........         800
+
+
+TGCAGCTCTG GTTGTTTATT CGCTCAAGAT AGTGTTGGTT AACTTTCCTT GCTGCGAAGC      491001
+     ||||| |||||||||| |||||||||| ||||||||||   |||||||| ||||||||||
+......CTCTG GTTGTTTATT CGCTCAAGAT AGTGTTGGTT CTCTTTCCTT GCTGCGAAGC         855
+
+
+TTGCTGTTTC AGTCTATTGT TTAATTAGGG GTTGATATTG CTCTTGTTTC CCTGCCTTTT      490941
+|||||||||| |||||||||| |||||||||| |||||||||| |||| ||||| ||||||||||
+TTGCTGTTTC AGTCTATTGT TTAATTAGGG GTTGATATTG CTCTGGTTTC CCTGCCTTTT         915
+
+
+CCCCTTCCTG TCAGTTCGGT CTGCCTTTGT GCTGAAGGTA TTTTCTTCTT CTTTATTGTT      490881
+|||||||||| |||||||||| |||||||||| |||||||                         
+CCCCTTCCTG TCAGTTCGGT CTGCCTTTGT GCTGAAG... .......... ..........         952
+
+
+ATACATTACT ATATTTCTCT GGTTGTTTAA TTCTTTGCAT GATATTATAT GGTATATGTG      490821
+                                                                 
+........... .......... .......... .......... .......... ..........         952
+
+
+// intron part 490820 481581 (9240 n) not shown                //
+
+//........ .......... .......... .......... .......... ........//
+
+
+TATGATTTGT CCGCTGCAGT TATATGTACT GTTCTTCTTA GTAACATTTC CTTGTACATA      481521
+                                                                 
+........... .......... .......... .......... .......... ..........         952
+
+
+TATAGTAGTG TTGTTTTGTC TATACTAAAA GTATTTTGTG CTTATTGCAG ATTCCATATG      481461
+                                                       ||||||||||
+........... .......... .......... .......... .......... ATTCCATATG         962
+
+
+GCGCATGTAC TGATTTCACA GCTATCGTTT GGAGATTCAA ACAAAAGAAT CCTTGCAAGG      481401
+|||||||||| |||||||||| |||||||||| |||||||||| |||||||||| ||||||||||
+GCGCATGTAC TGATTTCACA GCTATCGTTT GGAGATTCAA ACAAAAGAAT CCTTGCAAGG        1022
+
+
+GTCTCCAGGC TATGGAACTT TACTGATCTC AACGATGATA CAAAAATTTT CCACACTGAT      481341
+|||||||||| |||||||||| |||||||||| ||| || ||| |||||||||| ||||||||||
+GTCTCCAGGC TATGGAACTT TACTGATCTC AACAATCATA CAAAAATTTT CCACACTGAT        1082
+
+
+CTTGTCTTAC TCGATGAAAT GGTAATAATT TACGTGCCAA ATCCATTTTC TATATTTTCC      481281
+|||||||||| |||||||||| |                                          
+CTTGTCTTAC TCGATGAAAT G......... .......... .......... ..........        1103
+
+
+TTTCTATACC GATAATTCTC TTGATAACAT GATTTGTATT TATAATCTGC AGGGGACTAG      481221
+                                                         ||||||||
+........... .......... .......... .......... .......... ..GGGACTAG        1111
+
+
+CATACATGCC CAAATTTACC CCCCTATAAC AGAAAAGATG AAACCTCTCC TTAAGGAAGA      481161
+|||||||||| |||||||||| |||||||||| |||||||||| |||||||||| ||||||||||
+CATACATGCC CAAATTTACC CCCCTATAAC AGAAAAGATG AAACCTCTCC TTAAGGAAGA        1171
+
+
+AAAGGTTTAC TACATTGACT CATTCACTGT TAGGGCTGCA AACAGAACAT ACAGGCTAGT      481101
+|||||||||| |||||||||| |||||||||| |||||||||| |||||||||| |||||| |||
+AAAGGTTTAC TACATTGACT CATTCACTGT TAGGGCTGCA AACAGAACAT ACAGGCCAGT        1231
+
+
+TGCAAACAAC CTAATGATCC TCTTCAGTAA ATGGACAACA CTTGAAGAAC ACATTAATGT      481041
+|||||||||| |||||||||| |||||||||| |||||||||| |||||||||| ||||||||||
+TGCAAACAAC CTAATGATCC TCTTCAGTAA ATGGACAACA CTTGAAGAAC ACATTAATGT        1291
+
+
+CCCTCCTCAT TTCCCTGGTA TTACATTTTC ACTGACACCA TTCGAAGATG TTCCTTCCCT      480981
+|||||||||| |||||||||| |||||||||| |||||||||| |||||||||| ||||||||||
+CCCTCCTCAT TTCCCTGGTA TTACATTTTC ACTGACACCA TTCGAAGATG TTCCTTCCCT        1351
+
+
+TGTCGAGAAA AAATCATTCT ACGTTGGTAA TAACATACTT TTATTGTGTT GCAATTATTG      480921
+|||||||||| || ||||||| |||||||||| |||||||||| ||||||||||  |||||||||
+TGTCGAGAAA AATTCATTCT ACGTTGGTAA TAACATACTT TTATTGTGTT ACAATTATTG        1411
+
+
+TTATATACAT CTTTTGCAAT GCCATATCAT TTTATTAAAT TTATATGCAA TGCAAACAGA      480861
+|||||||||| ||| |||||| |||||||||| |||||||||   | |||   | ||    |   
+TTATATACAT CTTCTGCAAT GCCATATCAT TTTATTAAA- CT-TAT---A TG----C---        1459
+
+
+CATTATGGGT GTGATCACTG AAGTTGGTGC AGTCACTACT ATACGTCCTA AGTCCAGAAA      480801
+|   |       | ||||||| |||||||||| |||||||||| |||||||||| ||||||||||
+C---A----- -T-ATCACTG AAGTTGGTGC AGTCACTACT ATACGTCCTA AGTCCAGAAA        1509
+
+
+CGCTAAGAGC TTAAAAAGGA CATTACAGAT CCGCGATGCA AGGCTAGTTT AGTACAACTA      480741
+|||| ||||| |||||||||| |||||||||| |||||||||| ||                   
+CGCTGAGAGC TTAAAAAGGA CATTACAGAT CCGCGATGCA AG........ ..........        1551
+
+
+AATATTTACA TATTTATTAT TTACTTAATC TTTTTCGCTA GCATTCACAC AAACTATCTC      480681
+                                                                 
+........... .......... .......... .......... .......... ..........        1551
+
+
+ACATATTCTT AACACTAAGT CATCTCTTCC AATTAAAATT AAATCACTTT TTCCCCTCCA      480621
+                                                                 
+........... .......... .......... .......... .......... ..........        1551
+
+
+AATCTACAAA ACTAGCAATT CAACTCTTCC TGTCACACTC TGGGGAGAAA GAGCAACCTC      480561
+                ||||| |||||||||| |||||||||| |||||||||| ||||||||||
+........... .....CAATT CAACTCTTCC TGTCACACTC TGGGGAGAAA GAGCAACCTC        1596
+
+
+TTTTGATGCT GATGACATAT ACAATGCTGG TCAAACTCAA GCTCAAGTTG CTGTGTTTGT      480501
+||||||||||  ||||||||| |||||||||| |||||||||| ||||||||||  |||||||||
+TTTTGATGCT AATGACATAT ACAATGCTGG TCAAACTCAA GCTCAAGTTG TTGTGTTTGT        1656
+
+
+TGGAACACTT GTGAAAGATT ATAGAGGATT AGGTACATTT CTTTCTAAAC TTTCAATTAC      480441
+|||||||||| |||||||||| | |||||||| |||  | ||  |   || |||  |  ||   |
+TGGAACACTT GTGAAAGATT ACAGAGGATT AGG--CCTTA C--ACT-AAC -TGGAAGCTC        1710
+
+
+TGTAGTATTG ACTACATGCA ACTAACAATA TCTAATAATT TCCTCCACAT ATATAGGCCT      480381
+                                                              || 
+-......... .......... .......... .......... .......... ......ACCA        1714
+
+
+TACACTAACT GGAAGCTTAC CATCTAAATA TTCCTGAAGT AGCAGAACTA AATGAGAGGT      480321
+| ||  || | || |  |||   ||||||||| |||||||||| |||||||||| ||||||||  
+TGCA--AA-T GGTATATTA- -ATCTAAATA TTCCTGAAGT AGCAGAACTA AATGAGAG..        1767
+
+
+AATTTAATTT ATTTAACGTT ATTCTTACAA TCTATGTGCA TCACTGTATT CTTCAAGGTT      480261
+                                                                 
+........... .......... .......... .......... .......... ..........        1767
+
+
+TTCACAGTAT CCATTAATCT AAGATACAAT TCTTCTATGT AGCTTTAGCA CAAACTTTCA      480201
+                                              |||||||| ||||||||||
+........... .......... .......... .......... ..CTTTAGCA CAAACTTTCA        1785
+
+
+ACCAATCAAG TGGGTTGATG AGCCTGCTAC AGGATACAAC CAGGATGTAC CAGAAGAAAA      480141
+ ||||||||| |||||||||| |||||||||| |||||||||| |||||||||| ||||||||||
+GCCAATCAAG TGGGTTGATG AGCCTGCTAC AGGATACAAC CAGGATGTAC CAGAAGAAAA        1845
+
+
+GAGTATTGCA GAAATCCTTA ATATCAACCC TCACAAACAC AAGGTTGACA CTATCTCTAG      480081
+|||||||||| |||||||||| |||||||||| |||||||||| |||                  
+GAGTATTGCA GAAATCCTTA ATATCAACCC TCACAAACAC AAG....... ..........        1888
+
+
+AACACATCTT AACTACATCT ATCCACTTTT TGATGATATA ATTACCAATA TGATATTTTC      480021
+                                                                 
+........... .......... .......... .......... .......... ..........        1888
+
+
+ATTGTCTTCT TATGCAGGGA ACACGTTTTA TAGTAAATGT GACTGTCAGA AGGATATGTA      479961
+                  ||| ||| |||||| |||||||||| |||||||||| ||||||||||
+........... .......GGA ACATGTTTTA TAGTAAATGT GACTGTCAGA AGGATATGTA        1931
+
+
+ATGAATATTC TTGGTGGTAC AATTCATGTC GAATATGCTA CAAAACTTCA AAACCATATG      479901
+|||||||||| |||||||||| |||||||||  |||| ||||| |||||||||| ||||||||||
+ATGAATATTC TTGGTGGTAC AATTCATGTT GAATGTGCTA CAAAACTTCA AAACCATATG        1991
+
+
+GCTCTAGCTA CAGATACTCC AGCTGTTCTA GCATCGGAAT AACAGATCCA AGGTTCATAA      479841
+|||||||||| ||||| |||| |||| |||||  ||||||||| | |||||||| ||        
+GCTCTAGCTA CAGATGCTCC AGCTATTCTA ACATCGGAAT ACCAGATCCA AG........        2043
+
+
+CAGAACACGC TCTGTCCTCT TACATCTTTA GCAATTATCA TCCACACATT GCTATAGCCA      479781
+                                                                 
+........... .......... .......... .......... .......... ..........        2043
+
+
+TATCCATTTT TCATGCAGGT ACAAAGTAGT ATTAATTGCC AGCGATGATG ATGCTAATGC      479721
+                   || |||||||||| ||||||| ||  ||||||||| ||||||||||
+........... ........GT ACAAAGTAGT ATTAATTTCC GGCGATGATG ATGCTAATGC        2085
+
+
+TACATTTATC CTTTTCGGAA GGATCGCACA ACGGCTACTA CGCAGGCCCG TAGAATCTCT      479661
+|||||||||| |||||||||| |||||||||| |||||||||| |||||||||  ||||||||||
+TACATTTATC CTTTTCGGAA GGATCGCACA ACGGCTACTA CGCAGGCCCA TAGAATCTCT        2145
+
+
+CATTGAAGAA AAACCACCAA ACAGTGAATA CATTCCAAGT GAAATCACGT CACTTATTGG      479601
+|||||||||| || ||||||| |||||||||| |||||||||| |||||||||| ||||||||||
+CATTGAAGAA AATCCACCAA ACAGTGAATA CATTCCAAGT GAAATCACGT CACTTATTGG        2205
+
+
+TAGCAATTTT GCATGGAATG TTAGCTTTAC GCGGGATACT GTTATGAGAA GTCAAGAGTG      479541
+ |||||||||  ||||||||| ||||||||||  ||||||||| |||||||||| ||||||||||
+CAGCAATTTT CCATGGAATG TTAGCTTTAC ACGGGATACT GTTATGAGAA GTCAAGAGTG        2265
+
+
+CCTACAAGTT AATAGCATTA TATCCGCTGG TGCTTCAAAC CAGCCACTAC TCCTTATGTC      479481
+|||||||||| |||||||||| |||||||||| |||||||||| || ||||||| ||||||||||
+CCTACAAGTT AATAGCATTA TATCCGCTGG TGCTTCAAAC CAACCACTAC TCCTTATGTC        2325
+
+
+CCCAGATGCT TCACAAGTGA CATCAGCTAT TGTCTCAGCA AGCTCAAGCA GCTCTGTCCA      479421
+|||||||||| |||||||||| |||||||||| |||||||||| | |||||||| ||||||||||
+CCCAGATGCT TCACAAGTGA CATCAGCTAT TGTCTCAGCA ACCTCAAGCA GCTCTGTCCA        2385
+
+
+AACAGCACCA ACACCAAATG AAACAAGCAA TGAATCACAG CAGCCCATTT AACCAAGACA      479361
+|||||||||| |||||||||| |||||||||| |||||||||| |||||||||  ||||||||||
+AACAGCACCA ACACCAAATG AAACAAGCAA TGAATCACAG CAGCCCATTC AACCAAGACA        2445
+
+
+AACCATCTCA ACACCAACCA AGTTCATCAT CGCTCAGGGA ACACAGGACA CCCCAACTAG      479301
+|||||||||| |||||||||| ||||||  || |||||||||| |||||||||| ||||||||||
+AACCATCTCA ACACCAACCA AGTTCACTAT CGCTCAGGGA ACACAGGACA CCCCAACTAG        2505
+
+
+CAAATCAAGT TCTTCAGCAC CTACCAAGAA AAGCATTGTT GTCTCAGTGT CTCACATGCA      479241
+|||||||||| |||||| ||| |||||||||| |||||   || |||||||||| ||||||||||
+CAAATCAAGT TCTTCAACAC CTACCAAGAA AAGCA---TT GTCTCAGTGT CTCACATGCA        2562
+
+
+GTCTAGCAAG ACCAAACCTA AAACTGATGA TAAGGTAACC ACTTTATAGC CACCCTTAAA      479181
+|||||||| | |||||||||| |||||||||| ||||                            
+GTCTAGCAGG ACCAAACCTA AAACTGATGA TAAG...... .......... ..........        2596
+
+
+CTTGTTGTCA CTCATACTGA ATTACATCCA CTCTCACTTC TTTCCTAATT TTGCAAGCCC      479121
+                                                              |||
+........... .......... .......... .......... .......... .......CCC        2599
+
+
+AAAACTGACA CAAAAGCTAA AGAAAACACC TCACATGATA AATCTTCAAT TGTTGTACTG      479061
+|||||||||| |||||||| | |||||||| | |||||||||| |||||||||| |||||| |||
+AAAACTGACA CAAAAGCTGA AGAAAACATC TCACATGATA AATCTTCAAT TGTTGTCCTG        2659
+
+
+CCTGATACTG CTGAAAATAA GGTACTACTA CATCTCTTTC CTTTCATCTC ATTCATTAAG      479001
+|||||||||| |||||||||  |                                          
+CCTGATACTG CTGAAAATAT G......... .......... .......... ..........        2680
+
+
+ACCTAACCGC CACTTCTTTT ACAAGGGAAA GGGACTACCA GAAACTGCTG AAGAAGCCAA      478941
+                           ||||| |||||||||| |||||||||| ||||||||||
+........... .......... .....GGAAA GGGACTACCA GAAACTGCTG AAGAAGCCAA        2715
+
+
+ACAAGCAACC CCATCCTTCC CTACAGATAC CCTAGCCAAA AAAAGGTGCT TTGATCACTC      478881
+|||||||||| |||||||||| ||||| |||| || ||||||| |||||                
+ACAAGCAACC CCATCCTTCC CTACACATAC CCCAGCCAAA AAAAG..... ..........        2760
+
+
+CTAGGTGCAT TCCAATAATA AAGATTTCTT CCATTGTAAC TAACACATCA TTTCAATAAA      478821
+                                                                 
+........... .......... .......... .......... .......... ..........        2760
+
+
+CAGAGGAAGG CCTACACCTA CAGCAACACC TCCGGTTGCT AAGAAATTGT TCAAGGATGA      478761
+   ||||||| |||||||||| |||||||||| |||||||||| |||||||||| ||||||||| 
+....AGGAAGG CCTACACCTA CAGCAACACC TCCGGTTGCT AAGAAATTGT TCAAGGATGG        2817
+
+
+TGCCCAGCAA AAAGGCAATG ACAGGTTACT CCTCAAACAC AAACTCACCT ATCTACACAT      478701
+|||| ||||| |||||||||| ||||                                       
+TGCCAAGCAA AAAGGCAATG ACAG...... .......... .......... ..........        2841
+
+
+AACAAATTAG CAATTTAAAG GCATTCCTAA TCTCAGCTCT TAATTCATCT ACACAGTGAA      478641
+                                       |||| |||||||||| ||||| ||||
+........... .......... .......... ......CTCT TAATTCATCT ACACAATGAA        2865
+
+
+TGAGTTGTCG ACGTGCAATC CATCTCAAGA CTTTTTCTTA TATATATGTA CAAAGCTATG      478581
+|||||||||| |||||||||| |||||||||| ||||| |||| |||||||||| ||||||||||
+TGAGTTGTCG ACGTGCAATC CATCTCAAGA CTTTTGCTTA TATATATGTA CAAAGCTATG        2925
+
+
+TCCCAGCTAG AAGACAGATG GCAGTTGTGA AATTACCCAG GACTAAGGAA CCAAGATCTT      478521
+|||||||||| |||||||||| |||||||||| |||||||||| |||||| ||| ||||||||||
+TCCCAGCTAG AAGACAGATG GCAGTTGTGA AATTACCCAG GACTAAAGAA CCAAGATCTT        2985
+
+
+TTGTTCATGG CTTTTTGTCA TGATTATCAT TGTATATAAG TGTTGCCTTA TCT             478468
+|||||||||| |||||||||| |||||||||| |||||||||| |||||||||| |||
+TTGTTCATGG CTTTTTGTCA TGATTATCAT TGTATATAAG TGTTGCCTTA TCT               3038
+
+
+--------------------------------------------------------------------------------
+
+Predicted gene locations (1):
+
+
+PGL   1 (- strand):      495080     478468
+AGS-1 (495080  494371,494239  494156,491175  491169,491055  490904,481470  481320,481228  480759,480605  480440,480384  480323,480218  480098,480003  479849,479762  479207,479123  479040,478975  478896,478817  478737,478664  478468)
+SCR   (e 0.977  d 0.000 a 0.988,e 0.964  d 0.001 a 0.000,e 1.000  d 0.932 a 0.545,e 0.980  d 0.999 a 0.996,e 0.987  d 0.998 a 0.996,e 0.940  d 0.968 a 0.001,e 0.892  d 0.001 a 0.581,e 0.823  d 0.966 a 0.851,e 0.992  d 0.984 a 0.985,e 0.955  d 0.952 a 0.998,e 0.969  d 0.996 a 0.790,e 0.952  d 0.995 a 0.802,e 0.975  d 0.917 a 0.945,e 0.975  d 0.996 a 0.001,e 0.985)
+
+  Exon  1   495080   494371 ( 710 n); score: 0.977
+    Intron  1   494370   494240 ( 131 n);           Pd: 0.000  Pa: 0.988
+  Exon  2   494239   494156 (  84 n); score: 0.964
+    Intron  2   494155   491176 (2980 n);           Pd: 0.001  Pa: 0.000
+  Exon  3   491175   491169 (   7 n); score: 1.000
+    Intron  3   491168   491056 ( 113 n);           Pd: 0.932  Pa: 0.545
+  Exon  4   491055   490904 ( 152 n); score: 0.980
+    Intron  4   490903   481471 (9433 n);           Pd: 0.999  Pa: 0.996
+  Exon  5   481470   481320 ( 151 n); score: 0.987
+    Intron  5   481319   481229 (  91 n);           Pd: 0.998  Pa: 0.996
+  Exon  6   481228   480759 ( 470 n); score: 0.940
+    Intron  6   480758   480606 ( 153 n);           Pd: 0.968  Pa: 0.001
+  Exon  7   480605   480440 ( 166 n); score: 0.892
+    Intron  7   480439   480385 (  55 n);           Pd: 0.001  Pa: 0.581
+  Exon  8   480384   480323 (  62 n); score: 0.823
+    Intron  8   480322   480219 ( 104 n);           Pd: 0.966  Pa: 0.851
+  Exon  9   480218   480098 ( 121 n); score: 0.992
+    Intron  9   480097   480004 (  94 n);           Pd: 0.984  Pa: 0.985
+  Exon 10   480003   479849 ( 155 n); score: 0.955
+    Intron 10   479848   479763 (  86 n);           Pd: 0.952  Pa: 0.998
+  Exon 11   479762   479207 ( 556 n); score: 0.969
+    Intron 11   479206   479124 (  83 n);           Pd: 0.996  Pa: 0.790
+  Exon 12   479123   479040 (  84 n); score: 0.952
+    Intron 12   479039   478976 (  64 n);           Pd: 0.995  Pa: 0.802
+  Exon 13   478975   478896 (  80 n); score: 0.975
+    Intron 13   478895   478818 (  78 n);           Pd: 0.917  Pa: 0.945
+  Exon 14   478817   478737 (  81 n); score: 0.975
+    Intron 14   478736   478665 (  72 n);           Pd: 0.996  Pa: 0.001
+  Exon 15   478664   478468 ( 197 n); score: 0.985
+
+  PGS (495080  494371,494239  494156,491175  491169,491055  490904,481470  481320,481228  480759,480605  480440,480384  480323,480218  480098,480003  479849,479762  479207,479123  479040,478975  478896,478817  478737,478664  478468)	37988995+
+
+3-phase translation of AGS-1 (-strand):
+
+          .         .         .         .         .         .         
+  495080  ACACAAACAGGTCAACCCCTTCTCAGTTCTCACCCTGCTAGGCTGCTAGACCCTCTCTTC
+           T  Q  T  G  Q  P  L  L  S  S  H  P  A  R  L  L  D  P  L  F 
+            H  K  Q  V  N  P  F  S  V  L  T  L  L  G  C  *  T  L  S  S
+             T  N  R  S  T  P  S  Q  F  S  P  C  *  A  A  R  P  S  L  
+
+
+          .         .         .         .         .         .         
+  495020  CTCCTCATTCCTACCAGATAAACAGAGAAAGAAAAGGTCTCATAGCATAGGAACCAACGA
+           L  L  I  P  T  R  *  T  E  K  E  K  V  S  *  H  R  N  Q  R 
+            S  S  F  L  P  D  K  Q  R  K  K  R  S  H  S  I  G  T  N  E
+          P  P  H  S  Y  Q  I  N  R  E  R  K  G  L  I  A  *  E  P  T  
+
+
+          .         .         .         .         .         .         
+  494960  GGCAGGACGGCAGGAGGCCTGTTCGCTTGAGGTGTCTAGCCTGGAGTGCTTGCCACTAGG
+           G  R  T  A  G  G  L  F  A  *  G  V  *  P  G  V  L  A  T  R 
+            A  G  R  Q  E  A  C  S  L  E  V  S  S  L  E  C  L  P  L  G
+          R  Q  D  G  R  R  P  V  R  L  R  C  L  A  W  S  A  C  H  *  
+
+
+          .         .         .         .         .         .         
+  494900  AGTGAGGCAGCGAAGGGGACATGGTTGCTGGCGGCGGAGTCAATTTGATGGTGACGACTG
+           S  E  A  A  K  G  T  W  L  L  A  A  E  S  I  *  W  *  R  L 
+            V  R  Q  R  R  G  H  G  C  W  R  R  S  Q  F  D  G  D  D  C
+          E  *  G  S  E  G  D  M  V  A  G  G  G  V  N  L  M  V  T  T  
+
+
+          .         .         .         .         .         .         
+  494840  TATGCGGTGGGTCTCGACCAGTAGTGACGAGGAAGAAGGCGTGTTCCCCGGCCGACGGCG
+           Y  A  V  G  L  D  Q  *  *  R  G  R  R  R  V  P  R  P  T  A 
+            M  R  W  V  S  T  S  S  D  E  E  E  G  V  F  P  G  R  R  R
+          V  C  G  G  S  R  P  V  V  T  R  K  K  A  C  S  P  A  D  G  
+
+
+          .         .         .         .         .         .         
+  494780  AGGAGGCGCCGTCCCCTCGGCGGCGGGGTGAAGGCCTGCAGACGAAGGTAGTAGCAGCCC
+           R  R  R  R  P  L  G  G  G  V  K  A  C  R  R  R  *  *  Q  P 
+            G  G  A  V  P  S  A  A  G  *  R  P  A  D  E  G  S  S  S  P
+          E  E  A  P  S  P  R  R  R  G  E  G  L  Q  T  K  V  V  A  A  
+
+
+          .         .         .         .         .         .         
+  494720  AGGCGGCGGTGAAAATCAAGAGACGAGGCGGAGGAGGCTAGCGTGACGTTAGGGAAAAAG
+           R  R  R  *  K  S  R  D  E  A  E  E  A  S  V  T  L  G  K  K 
+            G  G  G  E  N  Q  E  T  R  R  R  R  L  A  *  R  *  G  K  R
+          Q  A  A  V  K  I  K  R  R  G  G  G  G  *  R  D  V  R  E  K  
+
+
+          .         .         .         .         .         .         
+  494660  GTGGGTCCAGATCGGCGCAGGCCCAGTGGACATGGATGAGAGGGCCGACGAGATGAGGCT
+           V  G  P  D  R  R  R  P  S  G  H  G  *  E  G  R  R  D  E  A 
+            W  V  Q  I  G  A  G  P  V  D  M  D  E  R  A  D  E  M  R  L
+          G  G  S  R  S  A  Q  A  Q  W  T  W  M  R  G  P  T  R  *  G  
+
+
+          .         .         .         .         .         .         
+  494600  CCATGCTAGCAGTGGAGACCTGGACGGAGGGCGCTCGATCTGACCAGATCGAGTCAGCGG
+           P  C  *  Q  W  R  P  G  R  R  A  L  D  L  T  R  S  S  Q  R 
+            H  A  S  S  G  D  L  D  G  G  R  S  I  *  P  D  R  V  S  G
+          S  M  L  A  V  E  T  W  T  E  G  A  R  S  D  Q  I  E  S  A  
+
+
+          .         .         .         .         .         .         
+  494540  CGGTGGTTGGAGACGCCTTGACATAGCCACGCGAAAAAGATGATTTTTCACTCCTCGCAG
+           R  W  L  E  T  P  *  H  S  H  A  K  K  M  I  F  H  S  S  Q 
+            G  G  W  R  R  L  D  I  A  T  R  K  R  *  F  F  T  P  R  R
+          A  V  V  G  D  A  L  T  *  P  R  E  K  D  D  F  S  L  L  A  
+
+
+          .         .         .         .         .         .         
+  494480  GCTGAGAAGACGCGGGAGCGTAGGATTGGGAATAGGAGAGGAGCCCTCACTCAGCCTCAG
+           A  E  K  T  R  E  R  R  I  G  N  R  R  G  A  L  T  Q  P  Q 
+            L  R  R  R  G  S  V  G  L  G  I  G  E  E  P  S  L  S  L  S
+          G  *  E  D  A  G  A  *  D  W  E  *  E  R  S  P  H  S  A  S  
+
+
+          .         .         .         .         .          : .         
+  494420  TATTGAGAGCGAATATTACAGGATAGAAACTCCACAAGTTTAGCATCTGA : GGGAGAAGAT
+           Y  *  E  R  I  L  Q  D  R  N  S  T  S  L  A  S  E :   G  E  D 
+            I  E  S  E  Y  Y  R  I  E  T  P  Q  V  *  H  L   : R  E  K  I
+          V  L  R  A  N  I  T  G  *  K  L  H  K  F  S  I  *  :  G  R  R  
+
+
+          .         .         .         .         .         .         
+  494229  CTGCATGGGTTGCATCGGAGCTTCAAAGGTTCTTAATTACTTTTAGTTAGACGTGCAAGA
+           L  H  G  L  H  R  S  F  K  G  S  *  L  L  L  V  R  R  A  R 
+            C  M  G  C  I  G  A  S  K  V  L  N  Y  F  *  L  D  V  Q  E
+          S  A  W  V  A  S  E  L  Q  R  F  L  I  T  F  S  *  T  C  K  
+
+
+          .         .    :       . :          .         .         .         
+  494169  GCTGCTGGAAATAT : TTGGCAG : CTCTGGTTGTTTATTCGCTCAAGATAGTGTTGGTTAACT
+           A  A  G  N  I :   W  Q  :  L  W  L  F  I  R  S  R  *  C  W  L  T 
+            L  L  E  I   : F  G  S :   S  G  C  L  F  A  Q  D  S  V  G  *  L
+          S  C  W  K  Y  :  L  A   : A  L  V  V  Y  S  L  K  I  V  L  V  N  
+
+
+          .         .         .         .         .         .         
+  491016  TTCCTTGCTGCGAAGCTTGCTGTTTCAGTCTATTGTTTAATTAGGGGTTGATATTGCTCT
+           F  L  A  A  K  L  A  V  S  V  Y  C  L  I  R  G  *  Y  C  S 
+            S  L  L  R  S  L  L  F  Q  S  I  V  *  L  G  V  D  I  A  L
+          F  P  C  C  E  A  C  C  F  S  L  L  F  N  *  G  L  I  L  L  
+
+
+          .         .         .         .         .         .   :        
+  490956  TGTTTCCCTGCCTTTTCCCCTTCCTGTCAGTTCGGTCTGCCTTTGTGCTGAAG : ATTCCAT
+           C  F  P  A  F  S  P  S  C  Q  F  G  L  P  L  C  *  R :   F  H 
+            V  S  L  P  F  P  L  P  V  S  S  V  C  L  C  A  E   : D  S  I
+          L  F  P  C  L  F  P  F  L  S  V  R  S  A  F  V  L  K  :  I  P  
+
+
+          .         .         .         .         .         .         
+  481463  ATGGCGCATGTACTGATTTCACAGCTATCGTTTGGAGATTCAAACAAAAGAATCCTTGCA
+           M  A  H  V  L  I  S  Q  L  S  F  G  D  S  N  K  R  I  L  A 
+            W  R  M  Y  *  F  H  S  Y  R  L  E  I  Q  T  K  E  S  L  Q
+          Y  G  A  C  T  D  F  T  A  I  V  W  R  F  K  Q  K  N  P  C  
+
+
+          .         .         .         .         .         .         
+  481403  AGGGTCTCCAGGCTATGGAACTTTACTGATCTCAACGATGATACAAAAATTTTCCACACT
+           R  V  S  R  L  W  N  F  T  D  L  N  D  D  T  K  I  F  H  T 
+            G  S  P  G  Y  G  T  L  L  I  S  T  M  I  Q  K  F  S  T  L
+          K  G  L  Q  A  M  E  L  Y  *  S  Q  R  *  Y  K  N  F  P  H  
+
+
+          .         .         .    :       .         .         .         
+  481343  GATCTTGTCTTACTCGATGAAATG : GGGACTAGCATACATGCCCAAATTTACCCCCCTATA
+           D  L  V  L  L  D  E  M  :  G  T  S  I  H  A  Q  I  Y  P  P  I 
+            I  L  S  Y  S  M  K  W :   G  L  A  Y  M  P  K  F  T  P  L  *
+          *  S  C  L  T  R  *  N   : G  D  *  H  T  C  P  N  L  P  P  Y  
+
+
+          .         .         .         .         .         .         
+  481192  ACAGAAAAGATGAAACCTCTCCTTAAGGAAGAAAAGGTTTACTACATTGACTCATTCACT
+           T  E  K  M  K  P  L  L  K  E  E  K  V  Y  Y  I  D  S  F  T 
+            Q  K  R  *  N  L  S  L  R  K  K  R  F  T  T  L  T  H  S  L
+          N  R  K  D  E  T  S  P  *  G  R  K  G  L  L  H  *  L  I  H  
+
+
+          .         .         .         .         .         .         
+  481132  GTTAGGGCTGCAAACAGAACATACAGGCTAGTTGCAAACAACCTAATGATCCTCTTCAGT
+           V  R  A  A  N  R  T  Y  R  L  V  A  N  N  L  M  I  L  F  S 
+            L  G  L  Q  T  E  H  T  G  *  L  Q  T  T  *  *  S  S  S  V
+          C  *  G  C  K  Q  N  I  Q  A  S  C  K  Q  P  N  D  P  L  Q  
+
+
+          .         .         .         .         .         .         
+  481072  AAATGGACAACACTTGAAGAACACATTAATGTCCCTCCTCATTTCCCTGGTATTACATTT
+           K  W  T  T  L  E  E  H  I  N  V  P  P  H  F  P  G  I  T  F 
+            N  G  Q  H  L  K  N  T  L  M  S  L  L  I  S  L  V  L  H  F
+          *  M  D  N  T  *  R  T  H  *  C  P  S  S  F  P  W  Y  Y  I  
+
+
+          .         .         .         .         .         .         
+  481012  TCACTGACACCATTCGAAGATGTTCCTTCCCTTGTCGAGAAAAAATCATTCTACGTTGGT
+           S  L  T  P  F  E  D  V  P  S  L  V  E  K  K  S  F  Y  V  G 
+            H  *  H  H  S  K  M  F  L  P  L  S  R  K  N  H  S  T  L  V
+          F  T  D  T  I  R  R  C  S  F  P  C  R  E  K  I  I  L  R  W  
+
+
+          .         .         .         .         .         .         
+  480952  AATAACATACTTTTATTGTGTTGCAATTATTGTTATATACATCTTTTGCAATGCCATATC
+           N  N  I  L  L  L  C  C  N  Y  C  Y  I  H  L  L  Q  C  H  I 
+            I  T  Y  F  Y  C  V  A  I  I  V  I  Y  I  F  C  N  A  I  S
+          *  *  H  T  F  I  V  L  Q  L  L  L  Y  T  S  F  A  M  P  Y  
+
+
+          .         .         .         .         .         .         
+  480892  ATTTTATTAAATTTATATGCAATGCAAACAGACATTATGGGTGTGATCACTGAAGTTGGT
+           I  L  L  N  L  Y  A  M  Q  T  D  I  M  G  V  I  T  E  V  G 
+            F  Y  *  I  Y  M  Q  C  K  Q  T  L  W  V  *  S  L  K  L  V
+          H  F  I  K  F  I  C  N  A  N  R  H  Y  G  C  D  H  *  S  W  
+
+
+          .         .         .         .         .         .         
+  480832  GCAGTCACTACTATACGTCCTAAGTCCAGAAACGCTAAGAGCTTAAAAAGGACATTACAG
+           A  V  T  T  I  R  P  K  S  R  N  A  K  S  L  K  R  T  L  Q 
+            Q  S  L  L  Y  V  L  S  P  E  T  L  R  A  *  K  G  H  Y  R
+          C  S  H  Y  Y  T  S  *  V  Q  K  R  *  E  L  K  K  D  I  T  
+
+
+          .         .    :       .         .         .         .         
+  480772  ATCCGCGATGCAAG : CAATTCAACTCTTCCTGTCACACTCTGGGGAGAAAGAGCAACCTCT
+           I  R  D  A  S :   N  S  T  L  P  V  T  L  W  G  E  R  A  T  S 
+            S  A  M  Q   : A  I  Q  L  F  L  S  H  S  G  E  K  E  Q  P  L
+          D  P  R  C  K  :  Q  F  N  S  S  C  H  T  L  G  R  K  S  N  L  
+
+
+          .         .         .         .         .         .         
+  480559  TTTGATGCTGATGACATATACAATGCTGGTCAAACTCAAGCTCAAGTTGCTGTGTTTGTT
+           F  D  A  D  D  I  Y  N  A  G  Q  T  Q  A  Q  V  A  V  F  V 
+            L  M  L  M  T  Y  T  M  L  V  K  L  K  L  K  L  L  C  L  L
+          F  *  C  *  *  H  I  Q  C  W  S  N  S  S  S  S  C  C  V  C  
+
+
+          .         .         .         .         .         .          : 
+  480499  GGAACACTTGTGAAAGATTATAGAGGATTAGGTACATTTCTTTCTAAACTTTCAATTACT : 
+           G  T  L  V  K  D  Y  R  G  L  G  T  F  L  S  K  L  S  I  T  : 
+            E  H  L  *  K  I  I  E  D  *  V  H  F  F  L  N  F  Q  L  L : 
+          W  N  T  C  E  R  L  *  R  I  R  Y  I  S  F  *  T  F  N  Y   : 
+
+
+          .         .         .         .         .         .         
+  480384  GCCTTACACTAACTGGAAGCTTACCATCTAAATATTCCTGAAGTAGCAGAACTAAATGAG
+           A  L  H  *  L  E  A  Y  H  L  N  I  P  E  V  A  E  L  N  E 
+            P  Y  T  N  W  K  L  T  I  *  I  F  L  K  *  Q  N  *  M  R
+          C  L  T  L  T  G  S  L  P  S  K  Y  S  *  S  S  R  T  K  *  
+
+
+          .  :         .         .         .         .         .         
+  480324  AG : CTTTAGCACAAACTTTCAACCAATCAAGTGGGTTGATGAGCCTGCTACAGGATACAAC
+           S :   F  S  T  N  F  Q  P  I  K  W  V  D  E  P  A  T  G  Y  N 
+             : A  L  A  Q  T  F  N  Q  S  S  G  L  M  S  L  L  Q  D  T  T
+          E  :  L  *  H  K  L  S  T  N  Q  V  G  *  *  A  C  Y  R  I  Q  
+
+
+          .         .         .         .         .         .         
+  480160  CAGGATGTACCAGAAGAAAAGAGTATTGCAGAAATCCTTAATATCAACCCTCACAAACAC
+           Q  D  V  P  E  E  K  S  I  A  E  I  L  N  I  N  P  H  K  H 
+            R  M  Y  Q  K  K  R  V  L  Q  K  S  L  I  S  T  L  T  N  T
+          P  G  C  T  R  R  K  E  Y  C  R  N  P  *  Y  Q  P  S  Q  T  
+
+
+          .   :        .         .         .         .         .         
+  480100  AAG : GGAACACGTTTTATAGTAAATGTGACTGTCAGAAGGATATGTAATGAATATTCTTGG
+           K  :  G  T  R  F  I  V  N  V  T  V  R  R  I  C  N  E  Y  S  W 
+            R :   E  H  V  L  *  *  M  *  L  S  E  G  Y  V  M  N  I  L  G
+          Q   : G  N  T  F  Y  S  K  C  D  C  Q  K  D  M  *  *  I  F  L  
+
+
+          .         .         .         .         .         .         
+  479946  TGGTACAATTCATGTCGAATATGCTACAAAACTTCAAAACCATATGGCTCTAGCTACAGA
+           W  Y  N  S  C  R  I  C  Y  K  T  S  K  P  Y  G  S  S  Y  R 
+            G  T  I  H  V  E  Y  A  T  K  L  Q  N  H  M  A  L  A  T  D
+          V  V  Q  F  M  S  N  M  L  Q  N  F  K  T  I  W  L  *  L  Q  
+
+
+          .         .         .         .        :   .         .         
+  479886  TACTCCAGCTGTTCTAGCATCGGAATAACAGATCCAAG : GTACAAAGTAGTATTAATTGCC
+           Y  S  S  C  S  S  I  G  I  T  D  P  R :   Y  K  V  V  L  I  A 
+            T  P  A  V  L  A  S  E  *  Q  I  Q   : G  T  K  *  Y  *  L  P
+          I  L  Q  L  F  *  H  R  N  N  R  S  K  :  V  Q  S  S  I  N  C  
+
+
+          .         .         .         .         .         .         
+  479740  AGCGATGATGATGCTAATGCTACATTTATCCTTTTCGGAAGGATCGCACAACGGCTACTA
+           S  D  D  D  A  N  A  T  F  I  L  F  G  R  I  A  Q  R  L  L 
+            A  M  M  M  L  M  L  H  L  S  F  S  E  G  S  H  N  G  Y  Y
+          Q  R  *  *  C  *  C  Y  I  Y  P  F  R  K  D  R  T  T  A  T  
+
+
+          .         .         .         .         .         .         
+  479680  CGCAGGCCCGTAGAATCTCTCATTGAAGAAAAACCACCAAACAGTGAATACATTCCAAGT
+           R  R  P  V  E  S  L  I  E  E  K  P  P  N  S  E  Y  I  P  S 
+            A  G  P  *  N  L  S  L  K  K  N  H  Q  T  V  N  T  F  Q  V
+          T  Q  A  R  R  I  S  H  *  R  K  T  T  K  Q  *  I  H  S  K  
+
+
+          .         .         .         .         .         .         
+  479620  GAAATCACGTCACTTATTGGTAGCAATTTTGCATGGAATGTTAGCTTTACGCGGGATACT
+           E  I  T  S  L  I  G  S  N  F  A  W  N  V  S  F  T  R  D  T 
+            K  S  R  H  L  L  V  A  I  L  H  G  M  L  A  L  R  G  I  L
+          *  N  H  V  T  Y  W  *  Q  F  C  M  E  C  *  L  Y  A  G  Y  
+
+
+          .         .         .         .         .         .         
+  479560  GTTATGAGAAGTCAAGAGTGCCTACAAGTTAATAGCATTATATCCGCTGGTGCTTCAAAC
+           V  M  R  S  Q  E  C  L  Q  V  N  S  I  I  S  A  G  A  S  N 
+            L  *  E  V  K  S  A  Y  K  L  I  A  L  Y  P  L  V  L  Q  T
+          C  Y  E  K  S  R  V  P  T  S  *  *  H  Y  I  R  W  C  F  K  
+
+
+          .         .         .         .         .         .         
+  479500  CAGCCACTACTCCTTATGTCCCCAGATGCTTCACAAGTGACATCAGCTATTGTCTCAGCA
+           Q  P  L  L  L  M  S  P  D  A  S  Q  V  T  S  A  I  V  S  A 
+            S  H  Y  S  L  C  P  Q  M  L  H  K  *  H  Q  L  L  S  Q  Q
+          P  A  T  T  P  Y  V  P  R  C  F  T  S  D  I  S  Y  C  L  S  
+
+
+          .         .         .         .         .         .         
+  479440  AGCTCAAGCAGCTCTGTCCAAACAGCACCAACACCAAATGAAACAAGCAATGAATCACAG
+           S  S  S  S  S  V  Q  T  A  P  T  P  N  E  T  S  N  E  S  Q 
+            A  Q  A  A  L  S  K  Q  H  Q  H  Q  M  K  Q  A  M  N  H  S
+          K  L  K  Q  L  C  P  N  S  T  N  T  K  *  N  K  Q  *  I  T  
+
+
+          .         .         .         .         .         .         
+  479380  CAGCCCATTTAACCAAGACAAACCATCTCAACACCAACCAAGTTCATCATCGCTCAGGGA
+           Q  P  I  *  P  R  Q  T  I  S  T  P  T  K  F  I  I  A  Q  G 
+            S  P  F  N  Q  D  K  P  S  Q  H  Q  P  S  S  S  S  L  R  E
+          A  A  H  L  T  K  T  N  H  L  N  T  N  Q  V  H  H  R  S  G  
+
+
+          .         .         .         .         .         .         
+  479320  ACACAGGACACCCCAACTAGCAAATCAAGTTCTTCAGCACCTACCAAGAAAAGCATTGTT
+           T  Q  D  T  P  T  S  K  S  S  S  S  A  P  T  K  K  S  I  V 
+            H  R  T  P  Q  L  A  N  Q  V  L  Q  H  L  P  R  K  A  L  L
+          N  T  G  H  P  N  *  Q  I  K  F  F  S  T  Y  Q  E  K  H  C  
+
+
+          .         .         .         .         .         .    :       
+  479260  GTCTCAGTGTCTCACATGCAGTCTAGCAAGACCAAACCTAAAACTGATGATAAG : CCCAAA
+           V  S  V  S  H  M  Q  S  S  K  T  K  P  K  T  D  D  K  :  P  K 
+            S  Q  C  L  T  C  S  L  A  R  P  N  L  K  L  M  I  S :   P  K
+          C  L  S  V  S  H  A  V  *  Q  D  Q  T  *  N  *  *  *   : A  Q  
+
+
+          .         .         .         .         .         .         
+  479117  ACTGACACAAAAGCTAAAGAAAACACCTCACATGATAAATCTTCAATTGTTGTACTGCCT
+           T  D  T  K  A  K  E  N  T  S  H  D  K  S  S  I  V  V  L  P 
+            L  T  Q  K  L  K  K  T  P  H  M  I  N  L  Q  L  L  Y  C  L
+          N  *  H  K  S  *  R  K  H  L  T  *  *  I  F  N  C  C  T  A  
+
+
+          .         .        :   .         .         .         .         
+  479057  GATACTGCTGAAAATAAG : GGAAAGGGACTACCAGAAACTGCTGAAGAAGCCAAACAAGCA
+           D  T  A  E  N  K  :  G  K  G  L  P  E  T  A  E  E  A  K  Q  A 
+            I  L  L  K  I  R :   E  R  D  Y  Q  K  L  L  K  K  P  N  K  Q
+          *  Y  C  *  K  *   : G  K  G  T  T  R  N  C  *  R  S  Q  T  S  
+
+
+          .         .         .         .        :   .         .         
+  478933  ACCCCATCCTTCCCTACAGATACCCTAGCCAAAAAAAG : AGGAAGGCCTACACCTACAGCA
+           T  P  S  F  P  T  D  T  L  A  K  K  R :   G  R  P  T  P  T  A 
+            P  H  P  S  L  Q  I  P  *  P  K  K   : E  E  G  L  H  L  Q  Q
+          N  P  I  L  P  Y  R  Y  P  S  Q  K  K  :  R  K  A  Y  T  Y  S  
+
+
+          .         .         .         .         .         .         :  
+  478795  ACACCTCCGGTTGCTAAGAAATTGTTCAAGGATGATGCCCAGCAAAAAGGCAATGACAG : C
+           T  P  P  V  A  K  K  L  F  K  D  D  A  Q  Q  K  G  N  D  S :  
+            H  L  R  L  L  R  N  C  S  R  M  M  P  S  K  K  A  M  T   : A
+          N  T  S  G  C  *  E  I  V  Q  G  *  C  P  A  K  R  Q  *  Q  :  
+
+
+          .         .         .         .         .         .         
+  478663  TCTTAATTCATCTACACAGTGAATGAGTTGTCGACGTGCAATCCATCTCAAGACTTTTTC
+           S  *  F  I  Y  T  V  N  E  L  S  T  C  N  P  S  Q  D  F  F 
+            L  N  S  S  T  Q  *  M  S  C  R  R  A  I  H  L  K  T  F  S
+          L  L  I  H  L  H  S  E  *  V  V  D  V  Q  S  I  S  R  L  F  
+
+
+          .         .         .         .         .         .         
+  478603  TTATATATATGTACAAAGCTATGTCCCAGCTAGAAGACAGATGGCAGTTGTGAAATTACC
+           L  Y  I  C  T  K  L  C  P  S  *  K  T  D  G  S  C  E  I  T 
+            Y  I  Y  V  Q  S  Y  V  P  A  R  R  Q  M  A  V  V  K  L  P
+          L  I  Y  M  Y  K  A  M  S  Q  L  E  D  R  W  Q  L  *  N  Y  
+
+
+          .         .         .         .         .         .         
+  478543  CAGGACTAAGGAACCAAGATCTTTTGTTCATGGCTTTTTGTCATGATTATCATTGTATAT
+           Q  D  *  G  T  K  I  F  C  S  W  L  F  V  M  I  I  I  V  Y 
+            R  T  K  E  P  R  S  F  V  H  G  F  L  S  *  L  S  L  Y  I
+          P  G  L  R  N  Q  D  L  L  F  M  A  F  C  H  D  Y  H  C  I  
+
+
+          .         .     
+  478483  AAGTGTTGCCTTATCT
+           K  C  C  L  I  
+            S  V  A  L  S 
+          *  V  L  P  Y   
+
+
+Maximal non-overlapping open reading frames (>= 64 codons)
+
+>OSchr10-v3-_PGL-1_AGS-1_PPS_1 (490905  490904,481470  481320,481228  480759,480605  480440,480384  480373)	(frame '0';   798 bp,  266 residues) 
+       1  RFHMAHVLIS QLSFGDSNKR ILARVSRLWN FTDLNDDTKI FHTDLVLLDE MGTSIHAQIY 
+      61  PPITEKMKPL LKEEKVYYID SFTVRAANRT YRLVANNLMI LFSKWTTLEE HINVPPHFPG 
+     121  ITFSLTPFED VPSLVEKKSF YVGNNILLLC CNYCYIHLLQ CHIILLNLYA MQTDIMGVIT 
+     181  EVGAVTTIRP KSRNAKSLKR TLQIRDASNS TLPVTLWGER ATSFDADDIY NAGQTQAQVA 
+     241  VFVGTLVKDY RGLGTFLSKL SITALH*
+
+>OSchr10-v3-_PGL-1_AGS-1_PPS_2 (480372  480323,480218  480098,480003  479849,479762  479369)	(frame '0';   717 bp,  239 residues) 
+       1  LEAYHLNIPE VAELNESFST NFQPIKWVDE PATGYNQDVP EEKSIAEILN INPHKHKGTR 
+      61  FIVNVTVRRI CNEYSWWYNS CRICYKTSKP YGSSYRYSSC SSIGITDPRY KVVLIASDDD 
+     121  ANATFILFGR IAQRLLRRPV ESLIEEKPPN SEYIPSEITS LIGSNFAWNV SFTRDTVMRS 
+     181  QECLQVNSII SAGASNQPLL LMSPDASQVT SAIVSASSSS SVQTAPTPNE TSNESQQPI*
+
+>OSchr10-v3-_PGL-1_AGS-1_PPS_3 (479368  479207,479123  479040,478975  478896,478817  478737,478664  478658)	(frame '0';   411 bp,  137 residues) 
+       1  PRQTISTPTK FIIAQGTQDT PTSKSSSSAP TKKSIVVSVS HMQSSKTKPK TDDKPKTDTK 
+      61  AKENTSHDKS SIVVLPDTAE NKGKGLPETA EEAKQATPSF PTDTLAKKRG RPTPTATPPV 
+     121  AKKLFKDDAQ QKGNDSS*
+
+>OSchr10-v3-_PGL-1_AGS-1_PPS_4 (495031  494750)	(frame '1';   279 bp,   93 residues) 
+       1  TLSSSSFLPD KQRKKRSHSI GTNEAGRQEA CSLEVSSLEC LPLGVRQRRG HGCWRRSQFD 
+      61  GDDCMRWVST SSDEEEGVFP GRRRGGAVPS AAG*
+
+
+
+
+$ memory statistics:
+$ 2948 bytes spliced alignments in total
+$ 1 spliced alignments have been stored
+$ 2948 bytes was the average size of a spliced alignment
+$ 2720 bytes predicted gene locations in total
+$ 1 predicted gene locations have been stored
+$ 2720 bytes was the average size of a predicted gene location
+$ 99 megabytes was the average size of the backtrace matrix
+$ 1 backtrace matrix has been allocated
+

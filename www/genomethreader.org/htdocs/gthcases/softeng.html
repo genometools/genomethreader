@@ -1,0 +1,84 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN"
+     "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+<head>
+<title>GBSK 2005 evaluation</title>
+</head>
+<body>
+
+<p><center><h3>Test cases from Gremme et al. 2005</h3></center></p>
+
+<p>
+<table border=1>
+  <tr>
+    <td></td>
+    <td>GeneSeqer</td>
+    <td>GenomeThreader (w/out intron cutout)</td>
+    <td>GenomeThreader (with intron cutout)</td>
+  </tr>
+  <tr>
+    <td>total output</td>
+    <td><a href="./gsq-OSchr10.out9">gsq-OSchr10.out9</a></td>
+    <td><a href="./gth-OSchr10.out9">gth-OSchr10.out9</a></td>
+    <td><a href="./gth-OSchr10-IC.out9">gth-OSchr10-IC.out9</a></td>
+  </tr>
+  <tr>
+    <td>parameter settings</td>
+    <td><a href="./parameters.gsq">parameters.gsq</a></td>
+    <td><a href="./parameters.gth">parameters.gth</a></td>
+    <td><a href="./parameters.IC.gth">parameters.IC.gth</a></td>
+  </tr>
+  <tr>
+    <td rowspan=2>alignments the same</td>
+    <td><a href="./struct_same.gsq">struct_same.gsq</a></td>
+    <td><a href="./struct_same.gth">struct_same.gth</a></td>
+    <td>*</td>
+  </tr>
+  <tr>
+    <td><a href="./struct_same.IC.gsq">struct_same.IC.gsq</a></td>
+    <td>*</td>
+    <td><a href="./struct_same.IC.gth">struct_same.IC.gth</a></td>
+  </tr>
+  <tr>
+    <td>alignments similar, but on opposite strands</td>
+    <td><a href="./strand_diff.gsq">strand_diff.gsq</a></td>
+    <td><a href="./strand_diff.gth">strand_diff.gth</a></td>
+    <td>*</td>
+  </tr>
+  <tr>
+    <td rowspan=2>gene structures differ, but at same locus</td>
+    <td><a href="./struct_diff.gsq">struct_diff.gsq</a></td>
+    <td><a href="./struct_diff.gth">struct_diff.gth</a></td>
+    <td>*</td>
+  </tr>
+  <tr>
+    <td><a href="./struct_diff.gsq">struct_diff.IC.gsq</a></td>
+    <td>*</td>
+    <td><a href="./struct_diff.gth">struct_diff.IC.gth</a></td>
+  </tr>
+  <tr>
+    <td>cDNA maps to different locus</td>
+    <td><a href="./locus_diff.gsq">locus_diff.gsq</a></td>
+    <td><a href="./locus_diff.gth">locus_diff.gth</a></td>
+    <td>*</td>
+  </tr>
+</table>
+</p>
+
+<p>Back to <a href="../index.html">main page</a></p>
+
+<!-- Piwik -->
+<script type="text/javascript">
+var pkBaseURL = "https://zenlicensemanager.com/piwik/";
+document.write(unescape("%3Cscript src='" + pkBaseURL + "piwik.js' type='text/javascript'%3E%3C/script%3E"));
+</script><script type="text/javascript">
+try {
+var piwikTracker = Piwik.getTracker(pkBaseURL + "piwik.php", 4);
+piwikTracker.trackPageView();
+piwikTracker.enableLinkTracking();
+} catch( err ) {}
+</script><noscript><p><img src="https://zenlicensemanager.com/piwik/piwik.php?idsite=4" style="border:0" alt="" /></p></noscript>
+<!-- End Piwik Tracking Tag -->
+
+</body>
+</html>

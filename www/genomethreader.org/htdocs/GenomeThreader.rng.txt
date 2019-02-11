@@ -1,0 +1,673 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<grammar xmlns="http://relaxng.org/ns/structure/1.0"
+         datatypeLibrary="http://www.w3.org/2001/XMLSchema-datatypes">
+
+<!-- This grammar corresponds to gthXML v1.2, which is reverse
+     compatible with gthXML v1.1 and v1.0 documents.
+
+     Michael E Sparks (mespar1@iastate.edu)
+     16 August 2007
+
+     Change log:
+
+     gthXML v1.2 added the optional "MetWAMer_annot" element
+      to the "orf_entry" element of "probable_ORFs".
+      The "header" element is now optional.
+
+     gthXML v1.1 added the optional "gDNA_id" attribute
+       to the "none" element of "probable_ORFs".
+ -->
+
+<!--
+  Copyright (c) 2003,2004,2005,2006,2007 Michael E Sparks
+  All rights reserved.
+ 
+  Permission to use, copy, modify, and distribute this software for any
+  purpose with or without fee is hereby granted, provided that the above
+  copyright notice and this permission notice appear in all copies.
+
+  THE SOFTWARE IS PROVIDED "AS IS" AND THE AUTHOR DISCLAIMS ALL WARRANTIES
+  WITH REGARD TO THIS SOFTWARE INCLUDING ALL IMPLIED WARRANTIES OF
+  MERCHANTABILITY AND FITNESS. IN NO EVENT SHALL THE AUTHOR BE LIABLE FOR
+  ANY SPECIAL, DIRECT, INDIRECT, OR CONSEQUENTIAL DAMAGES OR ANY DAMAGES
+  WHATSOEVER RESULTING FROM LOSS OF USE, DATA OR PROFITS, WHETHER IN AN
+  ACTION OF CONTRACT, NEGLIGENCE OR OTHER TORTIOUS ACTION, ARISING OUT OF
+  OR IN CONNECTION WITH THE USE OR PERFORMANCE OF THIS SOFTWARE.
+ -->
+<start>
+  <element name="GTH_output"
+           ns="http://www.genomethreader.org/GTH_output/">
+    <attribute name="GTH_XML_version"/>
+    <optional>
+      <element name="header"
+               ns="http://www.genomethreader.org/GTH_output/header/">
+        <ref name="header-CONTENT"/>
+      </element>
+    </optional>
+    <oneOrMore>
+      <element name="alignment_module">
+        <zeroOrMore>
+          <element name="spliced_alignment"
+                   ns="http://www.genomethreader.org/GTH_output/alignment_module/spliced_alignment/">
+            <ref name="spliced_alignment-CONTENT"/>
+          </element>
+        </zeroOrMore>
+        <choice>
+          <element name="total_number_ESTs_reported">
+            <data type="integer"/>
+          </element>
+          <element name="total_number_proteins_reported">
+            <data type="integer"/>
+          </element>
+        </choice>
+      </element>
+      <optional>
+        <element name="PGL_module"
+                 ns="http://www.genomethreader.org/GTH_output/PGL_module/">
+          <ref name="PGL_module-CONTENT"/>
+        </element>
+      </optional>
+    </oneOrMore>
+  </element>
+</start>
+
+<!-- ____________________________________________________________________________ -->
+
+<define name="header-CONTENT"
+        ns="http://www.genomethreader.org/GTH_output/header/">
+  <element name="source">
+    <attribute name="program"/>
+    <attribute name="version"/>
+    <attribute name="build_date"/>
+    <attribute name="run_date"/>
+  </element>
+  <zeroOrMore>
+    <element name="gDNA_template_files">
+      <oneOrMore>
+        <element name="temp_name">
+          <text/>
+        </element>
+      </oneOrMore>
+    </element>
+  </zeroOrMore>
+  <element name="reference_files">
+    <oneOrMore>
+      <element name="file">
+        <attribute name="ref_name"/>
+        <attribute name="type">
+          <choice>
+            <value>ESTcDNA</value>
+            <value>Protein</value>
+          </choice>
+        </attribute>
+      </element>
+    </oneOrMore>
+  </element>
+  <element name="splice_site_parameters">
+    <attribute name="parameter_type"/>
+    <attribute name="species"/>
+  </element>
+  <element name="parameters">
+    <oneOrMore>
+      <element name="parameter">
+        <attribute name="name"/>
+        <attribute name="value"/>
+      </element>
+    </oneOrMore>
+  </element>
+  <element name="overall_reference_type">
+    <choice>
+      <value>ESTcDNA</value>
+      <value>Protein</value>
+      <value>Mixed</value>
+    </choice>
+  </element>
+</define>
+
+<!-- ____________________________________________________________________________ -->
+
+<define name="spliced_alignment-CONTENT"
+        ns="http://www.genomethreader.org/GTH_output/alignment_module/spliced_alignment/">
+  <element name="reference">
+    <attribute name="ref_file"/>
+    <attribute name="ref_id"/>
+    <optional>
+      <attribute name="ref_strand">
+        <choice>
+          <value>+</value>
+          <value>-</value>
+        </choice>
+      </attribute>
+    </optional>
+    <attribute name="ref_description"/>
+    <element name="seq">
+      <text/>
+    </element>
+  </element>
+  <element name="gDNA_segment">
+    <oneOrMore>
+      <element name="template">
+        <attribute name="temp_file"/>
+        <attribute name="temp_id"/>
+        <attribute name="temp_strand">
+          <choice>
+            <value>+</value>
+            <value>-</value>
+          </choice>
+        </attribute>
+        <attribute name="temp_description"/>
+        <element name="position">
+          <attribute name="start">
+            <data type="integer"/>
+          </attribute>
+          <attribute name="stop">
+            <data type="integer"/>
+          </attribute>
+        </element>
+      </element>
+    </oneOrMore>
+  </element>
+  <element name="predicted_gene_structure">
+    <element name="exon-intron_info">
+      <interleave>
+        <oneOrMore>
+          <element name="exon">
+            <attribute name="e_serial">
+              <data type="integer"/>
+            </attribute>
+            <element name="gDNA_exon_boundary">
+              <attribute name="g_start">
+                <data type="integer"/>
+              </attribute> 
+              <attribute name="g_stop">
+                <data type="integer"/>
+              </attribute> 
+              <attribute name="g_length">
+                <data type="integer"/>
+              </attribute> 
+            </element>
+            <element name="reference_exon_boundary">
+              <attribute name="r_type">
+                <choice>
+                  <value>cDNA</value>
+                  <value>Protein</value>
+                </choice>
+              </attribute>
+              <attribute name="r_start">
+                <data type="integer"/>
+              </attribute>
+              <attribute name="r_stop">
+                <data type="integer"/>
+              </attribute>
+              <attribute name="r_length">
+                <data type="integer"/>
+              </attribute>
+              <attribute name="r_score">
+                <data type="decimal"/>
+              </attribute>
+            </element>
+          </element>    
+        </oneOrMore>
+        <zeroOrMore>
+          <element name="intron">
+            <attribute name="i_serial">
+              <data type="integer"/>
+            </attribute>
+            <element name="gDNA_intron_boundary">
+              <attribute name="i_start">
+                <data type="integer"/>
+              </attribute> 
+              <attribute name="i_stop">
+                <data type="integer"/>
+              </attribute> 
+              <attribute name="i_length">
+                <data type="integer"/>
+              </attribute> 
+              <element name="donor">
+                <attribute name="d_prob">
+                  <data type="decimal"/>
+                </attribute>
+                <optional>
+                  <attribute name="d_score">
+                    <data type="decimal"/>
+                  </attribute>
+                </optional>
+              </element>
+              <element name="acceptor">
+                <attribute name="a_prob">
+                  <data type="decimal"/>
+                </attribute>
+                <optional>
+                  <attribute name="a_score">
+                    <data type="decimal"/>
+                  </attribute>
+                </optional>
+              </element>
+            </element>
+            <optional>
+              <element name="shorter_than_min_intron_len">
+                <empty/>
+              </element>
+            </optional>
+          </element>
+        </zeroOrMore>
+      </interleave>
+    </element>
+    <optional>
+      <element name="PPA_line">
+        <attribute name="polyA_start">
+          <data type="integer"/>
+        </attribute>
+        <attribute name="polyA_stop">
+          <data type="integer"/>
+        </attribute>
+      </element>
+    </optional>
+    <element name="MATCH_line">
+      <attribute name="gen_id"/>
+      <attribute name="gen_strand">
+        <choice>
+          <value>+</value>
+          <value>-</value>
+        </choice>
+      </attribute>
+      <attribute name="ref_id"/>
+      <optional>
+        <attribute name="ref_strand">
+          <choice>
+            <value>+</value>
+            <value>-</value>
+          </choice>
+        </attribute>
+      </optional>
+      <element name="total_alignment_score">
+        <data type="decimal"/>
+      </element>
+      <element name="cumulative_length_of_scored_exons">
+        <data type="integer"/>
+      </element>
+      <element name="coverage">
+        <attribute name="percentage">
+          <data type="decimal"/>
+        </attribute>
+        <attribute name="high_type">
+          <choice>
+            <value>C</value>
+            <value>P</value>
+            <value>G</value>
+          </choice>
+        </attribute>
+      </element>
+    </element>
+    <element name="PGS_line">
+      <element name="gDNA">
+        <attribute name="gen_id"/>
+        <attribute name="gen_strand">
+          <choice>
+            <value>+</value>
+            <value>-</value>
+          </choice>
+        </attribute>
+      </element>
+      <choice>
+        <element name="rDNA">
+          <attribute name="rDNA_strand">
+            <choice>
+              <value>+</value>
+              <value>-</value>
+            </choice>
+          </attribute>
+          <attribute name="rDNA_id"/>
+        </element>
+        <element name="rProt">
+          <attribute name="rProt_id"/>
+        </element>
+      </choice>
+      <element name="gDNA_exon_coordinates">
+        <oneOrMore>
+          <element name="exon">
+            <attribute name="e_start">
+              <data type="integer"/>
+            </attribute>
+            <attribute name="e_stop">
+              <data type="integer"/>
+            </attribute>
+          </element>
+        </oneOrMore>
+      </element>
+    </element>
+    <element name="alignment">
+      <element name="genome_strand">
+        <text/>
+      </element>
+      <choice>
+        <element name="mrna_strand">
+          <text/>
+        </element>
+        <group>
+          <element name="genomeProt">
+            <text/>
+          </element>
+          <element name="queryProt">
+            <text/>
+          </element>
+        </group>
+      </choice>
+    </element>
+    <optional>
+      <element name="hqPGS_line">
+        <element name="hqgDNA">
+          <attribute name="gen_id"/>
+          <attribute name="gen_strand">
+            <choice>
+              <value>+</value>
+              <value>-</value>
+            </choice>
+          </attribute>
+        </element>
+        <choice>
+          <element name="hqrDNA">
+            <attribute name="rDNA_strand">
+              <choice>
+                <value>+</value>
+                <value>-</value>
+              </choice>
+            </attribute>
+            <attribute name="rDNA_id"/>
+          </element>
+          <element name="hqrProt">
+            <attribute name="rProt_id"/>
+          </element>
+        </choice>
+        <element name="hqgDNA_exon_coordinates">
+          <oneOrMore>
+            <element name="hqexon">
+              <attribute name="e_start">
+                <data type="integer"/>
+              </attribute>
+              <attribute name="e_stop">
+                <data type="integer"/>
+              </attribute>
+            </element>
+          </oneOrMore>
+        </element>
+      </element>
+    </optional>
+  </element>
+</define>
+
+<!-- ____________________________________________________________________________ -->
+
+<define name="PGL_module-CONTENT"
+        ns="http://www.genomethreader.org/GTH_output/PGL_module/">
+  <oneOrMore>
+    <element name="predicted_gene_location"> 
+      <element name="PGL_line">
+        <attribute name="PGL_serial">     
+          <data type="integer"/>
+        </attribute>
+        <attribute name="PGL_strand">
+          <choice>
+            <value>+</value>
+            <value>-</value>
+          </choice>
+        </attribute>
+        <attribute name="PGL_start">
+          <data type="integer"/>
+        </attribute>
+        <attribute name="PGL_stop">
+          <data type="integer"/>
+        </attribute>
+      </element>
+      <oneOrMore>
+        <element name="AGS_information">
+          <element name="AGS_line">
+            <attribute name="AGS_serial">
+              <data type="integer"/>
+            </attribute>
+            <element name="exon_coordinates">
+              <oneOrMore>
+                <element name="exon">
+                  <attribute name="e_start">
+                    <data type="integer"/>
+                  </attribute>
+                  <attribute name="e_stop">
+                    <data type="integer"/>
+                  </attribute>
+                </element>
+              </oneOrMore>
+            </element>
+          </element>  
+          <element name="SCR_line">
+            <interleave>
+              <zeroOrMore>
+                <element name="exon-intron">
+                  <attribute name="don_prob">
+                    <data type="decimal"/>
+                  </attribute>
+                  <attribute name="acc_prob">
+                    <data type="decimal"/>
+                  </attribute>
+                  <attribute name="e_score">
+                    <data type="decimal"/>
+                  </attribute>
+                </element>
+              </zeroOrMore>
+              <element name="exon-only">
+                <attribute name="e_score">
+                  <data type="decimal"/> 
+                </attribute>
+              </element>
+            </interleave>
+          </element>  
+          <element name="exon-intron_info"
+                   ns="http://www.genomethreader.org/GTH_output/PGL_module/predicted_gene_location/AGS_information/exon-intron_info/">
+            <interleave>
+              <oneOrMore>
+                <element name="exon">
+                  <attribute name="e_serial">
+                    <data type="integer"/>
+                  </attribute>
+                  <attribute name="e_score">
+                    <data type="decimal"/>
+                  </attribute>
+                  <element name="gDNA_exon_boundary">
+                    <attribute name="e_start">
+                      <data type="integer"/>
+                    </attribute>
+                    <attribute name="e_stop">
+                      <data type="integer"/>
+                    </attribute>
+                    <attribute name="e_length">
+                      <data type="integer"/>
+                    </attribute>
+                  </element>
+                </element>
+              </oneOrMore>
+              <zeroOrMore>
+                <element name="intron">
+                  <attribute name="i_serial">
+                    <data type="integer"/>
+                  </attribute>
+                  <attribute name="don_prob">
+                    <data type="decimal"/>
+                  </attribute>
+                  <attribute name="acc_prob">
+                    <data type="decimal"/>
+                  </attribute>
+                  <element name="gDNA_intron_boundary">
+                    <attribute name="i_start">
+                      <data type="integer"/>
+                    </attribute>
+                    <attribute name="i_stop">
+                      <data type="integer"/>
+                    </attribute>
+                    <attribute name="i_length">
+                      <data type="integer"/>
+                    </attribute>
+                  </element>
+                </element>
+              </zeroOrMore>
+            </interleave>
+          </element>  
+          <element name="supporting_evidence"
+                   ns="http://www.genomethreader.org/GTH_output/PGL_module/predicted_gene_location/AGS_information/supporting_evidence/">
+            <oneOrMore>
+              <element name="PGS_line">
+                <element name="gDNA_exon_coordinates">
+                  <oneOrMore>
+                    <element name="exon">
+                      <attribute name="start">
+                        <data type="integer"/>
+                      </attribute>
+                      <attribute name="stop">
+                        <data type="integer"/>
+                      </attribute>
+                    </element>
+                  </oneOrMore>
+                </element> 
+                <choice>
+                  <element name="referenceDNA">
+                    <attribute name="id"/>
+                    <attribute name="strand">
+                      <choice>
+                        <value>+</value>
+                        <value>-</value>
+                      </choice>
+                    </attribute>
+                  </element> 
+                  <element name="referenceProtein">
+                    <attribute name="id"/>
+                  </element> 
+                </choice>
+              </element> 
+            </oneOrMore>
+          </element>  
+          <oneOrMore>
+            <element name="three_phase_translation"
+                     ns="http://www.genomethreader.org/GTH_output/PGL_module/predicted_gene_location/AGS_information/three_phase_translation/">
+              <element name="description">
+                <attribute name="PGL_serial">    
+                  <data type="integer"/>
+                </attribute>
+                <attribute name="AGS_serial">    
+                  <data type="integer"/>
+                </attribute>
+                <attribute name="gDNA_strand">
+                  <choice>
+                    <value>+</value>
+                    <value>-</value>
+                  </choice>
+                </attribute>
+              </element>
+              <element name="translation">
+                <element name="gDNA_template">
+                  <text/>
+                </element> 
+                <element name="first_frame">
+                  <text/>
+                </element> 
+                <element name="second_frame">
+                  <text/>
+                </element> 
+                <element name="third_frame">
+                  <text/>
+                </element> 
+              </element>
+              <element name="probable_ORFs"
+                       ns="http://www.genomethreader.org/GTH_output/PGL_module/predicted_gene_location/AGS_information/three_phase_translation/probable_ORFs/">
+                <choice>
+                  <oneOrMore>
+                    <element name="orf_entry">
+                      <element name="id_line">
+                        <element name="gDNA">
+                          <attribute name="id"/>
+                          <attribute name="strand">
+                            <choice>
+                              <value>+</value>
+                              <value>-</value>
+                            </choice>
+                          </attribute>
+                        </element>
+                        <element name="serials">
+                          <attribute name="PGL_serial">
+                            <data type="integer"/>
+                          </attribute>
+                          <attribute name="AGS_serial">
+                            <data type="integer"/>
+                          </attribute>
+                          <attribute name="PPS_serial">
+                            <data type="integer"/>
+                          </attribute>
+                        </element>
+                        <element name="orf_info">
+                          <element name="exon_boundaries">
+                            <oneOrMore>
+                              <element name="exon">
+                                <attribute name="start">
+                                  <data type="integer"/>
+                                </attribute>
+                                <attribute name="stop">
+                                  <data type="integer"/>
+                                </attribute>
+                              </element>
+                            </oneOrMore>
+                          </element>
+                          <element name="frame">
+                            <choice>
+                              <value>0</value>
+                              <value>1</value>
+                              <value>2</value>
+                            </choice>
+                          </element>
+                          <element name="number_coding_nucleotides">
+                           <data type="integer"/>
+                          </element>
+                          <element name="number_encoded_amino_acids">
+                             <data type="integer"/>
+                          </element>
+                        </element>
+                      </element>
+                      <element name="predicted_protein_sequence">
+                        <text/>
+                      </element>
+                      <zeroOrMore>
+                        <!-- MetWAMer is a post-processing system that refines
+                             translation start and stop sites of predicted
+                             protein sequences.  It is possible to append
+                             multiple MetWAMer_annot elements, derived using
+                             different prediction methods.
+                        -->
+                        <element name="MetWAMer_annot">
+                          <attribute name="method"/>
+                          <attribute name="orf_amino_bound">
+                            <data type="integer"/>
+                          </attribute>
+                          <attribute name="start_codon">
+                            <data type="integer"/>
+                          </attribute>
+                          <attribute name="stop_codon">
+                            <data type="integer"/>
+                          </attribute>
+                        </element>
+                      </zeroOrMore>
+                    </element>
+                  </oneOrMore>
+                  <element name="none">
+                    <optional>
+                      <attribute name="gDNA_id"/>
+                    </optional>
+                  </element>
+                </choice>
+              </element>
+            </element>
+          </oneOrMore>
+        </element>
+      </oneOrMore>
+    </element>
+  </oneOrMore>
+</define>
+
+<!-- ____________________________________________________________________________ -->
+
+</grammar>

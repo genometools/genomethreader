@@ -1,0 +1,3 @@
+$ gthbssmtrain -seqfile U89959_genomic.fas arab.gff3
+gt-ag:  94.33% (n=133)
+gc-ag:   0.71% (n=1)

@@ -1,0 +1,149 @@
+changes in version 1.7.1 (2018-09-11)
+
+- gthbssmtrain gives an error if no donor or acceptor sites were found.
+
+
+changes in version 1.7.0 (2018-02-07)
+
+- Update to libgenometools commit 161fb4c21ddf8f6f3a90c587816192592e7cdfa5.
+- GenomeThreader is not protected by a license manager anymore.
+
+
+changes in version 1.6.6 (2016-05-02)
+
+- Update to libgenometools v1.5.8.
+- Update to ZLM v1.10.
+- Linux 64-bit versions are compiled with musl libc for better compatibility.
+
+
+changes in version 1.6.5 (2014-11-05)
+
+- gth has new option -cdnaforward (align only forward strand of cDNAs)
+
+
+changes in version 1.6.4 (2014-10-29)
+
+- Update to ZLM v1.7-prerelease.
+- License files starting with an UTF-8 byte order mark (BOM) can be parsed.
+
+
+changes in version 1.6.3 (2014-09-17)
+
+- Update to ZLM v1.6.
+
+
+changes in version 1.6.2 (2014-02-12)
+
+- distribute only dynamically linked binaries which are very portable
+- define the ambiguous amino acid 'J' (Leucine or Isoleucine) as wildcard
+
+
+changes in version 1.6.1 (2013-09-18)
+
+- Fix problem with impossible events in self-trained BSSMs.
+- Update to ZLM v1.2.
+- It is not necessary anymore to set the environment variables $BSSMDIR and
+  $GTHDATADIR, if the directories bssm/ and gthdata/ are in the same directory
+  as the executables.
+
+
+changes in version 1.6.0 (2013-06-06)
+
+- Change from RLM to ZLM (v1.0).
+- GFF3 output: 5' splice sites now have the type 'five_prime_cis_splice_site'
+  (instead of 'five_prime_splice_site') and 3' splice sites the type
+  'three_prime_cis_splice_site' (instead of 'three_prime_splice_cite') to comply
+  with the new version of SOFA (Sequence Ontology Feature Annotation).
+
+
+changes in version 1.5.2 (2012-06-10)
+
+- The format for MD5 sequence IDs has changed (option -md5ids).
+  It now uses md5:063b1024d68e26716b7f38caf958316f:1877523 instead of
+  md5:063b1024d68e26716b7f38caf958316f. That is, the ``original'' sequence ID is
+  kept after the MD5 hash.
+- Wrong source tag in GFF3 output has been fixed.
+
+
+changes in version 1.5.1 (2012-06-05)
+
+- fix bug in implementation of option -fastdp
+- update to RLM v9.3 (BL2 - release date February 15, 2012)
+
+
+changes in version 1.5.0 (2012-04-02)
+
+- protein spliced alignments are computed with less memory
+- update to RLM v9.2 (BL3 - release date October 21, 2011)
+- allow to disable file locking with environment variable GTHNOFLOCK (set to any
+  value)
+
+
+changes in version 1.4.9 (2011-09-17)
+
+- update to RLM v9.1 (BL3 - release date May 2, 2011)
+- gth and gthconsensus have new options -startcodon and -finalstopcodon
+- gth has new options -enrichchains and -fastdp
+- the PGL line in the (default) textual output now shows the genomic template.
+  Use the new option '-pglgentemplate no' disable this (for backward
+  compatibility)
+
+
+changes in version 1.4.8 (2011-05-19)
+
+- gthbssmtrain handles sequences containing wildcards (e.g., 'N') correctly
+
+
+changes in version 1.4.7 (2011-03-02)
+
+- gth has new option -duplicatecheck. The default value 'both' solves a problem
+  in GenomeThreader which could lead to falsely discarded spliced alignments.
+  To reproduce the behaviour in older GenomeThreader versions, use option
+  '-duplicatecheck id'. Please refer to the manual for details.
+- gth and gthconsensus have new options -gff3out and -md5ids.
+  The GFF3 output is sorted. Please refer to the manual for details.
+- gthbssmtrain shows number of processed gt-ag and gc-ag splice sites
+- gthbssmtrain is described in Section 9 of the updated GenomeThreader manual
+
+
+changes in version 1.4.6 (2011-02-05)
+
+- new tool `gthbssmtrain` added: gthbssmtrain allows to generate custom splice
+  site probability files (the so-called BSSM files). Custom BSSM files are very
+  helpful to improve the quality of GenomeThreader gene structure predictions.
+- handle additional codon translation tables
+- GenomeThreader can handle Pyrrolysine ('O' in single letter code)
+- update to RLM v9.0 (BL3 - release date Jan 5, 2011)
+- GenomeThreader can handle the ambiguous amino acid 'J' (Leucine or Isoleucine)
+- problem with fission_yeast.bssm file fixed
+
+
+changes in version 1.4.5 (2010-07-20)
+
+- gth is faster and needs less memory
+
+
+changes in version 1.4.4 (2010-07-08)
+
+- gthconsensus is much faster now, gth a little bit
+
+
+changes in version 1.4.3 (2010-06-09)
+
+- update to RLM v8.0 (BL6 - release date Jun 1, 2010)
+
+
+changes in version 1.4.2 (2010-02-17)
+
+- update to RLM v8.0 (BL3 - release date Jan 26, 2010)
+
+
+changes in version 1.4.1 (2010-01-12)
+
+- a bug in the protein spliced alignment computation has been fixed
+
+
+changes in version 1.4.0 (2009-09-21)
+
+- protein spliced alignments are computed much faster now (up to 3 times,
+  depending on your input data)

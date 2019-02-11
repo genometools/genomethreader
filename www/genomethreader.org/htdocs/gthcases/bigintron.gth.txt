@@ -1,0 +1,1976 @@
+$ GenomeThreader 0.9.32 (2005-04-19 10:59:24)
+$ Date run: 2005-04-19 11:01:55
+$ Splice Site Model: Bayesian
+$
+$ genomicfile      = "hs_ref_chr21.gbk"
+$ referencefile    = "NM_003253.gbk"
+$ species          = "human"
+$ proteinsmap      = "protein"
+$ scorematrix      = "BLOSUM62"
+$ bssmfile         = "human"
+$ searchmode       = (forward=True,reverse=True)
+$ frompos          =          0 (default)
+$ topos            =          0 (default)
+$ width            =          0 (default)
+$ verbose          =      False (default)
+$ gs2out           =      False (default)
+$ showintronmaxlen =        120 (default) maximum length of a fully shown intron
+$ minorflen        =         64 (default) minimum length of an ORF to be shown
+$ minmatchlen      =         20 (default) minimum match length
+$ seedlength       =         18 (default) the seed length
+$ exdrop           =          2 (default) the xdrop value for edit distance
+$ online           =      False (default) run the similarity filter online
+$ inverse          =      False (default) invert query and index in vmatch call
+$ exact            =      False (default) use exact matches
+$ noautoindex      =      False (default) do not create indices automatically
+$ maskpolyatails   =      False (default) mask poly(A) tails in cDNA/EST files
+$ maxnumofmatches  =          0 (default) maximum number of matches
+$ matchnumdistri   =      False (default) show the distribution of matches
+$ chainlocal       =          1 (default) local chains (according to L1-model).
+$ uselocalchaining =      False (default) enable local chaining
+$ chainwf          =   0.500000 (default) weight factor > 0.0 for local chaining
+$ gcmaxgapwidth    =    1000000 (default) maximum gap width for global chains
+$ gcfilterthreshold=         50 (default) threshold for filter of global chains
+$ introncutout     =       True (non-df.) enable the intron cutout technique
+$ autointroncutout =          0 (default) automatic intron cutout matrix size
+$ icinitialdelta   =         50 (default) initial delta used for intron cutouts
+$ iciterations     =          2 (default) number of intron cutout iterations
+$ icdeltaincrease  =         50 (default) delta increase during every iteration
+$ icminremintronlen=         10 (default) minimum remaining intron length
+$ probies          =   0.500000 (default) initial exon state probability
+$ probdelgen       =   0.030000 (default) genomic sequence deletion probability
+$ identityweight   =   2.000000 (default) pairs of identical characters weight
+$ mismatchweight   =  -2.000000 (default) weight for mismatching characters
+$ undetcharweight  =   0.000000 (default) weight for undetermined characters
+$ deletionweight   =  -4.000000 (default) weight for deletions
+$ dpminexonlen     =          5 (default) minimum exon length for the DP
+$ dpminintronlen   =         50 (default) minimum intron length for the DP
+$ shortexonpenal   =        100 (default) short exon penalty
+$ shortintronpenal =        100 (default) short intron penalty
+$ wzerotransition  =         80 (default) zero transition weights window size
+$ wdecreasedoutput =         80 (default) decreased output weights window size
+$ leadcutoffsmode  =    RELAXED (default) cutoffs mode for leading bases
+$ termcutoffsmode  =     STRICT (default) cutoffs mode for terminal bases
+$ cutoffsminexonlen=          5 (default) cutoffs minimum exon length
+$ scoreminexonlen  =         50 (default) score minimum exon length
+$ minaveragessp    =   0.500000 (default) minimum average splice site prob.
+$ intermediate     =      False (default) stop after calc. of spliced alignments
+$ sortags          =      False (default) sort alternative gene structures
+$ sortagswf        =   1.000000 (default) weight factor for the sorting of AGSs
+$ first            =          0 (default) maximum number of spliced alignments
+$
+$ special output characters for starting lines:
+$ GTHINFOCHAR      = $ (info line)
+$ VMATCHCHAR       = # (mkvtree and vmatch output)
+$
+********************************************************************************
+EST Sequence: file=NM_003253.gbk, strand=+, description=NM_003253 Homo sapiens T-cell lymphoma invasion and metastasis 1 (TIAM1),
+
+     1  CGCCCCGCAT CGTGCCCGGC CCCGTCGCGG AGATCCCGGA CGACCGTCGC GGGTTGATGG
+    61  TCGCATTCCA GATGTAAACA GCTTCAGAAG CCTGACGGTC ATATGGTAGA ATCACTGTGG
+   121  ACTGAGACCC ACCTTTCTAG ACCTGAAGCC CAGGAGGAGG AAGAGGAGGC TGGTTGGTAC
+   181  CATGGGCATA ATGCTCTGAA TCCTAGTCTC TCACCTAGTA TGTGAGCAGT CCCTGCAGAT
+   241  GGCCCATTTG GAGATCTTGA CAAAGCCTCT TCTGTTTCCA ATGGGGTTTT TGGCGCATTC
+   301  TCACAGACTT AGATGAAACT GTGATGGCCA CCGCAGGGGG CAGGTGCTGA CATCGTCCCC
+   361  AGCCCTGTGG CTGTTCATCC GGACATCATT TCCAACCTCA ATATCTAAAT GCCACAGTGC
+   421  TCTTGGAGCA AGTTGGGCTG GGGACCACTG TTGCCTTTTA AGACCATAAA ACCATGGGAA
+   481  ACGCAGAAAG TCAACATGTA GAGCACGAGT TTTATGGAGA AAAGCATGCC AGCCTGGGGC
+   541  GCAACGACAC TTCCCGCTCC CTGCGCCTCT CGCACAAGAC GCGGAGGACC AGGCACGCTT
+   601  CCTCGGGGAA GGTGATCCAC AGGAACTCCG AAGTGAGCAC CCGATCCAGC AGCACCCCCA
+   661  GCATCCCCCA GTCCCTGGCT GAAAATGGCC TGGAGCCCTT CTCCCAAGAT GGTACCCTAG
+   721  AAGACTTCGG GAGCCCCATC TGGGTGGACC GAGTGGACAT GGGCTTGAGA CCTGTGTCTT
+   781  ACACTGACTC TTCTGTCACT CCCAGCGTAG ACAGCAGCAT CGTCCTCACA GCAGCCTCTG
+   841  TGCAGAGCAT GCCAGACACT GAGGAGAGCA GGCTTTACGG GGATGACGCT ACATATTTGG
+   901  CTGAGGGAGG CAGGAGGCAG CATTCCTATA CATCCAATGG GCCCACTTTC ATGGAGACGG
+   961  CGAGCTTTAA GAAGAAACGC TCCAAATCTG CAGACATCTG GCGGGAGGAC AGCCTGGAAT
+  1021  TCTCACTCTC TGATCTGAGC CAAGAACATT TAACAAGCAA CGAAGAAATC TTGGGTTCCG
+  1081  CCGAAGAGAA GGACTGCGAG GAGGCTCGGG GGATGGAAAC GCGGGCGAGT CCGCGGCAGC
+  1141  TCAGCACCTG TCAGAGAGCC AATTCCTTGG GTGACTTGTA TGCTCAGAAA AACTCTGGAG
+  1201  TGACAGCAAA CATGGGGCCG GGGAGCAAAT TTGCAGGCTA CTGTCGGAAT TTGGTGTCTG
+  1261  ATATTCCCAA TCTTGCAAAC CATAAGATGC CACCAGCTGC TGCTGAAGAG ACTCCTCCGT
+  1321  ACAGTAATTA TAACACACTT CCCTGTAGGA AATCTCACTG TCTCTCTGAA GGTGCCACCA
+  1381  ACCCACAAAT TAGCCATAGC AACAGCATGC AAGGCAGAAG AGCTAAAACA ACTCAGGATG
+  1441  TTAATGCAGG CGAGGGCAGT GAGTTTGCAG ACAGTGGGAT TGAAGGGGCC ACTACCGACA
+  1501  CGGACCTCCT GTCCAGGCGA TCTAATGCCA CCAACTCCAG CTACTCACCC ACCACAGGCC
+  1561  GGGCCTTTGT GGGCAGCGAC AGCGGCAGCA GCTCCACCGG GGATGCGGCT CGTCAGGGGG
+  1621  TGTACGAGAA CTTCCGGCGG GAGCTGGAGA TGAGCACCAC CAACAGCGAG AGCCTGGAGG
+  1681  AGGCCGGCTC TGCGCACAGC GATGAGCAGA GCAGCGGCAC CCTGAGCTCT CCGGGCCAGT
+  1741  CGGACATCCT GCTGACCGCC GCACAGGGCA CGGTGCGCAA GGCCGGCGCC CTGGCCGTCA
+  1801  AGAACTTCCT GGTGCACAAG AAGAACAAGA AGGTGGAGTC AGCCACCCGG AGGAAGTGGA
+  1861  AGCACTACTG GGTGTCCCTG AAAGGATGCA CGCTATTTTT CTACGAGAGC GACGGCAGGT
+  1921  CTGGGATAGA CCACAACAGC ATCCCCAAAC ACGCCGTCTG GGTGGAGAAC AGCATTGTGC
+  1981  AGGCTGTGCC TGAGCACCCC AAGAAGGACT TTGTCTTCTG CCTCAGCAAT TCCCTGGGTG
+  2041  ATGCCTTCCT TTTTCAGACC ACTAGCCAGA CGGAGCTTGA AAACTGGATC ACCGCCATCC
+  2101  ACTCTGCCTG CGCCACTGCG GTCGCGAGGC ACCACCACAA GGAAGACACG CTCCGACTCC
+  2161  TGAAATCAGA GATCAAAAAA CTGGAACAGA AGATTGACAT GGATGAAAAG ATGAAGAAAA
+  2221  TGGGTGAAAT GCAGCTGTCT TCAGTCACTG ACTCAAAGAA AAAGAAAACA ATATTAGATC
+  2281  AGATCTTTGT CTGGGAGCAA AATCTCGAGC AGTTCCAAAT GGACCTGTTT CGTTTCCGCT
+  2341  GTTATTTAGC CAGCCTTCAG GGTGGGGAGC TGCCAAACCC CAAAAGGCTT CTCGCTTTTG
+  2401  CAAGTCGACC AACGAAAGTG GCCATGGGCC GCCTTGGAAT CTTTTCGGTA TCATCGTTTC
+  2461  ATGCCCTGGT GGCAGCACGC ACTGGTGAAA CTGGAGTGAG AAGACGTACT CAGGCCATGT
+  2521  CCAGATCCGC GAGCAAGCGA AGGAGCAGGT TTTCTTCTCT GTGGGGTCTG GATACTACCT
+  2581  CCAAAAAGAA GCAGGGACGG CCAAGCATCA ATCAGGTGTT TGGAGAGGGA ACCGAAGCTG
+  2641  TAAAGAAATC TTTAGAGGGA ATATTTGATG ACATTGTTCC AGATGGCAAG AGGGAGAAAG
+  2701  AAGTGGTCTT ACCTAACGTT CACCAGCACA ACCCTGACTG CGACATTTGG GTCCACGAGT
+  2761  ATTTCACTCC ATCCTGGTTC TGTCTGCCCA ATAATCAGCC TGCCCTGACG GTCGTCCGGC
+  2821  CAGGCGACAC TGCACGGGAC ACCCTGGAGC TGATTTGCAA GACACATCAA CTGGATCATT
+  2881  CTGCTCATTA CCTGCGCCTG AAATTTCTAA TAGAAAACAA AATGCAGCTC TATGTTCCAC
+  2941  AGCCCGAGGA AGACATCTAT GAGCTGCTGT ACAAAGAAAT TGAAATCTGT CCAAAAGTCA
+  3001  CTCACAGCAT CCACATTGAG AAGTCAGATA CAGCTGCTGA TACTTACGGG TTTTCACTTT
+  3061  CTTCTGTGGA AGAAGATGGT ATTCGAAGGC TGTACGTGAA TAGTGTGAAG GAAACCGGTT
+  3121  TAGCTTCCAA GAAAGGCCTG AAAGCAGGAG ATGAGATTCT TGAGATCAAT AATCGTGCTG
+  3181  CTGACGCCCT GAACTCTTCT ATGCTCAAAG ATTTCCTCTC ACAACCCTCG CTGGGCCTCC
+  3241  TGGTGAGGAC CTACCCCGAG CTGGAGGAAG GAGTGGAGCT GCTGGAAAGC CCGCCCCACC
+  3301  GAGTGGACGG CCCTGCCGAC CTTGACGAGA GCCCCCTCGC CTTTCTCACC AGCAACCCAG
+  3361  GGCACAGCCT TTGCAGCGAG CAGGGCAGCA GTGCTGAGAC CGCTCCAGAG GAGACCGAGG
+  3421  GGCCAGACTT GGAATCCTCA GATGAGACTG ATCACAGCAG CAAGAGTACA GAACAGGTGG
+  3481  CCGCATTTTG CCGCAGTTTG CATGAGATGA ACCCCTCTGA CCAGAACCCA TCTCCTCAGG
+  3541  ACTCCACGGG GCCTCAGCTG GCGACCATGA GACAACTCTC GGATGCAGAT AACGTGCGCA
+  3601  AGGTGATCTG CGAGCTCCTG GAGACGGAGC GCACCTACGT GAAGGATTTA AACTGTCTTA
+  3661  TGGAGAGATA CCTAAAGCCT CTTCAAAAAG AAACTTTTCT CACCCAGGAT GAGCTTGACG
+  3721  TGCTTTTTGG AAATTTAACG GAAATGGTAG AGTTTCAAGT AGAATTCCTT AAAACTCTAG
+  3781  AAGATGGAGT GAGACTGGTA CCTGATTTGG AAAAGCTTGA GAAGGTTGAT CAATTTAAGA
+  3841  AAGTGCTGTT CTCTCTGGGG GGATCATTCC TGTATTATGC TGACCGCTTC AAGCTCTACA
+  3901  GTGCCTTCTG CGCCATCCAC ACAAAAGTTC CCAAGGTCCT GGTGAAAGCC AAGACAGACA
+  3961  CGGCTTTCAA GGCATTCTTG GATGCCCAGA ACCCGAAGCA GCAGCACTCA TCCACGCTGG
+  4021  AGTCGTACCT CATCAAGCCC ATCCAGAGGA TCCTCAAGTA CCCACTTCTG CTCAGGGAGC
+  4081  TGTTCGCCCT GACCGATGCG GAGAGCGAGG AGCACTACCA CCTGGACGTG GCCATCAAGA
+  4141  CCATGAACAA GGTTGCCAGT CACATCAATG AGATGCAGAA AATCCATGAA GAGTTTGGGG
+  4201  CTGTGTTTGA CCAGCTGATT GCTGAACAGA CTGGTGAGAA AAAAGAGGTT GCAGATCTGA
+  4261  GCATGGGAGA CCTGCTTTTG CACACTACCG TGATCTGGCT GAACCCGCCG GCCTCGCTGG
+  4321  GCAAGTGGAA AAAGGAACCA GAGTTGGCAG CATTCGTCTT CAAAACTGCT GTGGTCCTTG
+  4381  TGTATAAAGA TGGTTCCAAA CAGAAGAAGA AACTTGTAGG ATCTCACAGG CTTTCCATTT
+  4441  ATGAGGACTG GGACCCCTTC AGATTTCGAC ACATGATCCC CACGGAAGCG CTGCAGGTTC
+  4501  GAGCTTTGGC GAGTGCAGAT GCAGAGGCAA ATGCCGTGTG TGAAATTGTC CATGTAAAAT
+  4561  CCGAGTCTGA AGGGAGGCCG GAGAGGGTCT TTCACTTGTG CTGCAGCTCC CCAGAGAGCC
+  4621  GAAAGGATTT CCTAAAGGCT GTGCATTCAA TCCTGCGTGA TAAGCACAGA AGACAGCTCC
+  4681  TCAAAACCGA GAGCCTTCCC TCATCCCAGC AATATGTCCC TTTTGGAGGC AAAAGATTGT
+  4741  GTGCACTGAA GGGGGCCAGG CCGGCCATGA GCAGGGCAGT GTCTGCCCCA AGCAAGTCTC
+  4801  TTGGGAGGAG GAGGCGGCGG CTGGCTCGAA ACAGGTTTAC CATTGATTCT GATGCCGTCT
+  4861  CCGCAAGCAG CCCGGAGAAA GAGTCCCAGC AGCCCCCCGG TGGTGGGGAC ACTGACCGAT
+  4921  GGGTAGAGGA GCAGTTTGAT CTTGCTCAGT ATGAGGAGCA AGATGACATC AAGGAGACAG
+  4981  ACATCCTCAG TGACGATGAT GAGTTCTGTG AGTCCGTGAA GGGTGCCTCA GTGGACAGAG
+  5041  ACCTGCAGGA GCGGCTTCAG GCCACCTCCA TCAGTCAGCG GGAAAGAGGC CGGAAAACCC
+  5101  TGGATAGTCA CGCGTCCCGC ATGGCACAGC TCAAGAAGCA AGCTGCCCTG TCGGGGATCA
+  5161  ATGGAGGCCT GGAGAGCGCA AGCGAGGAAG TCATTTGGGT TAGGCGTGAA GACTTTGCCC
+  5221  CCTCCAGGAA ACTGAACACT GAGATCTGAC TGCGTCACCT GCCCCGTAGA GAATGTGTGT
+  5281  AGATACTTCC TGCCCTAACT CTGCCCACCC TCCTGTACCG TCGACAAGAA TGTCCCCTTA
+  5341  GGTCGCGCTC TTGCACACAC GGTTTTGGCA GCTGACTTGG TTCTGAAGCC ATGTAGCCAC
+  5401  CCAACTTTGT CATTTTCAAC AACATCAGAA AGAATTGATC AGAATCCCAA ATAAAACCCA
+  5461  AAAGTGTCTA ATGTATTCAT TCATTAGCTA ACTAAAAGCC CAAAAAAGAC AAGACACCCA
+  5521  G
+
+Genomic Template: file=hs_ref_chr21.gbk, strand=-, from=18593461, to=18154052, description=NT_011512 Homo sapiens chromosome 21 genomic contig.
+
+Predicted gene structure:
+
+ Exon  1 18593162 18593111 (  52 n);  cDNA      1     52 (  52 n); score: 0.981
+  Intron  1 18593110 18498220 (94891 n); Pd: 0.992 (s: 1.00), Pa: 1.000 (s: 1.00)
+ Exon  2 18498219 18498167 (  53 n);  cDNA     53    105 (  53 n); score: 1.000
+  Intron  2 18498166 18373609 (124558 n); Pd: 0.700 (s: 1.00), Pa: 0.999 (s: 1.00)
+ Exon  3 18373608 18373429 ( 180 n);  cDNA    106    285 ( 180 n); score: 1.000
+  Intron  3 18373428 18311096 (62333 n); Pd: 0.986 (s: 1.00), Pa: 0.997 (s: 1.00)
+ Exon  4 18311095 18310919 ( 177 n);  cDNA    286    462 ( 177 n); score: 1.000
+  Intron  4 18310918 18301171 (9748 n); Pd: 0.981 (s: 1.00), Pa: 0.931 (s: 1.00)
+ Exon  5 18301170 18300197 ( 974 n);  cDNA    463   1436 ( 974 n); score: 0.996
+  Intron  5 18300196 18286377 (13820 n); Pd: 0.984 (s: 1.00), Pa: 0.979 (s: 1.00)
+ Exon  6 18286376 18285929 ( 448 n);  cDNA   1437   1884 ( 448 n); score: 0.998
+  Intron  6 18285928 18279848 (6081 n); Pd: 0.983 (s: 1.00), Pa: 0.997 (s: 1.00)
+ Exon  7 18279847 18279675 ( 173 n);  cDNA   1885   2057 ( 173 n); score: 0.994
+  Intron  7 18279674 18260138 (19537 n); Pd: 0.780 (s: 1.00), Pa: 0.988 (s: 1.00)
+ Exon  8 18260137 18259913 ( 225 n);  cDNA   2058   2282 ( 225 n); score: 1.000
+  Intron  8 18259912 18257779 (2134 n); Pd: 0.917 (s: 1.00), Pa: 0.980 (s: 1.00)
+ Exon  9 18257778 18257593 ( 186 n);  cDNA   2283   2468 ( 186 n); score: 1.000
+  Intron  9 18257592 18251887 (5706 n); Pd: 0.939 (s: 1.00), Pa: 0.992 (s: 1.00)
+ Exon 10 18251886 18251740 ( 147 n);  cDNA   2469   2615 ( 147 n); score: 1.000
+  Intron 10 18251739 18247660 (4080 n); Pd: 0.959 (s: 1.00), Pa: 0.891 (s: 1.00)
+ Exon 11 18247659 18247585 (  75 n);  cDNA   2616   2690 (  75 n); score: 1.000
+  Intron 11 18247584 18244403 (3182 n); Pd: 0.842 (s: 1.00), Pa: 0.989 (s: 1.00)
+ Exon 12 18244402 18244232 ( 171 n);  cDNA   2691   2861 ( 171 n); score: 1.000
+  Intron 12 18244231 18237200 (7032 n); Pd: 0.967 (s: 1.00), Pa: 0.999 (s: 1.00)
+ Exon 13 18237199 18237095 ( 105 n);  cDNA   2862   2966 ( 105 n); score: 1.000
+  Intron 13 18237094 18229493 (7602 n); Pd: 0.282 (s: 1.00), Pa: 0.994 (s: 0.98)
+ Exon 14 18229492 18229411 (  82 n);  cDNA   2967   3048 (  82 n); score: 0.988
+  Intron 14 18229410 18221275 (8136 n); Pd: 0.999 (s: 0.98), Pa: 1.000 (s: 1.00)
+ Exon 15 18221274 18221188 (  87 n);  cDNA   3049   3135 (  87 n); score: 1.000
+  Intron 15 18221187 18216834 (4354 n); Pd: 0.989 (s: 1.00), Pa: 0.985 (s: 1.00)
+ Exon 16 18216833 18216609 ( 225 n);  cDNA   3136   3360 ( 225 n); score: 0.991
+  Intron 16 18216608 18199254 (17355 n); Pd: 0.935 (s: 0.98), Pa: 0.910 (s: 1.00)
+ Exon 17 18199253 18199150 ( 104 n);  cDNA   3361   3464 ( 104 n); score: 1.000
+  Intron 17 18199149 18188616 (10534 n); Pd: 0.994 (s: 1.00), Pa: 0.786 (s: 1.00)
+ Exon 18 18188615 18188436 ( 180 n);  cDNA   3465   3644 ( 180 n); score: 0.983
+  Intron 18 18188435 18187324 (1112 n); Pd: 0.997 (s: 1.00), Pa: 0.997 (s: 1.00)
+ Exon 19 18187323 18187255 (  69 n);  cDNA   3645   3713 (  69 n); score: 1.000
+  Intron 19 18187254 18186951 ( 304 n); Pd: 0.793 (s: 1.00), Pa: 0.993 (s: 1.00)
+ Exon 20 18186950 18186825 ( 126 n);  cDNA   3714   3839 ( 126 n); score: 1.000
+  Intron 20 18186824 18181193 (5632 n); Pd: 0.879 (s: 1.00), Pa: 0.865 (s: 1.00)
+ Exon 21 18181192 18181084 ( 109 n);  cDNA   3840   3948 ( 109 n); score: 0.991
+  Intron 21 18181083 18175694 (5390 n); Pd: 0.999 (s: 0.98), Pa: 0.157 (s: 1.00)
+ Exon 22 18175693 18175514 ( 180 n);  cDNA   3949   4128 ( 180 n); score: 1.000
+  Intron 22 18175513 18175426 (  88 n); Pd: 0.978 (s: 1.00), Pa: 0.994 (s: 1.00)
+ Exon 23 18175425 18175307 ( 119 n);  cDNA   4129   4247 ( 119 n); score: 1.000
+  Intron 23 18175306 18170231 (5076 n); Pd: 0.967 (s: 1.00), Pa: 0.990 (s: 1.00)
+ Exon 24 18170230 18170122 ( 109 n);  cDNA   4248   4356 ( 109 n); score: 1.000
+  Intron 24 18170121 18165138 (4984 n); Pd: 0.882 (s: 1.00), Pa: 0.999 (s: 1.00)
+ Exon 25 18165137 18165079 (  59 n);  cDNA   4357   4415 (  59 n); score: 1.000
+  Intron 25 18165078 18164505 ( 574 n); Pd: 0.790 (s: 1.00), Pa: 0.902 (s: 1.00)
+ Exon 26 18164504 18164402 ( 103 n);  cDNA   4416   4518 ( 103 n); score: 1.000
+  Intron 26 18164401 18161342 (3060 n); Pd: 0.757 (s: 1.00), Pa: 0.999 (s: 1.00)
+ Exon 27 18161341 18161254 (  88 n);  cDNA   4519   4606 (  88 n); score: 1.000
+  Intron 27 18161253 18158884 (2370 n); Pd: 0.971 (s: 1.00), Pa: 0.994 (s: 1.00)
+ Exon 28 18158883 18158711 ( 173 n);  cDNA   4607   4779 ( 173 n); score: 1.000
+  Intron 28 18158710 18155027 (3684 n); Pd: 0.742 (s: 1.00), Pa: 0.985 (s: 1.00)
+ Exon 29 18155026 18154352 ( 675 n);  cDNA   4780   5454 ( 675 n); score: 1.000
+
+MATCH	NT_011512-	NM_003253+	0.997	5454	0.988	C
+PGS_NT_011512-_NM_003253+	(18593162  18593111,18498219  18498167,18373608  18373429,18311095  18310919,18301170  18300197,18286376  18285929,18279847  18279675,18260137  18259913,18257778  18257593,18251886  18251740,18247659  18247585,18244402  18244232,18237199  18237095,18229492  18229411,18221274  18221188,18216833  18216609,18199253  18199150,18188615  18188436,18187323  18187255,18186950  18186825,18181192  18181084,18175693  18175514,18175425  18175307,18170230  18170122,18165137  18165079,18164504  18164402,18161341  18161254,18158883  18158711,18155026  18154352)
+
+Alignment (genomic DNA sequence = upper lines):
+
+TGCCCCGCAT CGTGCCCGGC CCCGTCGCGG AGATCCCGGA CGACCGTCGC GGGTGAGTAC    18593103
+ ||||||||| |||||||||| |||||||||| |||||||||| |||||||||| ||        
+CGCCCCGCAT CGTGCCCGGC CCCGTCGCGG AGATCCCGGA CGACCGTCGC GG........          52
+
+
+CGCGGGCCTG GGGTGCGCGG GCGTCCGGCC GGAGCCGCCC CGGGAGACGG CGGCGAGGAT    18593043
+                                                                 
+........... .......... .......... .......... .......... ..........          52
+
+
+// intron part 18593042 18498303 (94740 n) not shown           //
+
+//........ .......... .......... .......... .......... ........//
+
+
+CTGTGGAATA AAATGGATGG GCTTTGTGGA AGCTGTTTGT CACTCAGAAG TTTTTTTGTT    18498243
+                                                                 
+........... .......... .......... .......... .......... ..........          52
+
+
+TGTTTGTTTT TCTTACCTTC CAGGTTGATG GTCGCATTCC AGATGTAAAC AGCTTCAGAA    18498183
+                         ||||||| |||||||||| |||||||||| ||||||||||
+........... .......... ...GTTGATG GTCGCATTCC AGATGTAAAC AGCTTCAGAA          89
+
+
+GCCTGACGGT CATATGGTGA GCAGTTTACA CTTTCATATA CGCCCTGTCA TGTGCTTTGA    18498123
+|||||||||| ||||||                                                
+GCCTGACGGT CATATG.... .......... .......... .......... ..........         105
+
+
+AGGACTTTCT AGGGGCATCA AGGGTATGTG AATAAATTTG CTTTTTCACT TATTTGTCTA    18498063
+                                                                 
+........... .......... .......... .......... .......... ..........         105
+
+
+// intron part 18498062 18373683 (124380 n) not shown          //
+
+//........ .......... .......... .......... .......... ........//
+
+
+GATAATCTTG CAATCTCTAG AGGTATGTAA AAACGAAGCA CAAAACCCAT TATTTTCTTA    18373623
+                                                                 
+........... .......... .......... .......... .......... ..........         105
+
+
+TGTTGCTCTT ATAGGTAGAA TCACTGTGGA CTGAGACCCA CCTTTCTAGA CCTGAAGCCC    18373563
+               |||||| |||||||||| |||||||||| |||||||||| ||||||||||
+........... ....GTAGAA TCACTGTGGA CTGAGACCCA CCTTTCTAGA CCTGAAGCCC         151
+
+
+AGGAGGAGGA AGAGGAGGCT GGTTGGTACC ATGGGCATAA TGCTCTGAAT CCTAGTCTCT    18373503
+|||||||||| |||||||||| |||||||||| |||||||||| |||||||||| ||||||||||
+AGGAGGAGGA AGAGGAGGCT GGTTGGTACC ATGGGCATAA TGCTCTGAAT CCTAGTCTCT         211
+
+
+CACCTAGTAT GTGAGCAGTC CCTGCAGATG GCCCATTTGG AGATCTTGAC AAAGCCTCTT    18373443
+|||||||||| |||||||||| |||||||||| |||||||||| |||||||||| ||||||||||
+CACCTAGTAT GTGAGCAGTC CCTGCAGATG GCCCATTTGG AGATCTTGAC AAAGCCTCTT         271
+
+
+CTGTTTCCAA TGGGGTAAGT GTGGCGTTTG CAAAAGGCTG GGGAATGAGG ATTGAAGCTT    18373383
+|||||||||| ||||                                                  
+CTGTTTCCAA TGGG...... .......... .......... .......... ..........         285
+
+
+TTAAAGTCTT TATTATCTTG ATCCTGCCCA AATCCACCTT TTTTGGGACA ATAGAAAGTT    18373323
+                                                                 
+........... .......... .......... .......... .......... ..........         285
+
+
+// intron part 18373322 18311163 (62160 n) not shown           //
+
+//........ .......... .......... .......... .......... ........//
+
+
+ATTTCCTTCC TTCTGCCTCA TCCTTTTCTT TCTGTTTTTC TATCTCCTCT GACCTGCTCC    18311103
+                                                                 
+........... .......... .......... .......... .......... ..........         285
+
+
+TCTCCAGGTT TTTGGCGCAT TCTCACAGAC TTAGATGAAA CTGTGATGGC CACCGCAGGG    18311043
+       ||| |||||||||| |||||||||| |||||||||| |||||||||| ||||||||||
+........GTT TTTGGCGCAT TCTCACAGAC TTAGATGAAA CTGTGATGGC CACCGCAGGG         338
+
+
+GGCAGGTGCT GACATCGTCC CCAGCCCTGT GGCTGTTCAT CCGGACATCA TTTCCAACCT    18310983
+|||||||||| |||||||||| |||||||||| |||||||||| |||||||||| ||||||||||
+GGCAGGTGCT GACATCGTCC CCAGCCCTGT GGCTGTTCAT CCGGACATCA TTTCCAACCT         398
+
+
+CAATATCTAA ATGCCACAGT GCTCTTGGAG CAAGTTGGGC TGGGGACCAC TGTTGCCTTT    18310923
+|||||||||| |||||||||| |||||||||| |||||||||| |||||||||| ||||||||||
+CAATATCTAA ATGCCACAGT GCTCTTGGAG CAAGTTGGGC TGGGGACCAC TGTTGCCTTT         458
+
+
+TAAGGTAGGT TTGCATATGT ATATTTGAGC CTATATGTTT GTATGAATTA ATGGAAATGC    18310863
+||||                                                             
+TAAG...... .......... .......... .......... .......... ..........         462
+
+
+TTCAAAGGTG GTGGGACAGA TACGTTTTAC TATCATTGTT GTGTGTAGCT CGTGGGAAAA    18310803
+                                                                 
+........... .......... .......... .......... .......... ..........         462
+
+
+// intron part 18310802 18301263 (9540 n) not shown            //
+
+//........ .......... .......... .......... .......... ........//
+
+
+TGCCCTCCCT GCAGGCTGAG CGCTTTCTCT AAGATGCCTA TACCTGTACT AATAGTGACT    18301203
+                                                                 
+........... .......... .......... .......... .......... ..........         462
+
+
+CAATTCTCCC CTTTCCCCCC GCTTTGCTGC AGACCATAAA ACCATGGGAA ACGCAGAAAG    18301143
+                                   |||||||| |||||||||| ||||||||||
+........... .......... .......... ..ACCATAAA ACCATGGGAA ACGCAGAAAG         490
+
+
+TCAACATGTA GAGCACGAGT TTTATGGAGA AAAGCATGCC AGCCTGGGGC GCAAGCACAC    18301083
+|||||||||| |||||||||| |||||||||| |||||||||| |||||||||| ||||  ||||
+TCAACATGTA GAGCACGAGT TTTATGGAGA AAAGCATGCC AGCCTGGGGC GCAACGACAC         550
+
+
+TTCCCGCTCC CTGCGCCTCT CGCACAAGAC GCGGAGGACC AGGCACGCTT CCTCGGGGAA    18301023
+|||||||||| |||||||||| |||||||||| |||||||||| |||||||||| ||||||||||
+TTCCCGCTCC CTGCGCCTCT CGCACAAGAC GCGGAGGACC AGGCACGCTT CCTCGGGGAA         610
+
+
+GGTGATCCAC AGGAACTCCG AAGTGAGCAC CCGATCCAGC AGCACCCCCA GCATCCCCCA    18300963
+|||||||||| |||||||||| |||||||||| |||||||||| |||||||||| ||||||||||
+GGTGATCCAC AGGAACTCCG AAGTGAGCAC CCGATCCAGC AGCACCCCCA GCATCCCCCA         670
+
+
+GTCCCTGGCT GAAAATGGCC TGGAGCCCTT CTCCCAAGAT GGTACCCTAG AAGACTTCGG    18300903
+|||||||||| |||||||||| |||||||||| |||||||||| |||||||||| ||||||||||
+GTCCCTGGCT GAAAATGGCC TGGAGCCCTT CTCCCAAGAT GGTACCCTAG AAGACTTCGG         730
+
+
+GAGCCCCATC TGGGTGGACC GAGTGGACAT GGGCTTGAGA CCTGTGTCTT ACACTGACTC    18300843
+|||||||||| |||||||||| |||||||||| |||||||||| |||||||||| ||||||||||
+GAGCCCCATC TGGGTGGACC GAGTGGACAT GGGCTTGAGA CCTGTGTCTT ACACTGACTC         790
+
+
+TTCTGTCACT CCCAGCGTAG ACAGCAGCAT CGTCCTCACA GCAGCCTCTG TGCAGAGCAT    18300783
+|||||||||| |||||||||| |||||||||| |||||||||| |||||||||| ||||||||||
+TTCTGTCACT CCCAGCGTAG ACAGCAGCAT CGTCCTCACA GCAGCCTCTG TGCAGAGCAT         850
+
+
+GCCAGACACT GAGGAGAGCA GGCTTTACGG GGATGACGCT ACATATTTGG CTGAGGGAGG    18300723
+|||||||||| |||||||||| |||||||||| |||||||||| |||||||||| ||||||||||
+GCCAGACACT GAGGAGAGCA GGCTTTACGG GGATGACGCT ACATATTTGG CTGAGGGAGG         910
+
+
+CAGGAGGCAG CATTCCTATA CATCCAATGG GCCCACTTTC ATGGAGACGG CGAGCTTTAA    18300663
+|||||||||| |||||||||| |||||||||| |||||||||| |||||||||| ||||||||||
+CAGGAGGCAG CATTCCTATA CATCCAATGG GCCCACTTTC ATGGAGACGG CGAGCTTTAA         970
+
+
+GAAGAAACGC TCCAAATCTG CAGACATCTG GCGGGAGGAC AGCCTGGAAT TCTCACTCTC    18300603
+|||||||||| |||||||||| |||||||||| |||||||||| |||||||||| ||||||||||
+GAAGAAACGC TCCAAATCTG CAGACATCTG GCGGGAGGAC AGCCTGGAAT TCTCACTCTC        1030
+
+
+TGATCTGAGC CAAGAACATT TAACAAGCAA CGAAGAAATC TTGGGTTCCG CCGAAGAGAA    18300543
+|||||||||| |||||||||| |||||||||| |||||||||| |||||||||| ||||||||||
+TGATCTGAGC CAAGAACATT TAACAAGCAA CGAAGAAATC TTGGGTTCCG CCGAAGAGAA        1090
+
+
+GGACTGCGAG GAGGCTCGGG GGATGGAAAC GCGGGCGAGT CCGCGGCAGC TCAGCACCTG    18300483
+|||||||||| |||||||||| |||||||||| |||||||||| |||||||||| ||||||||||
+GGACTGCGAG GAGGCTCGGG GGATGGAAAC GCGGGCGAGT CCGCGGCAGC TCAGCACCTG        1150
+
+
+TCAGAGAGCC AATTCCTTGG GTGACTTGTA TGCTCAGAAA AACTCTGGAG TGACAGCAAA    18300423
+|||||||||| |||||||||| |||||||||| |||||||||| |||||||||| ||||||||||
+TCAGAGAGCC AATTCCTTGG GTGACTTGTA TGCTCAGAAA AACTCTGGAG TGACAGCAAA        1210
+
+
+CGGGGGGCCG GGGAGCAAAT TTGCAGGCTA CTGTCGGAAT TTGGTGTCTG ATATTCCCAA    18300363
+|  ||||||| |||||||||| |||||||||| |||||||||| |||||||||| ||||||||||
+CATGGGGCCG GGGAGCAAAT TTGCAGGCTA CTGTCGGAAT TTGGTGTCTG ATATTCCCAA        1270
+
+
+TCTTGCAAAC CATAAGATGC CACCAGCTGC TGCTGAAGAG ACTCCTCCGT ACAGTAATTA    18300303
+|||||||||| |||||||||| |||||||||| |||||||||| |||||||||| ||||||||||
+TCTTGCAAAC CATAAGATGC CACCAGCTGC TGCTGAAGAG ACTCCTCCGT ACAGTAATTA        1330
+
+
+TAACACACTT CCCTGTAGGA AATCTCACTG TCTCTCTGAA GGTGCCACCA ACCCACAAAT    18300243
+|||||||||| |||||||||| |||||||||| |||||||||| |||||||||| ||||||||||
+TAACACACTT CCCTGTAGGA AATCTCACTG TCTCTCTGAA GGTGCCACCA ACCCACAAAT        1390
+
+
+TAGCCATAGC AACAGCATGC AAGGCAGAAG AGCTAAAACA ACTCAGGTAA AGTGATTGAA    18300183
+|||||||||| |||||||||| |||||||||| |||||||||| ||||||               
+TAGCCATAGC AACAGCATGC AAGGCAGAAG AGCTAAAACA ACTCAG.... ..........        1436
+
+
+ATTTGTTTCA ATATTTTGGG AATGGTGCAT GACTCTTTAA GTGCATGACT TTGCTCTTAG    18300123
+                                                                 
+........... .......... .......... .......... .......... ..........        1436
+
+
+// intron part 18300122 18286443 (13680 n) not shown           //
+
+//........ .......... .......... .......... .......... ........//
+
+
+CACGTGACCC TGGGTTCCTT CTCCACGTGA CGCTTGTCTT CTTTGCTCTC TCTTTCTGCT    18286383
+                                                                 
+........... .......... .......... .......... .......... ..........        1436
+
+
+CCCAAGGATG TTAATGCAGG CGAGGGCAGT GAGTTTGCAG ACAGTGGGAT TGAAGGGGCC    18286323
+      |||| |||||||||| |||||||||| |||||||||| |||||||||| ||||||||||
+.......GATG TTAATGCAGG CGAGGGCAGT GAGTTTGCAG ACAGTGGGAT TGAAGGGGCC        1490
+
+
+ACTACCGACA CGGACCTCCT GTCCAGGCGA TCTAATGCCA CCAACTCCAG CTACTCACCC    18286263
+|||||||||| |||||||||| |||||||||| |||||||||| |||||||||| ||||||||||
+ACTACCGACA CGGACCTCCT GTCCAGGCGA TCTAATGCCA CCAACTCCAG CTACTCACCC        1550
+
+
+ACCACAGGCC GGGCCTTTGT GGGCAGCGAC AGCGGCAGCA GCTCCACCGG GGATGCGGCT    18286203
+|||||||||| |||||||||| |||||||||| |||||||||| |||||||||| ||||||||||
+ACCACAGGCC GGGCCTTTGT GGGCAGCGAC AGCGGCAGCA GCTCCACCGG GGATGCGGCT        1610
+
+
+CGTCAGGGGG TGTACGAGAA CTTCCGGCGG GAGCTGGAGA TGAGCACCAC CAACAGCGAG    18286143
+|||||||||| |||||||||| |||||||||| |||||||||| |||||||||| ||||||||||
+CGTCAGGGGG TGTACGAGAA CTTCCGGCGG GAGCTGGAGA TGAGCACCAC CAACAGCGAG        1670
+
+
+AGCCTGGAGG AGGCCGGCTC GGCGCACAGC GATGAGCAGA GCAGCGGCAC CCTGAGCTCT    18286083
+|||||||||| ||||||||||  ||||||||| |||||||||| |||||||||| ||||||||||
+AGCCTGGAGG AGGCCGGCTC TGCGCACAGC GATGAGCAGA GCAGCGGCAC CCTGAGCTCT        1730
+
+
+CCGGGCCAGT CGGACATCCT GCTGACCGCC GCACAGGGCA CGGTGCGCAA GGCCGGCGCC    18286023
+|||||||||| |||||||||| |||||||||| |||||||||| |||||||||| ||||||||||
+CCGGGCCAGT CGGACATCCT GCTGACCGCC GCACAGGGCA CGGTGCGCAA GGCCGGCGCC        1790
+
+
+CTGGCCGTCA AGAACTTCCT GGTGCACAAG AAGAACAAGA AGGTGGAGTC AGCCACCCGG    18285963
+|||||||||| |||||||||| |||||||||| |||||||||| |||||||||| ||||||||||
+CTGGCCGTCA AGAACTTCCT GGTGCACAAG AAGAACAAGA AGGTGGAGTC AGCCACCCGG        1850
+
+
+AGGAAGTGGA AGCACTACTG GGTGTCCCTG AAAGGTGAGA GCGGGAGGGC CCCGGCTATG    18285903
+|||||||||| |||||||||| |||||||||| ||||                            
+AGGAAGTGGA AGCACTACTG GGTGTCCCTG AAAG...... .......... ..........        1884
+
+
+TGCCAAATGC ACCAATAGAG GTGCCCCGTT GTGCACATAC TCACGGGATG GGTGGGTTTG    18285843
+                                                                 
+........... .......... .......... .......... .......... ..........        1884
+
+
+// intron part 18285842 18279963 (5880 n) not shown            //
+
+//........ .......... .......... .......... .......... ........//
+
+
+TTCCACGTGC TTTAATTTTC AGCCTCTGAC AGGGTGCACA TGTTAGGTTC AACTGTGGGT    18279903
+                                                                 
+........... .......... .......... .......... .......... ..........        1884
+
+
+TCTTTTGTTT CCCAAGCACT GAATACTCAT GCACACCCCT GTTCTGTTTC CTCAGGATGC    18279843
+                                                            |||||
+........... .......... .......... .......... .......... .....GATGC        1889
+
+
+ACGCTATTTT TCTACGAGAG CGACGGCAGG TCTGGGATAG ACCACAACAG CATCCCCAAA    18279783
+|||||||||| |||||||||| |||||||||| |||||||||| |||||||||| ||||||||||
+ACGCTATTTT TCTACGAGAG CGACGGCAGG TCTGGGATAG ACCACAACAG CATCCCCAAA        1949
+
+
+CACGCCGTCT GGGTGGAGAA CAGCATTGTG CAGGCGGTGC CTGAGCACCC CAAGAAGGAC    18279723
+|||||||||| |||||||||| |||||||||| ||||| |||| |||||||||| ||||||||||
+CACGCCGTCT GGGTGGAGAA CAGCATTGTG CAGGCTGTGC CTGAGCACCC CAAGAAGGAC        2009
+
+
+TTTGTCTTCT GCCTCAGCAA TTCCCTGGGT GATGCCTTCC TTTTTCAGGT TTGTTGGGCA    18279663
+|||||||||| |||||||||| |||||||||| |||||||||| ||||||||             
+TTTGTCTTCT GCCTCAGCAA TTCCCTGGGT GATGCCTTCC TTTTTCAG.. ..........        2057
+
+
+CTTCCTTTGC AGGGCATTTC AAACCTCTGA ACTGGCTACC TTCTTTTCTT GCCTAGGCAC    18279603
+                                                                 
+........... .......... .......... .......... .......... ..........        2057
+
+
+// intron part 18279602 18260223 (19380 n) not shown           //
+
+//........ .......... .......... .......... .......... ........//
+
+
+ATTGCTTCTC TGGAAATGCT CCGGTTCATT TCTCTTAAGT TCCTAAGAGG TGCCTTTTTC    18260163
+                                                                 
+........... .......... .......... .......... .......... ..........        2057
+
+
+TTCCTGCCCC TTCTTCCTGG TACAGACCAC TAGCCAGACG GAGCTTGAAA ACTGGATCAC    18260103
+                           ||||| |||||||||| |||||||||| ||||||||||
+........... .......... .....ACCAC TAGCCAGACG GAGCTTGAAA ACTGGATCAC        2092
+
+
+CGCCATCCAC TCTGCCTGCG CCACTGCGGT CGCGAGGCAC CACCACAAGG AAGACACGCT    18260043
+|||||||||| |||||||||| |||||||||| |||||||||| |||||||||| ||||||||||
+CGCCATCCAC TCTGCCTGCG CCACTGCGGT CGCGAGGCAC CACCACAAGG AAGACACGCT        2152
+
+
+CCGACTCCTG AAATCAGAGA TCAAAAAACT GGAACAGAAG ATTGACATGG ATGAAAAGAT    18259983
+|||||||||| |||||||||| |||||||||| |||||||||| |||||||||| ||||||||||
+CCGACTCCTG AAATCAGAGA TCAAAAAACT GGAACAGAAG ATTGACATGG ATGAAAAGAT        2212
+
+
+GAAGAAAATG GGTGAAATGC AGCTGTCTTC AGTCACTGAC TCAAAGAAAA AGAAAACAAT    18259923
+|||||||||| |||||||||| |||||||||| |||||||||| |||||||||| ||||||||||
+GAAGAAAATG GGTGAAATGC AGCTGTCTTC AGTCACTGAC TCAAAGAAAA AGAAAACAAT        2272
+
+
+ATTAGATCAG GTAATCGTTC TTCCGTGTTT AGGTCCGGAC AAAATTGTTA GGTCTCTAAA    18259863
+||||||||||                                                       
+ATTAGATCAG .......... .......... .......... .......... ..........        2282
+
+
+AGGGTTTTTT TTTTTTTTTG CTGTTTTGGA ATCGTGAAAC ATCATCGGAT ATCTCCTCGA    18259803
+                                                                 
+........... .......... .......... .......... .......... ..........        2282
+
+
+// intron part 18259802 18257883 (1920 n) not shown            //
+
+//........ .......... .......... .......... .......... ........//
+
+
+TATAATGAAT GCCTTTACGA CATATAGATC TGTATAGGAT AAAGATATTA GCATTTGTTT    18257823
+                                                                 
+........... .......... .......... .......... .......... ..........        2282
+
+
+CCCATTTTCT CACTTTTTCT TTTCCCGTGT TTTCACTACC ATAGATCTTT GTCTGGGAGC    18257763
+                                                |||||| ||||||||||
+........... .......... .......... .......... ....ATCTTT GTCTGGGAGC        2298
+
+
+AAAATCTCGA GCAGTTCCAA ATGGACCTGT TTCGTTTCCG CTGTTATTTA GCCAGCCTTC    18257703
+|||||||||| |||||||||| |||||||||| |||||||||| |||||||||| ||||||||||
+AAAATCTCGA GCAGTTCCAA ATGGACCTGT TTCGTTTCCG CTGTTATTTA GCCAGCCTTC        2358
+
+
+AGGGTGGGGA GCTGCCAAAC CCCAAAAGGC TTCTCGCTTT TGCAAGTCGA CCAACGAAAG    18257643
+|||||||||| |||||||||| |||||||||| |||||||||| |||||||||| ||||||||||
+AGGGTGGGGA GCTGCCAAAC CCCAAAAGGC TTCTCGCTTT TGCAAGTCGA CCAACGAAAG        2418
+
+
+TGGCCATGGG CCGCCTTGGA ATCTTTTCGG TATCATCGTT TCATGCCCTG GTGAGTAGAA    18257583
+|||||||||| |||||||||| |||||||||| |||||||||| ||||||||||           
+TGGCCATGGG CCGCCTTGGA ATCTTTTCGG TATCATCGTT TCATGCCCTG ..........        2468
+
+
+GCTAATGAAT TTTTGAAAAA CATTAAGCTT GACGCTTAAT CCTGAGCAGG ACTTGACAAG    18257523
+                                                                 
+........... .......... .......... .......... .......... ..........        2468
+
+
+// intron part 18257522 18252003 (5520 n) not shown            //
+
+//........ .......... .......... .......... .......... ........//
+
+
+TTGGCTGGCA TGATGGAGGA GGGTTTTTTG AAGGGTGGGA CTTACGGGGA CCTCAAGGCA    18251943
+                                                                 
+........... .......... .......... .......... .......... ..........        2468
+
+
+CAAGTGGGTG GTCCTGATGC ATCTCCCTTG TGGCTGCTTG TCCTTGCCAT CCTCAGGTGG    18251883
+                                                             ||||
+........... .......... .......... .......... .......... ......GTGG        2472
+
+
+CAGCACGCAC TGGTGAAACT GGAGTGAGAA GACGTACTCA GGCCATGTCC AGATCCGCGA    18251823
+|||||||||| |||||||||| |||||||||| |||||||||| |||||||||| ||||||||||
+CAGCACGCAC TGGTGAAACT GGAGTGAGAA GACGTACTCA GGCCATGTCC AGATCCGCGA        2532
+
+
+GCAAGCGAAG GAGCAGGTTT TCTTCTCTGT GGGGTCTGGA TACTACCTCC AAAAAGAAGC    18251763
+|||||||||| |||||||||| |||||||||| |||||||||| |||||||||| ||||||||||
+GCAAGCGAAG GAGCAGGTTT TCTTCTCTGT GGGGTCTGGA TACTACCTCC AAAAAGAAGC        2592
+
+
+AGGGACGGCC AAGCATCAAT CAGGTAGGTT CCAGAGCAGA TGAAAAGTGA GCCCGCACAA    18251703
+|||||||||| |||||||||| |||                                        
+AGGGACGGCC AAGCATCAAT CAG....... .......... .......... ..........        2615
+
+
+ATCACTTCTG TGGCCACCTC AATTTGGGGT GTGTGTGTTT CTTCAGTGAG GCCGAGTGTT    18251643
+                                                                 
+........... .......... .......... .......... .......... ..........        2615
+
+
+// intron part 18251642 18247743 (3900 n) not shown            //
+
+//........ .......... .......... .......... .......... ........//
+
+
+ATGCCCATTT CCTTCCCCCT TCCTACGTTT CGTTTGCCCT GTTGCCCAGA TTCCTTTTTA    18247683
+                                                                 
+........... .......... .......... .......... .......... ..........        2615
+
+
+AGGTGGTACT TTTGTATATG CAGGTGTTTG GAGAGGGAAC CGAAGCTGTA AAGAAATCTT    18247623
+                         ||||||| |||||||||| |||||||||| ||||||||||
+........... .......... ...GTGTTTG GAGAGGGAAC CGAAGCTGTA AAGAAATCTT        2652
+
+
+TAGAGGGAAT ATTTGATGAC ATTGTTCCAG ATGGCAAGGT AAAAATAAAC GTGTGTTTTC    18247563
+|||||||||| |||||||||| |||||||||| ||||||||                        
+TAGAGGGAAT ATTTGATGAC ATTGTTCCAG ATGGCAAG.. .......... ..........        2690
+
+
+TTTTCTAAAA GTACCACAAG TGCATCAACA TATACATGGT GCAGTGTTGT CTTGAGCTAC    18247503
+                                                                 
+........... .......... .......... .......... .......... ..........        2690
+
+
+// intron part 18247502 18244503 (3000 n) not shown            //
+
+//........ .......... .......... .......... .......... ........//
+
+
+CTGTTTTCAT GGGAATCGGT GATTCCTGTG TGCAGTCTGG GAATCTAGGG TTGTCAGAGC    18244443
+                                                                 
+........... .......... .......... .......... .......... ..........        2690
+
+
+TCCACTGCTG CTGCCCTGCT AACTTTATTT CTTGTTATAG AGGGAGAAAG AAGTGGTCTT    18244383
+                                            |||||||||| ||||||||||
+........... .......... .......... .......... AGGGAGAAAG AAGTGGTCTT        2710
+
+
+ACCTAACGTT CACCAGCACA ACCCTGACTG CGACATTTGG GTCCACGAGT ATTTCACTCC    18244323
+|||||||||| |||||||||| |||||||||| |||||||||| |||||||||| ||||||||||
+ACCTAACGTT CACCAGCACA ACCCTGACTG CGACATTTGG GTCCACGAGT ATTTCACTCC        2770
+
+
+ATCCTGGTTC TGTCTGCCCA ATAATCAGCC TGCCCTGACG GTCGTCCGGC CAGGCGACAC    18244263
+|||||||||| |||||||||| |||||||||| |||||||||| |||||||||| ||||||||||
+ATCCTGGTTC TGTCTGCCCA ATAATCAGCC TGCCCTGACG GTCGTCCGGC CAGGCGACAC        2830
+
+
+TGCACGGGAC ACCCTGGAGC TGATTTGCAA GGTATGGAGC TGCTTTGGGT TGTTTCTCCA    18244203
+|||||||||| |||||||||| |||||||||| |                               
+TGCACGGGAC ACCCTGGAGC TGATTTGCAA G......... .......... ..........        2861
+
+
+AGAAGAGCAG AATGGGGTGT AGCAATCTTC TAAGGCACAT GTGGAAACCC AGAGCCGTGT    18244143
+                                                                 
+........... .......... .......... .......... .......... ..........        2861
+
+
+// intron part 18244142 18237303 (6840 n) not shown            //
+
+//........ .......... .......... .......... .......... ........//
+
+
+AACTCTATTG GTCATAGGAA TACATCGTAT GTTGGTGGAG AACTAATTGT GCCTATTTAC    18237243
+                                                                 
+........... .......... .......... .......... .......... ..........        2861
+
+
+TATTGAACAG ACATTTTCTT TCTTTCTTTC TTTTTTGTCC CAGACACATC AACTGGATCA    18237183
+                                               ||||||| ||||||||||
+........... .......... .......... .......... ...ACACATC AACTGGATCA        2878
+
+
+TTCTGCTCAT TACCTGCGCC TGAAATTTCT AATAGAAAAC AAAATGCAGC TCTATGTTCC    18237123
+|||||||||| |||||||||| |||||||||| |||||||||| |||||||||| ||||||||||
+TTCTGCTCAT TACCTGCGCC TGAAATTTCT AATAGAAAAC AAAATGCAGC TCTATGTTCC        2938
+
+
+ACAGCCCGAG GAAGACATCT ATGAGCTGGT AATGTTATGA CTGTTGTCCA AGCACACTTT    18237063
+|||||||||| |||||||||| ||||||||                                   
+ACAGCCCGAG GAAGACATCT ATGAGCTG.. .......... .......... ..........        2966
+
+
+ATGGGAGATT ATCTTCAAAT TATGAGTGTT CTCGTGTTAA TTGTAGTTGG TGGAGTGGAA    18237003
+                                                                 
+........... .......... .......... .......... .......... ..........        2966
+
+
+// intron part 18237002 18229563 (7440 n) not shown            //
+
+//........ .......... .......... .......... .......... ........//
+
+
+TGAAATGATG ACCATTTTTA AAAGTTAGTT ATAATGAAAT TCTAATTAGA TTCCCCTTTG    18229503
+                                                                 
+........... .......... .......... .......... .......... ..........        2966
+
+
+TAACTTTCAG CTGTACAAAG AAATTGAAAT CTGTCCAAAA GTCACTCAGA GCATCCACAT    18229443
+           |||||||||| |||||||||| |||||||||| |||||||| | ||||||||||
+........... CTGTACAAAG AAATTGAAAT CTGTCCAAAA GTCACTCACA GCATCCACAT        3016
+
+
+TGAGAAGTCA GATACAGCTG CTGATACTTA CGGTAAGTTT ATTTTTCTTT GTTTGTGTTT    18229383
+|||||||||| |||||||||| |||||||||| ||                              
+TGAGAAGTCA GATACAGCTG CTGATACTTA CG........ .......... ..........        3048
+
+
+TAAGGTAAAG TATTTCTTAT GTAAGCATGC ATTTATTTAC AGTTCAACAA AATGCCTTTG    18229323
+                                                                 
+........... .......... .......... .......... .......... ..........        3048
+
+
+// intron part 18229322 18221343 (7980 n) not shown            //
+
+//........ .......... .......... .......... .......... ........//
+
+
+ACTTCCTGTT GTTTGCTAAA CATTCAGAAG GTGTGAGCCC TGCCATTCTG TCTTTTTGTG    18221283
+                                                                 
+........... .......... .......... .......... .......... ..........        3048
+
+
+TTTCACAGGG TTTTCACTTT CTTCTGTGGA AGAAGATGGT ATTCGAAGGC TGTACGTGAA    18221223
+        || |||||||||| |||||||||| |||||||||| |||||||||| ||||||||||
+.........GG TTTTCACTTT CTTCTGTGGA AGAAGATGGT ATTCGAAGGC TGTACGTGAA        3100
+
+
+TAGTGTGAAG GAAACCGGTT TAGCTTCCAA GAAAGGTAAG TCAGTGAAGG AGGGCTGGTC    18221163
+|||||||||| |||||||||| |||||||||| |||||                           
+TAGTGTGAAG GAAACCGGTT TAGCTTCCAA GAAAG..... .......... ..........        3135
+
+
+TGTCTGTCTT AAATGCCCTT TGGGGCTTCT CTAGTTTTTG AAGGAGAAAG ATATGCCCAA    18221103
+                                                                 
+........... .......... .......... .......... .......... ..........        3135
+
+
+// intron part 18221102 18216903 (4200 n) not shown            //
+
+//........ .......... .......... .......... .......... ........//
+
+
+CAGAGCTCCT AAGCTGTTGT GTTCTGATAA TGTGTGTGAA ATTAAAAATT TTCCATCTTG    18216843
+                                                                 
+........... .......... .......... .......... .......... ..........        3135
+
+
+CGTTGGCAGG CCTGAAAGCA GGAGATGAGA TTCTTGAGAT CAATAATCGT GCTGCTGACG    18216783
+         | |||||||||| |||||||||| |||||||||| |||||||||| ||||||||||
+..........G CCTGAAAGCA GGAGATGAGA TTCTTGAGAT CAATAATCGT GCTGCTGACG        3186
+
+
+CCCTGAACTC TTCTATGCTC AAAGATTTCC TCTCACAGCC CTCGCTGGGC CTCCTGGTGA    18216723
+|||||||||| |||||||||| |||||||||| ||||||| || |||||||||| ||||||||||
+CCCTGAACTC TTCTATGCTC AAAGATTTCC TCTCACAACC CTCGCTGGGC CTCCTGGTGA        3246
+
+
+GGACCTACCC CGAGCTGGAG GAAGGAGTGG AGCTGCTGGA AAGCCCGCCC CACCGAGTGG    18216663
+|||||||||| |||||||||| |||||||||| |||||||||| |||||||||| ||||||||||
+GGACCTACCC CGAGCTGGAG GAAGGAGTGG AGCTGCTGGA AAGCCCGCCC CACCGAGTGG        3306
+
+
+ACGGCCCTGC CGACCTTGGC GAGAGCCCCC TCGCCTTTCT CACCAGCAAC CCAGGTATGG    18216603
+|||||||||| |||||||| | |||||||||| |||||||||| |||||||||| ||||      
+ACGGCCCTGC CGACCTTGAC GAGAGCCCCC TCGCCTTTCT CACCAGCAAC CCAG......        3360
+
+
+CTGTGCAGGG TGCTGGGGGC GAGTCTGAAC TCCGTTGTGC CACGACCCGG GGAGTTTATC    18216543
+                                                                 
+........... .......... .......... .......... .......... ..........        3360
+
+
+// intron part 18216542 18199323 (17220 n) not shown           //
+
+//........ .......... .......... .......... .......... ........//
+
+
+CACACAGGGG TGGCTTTTAG CAATTACTGT CCATGTTGAC CCACATTTTC TTCTGATTTC    18199263
+                                                                 
+........... .......... .......... .......... .......... ..........        3360
+
+
+ATCTGACAGG GCACAGCCTT TGCAGCGAGC AGGGCAGCAG TGCTGAGACC GCTCCAGAGG    18199203
+         | |||||||||| |||||||||| |||||||||| |||||||||| ||||||||||
+..........G GCACAGCCTT TGCAGCGAGC AGGGCAGCAG TGCTGAGACC GCTCCAGAGG        3411
+
+
+AGACCGAGGG GCCAGACTTG GAATCCTCAG ATGAGACTGA TCACAGCAGC AAGGTGAGAG    18199143
+|||||||||| |||||||||| |||||||||| |||||||||| |||||||||| |||       
+AGACCGAGGG GCCAGACTTG GAATCCTCAG ATGAGACTGA TCACAGCAGC AAG.......        3464
+
+
+ATTTTCATTT TCACATCCCA TGCTTTGAAC CACTGAAGAA TCACAGCTGA CAATGTCACC    18199083
+                                                                 
+........... .......... .......... .......... .......... ..........        3464
+
+
+// intron part 18199082 18188703 (10380 n) not shown           //
+
+//........ .......... .......... .......... .......... ........//
+
+
+GGAGAACACC TCTAGGCGGT CCAGGTGTCA GGTGCGTCTA ATGAGGGATA ATGACCTCTG    18188643
+                                                                 
+........... .......... .......... .......... .......... ..........        3464
+
+
+CCTTCCCTTC CCCCCTGTGC TCCGAAGAGT ACAGAACAGG TGGCCGCATT TTGCCGCAGT    18188583
+                             ||| |||||||||| |||||||||| ||||||||||
+........... .......... .......AGT ACAGAACAGG TGGCCGCATT TTGCCGCAGT        3497
+
+
+TTGCATGAGA TGAACCCCTC TGACCAGAGC CCATCTCCTC AGGACTCCAC GGGGCCTCAG    18188523
+|||||||||| |||||||||| |||||||| | |||||||||| |||||||||| ||||||||||
+TTGCATGAGA TGAACCCCTC TGACCAGAAC CCATCTCCTC AGGACTCCAC GGGGCCTCAG        3557
+
+
+CTGGCGACCA TGAGACAACT CTCGGATGCA GATAAGCTGC GCAAGGTGAT CTGCGAGCTC    18188463
+|||||||||| |||||||||| |||||||||| |||||  ||| |||||||||| ||||||||||
+CTGGCGACCA TGAGACAACT CTCGGATGCA GATAACGTGC GCAAGGTGAT CTGCGAGCTC        3617
+
+
+CTGGAGACGG AGCGCACCTA CGTGAAGGTA TGTTTCTTTT TTCTCCCCCT GCCCTCCCTC    18188403
+|||||||||| |||||||||| |||||||                                    
+CTGGAGACGG AGCGCACCTA CGTGAAG... .......... .......... ..........        3644
+
+
+TGCCTCGTAA AGGAGTGAAG TTGGTGTGTC TGCTGGTTTT CATTAACAGC TGATTTAAAC    18188343
+                                                                 
+........... .......... .......... .......... .......... ..........        3644
+
+
+// intron part 18188342 18187443 (900 n) not shown             //
+
+//........ .......... .......... .......... .......... ........//
+
+
+GATCTGTTTG TTCTCTTCTA GATCCTTTTA TAGACATTAA CATATGCTTT ATACTTTAAG    18187383
+                                                                 
+........... .......... .......... .......... .......... ..........        3644
+
+
+TTCTAGGGTA TATAAAAAAT AAAACACATA AGCTAATGAG TTCTCTTTTC AATTCTTAGG    18187323
+                                                                |
+........... .......... .......... .......... .......... .........G        3645
+
+
+ATTTAAACTG TCTTATGGAG AGATACCTAA AGCCTCTTCA AAAAGAAACT TTTCTCACCC    18187263
+|||||||||| |||||||||| |||||||||| |||||||||| |||||||||| ||||||||||
+ATTTAAACTG TCTTATGGAG AGATACCTAA AGCCTCTTCA AAAAGAAACT TTTCTCACCC        3705
+
+
+AGGATGAGGT ATGCTGGAAA TGGTTTCAAC TTTGTGACCA TCATACCGTG GTTTGACTTG    18187203
+||||||||                                                         
+AGGATGAG.. .......... .......... .......... .......... ..........        3713
+
+
+TTGGTAAAGA GGAAAAATGG GGACATGCGT AACACTGAAA ACATTTTAAA TTTATTTAAT    18187143
+                                                                 
+........... .......... .......... .......... .......... ..........        3713
+
+
+// intron part 18187142 18187023 (120 n) not shown             //
+
+//........ .......... .......... .......... .......... ........//
+
+
+GTAATCAGAT ATAAATAACG TTTAGGAAGA CTAATGAGAT ATGAGGTGCA TTAAATTCTG    18186963
+                                                                 
+........... .......... .......... .......... .......... ..........        3713
+
+
+TTTTATTTCT AGCTTGACGT GCTTTTTGGA AATTTAACGG AAATGGTAGA GTTTCAAGTA    18186903
+             |||||||| |||||||||| |||||||||| |||||||||| ||||||||||
+........... ..CTTGACGT GCTTTTTGGA AATTTAACGG AAATGGTAGA GTTTCAAGTA        3761
+
+
+GAATTCCTTA AAACTCTAGA AGATGGAGTG AGACTGGTAC CTGATTTGGA AAAGCTTGAG    18186843
+|||||||||| |||||||||| |||||||||| |||||||||| |||||||||| ||||||||||
+GAATTCCTTA AAACTCTAGA AGATGGAGTG AGACTGGTAC CTGATTTGGA AAAGCTTGAG        3821
+
+
+AAGGTTGATC AATTTAAGGT AAATAGTGCA AAGCTGCCTC CAGCGTCAGG GCTATAGTGT    18186783
+|||||||||| ||||||||                                              
+AAGGTTGATC AATTTAAG.. .......... .......... .......... ..........        3839
+
+
+GGCTCAAGTT GAATCCCCTG ATCGTGTTGA TGTCTTCATT GGAGGGCCAC AGTGGGGTCT    18186723
+                                                                 
+........... .......... .......... .......... .......... ..........        3839
+
+
+// intron part 18186722 18181263 (5460 n) not shown            //
+
+//........ .......... .......... .......... .......... ........//
+
+
+TGCCATAACC TGCTGATATT TCCAGTGGAG GAAGGAAACA ACCAACTGTG CCTTTTCTCG    18181203
+                                                                 
+........... .......... .......... .......... .......... ..........        3839
+
+
+TCAAATCCAG AAAGTGCTGT TCTCTCTGGG GGGATCATTC CTGTATTATG CTGACCGCTT    18181143
+           |||||||||| |||||||||| |||||||||| |||||||||| ||||||||||
+........... AAAGTGCTGT TCTCTCTGGG GGGATCATTC CTGTATTATG CTGACCGCTT        3889
+
+
+CAAGCTCTAC AGTGCCTTCT GCGCCAGCCA CACAAAAGTT CCCAAGGTCC TGGTGAAAGG    18181083
+|||||||||| |||||||||| |||||| ||| |||||||||| |||||||||| ||||||||| 
+CAAGCTCTAC AGTGCCTTCT GCGCCATCCA CACAAAAGTT CCCAAGGTCC TGGTGAAAG.        3948
+
+
+TAAGGCCTCT GAGGATGTGG AGGTGGGGGT GTGTTGCTTG TCAGTTGTGT GGCTGACAGT    18181023
+                                                                 
+........... .......... .......... .......... .......... ..........        3948
+
+
+// intron part 18181022 18175803 (5220 n) not shown            //
+
+//........ .......... .......... .......... .......... ........//
+
+
+CTCAGTCCTG CAAAAAGGCA CCTTGGAGTC ACTGAGGAAG GGAGGGAAAT TGTGGGAAGG    18175743
+                                                                 
+........... .......... .......... .......... .......... ..........        3948
+
+
+GAGTCACGTG GGCGTTCCAC CCCCATGACC TGTGTTTAAA CCCTGCCAGC CAAGACAGAC    18175683
+                                                     | ||||||||||
+........... .......... .......... .......... .........C CAAGACAGAC        3959
+
+
+ACGGCTTTCA AGGCATTCTT GGATGCCCAG AACCCGAAGC AGCAGCACTC ATCCACGCTG    18175623
+|||||||||| |||||||||| |||||||||| |||||||||| |||||||||| ||||||||||
+ACGGCTTTCA AGGCATTCTT GGATGCCCAG AACCCGAAGC AGCAGCACTC ATCCACGCTG        4019
+
+
+GAGTCGTACC TCATCAAGCC CATCCAGAGG ATCCTCAAGT ACCCACTTCT GCTCAGGGAG    18175563
+|||||||||| |||||||||| |||||||||| |||||||||| |||||||||| ||||||||||
+GAGTCGTACC TCATCAAGCC CATCCAGAGG ATCCTCAAGT ACCCACTTCT GCTCAGGGAG        4079
+
+
+CTGTTCGCCC TGACCGATGC GGAGAGCGAG GAGCACTACC ACCTGGACGG TAGGCCTCGG    18175503
+|||||||||| |||||||||| |||||||||| |||||||||| |||||||||            
+CTGTTCGCCC TGACCGATGC GGAGAGCGAG GAGCACTACC ACCTGGACG. ..........        4128
+
+
+CCTGGGACCC CCGGCAGGCC TGAGTCTCCA TGAGGGTCTC TAAATAGCCT CTCATTTCAC    18175443
+                                                                 
+........... .......... .......... .......... .......... ..........        4128
+
+
+AACCTGTTTT CTTCCAGTGG CCATCAAGAC CATGAACAAG GTTGCCAGTC ACATCAATGA    18175383
+                  ||| |||||||||| |||||||||| |||||||||| ||||||||||
+........... .......TGG CCATCAAGAC CATGAACAAG GTTGCCAGTC ACATCAATGA        4171
+
+
+GATGCAGAAA ATCCATGAAG AGTTTGGGGC TGTGTTTGAC CAGCTGATTG CTGAACAGAC    18175323
+|||||||||| |||||||||| |||||||||| |||||||||| |||||||||| ||||||||||
+GATGCAGAAA ATCCATGAAG AGTTTGGGGC TGTGTTTGAC CAGCTGATTG CTGAACAGAC        4231
+
+
+TGGTGAGAAA AAAGAGGTGA GGGTCCCCAT CTTCTCAGGA CATCTGTCAG GAAAGCCGAG    18175263
+|||||||||| ||||||                                                
+TGGTGAGAAA AAAGAG.... .......... .......... .......... ..........        4247
+
+
+TTTGAGTTTG CTTTTATTTA TTTATTTATT TTTTAAAAAG GTGTTACTTG TAAGTAAAAT    18175203
+                                                                 
+........... .......... .......... .......... .......... ..........        4247
+
+
+// intron part 18175202 18170343 (4860 n) not shown            //
+
+//........ .......... .......... .......... .......... ........//
+
+
+CAGTATTTTC TTGAAGTAAA ATTAATATCA GCATGCTGAA TTTTCAAACA TCATGAAAAT    18170283
+                                                                 
+........... .......... .......... .......... .......... ..........        4247
+
+
+CTGAGTATTG ATAACACCAC CCAGTAAGCT TTGTCACGTC TCTGGCTTTC AGGTTGCAGA    18170223
+                                                         ||||||||
+........... .......... .......... .......... .......... ..GTTGCAGA        4255
+
+
+TCTGAGCATG GGAGACCTGC TTTTGCACAC TACCGTGATC TGGCTGAACC CGCCGGCCTC    18170163
+|||||||||| |||||||||| |||||||||| |||||||||| |||||||||| ||||||||||
+TCTGAGCATG GGAGACCTGC TTTTGCACAC TACCGTGATC TGGCTGAACC CGCCGGCCTC        4315
+
+
+GCTGGGCAAG TGGAAAAAGG AACCAGAGTT GGCAGCATTC GGTGTGTATC AGAAAAGCGT    18170103
+|||||||||| |||||||||| |||||||||| |||||||||| |                    
+GCTGGGCAAG TGGAAAAAGG AACCAGAGTT GGCAGCATTC G......... ..........        4356
+
+
+TTTATGGAGG GGGAAAAGTC TAGCTTAGTT TTCAAAACAA GAACATTTCT TTTTCAAGAC    18170043
+                                                                 
+........... .......... .......... .......... .......... ..........        4356
+
+
+// intron part 18170042 18165243 (4800 n) not shown            //
+
+//........ .......... .......... .......... .......... ........//
+
+
+AACGTCCTCT TCATAACTGT AGTGTTTATT ACCACAAGTT GGTGATGTCA AGGGGAAAAC    18165183
+                                                                 
+........... .......... .......... .......... .......... ..........        4356
+
+
+CCTACACATG ACATACCATA ACTGTCTTTA TTTTATTTTT TCCAGTCTTC AAAACTGCTG    18165123
+                                                 ||||| ||||||||||
+........... .......... .......... .......... .....TCTTC AAAACTGCTG        4371
+
+
+TGGTCCTTGT GTATAAAGAT GGTTCCAAAC AGAAGAAGAA ACTTGTAAGA CATCTTATGT    18165063
+|||||||||| |||||||||| |||||||||| |||||||||| ||||                 
+TGGTCCTTGT GTATAAAGAT GGTTCCAAAC AGAAGAAGAA ACTT...... ..........        4415
+
+
+TACCCCATGG TTTGAAACTA TTTCTCTATC TGCTTATCAG TTATGCCTGC ATAATTCTAC    18165003
+                                                                 
+........... .......... .......... .......... .......... ..........        4415
+
+
+// intron part 18165002 18164583 (420 n) not shown             //
+
+//........ .......... .......... .......... .......... ........//
+
+
+GCTGGTTTAG AAAATGCAGG GAACTGGTCC GGGGCAGGTT AGATTCTTCT TATGCAGCTG    18164523
+                                                                 
+........... .......... .......... .......... .......... ..........        4415
+
+
+GTTCCTTCTC CTCTGCAGGT AGGATCTCAC AGGCTTTCCA TTTATGAGGA CTGGGACCCC    18164463
+                   || |||||||||| |||||||||| |||||||||| ||||||||||
+........... ........GT AGGATCTCAC AGGCTTTCCA TTTATGAGGA CTGGGACCCC        4457
+
+
+TTCAGATTTC GACACATGAT CCCCACGGAA GCGCTGCAGG TTCGAGCTTT GGCGAGTGCA    18164403
+|||||||||| |||||||||| |||||||||| |||||||||| |||||||||| ||||||||||
+TTCAGATTTC GACACATGAT CCCCACGGAA GCGCTGCAGG TTCGAGCTTT GGCGAGTGCA        4517
+
+
+GGTAAACTCT CACCTGTGCT GGGTATTTCA CACACATATT TCTGATGTGT GTAGGAATTA    18164343
+|                                                                
+G......... .......... .......... .......... .......... ..........        4518
+
+
+TTTGTTTGAA TCCACACTCT TGGTCTAACT CTTCTACCGT CTTTTTTTTT TTTTTTTCCC    18164283
+                                                                 
+........... .......... .......... .......... .......... ..........        4518
+
+
+// intron part 18164282 18161403 (2880 n) not shown            //
+
+//........ .......... .......... .......... .......... ........//
+
+
+AAACATGTAA ATAAATCCAC TTGAAACATA CCCTGATTCA TTGTTGTTTT AATTTCTTTA    18161343
+                                                                 
+........... .......... .......... .......... .......... ..........        4518
+
+
+GATGCAGAGG CAAATGCCGT GTGTGAAATT GTCCATGTAA AATCCGAGTC TGAAGGGAGG    18161283
+ ||||||||| |||||||||| |||||||||| |||||||||| |||||||||| ||||||||||
+..ATGCAGAGG CAAATGCCGT GTGTGAAATT GTCCATGTAA AATCCGAGTC TGAAGGGAGG        4577
+
+
+CCGGAGAGGG TCTTTCACTT GTGCTGCAGG TGAGCCTGGG CCTGTAAAGT CGAGGCCGTG    18161223
+|||||||||| |||||||||| |||||||||                                  
+CCGGAGAGGG TCTTTCACTT GTGCTGCAG. .......... .......... ..........        4606
+
+
+TTGACATTTC TGCAGATTGG AACGGTTTGG TGTCTTACGT TGTGTTCTGG TGTTTGGTAC    18161163
+                                                                 
+........... .......... .......... .......... .......... ..........        4606
+
+
+// intron part 18161162 18159003 (2160 n) not shown            //
+
+//........ .......... .......... .......... .......... ........//
+
+
+GGCCTCAGTC TTTAGCCTTT GGCCCTAAGG GATATTTATT TGGTTGCACC TGATAACCTT    18158943
+                                                                 
+........... .......... .......... .......... .......... ..........        4606
+
+
+AGAAGTTCCC CATGTGTTAA GCCCTGATTC TCTAACATCT GTAAATCTTC TTTTCCTAGC    18158883
+                                                                |
+........... .......... .......... .......... .......... .........C        4607
+
+
+TCCCCAGAGA GCCGAAAGGA TTTCCTAAAG GCTGTGCATT CAATCCTGCG TGATAAGCAC    18158823
+|||||||||| |||||||||| |||||||||| |||||||||| |||||||||| ||||||||||
+TCCCCAGAGA GCCGAAAGGA TTTCCTAAAG GCTGTGCATT CAATCCTGCG TGATAAGCAC        4667
+
+
+AGAAGACAGC TCCTCAAAAC CGAGAGCCTT CCCTCATCCC AGCAATATGT CCCTTTTGGA    18158763
+|||||||||| |||||||||| |||||||||| |||||||||| |||||||||| ||||||||||
+AGAAGACAGC TCCTCAAAAC CGAGAGCCTT CCCTCATCCC AGCAATATGT CCCTTTTGGA        4727
+
+
+GGCAAAAGAT TGTGTGCACT GAAGGGGGCC AGGCCGGCCA TGAGCAGGGC AGGTACTGTG    18158703
+|||||||||| |||||||||| |||||||||| |||||||||| |||||||||| ||        
+GGCAAAAGAT TGTGTGCACT GAAGGGGGCC AGGCCGGCCA TGAGCAGGGC AG........        4779
+
+
+GGGATTCGGA CGTTCAAGAT TCCCGTCACC CCCACTCCGC AGTAGAACTC CAGTGAGCTT    18158643
+                                                                 
+........... .......... .......... .......... .......... ..........        4779
+
+
+// intron part 18158642 18155103 (3540 n) not shown            //
+
+//........ .......... .......... .......... .......... ........//
+
+
+TCCTTTGCTT TCTGGATTTT CATCTCACGT AAAGCATGTG GGGGTTTTAT TTTTATATTT    18155043
+                                                                 
+........... .......... .......... .......... .......... ..........        4779
+
+
+TTGTGTGTGT GTGCAGTGTC TGCCCCAAGC AAGTCTCTTG GGAGGAGGAG GCGGCGGCTG    18154983
+                 |||| |||||||||| |||||||||| |||||||||| ||||||||||
+........... ......TGTC TGCCCCAAGC AAGTCTCTTG GGAGGAGGAG GCGGCGGCTG        4823
+
+
+GCTCGAAACA GGTTTACCAT TGATTCTGAT GCCGTCTCCG CAAGCAGCCC GGAGAAAGAG    18154923
+|||||||||| |||||||||| |||||||||| |||||||||| |||||||||| ||||||||||
+GCTCGAAACA GGTTTACCAT TGATTCTGAT GCCGTCTCCG CAAGCAGCCC GGAGAAAGAG        4883
+
+
+TCCCAGCAGC CCCCCGGTGG TGGGGACACT GACCGATGGG TAGAGGAGCA GTTTGATCTT    18154863
+|||||||||| |||||||||| |||||||||| |||||||||| |||||||||| ||||||||||
+TCCCAGCAGC CCCCCGGTGG TGGGGACACT GACCGATGGG TAGAGGAGCA GTTTGATCTT        4943
+
+
+GCTCAGTATG AGGAGCAAGA TGACATCAAG GAGACAGACA TCCTCAGTGA CGATGATGAG    18154803
+|||||||||| |||||||||| |||||||||| |||||||||| |||||||||| ||||||||||
+GCTCAGTATG AGGAGCAAGA TGACATCAAG GAGACAGACA TCCTCAGTGA CGATGATGAG        5003
+
+
+TTCTGTGAGT CCGTGAAGGG TGCCTCAGTG GACAGAGACC TGCAGGAGCG GCTTCAGGCC    18154743
+|||||||||| |||||||||| |||||||||| |||||||||| |||||||||| ||||||||||
+TTCTGTGAGT CCGTGAAGGG TGCCTCAGTG GACAGAGACC TGCAGGAGCG GCTTCAGGCC        5063
+
+
+ACCTCCATCA GTCAGCGGGA AAGAGGCCGG AAAACCCTGG ATAGTCACGC GTCCCGCATG    18154683
+|||||||||| |||||||||| |||||||||| |||||||||| |||||||||| ||||||||||
+ACCTCCATCA GTCAGCGGGA AAGAGGCCGG AAAACCCTGG ATAGTCACGC GTCCCGCATG        5123
+
+
+GCACAGCTCA AGAAGCAAGC TGCCCTGTCG GGGATCAATG GAGGCCTGGA GAGCGCAAGC    18154623
+|||||||||| |||||||||| |||||||||| |||||||||| |||||||||| ||||||||||
+GCACAGCTCA AGAAGCAAGC TGCCCTGTCG GGGATCAATG GAGGCCTGGA GAGCGCAAGC        5183
+
+
+GAGGAAGTCA TTTGGGTTAG GCGTGAAGAC TTTGCCCCCT CCAGGAAACT GAACACTGAG    18154563
+|||||||||| |||||||||| |||||||||| |||||||||| |||||||||| ||||||||||
+GAGGAAGTCA TTTGGGTTAG GCGTGAAGAC TTTGCCCCCT CCAGGAAACT GAACACTGAG        5243
+
+
+ATCTGACTGC GTCACCTGCC CCGTAGAGAA TGTGTGTAGA TACTTCCTGC CCTAACTCTG    18154503
+|||||||||| |||||||||| |||||||||| |||||||||| |||||||||| ||||||||||
+ATCTGACTGC GTCACCTGCC CCGTAGAGAA TGTGTGTAGA TACTTCCTGC CCTAACTCTG        5303
+
+
+CCCACCCTCC TGTACCGTCG ACAAGAATGT CCCCTTAGGT CGCGCTCTTG CACACACGGT    18154443
+|||||||||| |||||||||| |||||||||| |||||||||| |||||||||| ||||||||||
+CCCACCCTCC TGTACCGTCG ACAAGAATGT CCCCTTAGGT CGCGCTCTTG CACACACGGT        5363
+
+
+TTTGGCAGCT GACTTGGTTC TGAAGCCATG TAGCCACCCA ACTTTGTCAT TTTCAACAAC    18154383
+|||||||||| |||||||||| |||||||||| |||||||||| |||||||||| ||||||||||
+TTTGGCAGCT GACTTGGTTC TGAAGCCATG TAGCCACCCA ACTTTGTCAT TTTCAACAAC        5423
+
+
+ATCAGAAAGA ATTGATCAGA ATCCCAAATA A                                   18154352
+|||||||||| |||||||||| |||||||||| |
+ATCAGAAAGA ATTGATCAGA ATCCCAAATA A                                       5454
+
+
+--------------------------------------------------------------------------------
+
+Predicted gene locations (1):
+
+
+PGL   1 (- strand):      18593162     18154352
+AGS-1 (18593162  18593111,18498219  18498167,18373608  18373429,18311095  18310919,18301170  18300197,18286376  18285929,18279847  18279675,18260137  18259913,18257778  18257593,18251886  18251740,18247659  18247585,18244402  18244232,18237199  18237095,18229492  18229411,18221274  18221188,18216833  18216609,18199253  18199150,18188615  18188436,18187323  18187255,18186950  18186825,18181192  18181084,18175693  18175514,18175425  18175307,18170230  18170122,18165137  18165079,18164504  18164402,18161341  18161254,18158883  18158711,18155026  18154352)
+SCR   (e 0.981  d 0.992 a 1.000,e 1.000  d 0.700 a 0.999,e 1.000  d 0.986 a 0.997,e 1.000  d 0.981 a 0.931,e 0.996  d 0.984 a 0.979,e 0.998  d 0.983 a 0.997,e 0.994  d 0.780 a 0.988,e 1.000  d 0.917 a 0.980,e 1.000  d 0.939 a 0.992,e 1.000  d 0.959 a 0.891,e 1.000  d 0.842 a 0.989,e 1.000  d 0.967 a 0.999,e 1.000  d 0.282 a 0.994,e 0.988  d 0.999 a 1.000,e 1.000  d 0.989 a 0.985,e 0.991  d 0.935 a 0.910,e 1.000  d 0.994 a 0.786,e 0.983  d 0.997 a 0.997,e 1.000  d 0.793 a 0.993,e 1.000  d 0.879 a 0.865,e 0.991  d 0.999 a 0.157,e 1.000  d 0.978 a 0.994,e 1.000  d 0.967 a 0.990,e 1.000  d 0.882 a 0.999,e 1.000  d 0.790 a 0.902,e 1.000  d 0.757 a 0.999,e 1.000  d 0.971 a 0.994,e 1.000  d 0.742 a 0.985,e 1.000)
+
+  Exon  1 18593162 18593111 (  52 n); score: 0.981
+    Intron  1 18593110 18498220 (94891 n);           Pd: 0.992  Pa: 1.000
+  Exon  2 18498219 18498167 (  53 n); score: 1.000
+    Intron  2 18498166 18373609 (124558 n);           Pd: 0.700  Pa: 0.999
+  Exon  3 18373608 18373429 ( 180 n); score: 1.000
+    Intron  3 18373428 18311096 (62333 n);           Pd: 0.986  Pa: 0.997
+  Exon  4 18311095 18310919 ( 177 n); score: 1.000
+    Intron  4 18310918 18301171 (9748 n);           Pd: 0.981  Pa: 0.931
+  Exon  5 18301170 18300197 ( 974 n); score: 0.996
+    Intron  5 18300196 18286377 (13820 n);           Pd: 0.984  Pa: 0.979
+  Exon  6 18286376 18285929 ( 448 n); score: 0.998
+    Intron  6 18285928 18279848 (6081 n);           Pd: 0.983  Pa: 0.997
+  Exon  7 18279847 18279675 ( 173 n); score: 0.994
+    Intron  7 18279674 18260138 (19537 n);           Pd: 0.780  Pa: 0.988
+  Exon  8 18260137 18259913 ( 225 n); score: 1.000
+    Intron  8 18259912 18257779 (2134 n);           Pd: 0.917  Pa: 0.980
+  Exon  9 18257778 18257593 ( 186 n); score: 1.000
+    Intron  9 18257592 18251887 (5706 n);           Pd: 0.939  Pa: 0.992
+  Exon 10 18251886 18251740 ( 147 n); score: 1.000
+    Intron 10 18251739 18247660 (4080 n);           Pd: 0.959  Pa: 0.891
+  Exon 11 18247659 18247585 (  75 n); score: 1.000
+    Intron 11 18247584 18244403 (3182 n);           Pd: 0.842  Pa: 0.989
+  Exon 12 18244402 18244232 ( 171 n); score: 1.000
+    Intron 12 18244231 18237200 (7032 n);           Pd: 0.967  Pa: 0.999
+  Exon 13 18237199 18237095 ( 105 n); score: 1.000
+    Intron 13 18237094 18229493 (7602 n);           Pd: 0.282  Pa: 0.994
+  Exon 14 18229492 18229411 (  82 n); score: 0.988
+    Intron 14 18229410 18221275 (8136 n);           Pd: 0.999  Pa: 1.000
+  Exon 15 18221274 18221188 (  87 n); score: 1.000
+    Intron 15 18221187 18216834 (4354 n);           Pd: 0.989  Pa: 0.985
+  Exon 16 18216833 18216609 ( 225 n); score: 0.991
+    Intron 16 18216608 18199254 (17355 n);           Pd: 0.935  Pa: 0.910
+  Exon 17 18199253 18199150 ( 104 n); score: 1.000
+    Intron 17 18199149 18188616 (10534 n);           Pd: 0.994  Pa: 0.786
+  Exon 18 18188615 18188436 ( 180 n); score: 0.983
+    Intron 18 18188435 18187324 (1112 n);           Pd: 0.997  Pa: 0.997
+  Exon 19 18187323 18187255 (  69 n); score: 1.000
+    Intron 19 18187254 18186951 ( 304 n);           Pd: 0.793  Pa: 0.993
+  Exon 20 18186950 18186825 ( 126 n); score: 1.000
+    Intron 20 18186824 18181193 (5632 n);           Pd: 0.879  Pa: 0.865
+  Exon 21 18181192 18181084 ( 109 n); score: 0.991
+    Intron 21 18181083 18175694 (5390 n);           Pd: 0.999  Pa: 0.157
+  Exon 22 18175693 18175514 ( 180 n); score: 1.000
+    Intron 22 18175513 18175426 (  88 n);           Pd: 0.978  Pa: 0.994
+  Exon 23 18175425 18175307 ( 119 n); score: 1.000
+    Intron 23 18175306 18170231 (5076 n);           Pd: 0.967  Pa: 0.990
+  Exon 24 18170230 18170122 ( 109 n); score: 1.000
+    Intron 24 18170121 18165138 (4984 n);           Pd: 0.882  Pa: 0.999
+  Exon 25 18165137 18165079 (  59 n); score: 1.000
+    Intron 25 18165078 18164505 ( 574 n);           Pd: 0.790  Pa: 0.902
+  Exon 26 18164504 18164402 ( 103 n); score: 1.000
+    Intron 26 18164401 18161342 (3060 n);           Pd: 0.757  Pa: 0.999
+  Exon 27 18161341 18161254 (  88 n); score: 1.000
+    Intron 27 18161253 18158884 (2370 n);           Pd: 0.971  Pa: 0.994
+  Exon 28 18158883 18158711 ( 173 n); score: 1.000
+    Intron 28 18158710 18155027 (3684 n);           Pd: 0.742  Pa: 0.985
+  Exon 29 18155026 18154352 ( 675 n); score: 1.000
+
+  PGS (18593162  18593111,18498219  18498167,18373608  18373429,18311095  18310919,18301170  18300197,18286376  18285929,18279847  18279675,18260137  18259913,18257778  18257593,18251886  18251740,18247659  18247585,18244402  18244232,18237199  18237095,18229492  18229411,18221274  18221188,18216833  18216609,18199253  18199150,18188615  18188436,18187323  18187255,18186950  18186825,18181192  18181084,18175693  18175514,18175425  18175307,18170230  18170122,18165137  18165079,18164504  18164402,18161341  18161254,18158883  18158711,18155026  18154352)	NM_003253+
+
+3-phase translation of AGS-1 (-strand):
+
+          .         .         .         .         .         .  :         
+18593162  tgccccgcatcgtgcccggccccgtcgcggagatcccggacgaccgtcgcgg : gttgatgg
+           C  P  A  S  C  P  A  P  S  R  R  S  R  T  T  V  A   : G  *  W 
+            A  P  H  R  A  R  P  R  R  G  D  P  G  R  P  S  R  :  V  D  G
+             P  R  I  V  P  G  P  V  A  E  I  P  D  D  R  R  G :   L  M  
+
+
+          .         .         .         .         .     :      .         
+18498211  tcgcattccagatgtaaacagcttcagaagcctgacggtcatatg : gtagaatcactgtgg
+           S  H  S  R  C  K  Q  L  Q  K  P  D  G  H  M  :  V  E  S  L  W 
+            R  I  P  D  V  N  S  F  R  S  L  T  V  I  W :   *  N  H  C  G
+          V  A  F  Q  M  *  T  A  S  E  A  *  R  S  Y   : G  R  I  T  V  
+
+
+          .         .         .         .         .         .         
+18373593  actgagacccacctttctagacctgaagcccaggaggaggaagaggaggctggttggtac
+           T  E  T  H  L  S  R  P  E  A  Q  E  E  E  E  E  A  G  W  Y 
+            L  R  P  T  F  L  D  L  K  P  R  R  R  K  R  R  L  V  G  T
+          D  *  D  P  P  F  *  T  *  S  P  G  G  G  R  G  G  W  L  V  
+
+
+          .         .         .         .         .         .         
+18373533  catgggcataatgctctgaatcctagtctctcacctagtatgtgagcagtccctgcagat
+           H  G  H  N  A  L  N  P  S  L  S  P  S  M  *  A  V  P  A  D 
+            M  G  I  M  L  *  I  L  V  S  H  L  V  C  E  Q  S  L  Q  M
+          P  W  A  *  C  S  E  S  *  S  L  T  *  Y  V  S  S  P  C  R  
+
+
+          .         .         .         .         .     :      .         
+18373473  ggcccatttggagatcttgacaaagcctcttctgtttccaatggg : gtttttggcgcattc
+           G  P  F  G  D  L  D  K  A  S  S  V  S  N  G  :  V  F  G  A  F 
+            A  H  L  E  I  L  T  K  P  L  L  F  P  M  G :   F  L  A  H  S
+          W  P  I  W  R  S  *  Q  S  L  F  C  F  Q  W   : G  F  W  R  I  
+
+
+          .         .         .         .         .         .         
+18311080  tcacagacttagatgaaactgtgatggccaccgcagggggcaggtgctgacatcgtcccc
+           S  Q  T  *  M  K  L  *  W  P  P  Q  G  A  G  A  D  I  V  P 
+            H  R  L  R  *  N  C  D  G  H  R  R  G  Q  V  L  T  S  S  P
+          L  T  D  L  D  E  T  V  M  A  T  A  G  G  R  C  *  H  R  P  
+
+
+          .         .         .         .         .         .         
+18311020  agccctgtggctgttcatccggacatcatttccaacctcaatatctaaatgccacagtgc
+           S  P  V  A  V  H  P  D  I  I  S  N  L  N  I  *  M  P  Q  C 
+            A  L  W  L  F  I  R  T  S  F  P  T  S  I  S  K  C  H  S  A
+          Q  P  C  G  C  S  S  G  H  H  F  Q  P  Q  Y  L  N  A  T  V  
+
+
+          .         .         .         .         .  :         .         
+18310960  tcttggagcaagttgggctggggaccactgttgccttttaag : accataaaaccatgggaa
+           S  W  S  K  L  G  W  G  P  L  L  P  F  K  :  T  I  K  P  W  E 
+            L  G  A  S  W  A  G  D  H  C  C  L  L  R :   P  *  N  H  G  K
+          L  L  E  Q  V  G  L  G  T  T  V  A  F  *   : D  H  K  T  M  G  
+
+
+          .         .         .         .         .         .         
+18301152  acgcagaaagtcaacatgtagagcacgagttttatggagaaaagcatgccagcctggggc
+           T  Q  K  V  N  M  *  S  T  S  F  M  E  K  S  M  P  A  W  G 
+            R  R  K  S  T  C  R  A  R  V  L  W  R  K  A  C  Q  P  G  A
+          N  A  E  S  Q  H  V  E  H  E  F  Y  G  E  K  H  A  S  L  G  
+
+
+          .         .         .         .         .         .         
+18301092  gcaagcacacttcccgctccctgcgcctctcgcacaagacgcggaggaccaggcacgctt
+           A  S  T  L  P  A  P  C  A  S  R  T  R  R  G  G  P  G  T  L 
+            Q  A  H  F  P  L  P  A  P  L  A  Q  D  A  E  D  Q  A  R  F
+          R  K  H  T  S  R  S  L  R  L  S  H  K  T  R  R  T  R  H  A  
+
+
+          .         .         .         .         .         .         
+18301032  cctcggggaaggtgatccacaggaactccgaagtgagcacccgatccagcagcaccccca
+           P  R  G  R  *  S  T  G  T  P  K  *  A  P  D  P  A  A  P  P 
+            L  G  E  G  D  P  Q  E  L  R  S  E  H  P  I  Q  Q  H  P  Q
+          S  S  G  K  V  I  H  R  N  S  E  V  S  T  R  S  S  S  T  P  
+
+
+          .         .         .         .         .         .         
+18300972  gcatcccccagtccctggctgaaaatggcctggagcccttctcccaagatggtaccctag
+           A  S  P  S  P  W  L  K  M  A  W  S  P  S  P  K  M  V  P  * 
+            H  P  P  V  P  G  *  K  W  P  G  A  L  L  P  R  W  Y  P  R
+          S  I  P  Q  S  L  A  E  N  G  L  E  P  F  S  Q  D  G  T  L  
+
+
+          .         .         .         .         .         .         
+18300912  aagacttcgggagccccatctgggtggaccgagtggacatgggcttgagacctgtgtctt
+           K  T  S  G  A  P  S  G  W  T  E  W  T  W  A  *  D  L  C  L 
+            R  L  R  E  P  H  L  G  G  P  S  G  H  G  L  E  T  C  V  L
+          E  D  F  G  S  P  I  W  V  D  R  V  D  M  G  L  R  P  V  S  
+
+
+          .         .         .         .         .         .         
+18300852  acactgactcttctgtcactcccagcgtagacagcagcatcgtcctcacagcagcctctg
+           T  L  T  L  L  S  L  P  A  *  T  A  A  S  S  S  Q  Q  P  L 
+            H  *  L  F  C  H  S  Q  R  R  Q  Q  H  R  P  H  S  S  L  C
+          Y  T  D  S  S  V  T  P  S  V  D  S  S  I  V  L  T  A  A  S  
+
+
+          .         .         .         .         .         .         
+18300792  tgcagagcatgccagacactgaggagagcaggctttacggggatgacgctacatatttgg
+           C  R  A  C  Q  T  L  R  R  A  G  F  T  G  M  T  L  H  I  W 
+            A  E  H  A  R  H  *  G  E  Q  A  L  R  G  *  R  Y  I  F  G
+          V  Q  S  M  P  D  T  E  E  S  R  L  Y  G  D  D  A  T  Y  L  
+
+
+          .         .         .         .         .         .         
+18300732  ctgagggaggcaggaggcagcattcctatacatccaatgggcccactttcatggagacgg
+           L  R  E  A  G  G  S  I  P  I  H  P  M  G  P  L  S  W  R  R 
+            *  G  R  Q  E  A  A  F  L  Y  I  Q  W  A  H  F  H  G  D  G
+          A  E  G  G  R  R  Q  H  S  Y  T  S  N  G  P  T  F  M  E  T  
+
+
+          .         .         .         .         .         .         
+18300672  cgagctttaagaagaaacgctccaaatctgcagacatctggcgggaggacagcctggaat
+           R  A  L  R  R  N  A  P  N  L  Q  T  S  G  G  R  T  A  W  N 
+            E  L  *  E  E  T  L  Q  I  C  R  H  L  A  G  G  Q  P  G  I
+          A  S  F  K  K  K  R  S  K  S  A  D  I  W  R  E  D  S  L  E  
+
+
+          .         .         .         .         .         .         
+18300612  tctcactctctgatctgagccaagaacatttaacaagcaacgaagaaatcttgggttccg
+           S  H  S  L  I  *  A  K  N  I  *  Q  A  T  K  K  S  W  V  P 
+            L  T  L  *  S  E  P  R  T  F  N  K  Q  R  R  N  L  G  F  R
+          F  S  L  S  D  L  S  Q  E  H  L  T  S  N  E  E  I  L  G  S  
+
+
+          .         .         .         .         .         .         
+18300552  ccgaagagaaggactgcgaggaggctcgggggatggaaacgcgggcgagtccgcggcagc
+           P  K  R  R  T  A  R  R  L  G  G  W  K  R  G  R  V  R  G  S 
+            R  R  E  G  L  R  G  G  S  G  D  G  N  A  G  E  S  A  A  A
+          A  E  E  K  D  C  E  E  A  R  G  M  E  T  R  A  S  P  R  Q  
+
+
+          .         .         .         .         .         .         
+18300492  tcagcacctgtcagagagccaattccttgggtgacttgtatgctcagaaaaactctggag
+           S  A  P  V  R  E  P  I  P  W  V  T  C  M  L  R  K  T  L  E 
+            Q  H  L  S  E  S  Q  F  L  G  *  L  V  C  S  E  K  L  W  S
+          L  S  T  C  Q  R  A  N  S  L  G  D  L  Y  A  Q  K  N  S  G  
+
+
+          .         .         .         .         .         .         
+18300432  tgacagcaaacggggggccggggagcaaatttgcaggctactgtcggaatttggtgtctg
+           *  Q  Q  T  G  G  R  G  A  N  L  Q  A  T  V  G  I  W  C  L 
+            D  S  K  R  G  A  G  E  Q  I  C  R  L  L  S  E  F  G  V  *
+          V  T  A  N  G  G  P  G  S  K  F  A  G  Y  C  R  N  L  V  S  
+
+
+          .         .         .         .         .         .         
+18300372  atattcccaatcttgcaaaccataagatgccaccagctgctgctgaagagactcctccgt
+           I  F  P  I  L  Q  T  I  R  C  H  Q  L  L  L  K  R  L  L  R 
+            Y  S  Q  S  C  K  P  *  D  A  T  S  C  C  *  R  D  S  S  V
+          D  I  P  N  L  A  N  H  K  M  P  P  A  A  A  E  E  T  P  P  
+
+
+          .         .         .         .         .         .         
+18300312  acagtaattataacacacttccctgtaggaaatctcactgtctctctgaaggtgccacca
+           T  V  I  I  T  H  F  P  V  G  N  L  T  V  S  L  K  V  P  P 
+            Q  *  L  *  H  T  S  L  *  E  I  S  L  S  L  *  R  C  H  Q
+          Y  S  N  Y  N  T  L  P  C  R  K  S  H  C  L  S  E  G  A  T  
+
+
+          .         .         .         .         .         .      :     
+18300252  acccacaaattagccatagcaacagcatgcaaggcagaagagctaaaacaactcag : gatg
+           T  H  K  L  A  I  A  T  A  C  K  A  E  E  L  K  Q  L  R :   M 
+            P  T  N  *  P  *  Q  Q  H  A  R  Q  K  S  *  N  N  S   : G  C
+          N  P  Q  I  S  H  S  N  S  M  Q  G  R  R  A  K  T  T  Q  :  D  
+
+
+          .         .         .         .         .         .         
+18286372  ttaatgcaggcgagggcagtgagtttgcagacagtgggattgaaggggccactaccgaca
+           L  M  Q  A  R  A  V  S  L  Q  T  V  G  L  K  G  P  L  P  T 
+            *  C  R  R  G  Q  *  V  C  R  Q  W  D  *  R  G  H  Y  R  H
+          V  N  A  G  E  G  S  E  F  A  D  S  G  I  E  G  A  T  T  D  
+
+
+          .         .         .         .         .         .         
+18286312  cggacctcctgtccaggcgatctaatgccaccaactccagctactcacccaccacaggcc
+           R  T  S  C  P  G  D  L  M  P  P  T  P  A  T  H  P  P  Q  A 
+            G  P  P  V  Q  A  I  *  C  H  Q  L  Q  L  L  T  H  H  R  P
+          T  D  L  L  S  R  R  S  N  A  T  N  S  S  Y  S  P  T  T  G  
+
+
+          .         .         .         .         .         .         
+18286252  gggcctttgtgggcagcgacagcggcagcagctccaccggggatgcggctcgtcaggggg
+           G  P  L  W  A  A  T  A  A  A  A  P  P  G  M  R  L  V  R  G 
+            G  L  C  G  Q  R  Q  R  Q  Q  L  H  R  G  C  G  S  S  G  G
+          R  A  F  V  G  S  D  S  G  S  S  S  T  G  D  A  A  R  Q  G  
+
+
+          .         .         .         .         .         .         
+18286192  tgtacgagaacttccggcgggagctggagatgagcaccaccaacagcgagagcctggagg
+           C  T  R  T  S  G  G  S  W  R  *  A  P  P  T  A  R  A  W  R 
+            V  R  E  L  P  A  G  A  G  D  E  H  H  Q  Q  R  E  P  G  G
+          V  Y  E  N  F  R  R  E  L  E  M  S  T  T  N  S  E  S  L  E  
+
+
+          .         .         .         .         .         .         
+18286132  aggccggctcggcgcacagcgatgagcagagcagcggcaccctgagctctccgggccagt
+           R  P  A  R  R  T  A  M  S  R  A  A  A  P  *  A  L  R  A  S 
+            G  R  L  G  A  Q  R  *  A  E  Q  R  H  P  E  L  S  G  P  V
+          E  A  G  S  A  H  S  D  E  Q  S  S  G  T  L  S  S  P  G  Q  
+
+
+          .         .         .         .         .         .         
+18286072  cggacatcctgctgaccgccgcacagggcacggtgcgcaaggccggcgccctggccgtca
+           R  T  S  C  *  P  P  H  R  A  R  C  A  R  P  A  P  W  P  S 
+            G  H  P  A  D  R  R  T  G  H  G  A  Q  G  R  R  P  G  R  Q
+          S  D  I  L  L  T  A  A  Q  G  T  V  R  K  A  G  A  L  A  V  
+
+
+          .         .         .         .         .         .         
+18286012  agaacttcctggtgcacaagaagaacaagaaggtggagtcagccacccggaggaagtgga
+           R  T  S  W  C  T  R  R  T  R  R  W  S  Q  P  P  G  G  S  G 
+            E  L  P  G  A  Q  E  E  Q  E  G  G  V  S  H  P  E  E  V  E
+          K  N  F  L  V  H  K  K  N  K  K  V  E  S  A  T  R  R  K  W  
+
+
+          .         .         .    :       .         .         .         
+18285952  agcactactgggtgtccctgaaag : gatgcacgctatttttctacgagagcgacggcaggt
+           S  T  T  G  C  P  *  K  :  D  A  R  Y  F  S  T  R  A  T  A  G 
+            A  L  L  G  V  P  E  R :   M  H  A  I  F  L  R  E  R  R  Q  V
+          K  H  Y  W  V  S  L  K   : G  C  T  L  F  F  Y  E  S  D  G  R  
+
+
+          .         .         .         .         .         .         
+18279811  ctgggatagaccacaacagcatccccaaacacgccgtctgggtggagaacagcattgtgc
+           L  G  *  T  T  T  A  S  P  N  T  P  S  G  W  R  T  A  L  C 
+            W  D  R  P  Q  Q  H  P  Q  T  R  R  L  G  G  E  Q  H  C  A
+          S  G  I  D  H  N  S  I  P  K  H  A  V  W  V  E  N  S  I  V  
+
+
+          .         .         .         .         .         .         
+18279751  aggcggtgcctgagcaccccaagaaggactttgtcttctgcctcagcaattccctgggtg
+           R  R  C  L  S  T  P  R  R  T  L  S  S  A  S  A  I  P  W  V 
+            G  G  A  *  A  P  Q  E  G  L  C  L  L  P  Q  Q  F  P  G  *
+          Q  A  V  P  E  H  P  K  K  D  F  V  F  C  L  S  N  S  L  G  
+
+
+          .         .       :    .         .         .         .         
+18279691  atgccttcctttttcag : accactagccagacggagcttgaaaactggatcaccgccatcc
+           M  P  S  F  F  R :   P  L  A  R  R  S  L  K  T  G  S  P  P  S 
+            C  L  P  F  S   : D  H  *  P  D  G  A  *  K  L  D  H  R  H  P
+          D  A  F  L  F  Q  :  T  T  S  Q  T  E  L  E  N  W  I  T  A  I  
+
+
+          .         .         .         .         .         .         
+18260094  actctgcctgcgccactgcggtcgcgaggcaccaccacaaggaagacacgctccgactcc
+           T  L  P  A  P  L  R  S  R  G  T  T  T  R  K  T  R  S  D  S 
+            L  C  L  R  H  C  G  R  E  A  P  P  Q  G  R  H  A  P  T  P
+          H  S  A  C  A  T  A  V  A  R  H  H  H  K  E  D  T  L  R  L  
+
+
+          .         .         .         .         .         .         
+18260034  tgaaatcagagatcaaaaaactggaacagaagattgacatggatgaaaagatgaagaaaa
+           *  N  Q  R  S  K  N  W  N  R  R  L  T  W  M  K  R  *  R  K 
+            E  I  R  D  Q  K  T  G  T  E  D  *  H  G  *  K  D  E  E  N
+          L  K  S  E  I  K  K  L  E  Q  K  I  D  M  D  E  K  M  K  K  
+
+
+          .         .         .         .         .         .         
+18259974  tgggtgaaatgcagctgtcttcagtcactgactcaaagaaaaagaaaacaatattagatc
+           W  V  K  C  S  C  L  Q  S  L  T  Q  R  K  R  K  Q  Y  *  I 
+            G  *  N  A  A  V  F  S  H  *  L  K  E  K  E  N  N  I  R  S
+          M  G  E  M  Q  L  S  S  V  T  D  S  K  K  K  K  T  I  L  D  
+
+
+          .  :         .         .         .         .         .         
+18259914  ag : atctttgtctgggagcaaaatctcgagcagttccaaatggacctgtttcgtttccgct
+           R :   S  L  S  G  S  K  I  S  S  S  S  K  W  T  C  F  V  S  A 
+             : D  L  C  L  G  A  K  S  R  A  V  P  N  G  P  V  S  F  P  L
+          Q  :  I  F  V  W  E  Q  N  L  E  Q  F  Q  M  D  L  F  R  F  R  
+
+
+          .         .         .         .         .         .         
+18257720  gttatttagccagccttcagggtggggagctgccaaaccccaaaaggcttctcgcttttg
+           V  I  *  P  A  F  R  V  G  S  C  Q  T  P  K  G  F  S  L  L 
+            L  F  S  Q  P  S  G  W  G  A  A  K  P  Q  K  A  S  R  F  C
+          C  Y  L  A  S  L  Q  G  G  E  L  P  N  P  K  R  L  L  A  F  
+
+
+          .         .         .         .         .         .         
+18257660  caagtcgaccaacgaaagtggccatgggccgccttggaatcttttcggtatcatcgtttc
+           Q  V  D  Q  R  K  W  P  W  A  A  L  E  S  F  R  Y  H  R  F 
+            K  S  T  N  E  S  G  H  G  P  P  W  N  L  F  G  I  I  V  S
+          A  S  R  P  T  K  V  A  M  G  R  L  G  I  F  S  V  S  S  F  
+
+
+          .        :   .         .         .         .         .         
+18257600  atgccctg : gtggcagcacgcactggtgaaactggagtgagaagacgtactcaggccatgt
+           M  P  W :   W  Q  H  A  L  V  K  L  E  *  E  D  V  L  R  P  C 
+            C  P   : G  G  S  T  H  W  *  N  W  S  E  K  T  Y  S  G  H  V
+          H  A  L  :  V  A  A  R  T  G  E  T  G  V  R  R  R  T  Q  A  M  
+
+
+          .         .         .         .         .         .         
+18251834  ccagatccgcgagcaagcgaaggagcaggttttcttctctgtggggtctggatactacct
+           P  D  P  R  A  S  E  G  A  G  F  L  L  C  G  V  W  I  L  P 
+            Q  I  R  E  Q  A  K  E  Q  V  F  F  S  V  G  S  G  Y  Y  L
+          S  R  S  A  S  K  R  R  S  R  F  S  S  L  W  G  L  D  T  T  
+
+
+          .         .         .         .     :      .         .         
+18251774  ccaaaaagaagcagggacggccaagcatcaatcag : gtgtttggagagggaaccgaagctg
+           P  K  R  S  R  D  G  Q  A  S  I  R :   C  L  E  R  E  P  K  L 
+            Q  K  E  A  G  T  A  K  H  Q  S   : G  V  W  R  G  N  R  S  C
+          S  K  K  K  Q  G  R  P  S  I  N  Q  :  V  F  G  E  G  T  E  A  
+
+
+          .         .         .         .         .          : .         
+18247634  taaagaaatctttagagggaatatttgatgacattgttccagatggcaag : agggagaaag
+           *  R  N  L  *  R  E  Y  L  M  T  L  F  Q  M  A  R :   G  R  K 
+            K  E  I  F  R  G  N  I  *  *  H  C  S  R  W  Q   : E  G  E  R
+          V  K  K  S  L  E  G  I  F  D  D  I  V  P  D  G  K  :  R  E  K  
+
+
+          .         .         .         .         .         .         
+18244392  aagtggtcttacctaacgttcaccagcacaaccctgactgcgacatttgggtccacgagt
+           K  W  S  Y  L  T  F  T  S  T  T  L  T  A  T  F  G  S  T  S 
+            S  G  L  T  *  R  S  P  A  Q  P  *  L  R  H  L  G  P  R  V
+          E  V  V  L  P  N  V  H  Q  H  N  P  D  C  D  I  W  V  H  E  
+
+
+          .         .         .         .         .         .         
+18244332  atttcactccatcctggttctgtctgcccaataatcagcctgccctgacggtcgtccggc
+           I  S  L  H  P  G  S  V  C  P  I  I  S  L  P  *  R  S  S  G 
+            F  H  S  I  L  V  L  S  A  Q  *  S  A  C  P  D  G  R  P  A
+          Y  F  T  P  S  W  F  C  L  P  N  N  Q  P  A  L  T  V  V  R  
+
+
+          .         .         .         .         . :          .         
+18244272  caggcgacactgcacgggacaccctggagctgatttgcaag : acacatcaactggatcatt
+           Q  A  T  L  H  G  T  P  W  S  *  F  A  R :   H  I  N  W  I  I 
+            R  R  H  C  T  G  H  P  G  A  D  L  Q   : D  T  S  T  G  S  F
+          P  G  D  T  A  R  D  T  L  E  L  I  C  K  :  T  H  Q  L  D  H  
+
+
+          .         .         .         .         .         .         
+18237180  ctgctcattacctgcgcctgaaatttctaatagaaaacaaaatgcagctctatgttccac
+           L  L  I  T  C  A  *  N  F  *  *  K  T  K  C  S  S  M  F  H 
+            C  S  L  P  A  P  E  I  S  N  R  K  Q  N  A  A  L  C  S  T
+          S  A  H  Y  L  R  L  K  F  L  I  E  N  K  M  Q  L  Y  V  P  
+
+
+          .         .         .      :     .         .         .         
+18237120  agcccgaggaagacatctatgagctg : ctgtacaaagaaattgaaatctgtccaaaagtca
+           S  P  R  K  T  S  M  S  C :   C  T  K  K  L  K  S  V  Q  K  S 
+            A  R  G  R  H  L  *  A   : A  V  Q  R  N  *  N  L  S  K  S  H
+          Q  P  E  E  D  I  Y  E  L  :  L  Y  K  E  I  E  I  C  P  K  V  
+
+
+          .         .         .         .         .        :   .         
+18229458  ctcagagcatccacattgagaagtcagatacagctgctgatacttacg : ggttttcacttt
+           L  R  A  S  T  L  R  S  Q  I  Q  L  L  I  L  T  :  G  F  H  F 
+            S  E  H  P  H  *  E  V  R  Y  S  C  *  Y  L  R :   V  F  T  F
+          T  Q  S  I  H  I  E  K  S  D  T  A  A  D  T  Y   : G  F  S  L  
+
+
+          .         .         .         .         .         .         
+18221262  cttctgtggaagaagatggtattcgaaggctgtacgtgaatagtgtgaaggaaaccggtt
+           L  L  W  K  K  M  V  F  E  G  C  T  *  I  V  *  R  K  P  V 
+            F  C  G  R  R  W  Y  S  K  A  V  R  E  *  C  E  G  N  R  F
+          S  S  V  E  E  D  G  I  R  R  L  Y  V  N  S  V  K  E  T  G  
+
+
+          .         .     :      .         .         .         .         
+18221202  tagcttccaagaaag : gcctgaaagcaggagatgagattcttgagatcaataatcgtgctg
+           *  L  P  R  K  :  A  *  K  Q  E  M  R  F  L  R  S  I  I  V  L 
+            S  F  Q  E  R :   P  E  S  R  R  *  D  S  *  D  Q  *  S  C  C
+          L  A  S  K  K   : G  L  K  A  G  D  E  I  L  E  I  N  N  R  A  
+
+
+          .         .         .         .         .         .         
+18216788  ctgacgccctgaactcttctatgctcaaagatttcctctcacagccctcgctgggcctcc
+           L  T  P  *  T  L  L  C  S  K  I  S  S  H  S  P  R  W  A  S 
+            *  R  P  E  L  F  Y  A  Q  R  F  P  L  T  A  L  A  G  P  P
+          A  D  A  L  N  S  S  M  L  K  D  F  L  S  Q  P  S  L  G  L  
+
+
+          .         .         .         .         .         .         
+18216728  tggtgaggacctaccccgagctggaggaaggagtggagctgctggaaagcccgccccacc
+           W  *  G  P  T  P  S  W  R  K  E  W  S  C  W  K  A  R  P  T 
+            G  E  D  L  P  R  A  G  G  R  S  G  A  A  G  K  P  A  P  P
+          L  V  R  T  Y  P  E  L  E  E  G  V  E  L  L  E  S  P  P  H  
+
+
+          .         .         .         .         .         .          : 
+18216668  gagtggacggccctgccgaccttggcgagagccccctcgcctttctcaccagcaacccag : 
+           E  W  T  A  L  P  T  L  A  R  A  P  S  P  F  S  P  A  T  Q  : 
+            S  G  R  P  C  R  P  W  R  E  P  P  R  L  S  H  Q  Q  P  R : 
+          R  V  D  G  P  A  D  L  G  E  S  P  L  A  F  L  T  S  N  P   : 
+
+
+          .         .         .         .         .         .         
+18199253  ggcacagcctttgcagcgagcagggcagcagtgctgagaccgctccagaggagaccgagg
+           G  T  A  F  A  A  S  R  A  A  V  L  R  P  L  Q  R  R  P  R 
+            A  Q  P  L  Q  R  A  G  Q  Q  C  *  D  R  S  R  G  D  R  G
+          G  H  S  L  C  S  E  Q  G  S  S  A  E  T  A  P  E  E  T  E  
+
+
+          .         .         .         .         .    :       .         
+18199193  ggccagacttggaatcctcagatgagactgatcacagcagcaag : agtacagaacaggtgg
+           G  Q  T  W  N  P  Q  M  R  L  I  T  A  A  R :   V  Q  N  R  W 
+            A  R  L  G  I  L  R  *  D  *  S  Q  Q  Q   : E  Y  R  T  G  G
+          G  P  D  L  E  S  S  D  E  T  D  H  S  S  K  :  S  T  E  Q  V  
+
+
+          .         .         .         .         .         .         
+18188599  ccgcattttgccgcagtttgcatgagatgaacccctctgaccagagcccatctcctcagg
+           P  H  F  A  A  V  C  M  R  *  T  P  L  T  R  A  H  L  L  R 
+            R  I  L  P  Q  F  A  *  D  E  P  L  *  P  E  P  I  S  S  G
+          A  A  F  C  R  S  L  H  E  M  N  P  S  D  Q  S  P  S  P  Q  
+
+
+          .         .         .         .         .         .         
+18188539  actccacggggcctcagctggcgaccatgagacaactctcggatgcagataagctgcgca
+           T  P  R  G  L  S  W  R  P  *  D  N  S  R  M  Q  I  S  C  A 
+            L  H  G  A  S  A  G  D  H  E  T  T  L  G  C  R  *  A  A  Q
+          D  S  T  G  P  Q  L  A  T  M  R  Q  L  S  D  A  D  K  L  R  
+
+
+          .         .         .         .         .    :       .         
+18188479  aggtgatctgcgagctcctggagacggagcgcacctacgtgaag : gatttaaactgtctta
+           R  *  S  A  S  S  W  R  R  S  A  P  T  *  R :   I  *  T  V  L 
+            G  D  L  R  A  P  G  D  G  A  H  L  R  E   : G  F  K  L  S  Y
+          K  V  I  C  E  L  L  E  T  E  R  T  Y  V  K  :  D  L  N  C  L  
+
+
+          .         .         .         .         .         .   :        
+18187307  tggagagatacctaaagcctcttcaaaaagaaacttttctcacccaggatgag : cttgacg
+           W  R  D  T  *  S  L  F  K  K  K  L  F  S  P  R  M  S :   L  T 
+            G  E  I  P  K  A  S  S  K  R  N  F  S  H  P  G  *   : A  *  R
+          M  E  R  Y  L  K  P  L  Q  K  E  T  F  L  T  Q  D  E  :  L  D  
+
+
+          .         .         .         .         .         .         
+18186943  tgctttttggaaatttaacggaaatggtagagtttcaagtagaattccttaaaactctag
+           C  F  L  E  I  *  R  K  W  *  S  F  K  *  N  S  L  K  L  * 
+            A  F  W  K  F  N  G  N  G  R  V  S  S  R  I  P  *  N  S  R
+          V  L  F  G  N  L  T  E  M  V  E  F  Q  V  E  F  L  K  T  L  
+
+
+          .         .         .         .         .         .         :  
+18186883  aagatggagtgagactggtacctgatttggaaaagcttgagaaggttgatcaatttaag : a
+           K  M  E  *  D  W  Y  L  I  W  K  S  L  R  R  L  I  N  L  R :  
+            R  W  S  E  T  G  T  *  F  G  K  A  *  E  G  *  S  I  *   : E
+          E  D  G  V  R  L  V  P  D  L  E  K  L  E  K  V  D  Q  F  K  :  
+
+
+          .         .         .         .         .         .         
+18181191  aagtgctgttctctctggggggatcattcctgtattatgctgaccgcttcaagctctaca
+           K  C  C  S  L  W  G  D  H  S  C  I  M  L  T  A  S  S  S  T 
+            S  A  V  L  S  G  G  I  I  P  V  L  C  *  P  L  Q  A  L  Q
+          K  V  L  F  S  L  G  G  S  F  L  Y  Y  A  D  R  F  K  L  Y  
+
+
+          .         .         .         .         .        :   .         
+18181131  gtgccttctgcgccagccacacaaaagttcccaaggtcctggtgaaag : ccaagacagaca
+           V  P  S  A  P  A  T  Q  K  F  P  R  S  W  *  K  :  P  R  Q  T 
+            C  L  L  R  Q  P  H  K  S  S  Q  G  P  G  E  S :   Q  D  R  H
+          S  A  F  C  A  S  H  T  K  V  P  K  V  L  V  K   : A  K  T  D  
+
+
+          .         .         .         .         .         .         
+18175681  cggctttcaaggcattcttggatgcccagaacccgaagcagcagcactcatccacgctgg
+           R  L  S  R  H  S  W  M  P  R  T  R  S  S  S  T  H  P  R  W 
+            G  F  Q  G  I  L  G  C  P  E  P  E  A  A  A  L  I  H  A  G
+          T  A  F  K  A  F  L  D  A  Q  N  P  K  Q  Q  H  S  S  T  L  
+
+
+          .         .         .         .         .         .         
+18175621  agtcgtacctcatcaagcccatccagaggatcctcaagtacccacttctgctcagggagc
+           S  R  T  S  S  S  P  S  R  G  S  S  S  T  H  F  C  S  G  S 
+            V  V  P  H  Q  A  H  P  E  D  P  Q  V  P  T  S  A  Q  G  A
+          E  S  Y  L  I  K  P  I  Q  R  I  L  K  Y  P  L  L  L  R  E  
+
+
+          .         .         .         .         .        :   .         
+18175561  tgttcgccctgaccgatgcggagagcgaggagcactaccacctggacg : tggccatcaaga
+           C  S  P  *  P  M  R  R  A  R  S  T  T  T  W  T  :  W  P  S  R 
+            V  R  P  D  R  C  G  E  R  G  A  L  P  P  G  R :   G  H  Q  D
+          L  F  A  L  T  D  A  E  S  E  E  H  Y  H  L  D   : V  A  I  K  
+
+
+          .         .         .         .         .         .         
+18175413  ccatgaacaaggttgccagtcacatcaatgagatgcagaaaatccatgaagagtttgggg
+           P  *  T  R  L  P  V  T  S  M  R  C  R  K  S  M  K  S  L  G 
+            H  E  Q  G  C  Q  S  H  Q  *  D  A  E  N  P  *  R  V  W  G
+          T  M  N  K  V  A  S  H  I  N  E  M  Q  K  I  H  E  E  F  G  
+
+
+          .         .         .         .         .       :    .         
+18175353  ctgtgtttgaccagctgattgctgaacagactggtgagaaaaaagag : gttgcagatctga
+           L  C  L  T  S  *  L  L  N  R  L  V  R  K  K  R :   L  Q  I  * 
+            C  V  *  P  A  D  C  *  T  D  W  *  E  K  R   : G  C  R  S  E
+          A  V  F  D  Q  L  I  A  E  Q  T  G  E  K  K  E  :  V  A  D  L  
+
+
+          .         .         .         .         .         .         
+18170217  gcatgggagacctgcttttgcacactaccgtgatctggctgaacccgccggcctcgctgg
+           A  W  E  T  C  F  C  T  L  P  *  S  G  *  T  R  R  P  R  W 
+            H  G  R  P  A  F  A  H  Y  R  D  L  A  E  P  A  G  L  A  G
+          S  M  G  D  L  L  L  H  T  T  V  I  W  L  N  P  P  A  S  L  
+
+
+          .         .         .         .      :     .         .         
+18170157  gcaagtggaaaaaggaaccagagttggcagcattcg : tcttcaaaactgctgtggtccttg
+           A  S  G  K  R  N  Q  S  W  Q  H  S  :  S  S  K  L  L  W  S  L 
+            Q  V  E  K  G  T  R  V  G  S  I  R :   L  Q  N  C  C  G  P  C
+          G  K  W  K  K  E  P  E  L  A  A  F   : V  F  K  T  A  V  V  L  
+
+
+          .         .         .         .     :      .         .         
+18165113  tgtataaagatggttccaaacagaagaagaaactt : gtaggatctcacaggctttccattt
+           C  I  K  M  V  P  N  R  R  R  N  L :   *  D  L  T  G  F  P  F 
+            V  *  R  W  F  Q  T  E  E  E  T   : C  R  I  S  Q  A  F  H  L
+          V  Y  K  D  G  S  K  Q  K  K  K  L  :  V  G  S  H  R  L  S  I  
+
+
+          .         .         .         .         .         .         
+18164479  atgaggactgggaccccttcagatttcgacacatgatccccacggaagcgctgcaggttc
+           M  R  T  G  T  P  S  D  F  D  T  *  S  P  R  K  R  C  R  F 
+            *  G  L  G  P  L  Q  I  S  T  H  D  P  H  G  S  A  A  G  S
+          Y  E  D  W  D  P  F  R  F  R  H  M  I  P  T  E  A  L  Q  V  
+
+
+          .         .        :   .         .         .         .         
+18164419  gagctttggcgagtgcag : atgcagaggcaaatgccgtgtgtgaaattgtccatgtaaaat
+           E  L  W  R  V  Q  :  M  Q  R  Q  M  P  C  V  K  L  S  M  *  N 
+            S  F  G  E  C  R :   C  R  G  K  C  R  V  *  N  C  P  C  K  I
+          R  A  L  A  S  A   : D  A  E  A  N  A  V  C  E  I  V  H  V  K  
+
+
+          .         .         .         .         .      :     .         
+18161299  ccgagtctgaagggaggccggagagggtctttcacttgtgctgcag : ctccccagagagcc
+           P  S  L  K  G  G  R  R  G  S  F  T  C  A  A   : A  P  Q  R  A 
+            R  V  *  R  E  A  G  E  G  L  S  L  V  L  Q  :  L  P  R  E  P
+          S  E  S  E  G  R  P  E  R  V  F  H  L  C  C  S :   S  P  E  S  
+
+
+          .         .         .         .         .         .         
+18158869  gaaaggatttcctaaaggctgtgcattcaatcctgcgtgataagcacagaagacagctcc
+           E  R  I  S  *  R  L  C  I  Q  S  C  V  I  S  T  E  D  S  S 
+            K  G  F  P  K  G  C  A  F  N  P  A  *  *  A  Q  K  T  A  P
+          R  K  D  F  L  K  A  V  H  S  I  L  R  D  K  H  R  R  Q  L  
+
+
+          .         .         .         .         .         .         
+18158809  tcaaaaccgagagccttccctcatcccagcaatatgtcccttttggaggcaaaagattgt
+           S  K  P  R  A  F  P  H  P  S  N  M  S  L  L  E  A  K  D  C 
+            Q  N  R  E  P  S  L  I  P  A  I  C  P  F  W  R  Q  K  I  V
+          L  K  T  E  S  L  P  S  S  Q  Q  Y  V  P  F  G  G  K  R  L  
+
+
+          .         .         .         .         :  .         .         
+18158749  gtgcactgaagggggccaggccggccatgagcagggcag : tgtctgccccaagcaagtctc
+           V  H  *  R  G  P  G  R  P  *  A  G  Q  :  C  L  P  Q  A  S  L 
+            C  T  E  G  G  Q  A  G  H  E  Q  G  S :   V  C  P  K  Q  V  S
+          C  A  L  K  G  A  R  P  A  M  S  R  A   : V  S  A  P  S  K  S  
+
+
+          .         .         .         .         .         .         
+18155005  ttgggaggaggaggcggcggctggctcgaaacaggtttaccattgattctgatgccgtct
+           L  G  G  G  G  G  G  W  L  E  T  G  L  P  L  I  L  M  P  S 
+            W  E  E  E  A  A  A  G  S  K  Q  V  Y  H  *  F  *  C  R  L
+          L  G  R  R  R  R  R  L  A  R  N  R  F  T  I  D  S  D  A  V  
+
+
+          .         .         .         .         .         .         
+18154945  ccgcaagcagcccggagaaagagtcccagcagccccccggtggtggggacactgaccgat
+           P  Q  A  A  R  R  K  S  P  S  S  P  P  V  V  G  T  L  T  D 
+            R  K  Q  P  G  E  R  V  P  A  A  P  R  W  W  G  H  *  P  M
+          S  A  S  S  P  E  K  E  S  Q  Q  P  P  G  G  G  D  T  D  R  
+
+
+          .         .         .         .         .         .         
+18154885  gggtagaggagcagtttgatcttgctcagtatgaggagcaagatgacatcaaggagacag
+           G  *  R  S  S  L  I  L  L  S  M  R  S  K  M  T  S  R  R  Q 
+            G  R  G  A  V  *  S  C  S  V  *  G  A  R  *  H  Q  G  D  R
+          W  V  E  E  Q  F  D  L  A  Q  Y  E  E  Q  D  D  I  K  E  T  
+
+
+          .         .         .         .         .         .         
+18154825  acatcctcagtgacgatgatgagttctgtgagtccgtgaagggtgcctcagtggacagag
+           T  S  S  V  T  M  M  S  S  V  S  P  *  R  V  P  Q  W  T  E 
+            H  P  Q  *  R  *  *  V  L  *  V  R  E  G  C  L  S  G  Q  R
+          D  I  L  S  D  D  D  E  F  C  E  S  V  K  G  A  S  V  D  R  
+
+
+          .         .         .         .         .         .         
+18154765  acctgcaggagcggcttcaggccacctccatcagtcagcgggaaagaggccggaaaaccc
+           T  C  R  S  G  F  R  P  P  P  S  V  S  G  K  E  A  G  K  P 
+            P  A  G  A  A  S  G  H  L  H  Q  S  A  G  K  R  P  E  N  P
+          D  L  Q  E  R  L  Q  A  T  S  I  S  Q  R  E  R  G  R  K  T  
+
+
+          .         .         .         .         .         .         
+18154705  tggatagtcacgcgtcccgcatggcacagctcaagaagcaagctgccctgtcggggatca
+           W  I  V  T  R  P  A  W  H  S  S  R  S  K  L  P  C  R  G  S 
+            G  *  S  R  V  P  H  G  T  A  Q  E  A  S  C  P  V  G  D  Q
+          L  D  S  H  A  S  R  M  A  Q  L  K  K  Q  A  A  L  S  G  I  
+
+
+          .         .         .         .         .         .         
+18154645  atggaggcctggagagcgcaagcgaggaagtcatttgggttaggcgtgaagactttgccc
+           M  E  A  W  R  A  Q  A  R  K  S  F  G  L  G  V  K  T  L  P 
+            W  R  P  G  E  R  K  R  G  S  H  L  G  *  A  *  R  L  C  P
+          N  G  G  L  E  S  A  S  E  E  V  I  W  V  R  R  E  D  F  A  
+
+
+          .         .         .         .         .         .         
+18154585  cctccaggaaactgaacactgagatctgactgcgtcacctgccccgtagagaatgtgtgt
+           P  P  G  N  *  T  L  R  S  D  C  V  T  C  P  V  E  N  V  C 
+            L  Q  E  T  E  H  *  D  L  T  A  S  P  A  P  *  R  M  C  V
+          P  S  R  K  L  N  T  E  I  *  L  R  H  L  P  R  R  E  C  V  
+
+
+          .         .         .         .         .         .         
+18154525  agatacttcctgccctaactctgcccaccctcctgtaccgtcgacaagaatgtcccctta
+           R  Y  F  L  P  *  L  C  P  P  S  C  T  V  D  K  N  V  P  L 
+            D  T  S  C  P  N  S  A  H  P  P  V  P  S  T  R  M  S  P  *
+          *  I  L  P  A  L  T  L  P  T  L  L  Y  R  R  Q  E  C  P  L  
+
+
+          .         .         .         .         .         .         
+18154465  ggtcgcgctcttgcacacacggttttggcagctgacttggttctgaagccatgtagccac
+           G  R  A  L  A  H  T  V  L  A  A  D  L  V  L  K  P  C  S  H 
+            V  A  L  L  H  T  R  F  W  Q  L  T  W  F  *  S  H  V  A  T
+          R  S  R  S  C  T  H  G  F  G  S  *  L  G  S  E  A  M  *  P  
+
+
+          .         .         .         .         .         .   
+18154405  ccaactttgtcattttcaacaacatcagaaagaattgatcagaatcccaaataa
+           P  T  L  S  F  S  T  T  S  E  R  I  D  Q  N  P  K  * 
+            Q  L  C  H  F  Q  Q  H  Q  K  E  L  I  R  I  P  N   
+          P  N  F  V  I  F  N  N  I  R  K  N  *  S  E  S  Q  I  
+
+
+Maximal non-overlapping open reading frames (>= 64 codons)
+
+>NT_011512-_PGL-1_AGS-1_PPS_1 (18310919  18300197,18286376  18285929,18279847  18279675,18260137  18259913,18257778  18257593,18251886  18251740,18247659  18247585,18244402  18244232,18237199  18237095,18229492  18229411,18221274  18221188,18216833  18216609,18199253  18199150,18188615  18188436,18187323  18187255,18186950  18186825,18181192  18181084,18175693  18175514,18175425  18175307,18170230  18170122,18165137  18165079,18164504  18164402,18161341  18161254,18158883  18158711,18155026  18154557)	(frame '2';  4785 bp, 1595 residues) 
+       1  DHKTMGNAES QHVEHEFYGE KHASLGRKHT SRSLRLSHKT RRTRHASSGK VIHRNSEVST 
+      61  RSSSTPSIPQ SLAENGLEPF SQDGTLEDFG SPIWVDRVDM GLRPVSYTDS SVTPSVDSSI 
+     121  VLTAASVQSM PDTEESRLYG DDATYLAEGG RRQHSYTSNG PTFMETASFK KKRSKSADIW 
+     181  REDSLEFSLS DLSQEHLTSN EEILGSAEEK DCEEARGMET RASPRQLSTC QRANSLGDLY 
+     241  AQKNSGVTAN GGPGSKFAGY CRNLVSDIPN LANHKMPPAA AEETPPYSNY NTLPCRKSHC 
+     301  LSEGATNPQI SHSNSMQGRR AKTTQDVNAG EGSEFADSGI EGATTDTDLL SRRSNATNSS 
+     361  YSPTTGRAFV GSDSGSSSTG DAARQGVYEN FRRELEMSTT NSESLEEAGS AHSDEQSSGT 
+     421  LSSPGQSDIL LTAAQGTVRK AGALAVKNFL VHKKNKKVES ATRRKWKHYW VSLKGCTLFF 
+     481  YESDGRSGID HNSIPKHAVW VENSIVQAVP EHPKKDFVFC LSNSLGDAFL FQTTSQTELE 
+     541  NWITAIHSAC ATAVARHHHK EDTLRLLKSE IKKLEQKIDM DEKMKKMGEM QLSSVTDSKK 
+     601  KKTILDQIFV WEQNLEQFQM DLFRFRCYLA SLQGGELPNP KRLLAFASRP TKVAMGRLGI 
+     661  FSVSSFHALV AARTGETGVR RRTQAMSRSA SKRRSRFSSL WGLDTTSKKK QGRPSINQVF 
+     721  GEGTEAVKKS LEGIFDDIVP DGKREKEVVL PNVHQHNPDC DIWVHEYFTP SWFCLPNNQP 
+     781  ALTVVRPGDT ARDTLELICK THQLDHSAHY LRLKFLIENK MQLYVPQPEE DIYELLYKEI 
+     841  EICPKVTQSI HIEKSDTAAD TYGFSLSSVE EDGIRRLYVN SVKETGLASK KGLKAGDEIL 
+     901  EINNRAADAL NSSMLKDFLS QPSLGLLVRT YPELEEGVEL LESPPHRVDG PADLGESPLA 
+     961  FLTSNPGHSL CSEQGSSAET APEETEGPDL ESSDETDHSS KSTEQVAAFC RSLHEMNPSD 
+    1021  QSPSPQDSTG PQLATMRQLS DADKLRKVIC ELLETERTYV KDLNCLMERY LKPLQKETFL 
+    1081  TQDELDVLFG NLTEMVEFQV EFLKTLEDGV RLVPDLEKLE KVDQFKKVLF SLGGSFLYYA 
+    1141  DRFKLYSAFC ASHTKVPKVL VKAKTDTAFK AFLDAQNPKQ QHSSTLESYL IKPIQRILKY 
+    1201  PLLLRELFAL TDAESEEHYH LDVAIKTMNK VASHINEMQK IHEEFGAVFD QLIAEQTGEK 
+    1261  KEVADLSMGD LLLHTTVIWL NPPASLGKWK KEPELAAFVF KTAVVLVYKD GSKQKKKLVG 
+    1321  SHRLSIYEDW DPFRFRHMIP TEALQVRALA SADAEANAVC EIVHVKSESE GRPERVFHLC 
+    1381  CSSPESRKDF LKAVHSILRD KHRRQLLKTE SLPSSQQYVP FGGKRLCALK GARPAMSRAV 
+    1441  SAPSKSLGRR RRRLARNRFT IDSDAVSASS PEKESQQPPG GGDTDRWVEE QFDLAQYEEQ 
+    1501  DDIKETDILS DDDEFCESVK GASVDRDLQE RLQATSISQR ERGRKTLDSH ASRMAQLKKQ 
+    1561  AALSGINGGL ESASEEVIWV RREDFAPSRK LNTEI*
+
+
+
+
+$ memory statistics:
+$ 2660 bytes spliced alignments in total
+$ 1 spliced alignments have been stored
+$ 2660 bytes was the average size of a spliced alignment
+$ 3056 bytes predicted gene locations in total
+$ 1 predicted gene locations have been stored
+$ 3056 bytes was the average size of a predicted gene location
+$ 24 megabytes was the average size of the backtrace matrix
+$ 1 backtrace matrix has been allocated
+

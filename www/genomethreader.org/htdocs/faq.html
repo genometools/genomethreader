@@ -1,0 +1,138 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+  <title>GenomeThreader Frequently Asked Questions (FAQ)</title>
+  <link rel="stylesheet" type="text/css" href="style.css">
+</head>
+
+<body>
+
+<h1><i>GenomeThreader</i> Frequently Asked Questions (FAQ)</h1>
+<ol>
+  <li><a href="#q1">How can I estimate the memory requirements of
+    <i>GenomeThreader</i>?</a></li>
+  <li><a href="#q2">How can I reduce the memory requirements of
+    <i>GenomeThreader</i>?</a></li>
+  <li><a href="#q3">How can I split the input files to reduce the memory
+    consumption and utilize multiple CPUs?</a></li>
+</ol>
+
+<p><b> (1) How can I estimate the memory requirements of
+  <i>GenomeThreader</i>?</b>
+<a name="q1"></a>
+</p>
+<blockquote>
+  <p>
+  The major driving forces are the size of the input files, the number
+  of stored spliced alignments and the maximum size of the Dynamic
+  Programming matrix. For the genomic file(s) (which are used to construct
+  the index) you need about factor 8 of the uncompressed file size(s).  For the
+  EST input file(s) you need about facor 2 of the uncompressed file size(s). The
+  number of stored spliced alignments is important, because they are all held in
+  main memory (the size depends on your use case, see statistics at the end of
+  the <i>GenomeThreader</i> output).
+
+  The maximum size of the Dynamic Programming matrix is very important,
+  because it could create a "space peak" which lets you run out of
+  memory. See next question for advice on how to limit the size of the matrix.
+  </p>
+</blockquote>
+
+<p><b> (2) How can I reduce the memory requirements of <i>GenomeThreader</i>?</b>
+<a name="q2"></a>
+</p>
+<blockquote>
+  <p>
+  You should set option <tt>-gcmaxgapwidth</tt> accordingly (depending on your
+  species) to reduce the maximum possible size of the Dynamic Programming
+  matrix.
+
+  If you do not use option <tt>-introncutout</tt> you can use
+  <tt>-autointroncutout</tt> to prevent "space peaks" for large Dynamic
+  Programming tables.
+
+  You can also split up the input files which is described in the next question.
+  </p>
+</blockquote>
+
+
+<p><b> (3) How can I split the input files to reduce the memory consumption and
+  utilize multiple CPUs?</b> <a name="q3"></a>
+</p>
+<blockquote>
+  <p>
+  The basic strategy is to use <tt>gth</tt> with option <tt>-intermediate</tt>
+  on different subsets of the input and combine the results afterwards.
+
+  The input files can be split with the <tt>gt splitfasta</tt> tool contained in
+  the <a href="http://genometools.org"><i>GenomeTools</i></a> package (an
+  open-source collection of bioinformatics tools).
+  To determine the right sizes for the genomic and EST/protein input files keep
+  the answer to <a href="#q1">question (1)</a> in mind.
+
+  A common strategy in practice is to leave the genomic input files untouched
+  (if you can afford it memory wise) and split the EST/protein input files into
+  chunks of 50 MB.
+
+  There are two possible formats to store the intermediate results: XML and GFF3
+  (options <tt>-xmlout</tt> and <tt>-gff3out</tt>, respectively).
+  XML output is lossless but takes more resources to process. GFF3 is much more
+  resource-efficient, but it makes only sense if you want to have GFF3 output in
+  the end, because the other formats cannot be reconstructed from GFF3 output.
+
+  To combine XML intermediate files use <tt>gthconsensus</tt> which is described
+  in the <i>GenomeThreader</i> <a href="doc/gthmanual.pdf">manual</a>.
+
+  Using <tt>gthconsensus</tt> is quite memory intensive, because it takes the
+  intermediate XML files and reconstructs the alignments exactly as they were
+  during the <tt>gth</tt> run. That is, each spliced alignment needs to be
+  stored in memory.
+
+  If you don't need the full alignments but could live with the
+  structure in GFF3 the following strategy is recommended:
+
+  You call <tt>gth</tt> with the options <tt>-intermediate</tt> and
+  <tt>-gff3out</tt>. This gives you the spliced alignments predicted by
+  <i>GenomeThreader</i> in GFF3 format.
+
+  You can then postprocess this spliced alignments with some tools from
+  the <a href="http://genometools.org"><i>GenomeTools</i></a> package.
+
+  You cannot convert the GFF3 output back to the intermediate form, but
+  you can perform the same analysis which <tt>gthconsensus</tt> performs with
+  tools operating on the GFF3 output.
+
+  To do so, sort the intermediate files with <tt>gt gff3 -sort</tt> and merge
+  them with <tt>gt merge</tt> afterwards.
+  Then compute the consensus spliced alignments with <tt>gt csa</tt>.
+  If you also want to predict coding sequences add them to the GFF3 with
+  <tt>gt cds</tt>.
+
+  <tt>gt filter</tt> allows you to filter spliced alignments according to their
+  scores.
+  </p>
+</blockquote>
+
+
+<div id="footer">
+Copyright &copy; 2003-2016 <a href="mailto:gordon@gremme.org">
+Gordon Gremme</a>. Last update: 2016-09-20
+</div>
+
+<!-- Piwik -->
+<script type="text/javascript">
+var pkBaseURL = "https://zenlicensemanager.com/piwik/";
+document.write(unescape("%3Cscript src='" + pkBaseURL + "piwik.js' type='text/javascript'%3E%3C/script%3E"));
+</script><script type="text/javascript">
+try {
+var piwikTracker = Piwik.getTracker(pkBaseURL + "piwik.php", 4);
+piwikTracker.trackPageView();
+piwikTracker.enableLinkTracking();
+} catch( err ) {}
+</script><noscript><p><img src="https://zenlicensemanager.com/piwik/piwik.php?idsite=4" style="border:0" alt="" /></p></noscript>
+<!-- End Piwik Tracking Tag -->
+
+</body>
+</html>

@@ -1,0 +1,196 @@
+\begin{supertabular}{ll}\hline
+\Showoptiongroup{Input~Options}
+\Showoption{genomic}& specify input files containing genomic sequences
+\\
+\Showoption{cdna}& specify input files containing cDNA/EST sequences
+\\
+\Showoption{protein}& specify input files containing protein sequences
+\\
+\Showoptiongroup{Parameter~Files}
+\Showoption{species}& specify species to select splice site model
+\\
+\Showoption{bssm}& read bssm parameter from file
+\\
+\Showoption{scorematrix}& read amino acid substitution scoring matrix from file
+\\
+\Showoption{translationtable}& set the codon translation table
+\\
+\Showoptiongroup{Strand~Direction}
+\Showoption{f}& analyze only forward strand of genomic sequences
+\\
+\Showoption{r}& analyze only reverse strand of genomic sequences
+\\
+\Showoption{cdnaforward}& align only forward strand of cDNAs
+\\
+\Showoptiongroup{Genomic~Sequence~Positions}
+\Showoption{frompos}& analyze genomic sequence from this position
+\\
+\Showoption{topos}& analyze genomic sequence to this position
+\\
+\Showoption{width}& analyze only this width of genomic sequence
+\\
+\Showoptiongroup{Output}
+\Showoption{v}& be verbose
+\\
+\Showoption{xmlout}& show output in XML format
+\\
+\Showoption{gff3out}& show output in GFF3 format
+\\
+\Showoption{md5ids}& show MD5 fingerprints as sequence IDs
+\\
+\Showoption{o}& redirect output to specified file
+\\
+\Showoption{gzip}& gzip compressed output file
+\\
+\Showoption{bzip2}& bzip2 compressed output file
+\\
+\Showoption{force}& force writing to output file
+\\
+\Showoption{skipalignmentout}& skip output of spliced alignments
+\\
+\Showoption{mincutoffs}& show full spliced alignments
+\\
+\Showoption{showintronmaxlen}& set the maximum length of a fully shown intron
+\\
+\Showoption{minorflen}& set the minimum length of an ORF to be shown
+\\
+\Showoption{startcodon}& require than an ORF must begin with a start codon
+\\
+\Showoption{finalstopcodon}& require that the final ORF must end with a stop codon
+\\
+\Showoption{showseqnums}& show sequence numbers in output
+\\
+\Showoption{pglgentemplate}& show genomic template in PGL lines
+\\
+\Showoption{gs2out}& output in old GeneSeqer2 format
+\\
+\Showoptiongroup{Data Preprocessing}
+\Showoption{maskpolyatails}& mask poly(A) tails in cDNA/EST files
+\\
+\Showoption{proteinsmap}& specify smap file used for protein files
+\\
+\Showoption{noautoindex}& do not create indices automatically
+\\
+\Showoption{createindicesonly}& stop program flow after the indices have been created
+\\
+\Showoption{skipindexcheck}& skip index check (in preprocessing phase)
+\\
+\Showoptiongroup{Similarity~Filter}
+\Showoption{minmatchlen}& specify minimum match length (cDNA matching)
+\\
+\Showoption{seedlength}& specify the seed length (cDNA matching)
+\\
+\Showoption{exdrop}& specify the Xdrop value for edit distance
+\\
+\Showoption{prminmatchlen}& specify minimum match length (protein matches)
+\\
+\Showoption{prseedlength}& specify seed length (protein matching)
+\\
+\Showoption{prhdist}& specify Hamming distance (protein matching)
+\\
+\Showoption{online}& run the similarity filter online
+\\
+\Showoption{inverse}& invert query and index in vmatch call
+\\
+\Showoption{exact}& use exact matches
+\\
+\Showoption{gcmaxgapwidth}& set the maximum gap width for global chains
+\\
+\Showoption{gcmincoverage}& set the minimum coverage of global chains
+\\
+\Showoption{paralogs}& compute paralogous genes (different chaining procedure)
+\\
+\Showoption{enrichchains}& enrich genomic sequence part of global chains with additional matches
+\\
+\Showoptiongroup{Intron~Cutout~Technique}
+\Showoption{introncutout}& enable the intron cutout technique
+\\
+\Showoption{fastdp}& use jump table to increase speed of DP calculation
+\\
+\Showoption{autointroncutout}& set the automatic intron cutout matrix size
+\\
+\Showoption{icinitialdelta}& set the initial delta used for intron cutouts
+\\
+\Showoption{iciterations}& set the number of intron cutout iterations
+\\
+\Showoption{icdeltaincrease}& set the delta increase during every iteration
+\\
+\Showoption{icminremintronlen}& set the minimum remaining intron length
+\\
+\Showoptiongroup{U12-type~Intron~Model}
+\Showoption{nou12intronmodel}& disable the U12-type intron model
+\\
+\Showoption{u12donorprob}& set the probability for perfect U12-type donor
+\\
+\Showoption{u12donorprob1mism}& set the prob. for U12-type donor w. 1 mismatch
+\\
+\Showoptiongroup{Basic~DP~Algorithm}
+\Showoption{probies}& set the initial exon state probability
+\\
+\Showoption{probdelgen}& set the genomic sequence deletion probability
+\\
+\Showoption{identityweight}& set the pairs of identical characters weight
+\\
+\Showoption{mismatchweight}& set the weight for mismatching characters
+\\
+\Showoption{undetcharweight}& set the weight for undetermined characters
+\\
+\Showoption{deletionweight}& set the weight for deletions
+\\
+\Showoptiongroup{Short~Exon/Intron~Parameters}
+\Showoption{dpminexonlen}& set the minimum exon length for the DP
+\\
+\Showoption{dpminintronlen}& set the minimum intron length for the DP
+\\
+\Showoption{shortexonpenal}& set the short exon penalty
+\\
+\Showoption{shortintronpenal}& set the short intron penalty
+\\
+\Showoptiongroup{Special~Parameters~DP~Algorithm}
+\Showoption{wzerotransition}& set the zero transition weights window size
+\\
+\Showoption{wdecreasedoutput}& set the decreased output weights window size
+\\
+\Showoptiongroup{Processing of ``raw'' spliced alignments}
+\Showoption{leadcutoffsmode}& set the cutoffs mode for leading bases
+\\
+\Showoption{termcutoffsmode}& set the cutoffs mode for terminal bases
+\\
+\Showoption{cutoffsminexonlen}& set the cutoffs minimum exon length
+\\
+\Showoption{scoreminexonlen}& set the score minimum exon length
+\\
+\Showoptiongroup{Advanced~Similarity~Filter~Option}
+\Showoption{minaveragessp}& set the minimum average splice site prob.
+\\
+\Showoptiongroup{Spliced~Alignment~Filter}
+\Showoption{minalignmentscore}& set the minimum alignment score
+\\
+\Showoption{maxalignmentscore}& set the maximum alignment score
+\\
+\Showoption{mincoverage}& set the minimum coverage
+\\
+\Showoption{maxcoverage}& set the maximum coverage
+\\
+\Showoption{intermediate}& stop after calc. of spliced alignments
+\\
+\Showoption{sortags}& sort alternative gene structures
+\\
+\Showoption{sortagswf}& set the weight factor for the sorting of AGSs
+\\
+\Showoption{exondistri}& show the exon length distribution
+\\
+\Showoption{introndistri}& show the intron length distribution
+\\
+\Showoption{refseqcovdistri}& show the reference sequence coverage distribution
+\\
+\Showoption{first}& set the maximum number of spliced alignments
+\\
+\Showoption{help}& show basic options and exit
+\\
+\Showoption{help+}& show all options and exit
+\\
+\Showoption{version}& display version information and exit
+\\
+\hline
+\end{supertabular}

@@ -1,0 +1,8 @@
+$ gthsplit2dim.sh -r 10 -v -g ceres_full.inter.gz
+$ split according to alignment score
+$ process all intermediate output files
+$ process file 1/1: ceres_full.inter.gz
+$ split file created: ceres_full.inter.scr70-80.gz (size=30)
+$ split file created: ceres_full.inter.scr80-90.gz (size=102)
+$ split file created: ceres_full.inter.scr90-100.gz (size=1310)
+$ split according to coverage

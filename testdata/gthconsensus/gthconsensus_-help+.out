@@ -1,0 +1,81 @@
+Show GenomeThreader output files containing intermediate results and assemble
+the contained spliced alignments to consensus spliced alignments.
+
+-scorematrix       read amino acid substitution scoring matrix from file in the
+                   path given by the environment variable GTHDATADIR
+                   default: BLOSUM62
+-translationtable  set the codon translation table used for codon translation in
+                   matching, DP, and output
+                   default: 1
+-v                 be verbose
+                   default: no
+-xmlout            show output in XML format
+                   default: no
+-gff3out           show output in GFF3 format
+                   default: no
+-md5ids            show MD5 fingerprints as sequence IDs
+                   default: no
+-o                 redirect output to specified file
+                   default: undefined
+-gzip              write gzip compressed output file
+                   default: no
+-bzip2             write bzip2 compressed output file
+                   default: no
+-force             force writing to output file
+                   default: no
+-skipalignmentout  skip output of spliced alignments
+                   default: no
+-showintronmaxlen  set the maximum length of a fully shown intron
+                   If set to 0, all introns are shown completely
+                   default: 120
+-minorflen         set the minimum length of an ORF to be shown
+                   default: 64
+-startcodon        require than an ORF must begin with a start codon
+                   default: no
+-finalstopcodon    require that the final ORF must end with a stop codon
+                   default: no
+-showseqnums       show sequence numbers in output
+                   default: no
+-pglgentemplate    show genomic template in PGL lines 
+                   (switch off for backward compatibility)
+                   default: yes
+-gs2out            output in old GeneSeqer2 format
+                   default: no
+-proteinsmap       specify smap file used for protein files
+                   default: protein
+-createindicesonly stop program flow after the indices have been created
+                   default: no
+-skipindexcheck    skip index check (in preprocessing phase)
+                   default: no
+-minalignmentscore set the minimum alignment score for spliced alignments to be
+                   included into the set of spliced alignments
+                   default: 0.00
+-maxalignmentscore set the maximum alignment score for spliced alignments to be
+                   included into the set of spliced alignments
+                   default: 1.00
+-mincoverage       set the minimum coverage for spliced alignments to be
+                   included into the set of spliced alignments
+                   default: 0.00
+-maxcoverage       set the maximum coverage for spliced alignments to be
+                   included into the set of spliced alignments
+                   default: 9999.99
+-intermediate      stop after calculation of spliced alignments and output
+                   results in reusable XML format. Do not process this output
+                   yourself, use the ``normal'' XML output instead!
+                   default: no
+-sortags           sort alternative gene structures according to the weighted
+                   mean of the average exon score and the average splice site
+                   probability
+                   default: no
+-sortagswf         set the weight factor for the sorting of AGSs
+                   default: 1.00
+-exondistri        show the exon length distribution
+                   default: no
+-introndistri      show the intron length distribution
+                   default: no
+-help              display help for basic options and exit
+-help+             display help for all options and exit
+-version           display version information and exit
+
+For detailed information, please refer to the manual of GenomeThreader.
+Report bugs to <gordon@gremme.org>.

@@ -1,0 +1,1588 @@
+%\newif\ifpdf%
+%\ifx\pdfoutput\undefined%
+%\pdffalse%
+%\else%
+%\pdfoutput=1%
+%\pdfcompresslevel=9%
+%\pdftrue%
+%\fi%
+
+\documentclass[11pt,a4paper,titlepage]{article}
+\usepackage{times}
+\usepackage{verbatim}
+\usepackage{optionman}
+\usepackage{lastpage}
+%\usepackage{xr}
+\usepackage{hyperref}
+\usepackage{LocalDefs}
+\hypersetup{pdfnewwindow=True}
+
+% including external references (xr package)
+%\externaldocument[docu-]{gthdoc}
+
+\makeindex
+
+\input{author}
+\title{%
+\textbf{\Gth Gene Prediction Software}\\[1cm]
+\textbf{Manual}}
+
+\begin{document}
+\maketitle
+
+\tableofcontents
+\newpage
+%\listoffigures
+%\newpage
+\listoftables
+\newpage
+
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{1ex plus 0.5ex minus 0.2ex}
+
+\section*{To the Impatient Reader}
+Seeing this manual, one could think:
+
+\emph{\pageref{LastPage} pages of documentation, you must be joking!
+\footnote{The idea for this paragraph was shamelessly stolen from the nice user guide of \Hmmer (\url{http://hmmer.wustl.edu/}).}}
+
+We try hard to fully document \Gth, helping to put the user in a position where he can understand and use the various tools and options of \Gth.
+
+Nevertheless, if you want to start using \Gth as fast as possible (without reading the whole documentation upfront), you can do so by reading the installation guidelines given in Section \ref{Installation} and the tutorial given in Section \ref{Tutorial} first and coming back to the other sections on demand later.
+
+\section{Introduction}
+This document describes how to use \Gth, a software tool to compute gene structure predictions.
+The gene structure predictions are calculated using a similarity-based approach where additional cDNA/EST and/or protein sequences are used to predict gene structures via spliced alignments.
+
+The algorithms, the phases, and the software engineering of
+\textit{Genome\-Threader}\footnote{
+The name was suggested by Volker Brendel, because the method can be seen
+as a spliced ``threading'' of ESTs with a genomic template, allowing
+gene structure predictions to be computed.} are described in \cite{GRE:2012} and \cite{GRE:BRE:SPA:KUR:2005}.
+More details on the core Dynamic Programming (DP) algorithms used
+ to computed spliced alignments via cDNAs/ESTs are given in
+\cite{USU:ZHU:BRE:2000}. The DP algorithms used to compute spliced alignments
+via protein sequences are described in \cite{USU:BRE:2000}. Here are the most
+important features of \Gth.
+
+\subsection*{Intron Cutout Technique}
+The core DP algorithms have been extended by the \emph{intron cutout technique} \cite{GRE:BRE:SPA:KUR:2005} which allows to apply \Gth to organisms with long introns.
+This overcomes the time and space limitations the algorithms described in \cite{USU:ZHU:BRE:2000} and \cite{USU:BRE:2000} have when applied to genomic sequences containing long introns.
+
+\subsubsection*{Incremental Updates}
+With the help of \emph{incremental updates} a lot of duplicated computations can be avoided, when the used cDNA/EST and/or protein databases have been updated. See Section \ref{gthconsensussection} for details.
+
+\subsubsection*{Highly Parameterized}
+\Gth is highly parameterized. That is, you can set many of the internal parameters via command line option to adjust the program to your personal gene prediction needs.
+
+
+%\subsection{Intron Cutout Technique}
+%\subsection{Consensus Spliced Alignments}
+%\subsection*{The Concept of BSSM Parameter Files}
+%\tobedone
+
+\Ignore{
+\subsection*{Intended Audience}
+This manual is intended for persons who are interested in learning how to use
+the gene prediction program \Gth. If you want to go into more detail how the
+program works and how it is implemented, please refer to the \Gth
+\documentation which comes with your distribution.
+}
+
+\subsection{The parts of \Gth}
+When referring to \Gth we mean the collection of gene prediction tools with
+this name. Whereas \Callgth (in typewriter font) denotes the most important
+tool in this collection which computes the gene structure predictions. Besides
+\Callgth, there are the following tools available:
+\begin{enumerate}
+\item \Callgthconsensus computes consensus spliced alignments using intermediate files.
+\item \Callgthsplit splits intermediate files.
+\item \Callgthgetseq gets \Fasta sequences from intermediate files.
+\item \Callgthfilestat show statistics of spliced alignments contained in intermediate files.
+\item \Callgthbssmfileinfo prints information about BSSM \footnote{BSSM stands
+for \emph{Bayesian Splice Site Model}}.
+\item \Callgthbssmtrain trains a BSSM.
+\item \Callgthbssmbuild builds a BSSM file.
+\item \Callgthclean removes all indices.
+\end{enumerate}
+
+\subsection{Structure of the Manual}
+In Section \ref{gthsection} it is shown how to use the various options of
+\Callgth to perform gene predictions and in Section \ref{gthconsensussection}
+it is described how to use \Callgthconsensus to process intermediate files
+produced by \Callgth.
+In the following three sections some tools are explained which are helpful in handling intermediate files.
+In Section \ref{gthbssmfileinfosection} the small tool \Callgthbssmfileinfo is
+introduced. In Section \ref{gthbssmtrainsection} the BSSM training tool \Callgthbssmtrain is documented. In Section \ref{gthbssmbuildsection} the tool \Callgthbssmbuild to build BSSMs is explained. In Section \ref{Gthcleansection} the shell script \Callgthclean is described.
+In Section \ref{indexconstruction} it is explained how
+to construct the indices used by \Gth.
+If you are new to \Gth and want to use the program as fast as possible skip
+this sections in the first run and go directly to the tutorial given in Section
+\ref{Tutorial}. At the end of the manual you can find the acknowledgments, the recent changes, the references, and the index.
+
+
+\section{Installation}
+\label{Installation}
+Extracting the \Gth distribution for your platform gives you a directory
+named after your distribution. For your convenience you should extend your \Environmentvariable{PATH} variable by its \texttt{bin} subdirectory.
+
+To be able to use all features of \Gth you have to make sure that the
+subdirectories \texttt{bssm} and \texttt{gthdata} remain in the same directory
+as the executables or you have to set two environment variables, namely
+\Environmentvariable{BSSMDIR} and \Environmentvariable{\gthdatadir}, pointing to
+the subdirectories \texttt{bssm} and \texttt{gthdata}.
+
+If one uses the \Programname{csh} or the \Programname{tcsh} shell,
+the definition of the environment variables could look like this:
+
+\begin{LargeOutput}
+\$ setenv BSSMDIR \SY{34}\$HOME/gth-1.6.1-Linux\_i686-32bit/bin/bssm\SY{34}
+\$ setenv GTHDATADIR \SY{34}\$HOME/gth-1.6.1-Linux\_i686-32bit/bin/gthdata\SY{34}
+\end{LargeOutput}
+
+For the \Programname{bash} or the \Programname{sh} the
+definitions could look like:
+
+\begin{LargeOutput}
+\$ export BSSMDIR=\SY{34}\$HOME/gth-1.6.1-Linux\_i686-32bit/bin/bssm\SY{34}
+\$ export GTHDATADIR=\SY{34}\$HOME/gth-1.6.1-Linux\_i686-32bit/bin/gthdata\SY{34}
+\end{LargeOutput}
+
+One can also specify more then one directory. In this case, they have to be separated by a colon in the according environment variable definition.
+
+To disable file locking in \Gth (not recommended), set the environment variable
+\Environmentvariable{GTHNOFLOCK} to any value. In \Programname{csh} or
+\Programname{tcsh}, this would look like this:
+
+\begin{LargeOutput}
+\$ setenv GTHNOFLOCK \SY{34}yes\SY{34}
+\end{LargeOutput}
+
+In \Programname{bash} or \Programname{sh} like this:
+
+\begin{LargeOutput}
+\$ export GTHNOFLOCK=\SY{34}yes\SY{34}
+\end{LargeOutput}
+
+The \Environmentvariable{GTHNOFLOCK} environment variable should only be used,
+if one experiences problems with file locking. This may happen if a Network
+File System (NFS) is used.
+
+\section{\Callgth: Computing Gene Predictions}
+\label{gthsection}
+
+\Callgth is called as follows:
+
+\medskip
+\Callgth [\textit{options}] \Showoption{genomic} \Showoptionarg{\genseqindex} \Showoption{cdna} \Showoptionarg{\cdnaindex} \Showoption{protein} \Showoptionarg{\proteinindex}
+\medskip
+
+Here \Showoptionarg{\genseqindex} denotes the input files containing the genomic
+template, \Showoptionarg{\cdnaindex} denotes the input files containing
+cDNAs/ESTs sequences, and \Showoptionarg{\proteinindex} the input files
+containing protein sequences. \Showoption{cdna} and \Showoption{protein} do not
+have to be used simultaneously.  For the input files indices have to be
+constructed, either by \callmkvtree or automatically, as described in Section
+\ref{indexconstruction}.
+If an error occurs during the computation of \Gth, the program exits with
+\index{error code} error code $1$. Otherwise, the exit code is $0$.
+All available \textit{options} are explained below. They have been divided into different categories for clarity.
+An overview
+of the option categories with a short one-line description of each
+option is given in Table \ref{gthoptiontable}.
+
+
+\begin{center}
+\topcaption{Overview of the \Callgth-Options sorted by Categories}
+\label{gthoptiontable}
+\begin{scriptsize}
+%\[
+%\renewcommand{\arraystretch}{0.89}
+\input{optiontable.tex}
+%\]
+\end{scriptsize}
+\end{center}
+
+
+
+
+
+\subsection{Input Options}
+\begin{Justshowoptions}
+\Option{genomic}{\Showoptionarg{\genseqindex}}{\Showoptionarg{\genseqindex} denotes the input files containing the genomic sequences, for which the gene prediction is to be computed.}
+\Option{cdna}{\Showoptionarg{\cdnaindex}}{\Showoptionarg{\cdnaindex} denotes the input files containing the cDNAs/ESTs which are spliced aligned to the genomic sequences.} 
+\Option{protein}{\Showoptionarg{\proteinindex}}{\Showoptionarg{\proteinindex} denotes the input files containing the protein sequences which are spliced aligned to the genomic sequences.}
+\end{Justshowoptions}
+
+The option \Showoption{genomic} is mandatory. Furthermore, at least one of the options \Showoption{cdna} and \Showoption{protein} has to be used.
+
+The names of the input files are separated by white spaces. 
+We support the following formats for the input files.
+They are recognized according to the first non-white space symbol in
+the file.
+\begin{description}
+\item[multiple \Fasta format]
+\index{multiple fasta}
+If the file begins with the symbol \Fastastart,
+then this file is considered to be a file in multiple \Fasta format
+(i.e.\ it contains one or more sequences).
+Each line starting with the symbol \Fastastart contains the
+\emph{description} of the sequence following it.
+\index{description!\Fasta}
+
+\item[multiple \EMBL/\SWISSPROT format] 
+\index{EMBL@\EMBL}
+\index{SWISSPROT@\SWISSPROT}
+If the file begins with the string \Seqformkeyword{ID}, 
+then this file is considered to be a file in multiple \EMBL format
+(i.e.\ containing one or more sequences, each in \EMBL-format).
+The information contained in
+the \Seqformkeyword{ID} and \Seqformkeyword{DE}-lines is taken as the
+\emph{description} of the
+corresponding sequence. The \EMBL format is identical
+to the \SWISSPROT format (w.r.t.\ the information we need to extract
+from such entries). So one can also use files in multiple
+\SWISSPROT format as input.
+\index{description!\SWISSPROT}
+\index{description!\EMBL}
+
+\item[multiple \GENBANK format]
+\index{GENBANK@\GENBANK}
+
+If the file begins with the string \Seqformkeyword{LOCUS},
+then this
+file is considered to be a file in multiple \GENBANK format (i.e.\ containing
+one or more entries in \GENBANK-format).
+The information contained in the \Seqformkeyword{LOCUS} and the
+\Seqformkeyword{DEFINITION}-lines is taken as the
+\emph{description} of the corresponding sequence.
+\index{description!\GENBANK}
+
+\item[plain format]
+If the file does not begin with the symbol
+\Fastastart or the strings \Seqformkeyword{ID} or
+\Seqformkeyword{LOCUS}, then the file is taken verbatim. That is, the
+entire file is considered to be the input sequence (white spaces are
+\emph{not} ignored).
+\end{description}
+
+\subsection{Parameter File Options}
+\index{BSSM parameter!options}
+If no BSSM parameter file is specified by one of the following two options, the generic splice site model is used. 
+%\comment{Possibly explain more here.} 
+BSSM stands for \textit{Bayesian Splice Site Model}.
+\begin{Justshowoptions}
+\Option{species}{\Showoptionarg{\speciesname}}{Use precomputed BSSM parameter file for species with name \Showoptionarg{\speciesname}, according to Table
+\ref{speciestable}. \Callgth searches for the file in the directory where it is
+run and in the directory specified by the environment variable
+\Environmentvariable{\bssmdir}.
+How to set \Environmentvariable{\bssmdir} is explained in Section \ref{Installation}.}
+
+\Option{bssm}{\Showoptionarg{\paramfileprefix}}{Load the BSSM parameter file
+\Showoptionarg{\paramfileprefix}\texttt{.bssm}. If \Showoptionarg{\paramfileprefix}\texttt{.bssm} is not in the current directory,
+the directories given by \Environmentvariable{\bssmdir} are searched for
+\Showoptionarg{paramfile}\texttt{.bssm}. }
+
+\Option{scorematrix}{\Showoptionarg{\scorematrixname}}{Use the amino acid substitution matrix given in the file \Showoptionarg{\scorematrixname} for spliced alignments with protein sequences.
+The default score matrix file is \texttt{BLOSUM62}. \Callgth searches for the
+file \Showoptionarg{\scorematrixname} in the directory where it is run and in
+the directory specified by the environment variable
+\Environmentvariable{\gthdatadir}. How one can set
+\Environmentvariable{\gthdatadir} is explained in Section \ref{Installation}.}
+
+\Option{translationtable}{\Showoptionarg{$t$}}{Set the codon translation table
+$t$ used in the matching, DP, and output phase. $t$ must be a number in the
+range \([1,23]\) except
+for 7, 8, 17, 18, 19 and 20. Table \ref{Codontranstables} gives the possible numbers
+and their names. The codon translation tables
+were taken from the website
+\url{ftp://ftp.ncbi.nih.gov/entrez/misc/data/gc.prt}.}
+
+\end{Justshowoptions}
+
+\input{codontrans}
+
+Option \Showoption{species} and option \Showoption{bssm} exclude each other. If two excluding options are used together, an error is thrown.
+
+All BSSM parameter files have the extension \texttt{.bssm}.
+
+It is highly recommended to use an adequate BSSM parameter file via the option
+\Showoption{species} or \Showoption{bssm}, if one is available.
+Because it is most likely that using a BSSM parameter file for the species under
+consideration (or a cognate one) will yield in better gene predictions.
+If no such file is available, feel free to contact us.
+
+If possible, one should prefer \Showoption{species} over \Showoption{bssm},
+because in this case additional internal parameters can be adjusted for the given species.
+
+\input{speciestable}
+
+
+\subsection{Strand Direction Options}
+\begin{Justshowoptions}
+\Option{f}{}{Analyze only the forward strand of the genomic sequences.}
+\Option{r}{}{Analyze only the reverse strand of the genomic sequences.}
+\Option{cdnaforward}{}{Align only forward strand of cDNAs.}
+\end{Justshowoptions}
+
+Option \Showoption{f} and option \Showoption{r} exclude each other.
+If neither \Showoption{f} nor \Showoption{r} is used, both strands of the genomic sequences are analyzed.
+
+
+\subsection{Genomic Sequence Positions Options}
+Positions in the genomic sequence begin with $1$. The following options are available to specify a region of the genomic sequence for which the gene prediction should be computed. They are only applicable if exactly one genomic sequence is given.
+\begin{Justshowoptions}
+\Option{frompos}{$\frompos$}{Specify first position $\frompos$ of a genomic region to analyze. The parameter $\frompos$ must be a positive integer.}
+
+\Option{topos}{$\topos$}{Analyze genomic sequence up to (and
+including) position $\topos$, whereas $\topos$ must be a
+positive integer.}
+
+\Option{width}{$\width$}{Analyze only width $\width$ of
+genomic sequence, whereas $\width$ must be a positive integer.}
+
+\end{Justshowoptions}
+
+If option \Showoption{topos} or \Showoption{width} are used, the option
+\Showoption{frompos} is required and the other way round, that is, \Showoption{topos}
+and \Showoption{width} exclude each other. If the parameters do not specify a
+substring of the genomic sequence, then an error is thrown.
+
+Furthermore, if option \Showoption{frompos} is used the option
+\Showoption{inverse} is set automatically. This may lead to a large memory
+consumption which can be avoided by putting the desired part of the genomic
+sequence in a separate file and running \Callgth without the options
+\Showoption{frompos} and \Showoption{inverse}. 
+
+\subsection{Output Options}
+The following options concern the output of \Gth:
+\begin{Justshowoptions}
+
+\Option{v}{~~~}{Be verbose, that is, give reports about the different steps as well as the
+resource requirements of the computation.}
+
+\Option{xmlout}{~~~}{Shows the output in XML format. This can be useful, if one wants to postprocess the output files. 
+%The XML schema to which the output conforms is given in Appendix \ref{XMLschemes}.
+}
+
+\Option{gff3out}{~~~}{Shows the output in GFF3 format. Either the spliced
+alignments (if option \Showoption{intermediate} is used) or the consensus spliced
+alignments (if option \Showoption{skipalignmentout} is used) are shown.}
+
+\Option{md5ids}{~~~}{Show MD5 fingerprints as sequence IDs. This makes
+subsequent mapping of the annotation to the actual sequences less error-prone.}
+
+\Option{o}{\Showoptionarg{\outputfile}}{Redirect output to specified file \Showoptionarg{\outputfile}.} 
+
+\Option{gzip}{~~~}{Compress the output file given by \Showoption{o} with \texttt{gzip}.}
+
+\Option{bzip2}{~~~}{Compress the output file given by \Showoption{o} with \texttt{bzip2}.}
+
+\Option{force}{~~~}{Forces writing to the output file \Showoptionarg{\outputfile} given by \Showoption{o}.
+By default, writing to \Showoptionarg{\outputfile} is only performed if the file does not exist already.}
+
+\Option{skipalignmentout}{}{Skip the output of spliced alignments.}
+
+\Option{mincutoffs}{}{The complete spliced alignments are shown. That is, on either side of the alignment only insertions and introns are cut off.
+This option has the same effect as using \Showoption{leadcutoffsmode} \minimalmode \Showoption{termcutoffsmode} \minimalmode.}
+
+\Option{showintronmaxlen}{\Showoptionarg{\showintronmaxlen}}{Sets the maximal length of an intron to be shown completely. If an intron is larger than \Showoptionarg{\showintronmaxlen}, it is shown in an abbreviated form. Set to $0$ to show all introns completely regardless of their lengths.}
+
+\Option{minorflength}{$\minorflength$}{Sets the minimum length of an open reading frame to be shown. Thereby, $\minorflength$ denotes the number of amino acids which must be an integer value greater $0$. The default value is $64$.}
+
+\Option{startcodon}{}{Require than an ORF must begin with a start codon.}
+
+\Option{finalstopcodon}{}{Require that the final ORF must end with a stop
+codon.}
+
+\Option{showseqnums}{}{Show the sequence numbers in output. That is, in the output lines describing the sequences used in a spliced alignment an additional tag is added giving the number of the sequence in the corresponding sequence file. 
+Sequences are numbered from $0$ on. This may be useful when \Gth output is postprocessed.}
+
+\Option{pglgentemplate}{}{Show genomic template in PGL lines. The default is
+\mbox{\footnotesize \texttt{yes}}. Switch off with \Showoption{pglgentemplate
+no} for backward compatibility.}
+
+\Option{gs2out}{}{Output is shown in the format of the program \GStwo, which is a predecessor of \Gth. We do not recommend to use this option. It is available for compatibility. For example, all wildcards ($S$, $Y$, $W$, $R$, $K$, $V$, $B$, $D$, $H$ and $M$) of the input sequences are replaced by the wildcard $N$.}
+
+\end{Justshowoptions}
+If the options \Showoption{o} and \Showoption{v} are invoked together: The
+additional output produced by the option \Showoption{v} is not redirected to the file \Showoptionarg{\outputfile} given by the option \Showoption{o}.
+This allows to save the results of the computation in a file while watching its progress on stdout.
+
+\subsection{Data Preprocessing}
+This options affect the preprocessing of the input data, for a detailed discussion see Section \ref{indexconstruction}. This is done by calling \callmkvtree, which is part of the \vmatch package (see \url{http://vmatch.de/}), internally.
+
+\begin{Justshowoptions}
+\Option{maskpolyatails}{~~~}{When this option is used, all \polyA tails and \polyT heads in cDNA/EST reference sequences are masked automatically. To be able to predict gene structures correctly it is very important that \polyA tails are masked!}
+
+\Option{proteinsmap}{smapfile}{Specifies the smap file \Showoptionarg{smapfile} 
+used for the (automatic) index construction of protein files. That is,
+internally \callmkvtree is called with option \Showoption{smap}
+\Showoptionarg{smapfile} (see the \vmatch manual for details). If this option
+is not used, \callmkvtree is called internally with its option \Showoption{protein}.}
+
+\Option{noautoindex}{~~~}{This option disables the automatic construction of the necessary indices. That is, it is assumed that they have been created manually beforehand using \callmkvtree. See Section \ref{indexconstruction} for details.
+
+If you use \Callgth with option \Showoption{createindicesonly} (instead of
+\callmkvtree) to construct the indices, use the option
+\Showoption{skipindexcheck} and not this option.
+}
+
+\Option{createindicesonly}{~~~}{This option stops the program flow after the indices have been created (that is, after the preprocessing phase). This is useful if one wants to let multiple instances of \Gth run on the same data set simultaneously without interfering each other during the index construction.}
+
+\Option{skipindexcheck}{~~~}{This option skips the index checks. That is, it is
+not checked anymore if an index exists or is corrupted. This is useful if
+one lets multiple instances of \Gth run on indices created with
+\Showoption{createindicesonly}. This option speeds up the preprocessing phase,
+especially if one uses multiple indices over a network file system. To
+ensure the correct functioning of this option, one has to
+use the same type of input data (that is, using \Showoption{cdna} and/or
+\Showoption{protein} in a similar way) and use
+\Showoption{maskpolyatails}, \Showoption{online}, and \Showoption{inverse}
+similarly in both index construction and splice
+alignment computation. If you want to use this option together with
+\Showoption{frompos}, pass option \Showoption{inverse} to the corresponding
+\Showoption{createindicesonly} call.}
+
+\end{Justshowoptions}
+
+The options \Showoption{maskpolyatails} and \Showoption{noautoindex} as well as \Showoption{proteinsmap} and \Showoption{noautoindex} exclude each other.
+Furthermore, the option \Showoption{createindicesonly} excludes using the
+option \Showoption{noautoindex} or \Showoption{skipindexcheck} (and the other
+way around).
+
+\subsection{Options of the Similarity Filter}
+
+The following options are used to compute the similarity regions, that is, the regions in the genomic sequence which are similar to the cDNAs/ESTs and/or proteins. This is done by calling \vmatch (\url{http://vmatch.de/}) internally.
+
+\vmatch matches a sequence file called \emph{query} against a persistent index named \emph{subject} of another sequence file.
+When matching a cDNA/EST file against a genomic file, the default is to use the cDNAs/ESTs as query and the genomic sequences as subject. For proteins it is the other way round.
+
+%To gain a deeper understanding of the similarity filter read Section \ref{docu-similarityfilter} of the \Gth \documentation.
+
+\begin{Justshowoptions}
+
+\Option{minmatchlen}{$\minmatchlen$}{Specify the length value $\minmatchlen$ for the initial matches used in the similarity filter for cDNA/EST matching. 
+The default value is $20$.}
+
+\Option{seedlength}{$\seedlength$}{
+Set the length $\seedlength$ of the exact seeds used for cDNA/EST matching. $\seedlength$ must be a positive integer. The default value is $18$.
+}
+
+\Option{exdrop}{$\exdrop$}{
+Specify the $\Xdrop$-score $\exdrop$ when extending a seed in both
+directions allowing for matches, mismatches, insertions, and deletions. The
+argument $\exdrop$ must be a positive integer smaller or equal to 255.
+Matches are scored \(2\), mismatches are scored \(-1\), and indels are
+scored \(-2\). 
+The default value is $2$.
+The extension procedure is further explained in the \vmatch manual which can be found at \url{http://vmatch.de/}.
+The minimum length of the seeds is specified by the argument to option
+\Showoption{seedlength}. 
+}
+
+\Option{prminmatchlen}{$\minmatchlen$}{Specify the length value $\minmatchlen$ for the initial matches used in the similarity filter for protein matching. 
+The default value is $24$.}
+
+\Option{prseedlength}{$\seedlength$}{
+Set the length $\seedlength$ of the exact seeds used for protein matching. $\seedlength$ must be a positive integer. The default value is $10$.
+}
+
+\Option{prhdist}{$\hdist$}{
+Set the maximum Hamming distance $\hdist$ a protein match is allowed to have.
+The default value is $4$.
+}
+
+\Option{online}{}{
+Run online algorithms to compute initial matches in the similarity filter. 
+In this case the complete index is not needed, except
+for the original and the transformed input sequences plus the descriptions. 
+Therefore, this option is more space efficient.
+However, the online algorithms usually run not as fast as the indexed
+based algorithms. 
+}
+
+\Option{inverse}{}{This option only affects cDNA/EST files. Invert subject and query, i.e., use the genomic files as query and the cDNA/EST files as subject.}
+
+\Option{exact}{}{Use exact matches in the similarity filter. If this option is invoked it is not possible to use the options \Showoption{seedlength} and \Showoption{exdrop}, because it would make no sense.
+}
+
+\Option{gcmaxgapwidth}{\Showoptionarg{gw}}{Set the maximum gap width
+\Showoptionarg{gw} for global chains. This width is approximately the same as
+the maximum intron length in the studies organism. The default is $1000000$
+which might be a good guess for human. It is very important to set this
+parameter appropriately!}
+
+\Option{gcmincoverage}{\Showoptionarg{mc}}{Set the minimum coverage a global
+chain must achieve to be kept.  That is, at least this proportion of the
+according cDNA/EST/protein sequence must be covered by the global chain.
+Thereby, \Showoptionarg{mc} is an integer denoting the minimum coverage in
+percent. The default is $50$. This option has a great influences on the number
+of computed spliced alignments!}
+
+\Option{paralogs}{}{By default, the chaining returns all global chains with maximal score (usually 1), if their coverage is higher than the argument \Showoptionarg{mc} to option \Showoption{gcmincoverage}. If this option is used, all non-overlapping global chains with a coverage higher than \Showoptionarg{mc} are reported. This can be helpful to detect paralogous genes. The total run time usually increases, because more spliced alignments need to be computed.}
+
+\Option{enrichchains}{}{Enrich genomic sequence part of global chains with
+additional matches.}
+
+\end{Justshowoptions}
+Using option \Showoption{inverse} without using option \Showoption{online} can lead to a large main memory consumption.
+
+\subsection{Intron Cutout Technique Options}
+\index{intron cutout technique}
+In this section the options used for the intron cutout technique are described.
+% XXX: refer to the manual here
+%To fully understand the options please refer to Section \ref{docu-introncutout}
+%of the \gth \documentation.
+\begin{Justshowoptions}
+\Option{introncutout}{}{Enable the intron cutout technique.}
+
+\Option{fastdp}{}{Use jump table to increase speed of DP calculation.}
+
+\Option{autointroncutout}{\Showoptionarg{\autointroncutout}}{Enables the automatic intron cutout technique.
+That is, the intron cutout technique is only used if the Dynamic Programming matrix in the ``normal'' DP call would be larger than \Showoptionarg{\autointroncutout} megabytes. Increasing \Showoptionarg{\autointroncutout} increases 
+the computation time and decreases the probability of wrong gene predictions.}
+
+\Option{icinitialdelta}{\Showoptionarg{\icinitialdelta}}{Set the initial delta \Showoptionarg{\icinitialdelta} used for intron cutouts. The parameter \Showoptionarg{\icinitialdelta} must be a positive integer. The default value is $50$.}
+
+
+
+\Option{iciterations}{\Showoptionarg{\iciterations}}{Set the number of
+iterations \Showoptionarg{\iciterations} the initial delta
+\Showoptionarg{\icinitialdelta} is increased by the increase delta
+\Showoptionarg{\icdeltaincrease}. Thereby, the first iteration counts, too.
+That is, in the default setting of $2$ \Showoptionarg{\icinitialdelta} is
+increased once by \Showoptionarg{\icdeltaincrease}, resulting in (up to) two
+iterations. The incrementation is only triggered if the intron cutout technique
+did not succeed.}
+
+\Option{icdeltaincrease}{\Showoptionarg{\icdeltaincrease}}{Set the increment
+\Showoptionarg{\icdeltaincrease} for the delta used in the intron cutout
+technique.  }
+
+\Option{icminremintronlen}{\Showoptionarg{\icminremintronlen}}{Set the minimum
+remaining intron length \Showoptionarg{\icminremintronlen} for an intron to be
+cut out. The parameter \Showoptionarg{\icminremintronlen} must be a positive
+integer. The default value is $10$.}
+
+\end{Justshowoptions}
+The options \Showoption{introncutout} and \Showoption{autointroncutout} exclude each other.
+
+
+
+\subsection{Advanced Options}
+\label{advancedoptions}
+This section describes the advanced options.
+To understand their semantics,
+a basic understanding of the underlying spliced alignment algorithms is required. For the initial use of \Gth, this section can safely be skipped.
+% XXX: refer to publication GRE:... here
+%Unless otherwise stated, all values specified by the advanced options are explained in Chapter \ref{docu-dp} of the \gth \documentation.
+
+\subsubsection{Options for U12-type introns}
+\Gth has a model for U12-type introns built in. That is, donor sites which match
+the consensus $/[\Adenine\Guanine]\Thymine\Adenine\Thymine\Cytosine\Cytosine\Thymine\Thymine$ (where $/$ denotes the exon end and $[\Adenine\Guanine]$ indicates $\Adenine$ or $\Guanine$) \cite{ZHU:BRE:2003B} perfectly or with one mismatch get a high
+probability. The mismatch is only allowed in the last 6 bases of the consensus.
+See \cite{ZHU:BRE:2003B} for details on U12-type introns and additional pointers to the literature.
+
+\begin{Justshowoptions}
+\Option{nou12intronmodel}{}{If this option is used, the U12-type intron model 
+                            is disabled.}
+\Option{u12donorprob}{$p$}{Sets the probability $p$ for perfectly matching 
+                           U12-type donor sites. The default value is $0.99$.}
+\Option{u12donorprob1mism}{$p$}{Sets the probability $p$ for U12-type donor 
+                                sites with exactly one mismatch. 
+                                The default value is $0.9$.}
+\end{Justshowoptions}
+In both cases, $p$ must be a positive floating point value 
+smaller or equal than $1.0$.
+
+
+\subsubsection{Basic DP Algorithm Options}
+With these options all DP parameters 
+% XXX: refer to publication
+%shown in Table \ref{docu-dpparameter} of the \documentation 
+can be changed.
+\begin{Justshowoptions}
+\Option{probies}{$\probinitialexonstate$}{Sets the probability that the initial state is an exon state.
+$\probinitialexonstate$ must be a positive floating point value 
+smaller or equal than $1.0$. The default value is $0.5$.
+}
+
+\Option{probdelgen}{$\probdelgen$}{Sets the probability of a nucleotide deletion in the genomic sequence.
+$\probinitialexonstate$ must be a positive floating point value 
+smaller or equal than $1.0$. The default value is $0.03$.
+}
+
+\Option{identityweight}{$\identity$}{
+Sets the weight for pairs of identical characters.
+$\identity$ must be a floating point value. The default value is $2.0$.
+}
+
+\Option{mismatchweight}{$\mismatch$}{
+Sets the weight for mismatching characters.
+$\mismatch$ must be a floating point value. The default value is $-2.0$.
+}
+
+\Option{undetcharweight}{$\undetcharweight$}{
+Sets the weight for alignment positions involving undetermined characters, i.e., involving character $\undetchar$.
+$\undetcharweight$ must be a floating point value. The default value is $0.0$.
+}
+
+\Option{deletionweight}{$\deletion$}{
+Sets the weight for deletions.
+$\deletion$ must be a floating point value. The default value is $-5.0$.
+}
+
+\end{Justshowoptions}
+
+\subsubsection{Short Exon/Intron Parameters}
+
+The following options allow to change the parameters for short exons and
+introns. If an exon is shorter than the minimum exon length $\dpminexonlength$,
+then a penalty for short exons $\shortexonpenalty$ is \textit{subtracted}
+from the actual weight. Analog, if an intron is shorter than the minimum intron
+length $\dpminintronlength$, then a penalty for short introns $\shortintronpenalty$ is \textit{subtracted} from the actual weight.
+
+\begin{Justshowoptions}
+
+\Option{dpminexonlength}{$\dpminexonlength$}{Sets the minimum exon length. $\dpminexonlength$ must be an integer value greater $0$. The default value is $5$.}
+
+\Option{dpminintronlength}{$\dpminintronlength$}{
+Sets the minimum intron length.
+$\dpminintronlength$ must be an integer value greater $0$. The default value is $50$.
+}
+
+\Option{shortexonpenal}{$\shortexonpenalty$}{
+Sets the short exon penalty. 
+$\shortexonpenalty$ must be a floating point value greater or equal $0.0$. The
+default value is $100.0$.  
+}
+
+
+\Option{shortintronpenal}{$\shortintronpenalty$}{
+Sets the short intron penalty.
+$\shortintronpenalty$ must be a floating point value greater or equal $0.0$. The
+default value is $100.0$.
+}
+
+
+
+\end{Justshowoptions}
+
+\subsubsection{Special Parameters for the DP Algorithm}
+
+With these options, the more special DP Parameter 
+% XXX: refer to something else here
+%(described in Section \ref{docu-specialparameter} of the \gth \documentation) 
+can be changed.
+\begin{Justshowoptions}
+\Option{wzerotransition}{$\wsizezerotransitionweights$}{
+Sets the window size for zero transition weights.
+$\wsizezerotransitionweights$ must be an integer value greater or equal to $0$. The default value is 80.
+}
+
+\Option{wdecreasedoutput}{$\wsizedecreasedoutputweights$}{
+Sets the window size for decreased output weights.
+$\wsizedecreasedoutputweights$ must be an integer value greater or equal to $0$. The default value is 80.
+}
+\end{Justshowoptions}
+
+
+\subsubsection{Options for Processing of ``raw'' Spliced Alignments}
+The following options affect the processing of ``raw'' spliced alignments after the dynamic programming.
+
+\begin{Justshowoptions}
+
+\Option{leadcutoffsmode}{\Showoptionarg{\leadingmode}}{
+Set the mode for determination of the leading cutoffs. The mandatory argument \Showoptionarg{\leadingmode} can be \relaxedmode, \strictmode, or \minimalmode.
+The default is \relaxedmode.
+}
+
+\Option{termcutoffsmode}{\Showoptionarg{\terminalmode}}{
+Set the mode for determination of the terminal cutoffs. The mandatory argument \Showoptionarg{\terminalmode} can be \relaxedmode, \strictmode, or \minimalmode.
+The default is \strictmode.
+}
+
+\Option{cutoffsminexonlen}{$\cutoffsminexonlen$}{
+Set the minimum length $\cutoffsminexonlen$ an exon must have, such that it is not cut off when the corresponding cut off mode is \strictmode.
+The default is $5$.
+}
+
+\Option{scoreminexonlen}{$\scoreminexonlen$}{
+Set the minimum length $\scoreminexonlen$ an exon must have, such that it is included in the computation of the overall similarity score of a spliced alignment. The default is $50$.}
+
+\end{Justshowoptions}
+
+
+\subsubsection{Spliced Alignment Filter}
+\label{splicedalignmentfiltersection}
+
+The spliced alignment filter controls which spliced alignments are stored in
+the internal set of spliced alignment. That is, only these spliced alignments
+are shown or written to an output file and are used to compute consensus
+spliced alignments.
+
+When a spliced alignment is computed, its \index{coverage} \emph{coverage} is
+also determined. The coverage of a spliced alignment is the maximum of the
+the \emph{genomic coverage} and the \emph{reference coverage}.
+Thereby, the genomic coverage denotes the cumulative exon length divided by the
+length of the genomic sequence part used for the dynamic programming. The
+reference coverage denotes the cumulative exon length divided by the length of
+the reference sequence. If the genomic coverage was maximal a \texttt{G} in
+shown in the output\footnote{In the textual output as last part of the
+\texttt{MATCH} line and in the final XML output as the \texttt{high\_type}
+attribute.}. If the reference coverage was maximal a \texttt{C} (for
+cDNA/EST based spliced alignments) or \texttt{P} (for protein based spliced
+alignments) is shown in the output.
+
+
+\index{coverage}
+
+\begin{Justshowoptions}
+\Option{minalignmentscore}{$s$}{A spliced alignment must at least an alignment score of $s$.}
+\Option{maxalignmentscore}{$s$}{A spliced alignment is not allowed to have an alignment score higher than $s$.}
+\Option{mincoverage}{$c$}{A spliced alignment must at least a coverage of $c$.}
+\Option{maxcoverage}{$c$}{A spliced alignment is not allowed to have a coverage higher than $c$.}
+\end{Justshowoptions}
+
+By default all computed spliced alignments are used.
+
+
+\subsubsection{Advanced Similarity Filter Option}
+\begin{Justshowoptions}
+\Option{minaveragessp}{$\minavgsplicesiteprob$}{
+Sets the minimum average splice site probability. $\minavgsplicesiteprob$ must be a floating point value in the interval $[0.0,1.0]$. The default value is $0.5$.
+}
+\Option{duplicatecheck}{\duplicatecheckmode}{Set the criterion used to check
+for spliced alignment duplicates. The mandatory argument
+\Showoptionarg{\duplicatecheckmode} can be \texttt{none}, \texttt{id},
+\texttt{desc}, \texttt{seq}, or \texttt{both}. The default is \texttt{both}.
+}
+\end{Justshowoptions}
+
+With the option \Showoption{duplicatecheck} the ``sameness'' criterion of the
+duplicate check is set. The duplicate check is designed to prevent duplicate
+alignments (that is, alignments from the ``same'' cDNA/EST or protein sequence to the same genomic region on the same strand of a particular genomic sequence). Duplicate alignments can occur for two reasons:
+
+\begin{enumerate}
+
+\item The chaining algorithm (which chains the matches before the actual
+spliced alignment computation) produced two overlapping chains in the
+same genomic region which leads to the same spliced alignments. This is
+a rather rare event, but it can happen from time to time.
+For this reason alone, a duplicate check is needed, if we don't want to see
+spliced alignment duplications.
+
+\item The same cDNA/EST or protein sequence was fed to GenomeThreader more than
+once. The duplicate check should prevent that it appears in the output multiple
+times and the ``sameness'' criterion used to compare the sequences depends on the \Showoptionarg{\duplicatecheckmode} supplied to \Showoption{duplicatecheck}.
+\end{enumerate}
+
+The different duplicate check modes work as follows:
+
+\begin{itemize}
+\item[\texttt{none}:] No duplicate check is done whatsoever. Only useful for
+testing purposes.
+\item[\texttt{id:}] The duplicate check is based on the ``ID'' of the cDNA/EST
+or protein sequence. The ``ID'' is parsed from the
+sequence description as follows: leading '\texttt{gi|}', '\texttt{SQ;}',
+'\texttt{(gi|}' , '\texttt{ref|}' are
+dropped and the part until the first '\texttt{:}', '\texttt{|}', ' ' or
+'\texttt{\textbackslash t}' is stored.
+This can cause problems if the description is empty or starts with a
+prefix that is not recognized.
+This was the behavior up to (and including) version 1.4.6.
+\item[\texttt{desc:}] In contrast to the \texttt{ID} mode, the complete
+description is used to compare sequences. This can cause problem if the
+description is empty or ambiguous.
+\item[\texttt{seq:}] The actual sequences is used to determine, if two cDNA/EST
+or protein sequences are the same. This would lead to the exclusion of cDNA/EST
+or protein sequences where the actual sequence equals but the descriptions
+differ (for example, equal ESTs sequenced independently from another and
+therefore with different descriptions).
+\item[\texttt{both:}] This mode combines the \texttt{desc} and \texttt{seq}
+modes. That is, a cDNA/EST or protein sequences is only considered equal to
+another one, if the complete descriptions and the actual sequences are equal.
+This is the default (from version 1.4.7 onwards).
+\end{itemize}
+
+% XXX:
+%The minimum average splice site probability is described in Section \ref{docu-similarityfiltercore} (Definition \ref{docu-defpoor}) of the \gth \documentation.
+
+\subsubsection{Interrupt Option}
+\label{interruptsection}
+With the following option it is possible to perform the \index{incremental
+updates} incremental updates which are described in Section
+\ref{gthconsensussection}.
+
+\begin{Justshowoptions}
+\Option{intermediate}{}{If this option is invoked, the dataflow of \Callgth is interrupted after the output of the spliced alignments.
+}
+\end{Justshowoptions}
+
+This option implies option \Showoption{xmlout} since the intermediate results
+are stored in an XML format. You should save the intermediate results using
+option \Showoption{o} instead of redirecting them to a file, because this allows
+for an internal check which ensures that the intermediate output reflects the
+spliced alignments stored in main memory.
+Do not process the intermediate XML output yourself, use the ``normal'' XML
+output instead!
+
+\subsubsection{Options for Postprocessing of Predicted Gene Locations}
+With the following options it is possible to postprocess the \index{predicted gene location} \emph{predicted gene 
+locations} (PGLs), also referred to as \index{consensus spliced alignment} \emph{consensus spliced alignments}.
+
+\begin{Justshowoptions}
+\Option{sortags}{}{If this option is invoked, the \index{alternative gene structure} alternative gene structures (AGSs) of every PGL are sorted according to the so-called \emph{overall score}.
+Every AGS has an exon score for every contained exon and a donor and a acceptor site probability for every contained intron (if any).
+The \index{alternative gene structure!overall score} overall score $o$ of 
+an AGS is computed as follows:
+\begin{itemize}
+\item If the AGS consists of exactly one exon, the overall score simply equals 
+      the exon score. 
+\item Otherwise, the average exon score $e$ and the average spliced site probability $s$ is calculated. Then \[o = \frac{w \cdot e + s }{w + 1.0},\] whereas $w$ is the \emph{weight factor} (see option below).
+\end{itemize}
+
+}
+\Option{sortagswf}{\Showoptionarg{wf}}{Set the weight factor \Showoptionarg{wf} for the calculation of the overall score (see option above). \Showoptionarg{wf} must be a floating point value larger than $0.0$. If \Showoptionarg{wf} is set to a value larger than $1.0$, the average exon score gets more weight in the calculation of the overall score. If \Showoptionarg{wf} is set to a value smaller than $1.0$, the average splice site probability gets more weight.
+The default value is $1.0$.}
+\end{Justshowoptions}
+If option \Showoption{sortagswf} is used, option \Showoption{sortags} is required.
+
+
+\subsubsection{Statistical Options}
+In this section the options are described which yield in the output of 
+additional statistical information at the end of a program run.
+\begin{Justshowoptions}
+
+\Option{exondistri}{}{Show the exon length distribution at the end of the \Callgth output.}
+
+\Option{introndistri}{}{Show the intron length distribution at the end of the \Callgth output.  This option might be useful to get a feeling for a good setting of the option \Showoption{gcmaxgapwidth}.
+}
+
+\Option{refseqcovdistri}{}{Show the reference sequence coverage distribution at
+the end of the \Callgth output. This option might be useful to get a feeling
+for a good setting of the option \Showoption{gcmincoverage}.}
+
+\end{Justshowoptions}
+
+
+\subsubsection{Miscellaneous Options}
+\begin{Justshowoptions}
+\Option{first}{$\firstalshown$}{The positive integer $\firstalshown$ specifies the maximum number of computed spliced alignments per genomic DNA input. The default value is $0$, which leads to the computation of all sensible spliced alignments.}
+\Option{help}{}{Show a summary of the basic options. That is, only the most common options. Afterwards terminate.}
+\Option{help+}{}{Show a summary of all options and terminate.}
+\Option{version}{}{Show version number and built-date of \Gth. Afterwards terminate.}
+\end{Justshowoptions}
+If one of the last three options is used, \Callgth terminates with 
+\index{exit code} exit code 0 after showing the corresponding output.
+
+
+\section{\Callgthconsensus: Incremental Updates}
+\label{gthconsensussection}
+
+With the help of \Callgthconsensus one can perform so-called \index{incremental update} \emph{incremental updates} of cDNA/EST and protein databases\footnote{To simplify the explanation, in the following we mention only cDNA/EST databases, but everything said also applies to protein databases.}:
+
+In a typical application of \Callgth one uses a cDNA/EST database to annotate
+a genomic sequence. As a result of the ongoing sequencing efforts it is very
+likely that a few weeks after such an annotation the used cDNA/EST database is 
+not up-to-date anymore, because new suitable cDNAs/ESTs are available. 
+The conventional approach was to rerun the whole annotation
+process using an updated database.
+This has the drawback that one repeats a lot of spliced alignment
+calculations of the cDNAs/ESTs which have already been in the database
+before the update while computing typically only a few new spliced
+alignments of the added cDNAs/ESTs.
+
+This observation leads to the idea to split the annotation process into two
+parts, such that one can reuse the already computed spliced alignments (that is, to
+perform incremental updates):
+
+
+\begin{enumerate}
+\item In one part one performs the computations which are independent of each
+other only once and stores the intermediate results. 
+\item In the other part the stored results are used to perform the calculations
+ which depend on one another.
+\end{enumerate}
+
+The first part refers to the calculation of spliced alignments (or \index{predicted gene structure} predicted gene structures) and is realized
+in \Callgth by the option \Showoption{intermediate} (see Section \ref{interruptsection}). If these results are stored in a file, we call it an \index{intermediate file} \emph{intermediate file}.
+
+The second part refers to the calculation of \index{spliced
+alignment!consensus} \textit{consensus} spliced alignments (or \index{predicted
+gene location} predicted gene locations) and is realized by the program
+\Callgthconsensus, which processes a set of intermediate files. In the
+following section the application of \Callgthconsensus is explained.  An
+example session using \Callgth \Showoption{intermediate} and \Callgthconsensus
+is shown in Section \ref{Tutorial}.
+
+\subsection{The Options of \Callgthconsensus}
+
+\Callgthconsensus is called as follows:
+
+\medskip
+\Callgthconsensus [\textit{options}] \textit{intermediate\_files}
+\medskip
+
+Here \textit{intermediate\_files} denotes a list of one or more files containing
+XML intermediate output produced by \Callgth invocations using the option \Showoption
+{intermediate}. The \textit{options} available for \Callgthconsensus are a subset of the options available for \Callgth. To find out which options are included in the subset try:
+
+\medskip
+\Callgthconsensus \Showoption{help} 
+\medskip
+
+Basically all options are included into \Callgthconsensus which make sense
+for the purpose of it.
+If you think a useful option is missing in \Callgthconsensus, feel free to contact
+the author.
+
+\section{\Callgthsplit: Split Intermediate Files}
+With the help of \Callgthsplit one can split \Gth output files 
+containing intermediate results into multiple sets according to different 
+criteria. \Callgthsplit is called as follows:
+
+\medskip
+\Callgthsplit[\textit{options}] \textit{intermediate\_files}
+\medskip
+
+If no intermediate file is given as input, stdin is used instead. This allows
+to use \Callgthsplit in a UNIX pipe.
+
+\Callgthsplit offers the following options:
+
+\begin{Justshowoptions}
+\Option{alignmentscore}{}{If this option is used, the input files are split according to the overall alignment score (scr).}
+\Option{coverage}{}{If this option is used, the input files are split according to the coverage (cov).}
+\Option{range}{\Showoptionarg{\Range}}{Set the percentage range \Showoptionarg{\Range} used to create the sets. 
+Each set contains the spliced alignments where the corresponding percentage
+(i.e., the alignment score or the coverage) is greater or equal then the lower
+set bound and lower then the higher bound. Spliced alignments with a percentage of 100\% go into the last set. \Showoptionarg{\Range} must divide 100 without rest. The default range is 5.}
+\end{Justshowoptions}
+
+Furthermore, the options \Showoption{v}, \Showoption{gzip}, \Showoption{bzip2}, \Showoption{force}, and \Showoption{help} are available and have the same semantic as in \Callgth.
+
+The spliced alignment filter options described in Section \ref{splicedalignmentfiltersection} can also be used to reduce the set of spliced alignment accordingly before splitting it.
+
+
+\subsection{Applying \Callgthsplit}
+
+The following examples show how to use \Callgthsplit and its output:
+
+\begin{footnotesize}\verbatiminput{output/gthsplit--alignmentscore--v--gzip-U89959.inter.gz.out}\end{footnotesize}
+
+
+
+\subsection{The Script \Callgthsplittwodim}
+With the shell script \Callgthsplittwodim on can split up an intermediate file in both dimensions (i.e., along the alignment score and the coverage) at the same time. It offers the following options:
+
+\begin{Justshowoptions}
+\Option{r}{\Showoptionarg{\Range}}{Same as \Showoption{range} when \Callgthsplit is used.}
+\Option{f}{~~~}{Same as \Showoption{force} when \Callgthsplit is used.}
+\Option{v}{~~~}{Same as \Showoption{v} when \Callgthsplit is used.}
+\Option{g}{~~~}{Same as \Showoption{gzip} when \Callgthsplit is used.}
+\Option{b}{~~~}{Same as \Showoption{bzip2} when \Callgthsplit is used.}
+\end{Justshowoptions}
+
+
+\subsection{Applying \Callgthsplittwodim}
+
+The following example shows how to use \Callgthsplittwodim and its output:
+
+\begin{footnotesize}\verbatiminput{output/gthsplit2dim.sh--r-10--v--g-ceres_full.inter.gz.out}\end{footnotesize}
+
+
+
+
+
+\section{\Callgthgetseq: Get \Fasta Sequences} 
+\label{gthextractfastasection}
+
+With the help of \Callgthgetseq one can get the used \Fasta sequences from
+\Gth output files containing intermediate results. That is, all
+sequences which are represented in the intermediate files are printed in
+\Fasta format on stdout. Strictly speaking, the sequences are not extracted from
+the intermediate file, but from the corresponding input sequence files.
+\Callgthgetseq is called as follows:
+
+\medskip
+\Callgthsplit[\textit{options}] \Showoption{getcdna} $|$ \Showoption{getprotein} $|$ \Showoption{getgenomic} \textit{intermediate\_files}
+\medskip
+
+If no intermediate file is given as input, stdin is used instead. This allows
+to use \Callgthgetseq in a UNIX pipe. \Callgthgetseq offers the following options:
+
+\begin{Justshowoptions}
+\Option{getcdna}{}{Get cDNA/EST sequences used in the spliced alignments contained in the given intermediate files.}
+\Option{getcdnacomp}{}{Get cDNA/EST sequences \emph{not} used in the spliced alignments contained in the given intermediate files. That is, the \emph{complement} of \Showoption{getcdna}.}
+\Option{getprotein}{}{Get protein sequences used in the spliced alignments contained in the given intermediate files.}
+\Option{getproteincomp}{}{Get protein sequences \emph{not} used in the spliced alignments contained in the given intermediate files. That is, the \emph{complement} of \Showoption{getprotein}.}
+\Option{getgenomic}{}{Get genomic sequences used in the spliced alignments contained in the given intermediate files.}
+\Option{getgenomiccomp}{}{Get genomic sequences \emph{not} used in the spliced alignments contained in the given intermediate files. That is, the \emph{complement} of \Showoption{getgenomic}.}
+\end{Justshowoptions}
+
+Furthermore, the options \Showoption{gzip}, \Showoption{bzip2}, and
+\Showoption{help} are available and have the same semantic as in \Callgth.
+
+The spliced alignment filter options described in Section \ref{splicedalignmentfiltersection} can also be used to extract sequences only from spliced alignments which pass the filter.
+
+At least one of the options \Showoption{getcdna}, \Showoption{getcdnacomp}, \Showoption{getprotein}, \Showoption{getproteincomp}, \Showoption{getgenomic}, \Showoption{getgenomiccomp} is mandatory.
+
+\subsection{Applying \Callgthgetseq}
+
+Lets assume we have an intermediate file called \texttt{ceres\_full.inter.gz}.
+To get all cDNAs which led to a spliced alignment with a maximum alignment score of $0.75$, we would issue the following command:
+
+\begin{footnotesize}\verbatiminput{output/gthgetseq--getcdna--gzip--maxalignmentscore-0.75-ceres_full.inter.gz.out}\end{footnotesize}
+
+To store the output in a file \texttt{cdna}, one can redirect the output like this:
+
+\begin{scriptsize}\verbatiminput{output/gthgetseq--getcdna--gzip--maxalignmentscore-0.75-ceres_full.inter.gz->-cdna.out}\end{scriptsize}
+
+\section{\Callgthfilestat: Show Statistics}
+\label{gthfilestatsection}
+\Callgthfilestat shows statistics about spliced alignments in \Gth output files containing intermediate results.
+This might be helpful in getting an overview of a set of intermediate files, before they are processed further, for example, with \Callgthsplit.
+
+\medskip
+\Callgthfilestat [\textit{options}] \textit{intermediate\_files}
+\medskip
+
+If no intermediate file is given as input, stdin is used instead. This allows
+to use \Callgthfilestat in a UNIX pipe.
+
+Besides the options \Showoption{v} and \Showoption{help}, the spliced alignment filter options described in Section \ref{splicedalignmentfiltersection}
+are available. The semantic is the same as in \Callgth.
+
+\subsection{Applying \Callgthfilestat}
+
+The following example shows how to use \Callgthfilestat and its output:
+
+\begin{footnotesize}\verbatiminput{output/gthfilestat-ceres_sub.inter.gz.out}\end{footnotesize}
+
+\section{\Callgthbssmfileinfo: BSSM File Information}
+\label{gthbssmfileinfosection}
+
+With \Callgthbssmfileinfo one can print out information about BSSM files.  It is called as follows:
+
+\medskip
+\Callgthbssmfileinfo \textit{bssm\_file}
+\medskip
+
+\Callgthbssmfileinfo uses the directories specified by the environment variable \Environmentvariable{\bssmdir} to look for the specified \textit{bssm\_file}.
+For example, printing information about the human BSSM file works like this:
+
+\begin{footnotesize}\verbatiminput{output/gthbssmfileinfo-human.out}\end{footnotesize}
+
+
+\section{\Callgthbssmtrain: Train BSSMs}
+\label{gthbssmtrainsection}
+
+\Callgthbssmtrain is called as follows:
+
+\medskip
+\Callgthbssmtrain [\textit{options}] \Showoption{seqfile(s)}$|$\Showoption{regionmapping} \textit{arg} \textit{GFF3\_file}
+
+\begin{Justshowoptions}
+\Option{outdir}{\Showoptionarg{dir}}{Specify the name of the output directory to
+which the training files are written. The default is \texttt{training\_data}.}
+\Option{gcdonor}{\Showoptionarg{arg}}{Extract training data for GC donor sites.
+The default is \texttt{yes}.}
+\Option{filtertype}{\Showoptionarg{type}}{Set type of features used for
+filtering (usually \texttt{exon} or \texttt{CDS}). The default is
+\texttt{exon}.}
+\Option{goodexoncount}{\Showoptionarg{n}}{Set the minimum number
+\Showoptionarg{n} of good exons a feature must have to be in the training data.
+The default is $1$.}
+\Option{cutoff}{\Showoptionarg{s}}{Set the minimum score \Showoptionarg{s} an
+exon must have to count towards the ``good exon count'' (exons without a score
+count as good). The default is $1.0$.}
+\Option{extracttype}{\Showoptionarg{type}}{Set type of features to to be
+extracted as exons (usually \texttt{exon} or \texttt{CDS}). The default is
+\texttt{CDS}.}
+\Option{seqfile}{\Showoptionarg{file}}{Set the sequence file from which to
+extract the features.}
+\Option{seqfiles}{\Showoptionarg{file ...}}{Set the sequence files from which
+to extract the features. The list of sequence files can be terminated with
+\texttt{--}.}
+\Option{matchdesc}{\Showoptionarg{arg}}{Match the sequence descriptions for the
+desired sequence IDs. The default is \texttt{no}.}
+\Option{usedesc}{\Showoptionarg{arg}}{Use sequence descriptions to map the
+sequence IDs (in the GFF3 file) to actual sequence entries. If a description
+contains a sequence range position (for example, \texttt{III:1000001..2000000}), the first part is used as sequence ID ('\texttt{III}') and the first range as offset ('\texttt{1000001}'). The default is \texttt{no}.}
+\Option{regionmapping}{\Showoptionarg{file}}{Set file containing sequence-region
+to sequence file mapping.}
+\Option{seed}{\Showoptionarg{s}}{Set seed for random generator manually. $0$
+generates a seed from the current time and the process id. The default is $0$.}
+\end{Justshowoptions}
+
+One of the options \Showoption{seqfile}, \Showoption{seqfiles}, or
+\Showoption{regionmapping} is mandatory.
+The mandatory argument \textit{GFF3\_file} must contain the annotation used to
+train the BSSM in GFF3 format.
+
+\subsection{Applying \Callgthbssmtrain}
+
+The following example shows how to use \Callgthbssmtrain.
+
+At first we have to create the annotation data which can be used to train a
+BSSM. For this purpose, \Callgth or \Callgthconsensus is called with the options
+\Showoption{gff3out} and \Showoption{skipalignmentout}. Furthermore, the option
+\Showoption{md5ids} should be used to make the subsequent sequence ID mapping of
+the GFF3 file used in \Callgthbssmtrain easier and less error prone.
+The annotation should be of high quality (that is, all gene predicted gene
+structures seem to be correct) and contain at least a couple of hundred splice
+sites. A \Callgth call could look like this (we store the result in a file
+called \texttt{arab.gff3}):
+
+\begin{scriptsize}\verbatiminput{output/gth--genomic-U89959_genomic.fas--cdna-U89959_ests.fas--gff3out--skipalignmentout--md5ids.out}\end{scriptsize}
+
+Afterwards we can train the BSSM with \Callgthbssmtrain using the following
+command. Thereby, we supply the genomic sequence file used in the annotation to
+the option \Showoption{seqfile}. If more than one genomic sequence file was
+used, the option \Showoption{seqfiles} can be used. Because we used
+\Showoption{md5ids} when we produced the GFF3 file, the mapping from sequence ID
+works automatically:
+
+\begin{footnotesize}\verbatiminput{output/gthbssmtrain--seqfile-U89959_genomic.fas-arab.gff3.out}\end{footnotesize}
+
+The output of \Callgthbssmtrain shows you how many \texttt{gt-ag} and
+\texttt{gc-ag} splice sites have been processed. If this number looks wrong,
+probably something is wrong with the sequence ID mapping. Because we did not set
+option \Showoption{outdir}, the training data is stored in the default output
+directory \texttt{training\_data}.
+
+We can now use \Callgthbssmbuild (which is described in detail in the next
+Section) to build the actual BSSM file \texttt{arab.bssm}.
+We use only the options \Showoption{gtdonor} and \Showoption{agacceptor},
+because there were not enough donor sites that it would make sense
+to build the GC donor model into the BSSM file with \Showoption{gcdonor}:
+
+\begin{scriptsize}\verbatiminput{output/gthbssmbuild--gtdonor--agacceptor--datapath-training_data--bssmfile-arab.bssm.out}\end{scriptsize}
+
+We now have a new BSSM file named \texttt{arab.bssm} which can be used in
+subsequent \Callgth or \Callgthconsensus calls with the option \Showoption{bssm}
+(without the \texttt{.bssm} suffix), like this:
+
+\begin{footnotesize}\verbatiminput{output/gth--bssm-arab--genomic-U89959_genomic.fas--cdna-U89959_ests.fas.out}\end{footnotesize}
+
+
+\section{\Callgthbssmbuild: Build BSSM files}
+\label{gthbssmbuildsection}
+
+With the help of \Callgthbssmbuild one can build a BSSM file from a directory
+tree containing the training data. The training data is usually generated with
+\Callgthbssmtrain which is described in the previous section.
+
+\Callgthbssmbuild is called as follows:
+
+\medskip
+\Callgthsplit [\textit{options}] \Showoption{databasedir} \textit{dir} \Showoption{bssmfile} \textit{file}
+\medskip
+
+\begin{Justshowoptions}
+\Option{bssmfile}{\Showoptionarg{file}}{Specify the name of the BSSM file \Showoptionarg{file} to store parameters in.}
+\Option{datapath}{\Showoptionarg{dir}}{Specify root of species-specific training data directory tree \Showoptionarg{dir}.}
+\Option{gtdonor}{}{Train the \texttt{GT} donor model.}
+\Option{gcdonor}{}{Train the \texttt{GC} donor model.}
+\Option{agacceptor}{}{Train the \texttt{AG} acceptor model.}
+\end{Justshowoptions}
+
+Furthermore, the options \Showoption{gzip} and \Showoption{help} are available 
+and have the same semantic as in \Callgth.
+
+The options \Showoption{bssmfile} and \Showoption{datapath} are mandatory.
+Furthermore, at least one of the options \Showoption{gtdonor}, \Showoption{gcdonor}, and \Showoption{agacceptor} is required.
+
+\subsection{The BSSM training data directory}
+
+A BSSM training data directory has up to three subdirectories named
+\texttt{GT\_donor}, \texttt{GC\_donor}, and \texttt{AG\_acceptor} which contain
+the training data files for the corresponding models. Each such directory must
+contain seven files named \texttt{F0}, \texttt{F1}, \texttt{F2}, \texttt{Fi},
+\texttt{T0}, \texttt{T1}, and \texttt{T2} (with an additional suffix \texttt{.gz} if they are compressed). For example, the directory tree containing the compressed training data for \emph{rice} looks like this:
+
+\begin{LargeOutput}
+\$ ls -R rice
+AG\_acceptor/ GC\_donor/    GT\_donor/
+
+rice/AG\_acceptor:
+F0.gz  F1.gz  F2.gz  Fi.gz  T0.gz  T1.gz  T2.gz
+
+rice/GC\_donor:
+F0.gz  F1.gz  F2.gz  Fi.gz  T0.gz  T1.gz  T2.gz
+
+rice/GT\_donor:
+F0.gz  F1.gz  F2.gz  Fi.gz  T0.gz  T1.gz  T2.gz
+\end{LargeOutput}
+
+\section{\Callgthclean: Remove Indices}
+\label{Gthcleansection}
+
+The script \Callgthclean removes all automatically and manually constructed
+indices in the directory where it is called. Furthermore, all files ending with
+\texttt{.polya} and \texttt{.polya.info} created by using the option
+\Showoption{maskpolyatails} of \Callgth are removed. Do not use the endings
+removed by the script, otherwise the corresponding files will be deleted when
+\Callgthclean is called! The script looks as follows:
+
+\begin{scriptsize}
+\verbatiminput{../scripts/gthclean.sh}
+\end{scriptsize}
+
+
+
+\section{Construction of the Indices}
+\label{indexconstruction}
+
+\Gth uses an persistent index to determine which spliced alignments have to be computed during an initial matching and chaining phase called \emph{similarity filter}.
+
+If \Callgth is called the first time on a set of input files (without using the option \Showoption{noautoindex}), these indices are constructed automatically.
+In subsequent calls it is recognized that these indices already exist and the construction phase is skipped. That is, the index construction is completely transparent to the user, the only difference is the reduced execution time when the index already exists.
+
+If the option \Showoption{noautoindex} is used, it is assumed that the indices already exist. They have to be created by \callmkvtree beforehand.
+It is part of the \vmatch software suite, which is available on
+the website \url{http://vmatch.de}.
+On this website you can also find a manual for \callmkvtree.
+For DNA files, indices are constructed as follows (the file is called \texttt{dna.fasta}):
+
+\begin{LargeOutput}
+$ mkvtree -v -dna -allout -pl -db dna.fasta
+\end{LargeOutput}
+
+And for protein files like this (the filename is \texttt{protein.fasta}):
+
+\begin{LargeOutput}
+$ mkvtree -v -protein -allout -pl -db protein.fasta
+\end{LargeOutput}
+
+If you use DNA reference files, you have to construct the index for the genomic
+files, if option \Showoption{inverse} is not used. And for the reference
+files, if option \Showoption{inverse} is used.  If you use protein reference
+files, the index has to be constructed for the reference files, no matter if
+option \Showoption{inverse} is used or not.  You can mix both types of input
+files.
+%An example using a manually constructed index is given in Section \ref{Manualindexconstruction}.
+
+Input files can be compressed with \texttt{gzip}. In this case they must end with \texttt{.gz}.
+
+
+\section{Tutorial}
+\label{Tutorial}
+
+In this section we give an tutorial on how to use \Gth by presenting some
+typical uses of \Gth. On our walk through the different examples, the most
+important features and options of \Gth are introduced.
+
+\subsection{Mapping a Single EST on the \textit{A. thaliana} Chromosome 1}
+
+We invoke \Callgth in the simplest possible way, just using two mandatory
+options \Showoption{genomic} and \Showoption{cdna} to map the EST with gi
+number 19875482 against the first chromosome of \textit{Arabidopsis thaliana}
+(gi 42592260). The EST is supplied as file \texttt{AU236313.gbk.gz} in \GENBANK
+format and the chromosome in \Fasta format (file \texttt{NC\_003070.fna.gz}).
+Both files have been compressed with the program \texttt{gzip} beforehand, which is indicated by the ending \texttt{.gz}.
+
+\begin{scriptsize}\verbatiminput{output/gth--genomic-NC_003070.fna.gz--cdna-AU236313.gbk.gz.out}\end{scriptsize}
+
+In the first line (starting with symbol \texttt{\SY{36}}) of all examples, the
+user input consisting of the called program plus the arguments are shown.
+Output lines starting with the symbol \texttt{\SY{36}} give you useful information about the job --- which parameters have been used is shown in the beginning and various statistical information is output at the end. In our example call an additional warning was issued after the parameter section complaining about the
+missing usage of the option \Showoption{species} which specify a so-called
+BSSM\footnote{BSSM stands for \emph{Bayesian Splice Site Model}} parameter file. These files contain statistical information which makes it possible to ``get the splice sites right'' more easily (this is an oversimplification, \cite{BRE:XIN:ZHU:2004} provides a good starting point to the theory behind this).
+So we execute the job again with the correct splice site file and the option \Showoption{v} which gives us additional information about the run:
+
+\begin{scriptsize}\verbatiminput{output/gth--species-arabidopsis--genomic-NC_003070.fna.gz--cdna-AU236313.gbk.gz--v.out}\end{scriptsize}
+
+As one can see, the output grew quite a bit. In lines starting with the symbol
+\SY{35} output from internal \callvmatch and \callmkvtree calls is shown. There
+is no \callmkvtree output in our example, because the necessary indices did
+already exist (see Section \ref{indexconstruction} for details).
+To combine the option \Showoption{v} with option \Showoption{o}
+which saves the output in the supplied output file is quite useful when performing larger tasks, because this gives us progress information on stdout
+while the actual output is saved in the output file.
+For example, to match $5000$ full-length cDNAs against the first $200000$ bases of the \textit{A. thaliana} chromosome 1, we issue the following command (only the last $20$ lines of progress information is shown):
+
+\begin{scriptsize}\verbatiminput{output/gth--v--frompos-1--topos-200000--inverse--force--o-arab_mapping.txt--cdna-CeresTigr.gz--species-arabidopsis--genomic-NC_003070.fna.gz.out}\end{scriptsize}
+
+After this run, the output can be found in the file \texttt{arab\_mapping.txt}.
+To get better results, we would also add the option \Showoption{gcmaxgapwidth
+5000}, limiting the maximal intron size in \textit{A. thaliana} to $5000$
+bases.
+
+\subsection{Using the Intron Cutout Technique}
+Assume we want to map a single mRNA against human chromosome 21.
+The obvious call would not succeed (only last $3$ lines of output shown):
+
+\begin{footnotesize}\verbatiminput{output/gth--species-human--genomic-hs_ref_chr21.fa.gz--cdna-NM_003253.gbk.out}\end{footnotesize}
+
+This is due to the fact that human genes can contain very long introns.
+Therefore, we have to use the option \Showoption{introncutout}.
+Furthermore, we use the option \Showoption{introndistri} which gives us a distribution of the intron sizes (only this distribution is shown from the output):
+
+\begin{scriptsize}\verbatiminput{output/gth--introncutout--introndistri--species-human--genomic-hs_ref_chr21.fa.gz--cdna-NM_003253.gbk.out}\end{scriptsize}
+
+
+%\subsection{Using a Manually Constructed Index}
+%\label{Manualindexconstruction}
+%To be done.
+
+\subsection{Employing \Callgthconsensus}
+Assume we want to perform \emph{incremental updates}, i.e., we want to annotate
+a genomic sequence with a set of cDNAs/ESTs and/or proteins and update the annotation as soon as new sequences become available.
+
+Because we do not want to redo the complete computation every time new sequences become available, we save the \emph{intermediate results} containing the spliced alignments and only recompute the \emph{consensus spliced alignments} using \Callgthconsensus.
+
+For explanatory purposes, we use the same files as in the examples above.
+We produce the intermediate results of the mapping of $5000$ cDNAs using the
+option \Showoption{intermediate} and store these in a file. The option
+\Showoption{intermediate} requires that we also use the option
+\Showoption{xmlout}, because the intermediate results are stored in an XML
+format. To save disk space we compress the output file on the fly using the
+option \Showoption{gzip}. The output is stored in the file \texttt{ceres.inter.gz}.
+
+\begin{scriptsize}\verbatiminput{output/gth--intermediate--xmlout--gzip--o-ceres.inter.gz--genomic-NC_003070.fna.gz--cdna-CeresTigr.gz--frompos-300000--topos-500000--inverse.out}\end{scriptsize}
+
+To look at the results stored in the file \texttt{ceres.inter.gz}, we employ \Callgthconsensus (with \Showoption{gzip}, because the file is compressed).
+The output was piped through \texttt{grep \SY{94}PGS} to shorten it:
+
+
+\begin{scriptsize}\verbatiminput{output/gthconsensus-ceres.inter.gz.out}\end{scriptsize}
+
+We can also print some information about the intermediate file with the help of
+\Callgthfilestat:
+
+\begin{footnotesize}\verbatiminput{output/gthfilestat-ceres.inter.gz.out}\end{footnotesize}
+
+Now we map an additional EST and store the result in \texttt{new.inter.gz}.
+
+\begin{scriptsize}\verbatiminput{output/gth--intermediate--xmlout--gzip--o-new.inter.gz--genomic-NC_003070.fna.gz--cdna-AU236313.gbk.gz--frompos-300000--topos-500000--inverse.out}\end{scriptsize}
+
+Afterwards we combine the two results (the output was also shortened):
+
+\begin{scriptsize}\verbatiminput{output/gthconsensus-ceres.inter.gz-new.inter.gz.out}\end{scriptsize}
+
+
+\section{Feedback}
+We would be glad to hear from you what you liked about \Gth, what you did not,
+and what could be improved. You can send your remarks via email to
+\texttt{gordon@gremme.org}. This is of particular importance, if you
+find a bug which slipped through our test suite. As an incentive, we promise
+to fix it!
+
+
+\section{Acknowledgements}
+Stefan Kurtz,
+Volker Brendel,
+Sergej Friedmann,
+Alexander Sczyrba,
+Michael E. Sparks,
+Stefan Bienert,
+Daniel Lang,
+Robert Buels,
+Qunfeng Dong,
+Marko Skocibusic,
+Lieven Sterck,
+Matthew Wilkerson,
+Robert Schmieder,
+Jerome Gouzy,
+and Jer-Young Lin
+gave valuable hints on improving the manual and the
+programs described herein. Their help is much appreciated.
+
+
+\section{Recent Changes}
+The following new features have recently been integrated into the
+software described in this manual.
+From version \texttt{1.0.1} on the recent changes can be found in the
+\texttt{CHANGELOG} file.
+
+\Showversionfeatures{1.0.0 (2007-06-20)}
+Many internal changes due to switch to the GenomeTools library (see
+\url{http://genometools.org/} for details). For example, the new option parser
+shows the default value for each option.
+The deprecated options \Showoption{reference} and \Showoption{gcfilterthreshold}
+have finally been removed. Bug fixes.
+
+\Showversionfeatures{0.9.60 (2007-03-08)}
+The implementation of the consensus phase changed. Bug fixed.
+
+\Showversionfeatures{0.9.59 (2007-02-08)}
+The default value for option \Showoption{deletionweight} has been changed from $-4.0$
+to $-5.0$.
+
+\Showversionfeatures{0.9.58 (2006-10-20)}
+Bug fix release.
+
+\Showversionfeatures{0.9.57 (2006-09-19)}
+The options \Showoption{createindicesonly} and \Showoption{skipindexcheck} have been added.
+
+\Showversionfeatures{0.9.56 (2006-08-31)}
+The options \Showoption{prminmatchlen}, \Showoption{prseedlength}, and
+\Showoption{prhdist} have been introduced. A bug concerning the output of
+protein alignments has been fixed.
+
+\Showversionfeatures{0.9.55 (2006-08-07)}
+A bug in the protein code has been fixed.
+
+\Showversionfeatures{0.9.54 (2006-07-27)}
+The XML output of \Gth now reflects version 1.1 of the corresponding schema.
+
+\Showversionfeatures{0.9.53 (2006-05-23)}
+\Callgthbssmbuild performs more sanity checks on the the training data.
+
+\Showversionfeatures{0.9.52 (2006-05-22)}
+The option \Showoption{replacewildcards} has been added to the tool \Callgthbssmbuild.
+
+\Showversionfeatures{0.9.51 (2006-05-16)} The plain protein output has been improved. Bug fixes.
+
+\Showversionfeatures{0.9.50 (2006-05-14)} A minor problem concerning the XML output has been fixed.
+
+\Showversionfeatures{0.9.49 (2006-05-12)} The tool \Callgthbssmbuild has been introduced.
+
+\Showversionfeatures{0.9.48 (2006-04-12)} Bug fix.
+
+\Showversionfeatures{0.9.47 (2005-12-08)} Bug fix.
+
+\Showversionfeatures{0.9.46 (2005-11-16)} Bug fixes.
+
+\Showversionfeatures{0.9.45 (2005-11-16)} Bug fixes. Time and space requirements of the consensus phase have been improved.
+
+\Showversionfeatures{0.9.44 (2005-11-11)} XML output adjusted.
+
+\Showversionfeatures{0.9.43 (2005-11-09)} Bug fixes.
+
+\Showversionfeatures{0.9.42 (2005-10-11)} Bug fixes.
+
+\Showversionfeatures{0.9.41 (2005-09-21)}
+Computation of paralogous genes has been made available via option
+\Showoption{paralogs}.  \Callgthgetseq has been extended by the options
+\Showoption{getcdnacomp}, \Showoption{getproteincomp}, and
+\Showoption{getgenomiccomp}. Bug fixes.
+
+\Showversionfeatures{0.9.40 (2005-09-15)}
+The option \Showoption{reference} has been replaced by the options \Showoption{cdna} and
+\Showoption{protein}. The tools \Callgthsplit, \Callgthsplittwodim,
+\Callgthgetseq, and \Callgthfilestat have been introduced. A spliced
+alignment filter (see Section \ref{splicedalignmentfiltersection}) has been built into some \Gth tools. Bug fixes.
+
+\Showversionfeatures{0.9.39} The small tool \Callgthbssmfileinfo has been introduced. The options \Showoption{translationtable} and \Showoption{skipalignmentout} have been added. 
+
+\Showversionfeatures{0.9.38} Option \Showoption{showseqnums} added.
+
+\Showversionfeatures{0.9.37} Option \Showoption{gcfilterthreshold} has been renamed to \Showoption{gcmincoverage}.
+
+\Showversionfeatures{0.9.36} Rare matches. Some bug fixes.
+
+\Showversionfeatures{0.9.35} Computation of paralogous genes has been introduced into the code.
+
+\Showversionfeatures{0.9.34} The generic splice site model has been changed! 
+
+\Showversionfeatures{0.9.33} Bug involving option \Showoption{frompos} fixed. U12-type intron model has been added. Space consumption of cDNA backtrace matrix quartered.
+
+\Showversionfeatures{0.9.32} Bug fixed.
+
+\Showversionfeatures{0.9.31} More statistics. 
+
+\Showversionfeatures{0.9.30} Some XML output changes. 
+
+\Showversionfeatures{0.9.29} Minor extension to the XML output. Bug fixed.
+
+\Showversionfeatures{0.9.28} Performance improved. Memory requirements reduced. Bugs fixed. Option \Showoption{gcmaxgapwidth} has been introduced.
+
+\Showversionfeatures{0.9.27} XML output adjusted.
+
+\Showversionfeatures{0.9.26} Speed optimization of the cDNA/EST DP.
+
+\Showversionfeatures{0.9.25} Unnecessary environment variable dependency removed.
+
+\Showversionfeatures{0.9.24} Internal error handling improved.
+
+\Showversionfeatures{0.9.23} The XML output for protein spliced alignments has been implemented.
+
+\Showversionfeatures{0.9.22} The options \Showoption{gzip} and \Showoption{bzip2} have been introduced.
+
+\Showversionfeatures{0.9.21} First version of protein case ready.
+
+\Showversionfeatures{0.9.20} Bug fixed.
+
+\Showversionfeatures{0.9.19} The \Callgthconsensus program has been introduced.
+
+\Showversionfeatures{0.9.18} Option \Showoption{intermediate} has been implemented.
+
+\Showversionfeatures{0.9.17} Option \Showoption{noautoindex} has been implemented.
+
+\Showversionfeatures{0.9.16} Option \Showoption{xmlout} has been implemented. 
+
+\Showversionfeatures{0.9.15} Some improvements have been made in the MPI version.
+
+\Showversionfeatures{0.9.14} The MPI version of \Gth has been introduced. The MPI version is not publicly available yet.
+
+\Showversionfeatures{0.9.13} The options \Showoption{iciterations} and \Showoption{icdeltaincrease} have been added.
+
+\Showversionfeatures{0.9.12} Option \Showoption{inverse} has been added. Some bugs fixed.
+
+\Showversionfeatures{0.9.11} Many additional options added.
+
+\Showversionfeatures{0.9.10} Additional species have been added.
+
+\Showversionfeatures{0.9.9} The options \Showoption{autointroncutout} and \Showoption{polyatailfilter} have been introduced.
+
+\Showversionfeatures{0.9.8} The default for \Showoption{minmatchlen} has been increased to $20$. Option \Showoption{inexact} has been removed, inexact matching is now the default. Exact matches can be computed via the new option \Showoption{exact}. The parameters of the inexact matching can be changed via the new options \Showoption{seedlength} and \Showoption{exdrop}.
+The default value for the Option \Showoption{gcfilterthreshold} has been increased to $50$.
+
+\Showversionfeatures{0.9.7} Option \Showoption{online} has been intronduced.
+
+\Showversionfeatures{0.9.6} One can now specify multiple genomic and reference files. A few bugs have been fixed.
+
+\Showversionfeatures{0.9.5} The genomic index can contain more than one sequence. The DP parameters are only computed for the considered genomic regions and not
+for the whole genomic sequence.
+
+\Showversionfeatures{0.9.4} Option \Showoption{gcfilterthreshold} has been introduced. The default value for option \Showoption{icinitialdelta} has been changed from $30$ to $50$.
+
+\Showversionfeatures{0.9.3} Segmentation fault fixed. 
+
+\Showversionfeatures{0.9.2} Some options used for the old similarity filter have been removed. Option \Showoption{minmatchlen} has been introduced. Small overlaps are now removed after the local chaining.
+
+\Showversionfeatures{0.9.1} Some internal changes concerning error handling. 
+
+\Showversionfeatures{0.9} First version with new similarity filter, new chaining, and intron cutout technique.
+
+\Showversionfeatures{0.8.11} Intron cutouts have been introduced in the DP.
+
+\Showversionfeatures{0.8.10} The calculation of exon scores for alternative gene structures has been changed.
+
+\Showversionfeatures{0.8.9} The exon scores for alternative gene structures are now shown.
+
+\Showversionfeatures{0.8.8}
+The option \Showoption{minorflength} has been introduced.
+
+\Showversionfeatures{0.8.7}{The 3-phase translation of alternative gene structures and the output of maximal non-overlapping open reading frames have been
+introduced. 
+
+\Showversionfeatures{0.8.6}
+The following options have been introduced: \Showoption{leadcutoffsmode},
+\Showoption{termcutoffsmode}, \Showoption{cutoffsminexonlen}, and
+\Showoption{scoreminexonlen}.
+
+
+\addcontentsline{toc}{section}{References}
+%\bibliographystyle{plain}
+
+\bibliographystyle{alpha}
+\bibliography{defines,dissertation,gene_prediction_methods,consensus_spliced_alignment,splicing}
+
+%\newpage
+%\appendix
+%\section{XML Schemes}
+%\label{XMLschemes}
+
+
+%\verbatiminput{../mesparks/xml_std/xml_file_formats/GenomeThreader.rng}
+
+\addcontentsline{toc}{section}{Index}
+% the index
+\input{gthmanual-tmp.ind}
+
+\end{document}

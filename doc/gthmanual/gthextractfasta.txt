@@ -1,0 +1,33 @@
+With the help of gthextractfasta one can extract the used fasta sequences from
+GenomeThreader output files containing intermediate results. That is, all 
+sequences which are represented in the intermediate files are printed in
+fasta format on stdout. Strictly speaking, the sequences are not extracted from
+the intermediate file, but from the corresponding sequence files.
+
+gthextractfasta is called as follows:
+
+gthextractfasta [options] intermediate_files
+
+If no intermediate_file is given as imput, stdin is used instead. This allows
+to use gthextractfasta in a UNIX pipe.
+
+gthextractfasta offers the following options:
+
+-containedcdna		extract cDNA/EST sequences 
+-noncontainedcdna
+-containedprotein	extract protein sequences
+-noncontainedprotein   	
+-containedgenomic   	extract genomic sequences 
+-noncontainedgenomic
+
+-cdna
+-cdnacomplement
+-protein
+-proteincomplement
+-genomic
+-genomiccomplement
+
+-gzip
+-bzip2
+-v
+-help

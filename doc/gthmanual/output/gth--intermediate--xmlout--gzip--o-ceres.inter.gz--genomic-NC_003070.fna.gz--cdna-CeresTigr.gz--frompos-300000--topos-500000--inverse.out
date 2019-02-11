@@ -1,0 +1,1 @@
+$ gth -intermediate -xmlout -gzip -o ceres.inter.gz -genomic NC_003070.fna.gz -cdna CeresTigr.gz -frompos 300000 -topos 500000 -inverse

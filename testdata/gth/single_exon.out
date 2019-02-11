@@ -1,0 +1,330 @@
+********************************************************************************
+
+     1  AGAGACACAG AGTCCGGCAT TGGTCCCAGG CAGCAGTTAG CCCGCCGCCC GCCTGTGTGT
+    61  CCCCAGAGCC ATGGAGAGAG CCAGTCTGAT CCAGAAGGCC AAGCTGGCAG AGCAGGCCGA
+   121  ACGCTATGAG GACATGGCAG CCTTCATGAA AGGCGCCGTG GAGAAGGGCG AGGAGCTCTC
+   181  CTGCGAAGAG CGAAACCTGC TCTCAGTAGC CTATAAGAAC GTGGTGGGCG GCCAGAGGGC
+   241  TGCCTGGAGG GTGCTGTCCA GTATTGAGCA GAAAAGCAAC GAGGAGGGCT CGGAGGAGAA
+   301  GGGGCCCGAG GTGCGTGAGT ACCGGGAGAA GGTGGAGACT GAGCTCCAGG GCGTGTGCGA
+   361  CACCGTGCTG GGCCTGCTGG ACAGCCACCT CATCAAGGAG GCCGGGGACG CCGAGAGCCG
+   421  GGTCTTCTAC CTGAAGATGA AGGGTGACTA CTACCGCTAC CTGGCCGAGG TGGCCACCGG
+   481  TGACGACAAG AAGCGCATCA TTGACTCAGC CCGGTCAGCC TACCAGGAGG CCATGGACAT
+   541  CAGCAAGAAG GAGATGCCGC CCACCAACCC CATCCGCCTG GGCCTGGCCC TGAACTTTTC
+   601  CGTCTTCCAC TACGAGATCG CCAACAGCCC CGAGGAGGCC ATCTCTCTGG CCAAGACCAC
+   661  TTTCGACGAG GCCATGGCTG ATCTGCACAC CCTCAGCGAG GACTCCTACA AAGACAGCAC
+   721  CCTCATCATG CAGCTGCTGC GAGACAACCT GACACTGTGG ACGGCCGACA ACGCCGGGGA
+   781  AGAGGGGGGC GAGGCTCCCC AGGAGCCCCA GAGCTGAGTG TTGCCCGCCA CCGCCCCGCC
+   841  CTGCCCCCTC CAGTCCCCCA CCCTGCCGAG AGGACTAGTA TGGGGTGGGA GGCCCCACCC
+   901  TTCTCCCCTA GGCGCTGTTC TTGCTCCAAA GGGCTCCGTG GAGAGGGACT GGCAGAGCTG
+   961  AGGCCACCTG GGGCTGGGGA TCCCACTCTT CTTGCAGCTG TTGAGCGCAC CTAACCACTG
+  1021  GTCATGCCCC CACCCCTGCT CTCCGCACCC GCTTCCTCCC GACCCCAGGA CCAGGCTACT
+  1081  TCTCCCCTCC TCTTGCCTCC CTCCTGCCCC TGCTGCCTCT GATCGTAGGA ATTGAGGAGT
+  1141  GTCCCGCCTT GTGGCTGAGA ACTGGACAGT GGCAGGGGCT GGAGATGGGT GTGTGTGTGT
+  1201  GTGTGTGTGT GTGTGTGTGC GCGCGCGCCA GTGCAAGACC GAGACTGAGG GAAAGCATGT
+  1261  CTGCTGGGTG TGACCATGTT TCCTCTCAAT AAAGTTCCCC TGTGACACT
+
+
+Predicted gene structure:
+
+ Exon  1  8568  9876 (1309 n);  cDNA      1   1309 (1309 n); score: 1.000
+
+MATCH	2702352+	2702352+	1.000	1309	1.000	C
+PGS_2702352+_2702352+	(8568  9876)
+
+Alignment (genomic DNA sequence = upper lines):
+
+AGAGACACAG AGTCCGGCAT TGGTCCCAGG CAGCAGTTAG CCCGCCGCCC GCCTGTGTGT        8627
+|||||||||| |||||||||| |||||||||| |||||||||| |||||||||| ||||||||||
+AGAGACACAG AGTCCGGCAT TGGTCCCAGG CAGCAGTTAG CCCGCCGCCC GCCTGTGTGT          60
+
+
+CCCCAGAGCC ATGGAGAGAG CCAGTCTGAT CCAGAAGGCC AAGCTGGCAG AGCAGGCCGA        8687
+|||||||||| |||||||||| |||||||||| |||||||||| |||||||||| ||||||||||
+CCCCAGAGCC ATGGAGAGAG CCAGTCTGAT CCAGAAGGCC AAGCTGGCAG AGCAGGCCGA         120
+
+
+ACGCTATGAG GACATGGCAG CCTTCATGAA AGGCGCCGTG GAGAAGGGCG AGGAGCTCTC        8747
+|||||||||| |||||||||| |||||||||| |||||||||| |||||||||| ||||||||||
+ACGCTATGAG GACATGGCAG CCTTCATGAA AGGCGCCGTG GAGAAGGGCG AGGAGCTCTC         180
+
+
+CTGCGAAGAG CGAAACCTGC TCTCAGTAGC CTATAAGAAC GTGGTGGGCG GCCAGAGGGC        8807
+|||||||||| |||||||||| |||||||||| |||||||||| |||||||||| ||||||||||
+CTGCGAAGAG CGAAACCTGC TCTCAGTAGC CTATAAGAAC GTGGTGGGCG GCCAGAGGGC         240
+
+
+TGCCTGGAGG GTGCTGTCCA GTATTGAGCA GAAAAGCAAC GAGGAGGGCT CGGAGGAGAA        8867
+|||||||||| |||||||||| |||||||||| |||||||||| |||||||||| ||||||||||
+TGCCTGGAGG GTGCTGTCCA GTATTGAGCA GAAAAGCAAC GAGGAGGGCT CGGAGGAGAA         300
+
+
+GGGGCCCGAG GTGCGTGAGT ACCGGGAGAA GGTGGAGACT GAGCTCCAGG GCGTGTGCGA        8927
+|||||||||| |||||||||| |||||||||| |||||||||| |||||||||| ||||||||||
+GGGGCCCGAG GTGCGTGAGT ACCGGGAGAA GGTGGAGACT GAGCTCCAGG GCGTGTGCGA         360
+
+
+CACCGTGCTG GGCCTGCTGG ACAGCCACCT CATCAAGGAG GCCGGGGACG CCGAGAGCCG        8987
+|||||||||| |||||||||| |||||||||| |||||||||| |||||||||| ||||||||||
+CACCGTGCTG GGCCTGCTGG ACAGCCACCT CATCAAGGAG GCCGGGGACG CCGAGAGCCG         420
+
+
+GGTCTTCTAC CTGAAGATGA AGGGTGACTA CTACCGCTAC CTGGCCGAGG TGGCCACCGG        9047
+|||||||||| |||||||||| |||||||||| |||||||||| |||||||||| ||||||||||
+GGTCTTCTAC CTGAAGATGA AGGGTGACTA CTACCGCTAC CTGGCCGAGG TGGCCACCGG         480
+
+
+TGACGACAAG AAGCGCATCA TTGACTCAGC CCGGTCAGCC TACCAGGAGG CCATGGACAT        9107
+|||||||||| |||||||||| |||||||||| |||||||||| |||||||||| ||||||||||
+TGACGACAAG AAGCGCATCA TTGACTCAGC CCGGTCAGCC TACCAGGAGG CCATGGACAT         540
+
+
+CAGCAAGAAG GAGATGCCGC CCACCAACCC CATCCGCCTG GGCCTGGCCC TGAACTTTTC        9167
+|||||||||| |||||||||| |||||||||| |||||||||| |||||||||| ||||||||||
+CAGCAAGAAG GAGATGCCGC CCACCAACCC CATCCGCCTG GGCCTGGCCC TGAACTTTTC         600
+
+
+CGTCTTCCAC TACGAGATCG CCAACAGCCC CGAGGAGGCC ATCTCTCTGG CCAAGACCAC        9227
+|||||||||| |||||||||| |||||||||| |||||||||| |||||||||| ||||||||||
+CGTCTTCCAC TACGAGATCG CCAACAGCCC CGAGGAGGCC ATCTCTCTGG CCAAGACCAC         660
+
+
+TTTCGACGAG GCCATGGCTG ATCTGCACAC CCTCAGCGAG GACTCCTACA AAGACAGCAC        9287
+|||||||||| |||||||||| |||||||||| |||||||||| |||||||||| ||||||||||
+TTTCGACGAG GCCATGGCTG ATCTGCACAC CCTCAGCGAG GACTCCTACA AAGACAGCAC         720
+
+
+CCTCATCATG CAGCTGCTGC GAGACAACCT GACACTGTGG ACGGCCGACA ACGCCGGGGA        9347
+|||||||||| |||||||||| |||||||||| |||||||||| |||||||||| ||||||||||
+CCTCATCATG CAGCTGCTGC GAGACAACCT GACACTGTGG ACGGCCGACA ACGCCGGGGA         780
+
+
+AGAGGGGGGC GAGGCTCCCC AGGAGCCCCA GAGCTGAGTG TTGCCCGCCA CCGCCCCGCC        9407
+|||||||||| |||||||||| |||||||||| |||||||||| |||||||||| ||||||||||
+AGAGGGGGGC GAGGCTCCCC AGGAGCCCCA GAGCTGAGTG TTGCCCGCCA CCGCCCCGCC         840
+
+
+CTGCCCCCTC CAGTCCCCCA CCCTGCCGAG AGGACTAGTA TGGGGTGGGA GGCCCCACCC        9467
+|||||||||| |||||||||| |||||||||| |||||||||| |||||||||| ||||||||||
+CTGCCCCCTC CAGTCCCCCA CCCTGCCGAG AGGACTAGTA TGGGGTGGGA GGCCCCACCC         900
+
+
+TTCTCCCCTA GGCGCTGTTC TTGCTCCAAA GGGCTCCGTG GAGAGGGACT GGCAGAGCTG        9527
+|||||||||| |||||||||| |||||||||| |||||||||| |||||||||| ||||||||||
+TTCTCCCCTA GGCGCTGTTC TTGCTCCAAA GGGCTCCGTG GAGAGGGACT GGCAGAGCTG         960
+
+
+AGGCCACCTG GGGCTGGGGA TCCCACTCTT CTTGCAGCTG TTGAGCGCAC CTAACCACTG        9587
+|||||||||| |||||||||| |||||||||| |||||||||| |||||||||| ||||||||||
+AGGCCACCTG GGGCTGGGGA TCCCACTCTT CTTGCAGCTG TTGAGCGCAC CTAACCACTG        1020
+
+
+GTCATGCCCC CACCCCTGCT CTCCGCACCC GCTTCCTCCC GACCCCAGGA CCAGGCTACT        9647
+|||||||||| |||||||||| |||||||||| |||||||||| |||||||||| ||||||||||
+GTCATGCCCC CACCCCTGCT CTCCGCACCC GCTTCCTCCC GACCCCAGGA CCAGGCTACT        1080
+
+
+TCTCCCCTCC TCTTGCCTCC CTCCTGCCCC TGCTGCCTCT GATCGTAGGA ATTGAGGAGT        9707
+|||||||||| |||||||||| |||||||||| |||||||||| |||||||||| ||||||||||
+TCTCCCCTCC TCTTGCCTCC CTCCTGCCCC TGCTGCCTCT GATCGTAGGA ATTGAGGAGT        1140
+
+
+GTCCCGCCTT GTGGCTGAGA ACTGGACAGT GGCAGGGGCT GGAGATGGGT GTGTGTGTGT        9767
+|||||||||| |||||||||| |||||||||| |||||||||| |||||||||| ||||||||||
+GTCCCGCCTT GTGGCTGAGA ACTGGACAGT GGCAGGGGCT GGAGATGGGT GTGTGTGTGT        1200
+
+
+GTGTGTGTGT GTGTGTGTGC GCGCGCGCCA GTGCAAGACC GAGACTGAGG GAAAGCATGT        9827
+|||||||||| |||||||||| |||||||||| |||||||||| |||||||||| ||||||||||
+GTGTGTGTGT GTGTGTGTGC GCGCGCGCCA GTGCAAGACC GAGACTGAGG GAAAGCATGT        1260
+
+
+CTGCTGGGTG TGACCATGTT TCCTCTCAAT AAAGTTCCCC TGTGACACT                    9876
+|||||||||| |||||||||| |||||||||| |||||||||| |||||||||
+CTGCTGGGTG TGACCATGTT TCCTCTCAAT AAAGTTCCCC TGTGACACT                    1309
+
+
+--------------------------------------------------------------------------------
+
+Predicted gene locations (1):
+
+
+PGL   1 (+ strand):      8568     9876 (genomic template '2702352')
+AGS-1 (8568  9876)
+SCR   (e 1.000)
+
+  Exon  1  8568  9876 (1309 n); score: 1.000
+
+  PGS (8568  9876)	2702352+
+
+3-phase translation of AGS-1 (+strand):
+
+       .         .         .         .         .         .         
+ 8568  AGAGACACAGAGTCCGGCATTGGTCCCAGGCAGCAGTTAGCCCGCCGCCCGCCTGTGTGT
+        R  D  T  E  S  G  I  G  P  R  Q  Q  L  A  R  R  P  P  V  C 
+         E  T  Q  S  P  A  L  V  P  G  S  S  *  P  A  A  R  L  C  V
+          R  H  R  V  R  H  W  S  Q  A  A  V  S  P  P  P  A  C  V  
+
+
+       .         .         .         .         .         .         
+ 8628  CCCCAGAGCCATGGAGAGAGCCAGTCTGATCCAGAAGGCCAAGCTGGCAGAGCAGGCCGA
+        P  Q  S  H  G  E  S  Q  S  D  P  E  G  Q  A  G  R  A  G  R 
+         P  R  A  M  E  R  A  S  L  I  Q  K  A  K  L  A  E  Q  A  E
+       S  P  E  P  W  R  E  P  V  *  S  R  R  P  S  W  Q  S  R  P  
+
+
+       .         .         .         .         .         .         
+ 8688  ACGCTATGAGGACATGGCAGCCTTCATGAAAGGCGCCGTGGAGAAGGGCGAGGAGCTCTC
+        T  L  *  G  H  G  S  L  H  E  R  R  R  G  E  G  R  G  A  L 
+         R  Y  E  D  M  A  A  F  M  K  G  A  V  E  K  G  E  E  L  S
+       N  A  M  R  T  W  Q  P  S  *  K  A  P  W  R  R  A  R  S  S  
+
+
+       .         .         .         .         .         .         
+ 8748  CTGCGAAGAGCGAAACCTGCTCTCAGTAGCCTATAAGAACGTGGTGGGCGGCCAGAGGGC
+        L  R  R  A  K  P  A  L  S  S  L  *  E  R  G  G  R  P  E  G 
+         C  E  E  R  N  L  L  S  V  A  Y  K  N  V  V  G  G  Q  R  A
+       P  A  K  S  E  T  C  S  Q  *  P  I  R  T  W  W  A  A  R  G  
+
+
+       .         .         .         .         .         .         
+ 8808  TGCCTGGAGGGTGCTGTCCAGTATTGAGCAGAAAAGCAACGAGGAGGGCTCGGAGGAGAA
+        C  L  E  G  A  V  Q  Y  *  A  E  K  Q  R  G  G  L  G  G  E 
+         A  W  R  V  L  S  S  I  E  Q  K  S  N  E  E  G  S  E  E  K
+       L  P  G  G  C  C  P  V  L  S  R  K  A  T  R  R  A  R  R  R  
+
+
+       .         .         .         .         .         .         
+ 8868  GGGGCCCGAGGTGCGTGAGTACCGGGAGAAGGTGGAGACTGAGCTCCAGGGCGTGTGCGA
+        G  A  R  G  A  *  V  P  G  E  G  G  D  *  A  P  G  R  V  R 
+         G  P  E  V  R  E  Y  R  E  K  V  E  T  E  L  Q  G  V  C  D
+       R  G  P  R  C  V  S  T  G  R  R  W  R  L  S  S  R  A  C  A  
+
+
+       .         .         .         .         .         .         
+ 8928  CACCGTGCTGGGCCTGCTGGACAGCCACCTCATCAAGGAGGCCGGGGACGCCGAGAGCCG
+        H  R  A  G  P  A  G  Q  P  P  H  Q  G  G  R  G  R  R  E  P 
+         T  V  L  G  L  L  D  S  H  L  I  K  E  A  G  D  A  E  S  R
+       T  P  C  W  A  C  W  T  A  T  S  S  R  R  P  G  T  P  R  A  
+
+
+       .         .         .         .         .         .         
+ 8988  GGTCTTCTACCTGAAGATGAAGGGTGACTACTACCGCTACCTGGCCGAGGTGGCCACCGG
+        G  L  L  P  E  D  E  G  *  L  L  P  L  P  G  R  G  G  H  R 
+         V  F  Y  L  K  M  K  G  D  Y  Y  R  Y  L  A  E  V  A  T  G
+       G  S  S  T  *  R  *  R  V  T  T  T  A  T  W  P  R  W  P  P  
+
+
+       .         .         .         .         .         .         
+ 9048  TGACGACAAGAAGCGCATCATTGACTCAGCCCGGTCAGCCTACCAGGAGGCCATGGACAT
+        *  R  Q  E  A  H  H  *  L  S  P  V  S  L  P  G  G  H  G  H 
+         D  D  K  K  R  I  I  D  S  A  R  S  A  Y  Q  E  A  M  D  I
+       V  T  T  R  S  A  S  L  T  Q  P  G  Q  P  T  R  R  P  W  T  
+
+
+       .         .         .         .         .         .         
+ 9108  CAGCAAGAAGGAGATGCCGCCCACCAACCCCATCCGCCTGGGCCTGGCCCTGAACTTTTC
+        Q  Q  E  G  D  A  A  H  Q  P  H  P  P  G  P  G  P  E  L  F 
+         S  K  K  E  M  P  P  T  N  P  I  R  L  G  L  A  L  N  F  S
+       S  A  R  R  R  C  R  P  P  T  P  S  A  W  A  W  P  *  T  F  
+
+
+       .         .         .         .         .         .         
+ 9168  CGTCTTCCACTACGAGATCGCCAACAGCCCCGAGGAGGCCATCTCTCTGGCCAAGACCAC
+        R  L  P  L  R  D  R  Q  Q  P  R  G  G  H  L  S  G  Q  D  H 
+         V  F  H  Y  E  I  A  N  S  P  E  E  A  I  S  L  A  K  T  T
+       P  S  S  T  T  R  S  P  T  A  P  R  R  P  S  L  W  P  R  P  
+
+
+       .         .         .         .         .         .         
+ 9228  TTTCGACGAGGCCATGGCTGATCTGCACACCCTCAGCGAGGACTCCTACAAAGACAGCAC
+        F  R  R  G  H  G  *  S  A  H  P  Q  R  G  L  L  Q  R  Q  H 
+         F  D  E  A  M  A  D  L  H  T  L  S  E  D  S  Y  K  D  S  T
+       L  S  T  R  P  W  L  I  C  T  P  S  A  R  T  P  T  K  T  A  
+
+
+       .         .         .         .         .         .         
+ 9288  CCTCATCATGCAGCTGCTGCGAGACAACCTGACACTGTGGACGGCCGACAACGCCGGGGA
+        P  H  H  A  A  A  A  R  Q  P  D  T  V  D  G  R  Q  R  R  G 
+         L  I  M  Q  L  L  R  D  N  L  T  L  W  T  A  D  N  A  G  E
+       P  S  S  C  S  C  C  E  T  T  *  H  C  G  R  P  T  T  P  G  
+
+
+       .         .         .         .         .         .         
+ 9348  AGAGGGGGGCGAGGCTCCCCAGGAGCCCCAGAGCTGAGTGTTGCCCGCCACCGCCCCGCC
+        R  G  G  R  G  S  P  G  A  P  E  L  S  V  A  R  H  R  P  A 
+         E  G  G  E  A  P  Q  E  P  Q  S  *  V  L  P  A  T  A  P  P
+       K  R  G  A  R  L  P  R  S  P  R  A  E  C  C  P  P  P  P  R  
+
+
+       .         .         .         .         .         .         
+ 9408  CTGCCCCCTCCAGTCCCCCACCCTGCCGAGAGGACTAGTATGGGGTGGGAGGCCCCACCC
+        L  P  P  P  V  P  H  P  A  E  R  T  S  M  G  W  E  A  P  P 
+         C  P  L  Q  S  P  T  L  P  R  G  L  V  W  G  G  R  P  H  P
+       P  A  P  S  S  P  P  P  C  R  E  D  *  Y  G  V  G  G  P  T  
+
+
+       .         .         .         .         .         .         
+ 9468  TTCTCCCCTAGGCGCTGTTCTTGCTCCAAAGGGCTCCGTGGAGAGGGACTGGCAGAGCTG
+        F  S  P  R  R  C  S  C  S  K  G  L  R  G  E  G  L  A  E  L 
+         S  P  L  G  A  V  L  A  P  K  G  S  V  E  R  D  W  Q  S  *
+       L  L  P  *  A  L  F  L  L  Q  R  A  P  W  R  G  T  G  R  A  
+
+
+       .         .         .         .         .         .         
+ 9528  AGGCCACCTGGGGCTGGGGATCCCACTCTTCTTGCAGCTGTTGAGCGCACCTAACCACTG
+        R  P  P  G  A  G  D  P  T  L  L  A  A  V  E  R  T  *  P  L 
+         G  H  L  G  L  G  I  P  L  F  L  Q  L  L  S  A  P  N  H  W
+       E  A  T  W  G  W  G  S  H  S  S  C  S  C  *  A  H  L  T  T  
+
+
+       .         .         .         .         .         .         
+ 9588  GTCATGCCCCCACCCCTGCTCTCCGCACCCGCTTCCTCCCGACCCCAGGACCAGGCTACT
+        V  M  P  P  P  L  L  S  A  P  A  S  S  R  P  Q  D  Q  A  T 
+         S  C  P  H  P  C  S  P  H  P  L  P  P  D  P  R  T  R  L  L
+       G  H  A  P  T  P  A  L  R  T  R  F  L  P  T  P  G  P  G  Y  
+
+
+       .         .         .         .         .         .         
+ 9648  TCTCCCCTCCTCTTGCCTCCCTCCTGCCCCTGCTGCCTCTGATCGTAGGAATTGAGGAGT
+        S  P  L  L  L  P  P  S  C  P  C  C  L  *  S  *  E  L  R  S 
+         L  P  S  S  C  L  P  P  A  P  A  A  S  D  R  R  N  *  G  V
+       F  S  P  P  L  A  S  L  L  P  L  L  P  L  I  V  G  I  E  E  
+
+
+       .         .         .         .         .         .         
+ 9708  GTCCCGCCTTGTGGCTGAGAACTGGACAGTGGCAGGGGCTGGAGATGGGTGTGTGTGTGT
+        V  P  P  C  G  *  E  L  D  S  G  R  G  W  R  W  V  C  V  C 
+         S  R  L  V  A  E  N  W  T  V  A  G  A  G  D  G  C  V  C  V
+       C  P  A  L  W  L  R  T  G  Q  W  Q  G  L  E  M  G  V  C  V  
+
+
+       .         .         .         .         .         .         
+ 9768  GTGTGTGTGTGTGTGTGTGCGCGCGCGCCAGTGCAAGACCGAGACTGAGGGAAAGCATGT
+        V  C  V  C  V  C  A  R  A  P  V  Q  D  R  D  *  G  K  A  C 
+         C  V  C  V  C  V  R  A  R  Q  C  K  T  E  T  E  G  K  H  V
+       C  V  C  V  C  V  C  A  R  A  S  A  R  P  R  L  R  E  S  M  
+
+
+       .         .         .         .         .        
+ 9828  CTGCTGGGTGTGACCATGTTTCCTCTCAATAAAGTTCCCCTGTGACACT
+        L  L  G  V  T  M  F  P  L  N  K  V  P  L  *  H  
+         C  W  V  *  P  C  F  L  S  I  K  F  P  C  D  T 
+       S  A  G  C  D  H  V  S  S  Q  *  S  S  P  V  T   
+
+
+Maximal non-overlapping open reading frames (>= 64 codons)
+
+>2702352+_PGL-1_AGS-1_PPS_1 (8608  9384)	(frame '1';   774 bp,  258 residues) 
+    1  PAARLCVPRA MERASLIQKA KLAEQAERYE DMAAFMKGAV EKGEELSCEE RNLLSVAYKN 
+   61  VVGGQRAAWR VLSSIEQKSN EEGSEEKGPE VREYREKVET ELQGVCDTVL GLLDSHLIKE 
+  121  AGDAESRVFY LKMKGDYYRY LAEVATGDDK KRIIDSARSA YQEAMDISKK EMPPTNPIRL 
+  181  GLALNFSVFH YEIANSPEEA ISLAKTTFDE AMADLHTLSE DSYKDSTLIM QLLRDNLTLW 
+  241  TADNAGEEGG EAPQEPQS*
+
+>2702352+_PGL-1_AGS-1_PPS_2 (9572  9859)	(frame '2';   285 bp,   95 residues) 
+    1  AHLTTGHAPT PALRTRFLPT PGPGYFSPPL ASLLPLLPLI VGIEECPALW LRTGQWQGLE 
+   61  MGVCVCVCVC VCARASARPR LRESMSAGCD HVSSQ*
+
+
+
+

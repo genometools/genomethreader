@@ -1,0 +1,10 @@
+$ gthfilestat ceres_sub.inter.gz
+spliced alignment alignment score distribution:
+
+spliced alignment coverage distribution:
+
+memory statistics:
+5 spliced alignments have been stored
+5 predicted gene locations have been stored
+
+date finished: 2008-11-18 11:32:05
