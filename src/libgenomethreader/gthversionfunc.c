@@ -10,7 +10,7 @@
 void gthversionfunc(const char *progname)
 {
   printf("%s (GenomeThreader) %s\n", progname, GTH_VERSION);
-  printf("All rights reserved. Do not distribute.\n\n");
+  printf("\n");
   printf("libgenometools-%s:\n", gt_version());
   printf("Copyright (c) 2003-2018 G. Gremme, S. Steinbiss, S. Kurtz, and "
          "CONTRIBUTORS\n");

@@ -13,8 +13,7 @@ ISPELLALL=author.ispell\
           speciestable.ispell
 
 all: ispellall\
-     gthmanual.pdf\
-     gthlicense.pdf
+     gthmanual.pdf
 
 ${GTHMANUALTMP}.tex: gthmanual.tex execcommand.pl
 	#findemptyoutfiles.sh
