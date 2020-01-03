@@ -1,6 +1,6 @@
 #include <math.h>
 #include "core/array2dim_api.h"
-#include "core/divmodmul.h"
+#include "core/divmodmul_api.h"
 #include "core/undef_api.h"
 #include "gth/align_dna_imp.h"
 #include "gth/compute_scores.h"

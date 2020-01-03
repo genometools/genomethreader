@@ -1,6 +1,6 @@
 #include <ctype.h>
 #include "core/cstr_api.h"
-#include "core/ma.h"
+#include "core/ma_api.h"
 #include "core/types_api.h"
 #include "core/unused_api.h"
 #include "gth/seq_con_rep.h"

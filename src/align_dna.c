@@ -1,4 +1,4 @@
-#include "core/tooldriver.h"
+#include "core/tooldriver_api.h"
 #include "libgenomethreader/gt_align_dna.h"
 #include "libgenomethreader/gthversionfunc.h"
 

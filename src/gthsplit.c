@@ -1,5 +1,5 @@
 #include "gth_config.h"
-#include "core/tooldriver.h"
+#include "core/tooldriver_api.h"
 #include "gth/gt_gthsplit.h"
 #include "libgenomethreader/gthpre.h"
 #include "libgenomethreader/gthversionfunc.h"
