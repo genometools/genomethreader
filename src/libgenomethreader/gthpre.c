@@ -1,10 +1,10 @@
 #include <math.h>
 #include <stdbool.h>
 #include "core/assert_api.h"
-#include "core/compat.h"
-#include "core/fa.h"
-#include "core/fileutils.h"
-#include "core/str.h"
+#include "core/compat_api.h"
+#include "core/fa_api.h"
+#include "core/fileutils_api.h"
+#include "core/str_api.h"
 #include "core/undef_api.h"
 #include "core/unused_api.h"
 #include "core/xansi_api.h"

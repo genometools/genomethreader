@@ -1,9 +1,9 @@
 #include "core/bittab_api.h"
-#include "core/divmodmul.h"
-#include "core/ensure.h"
+#include "core/divmodmul_api.h"
+#include "core/ensure_api.h"
 #include "core/ma_api.h"
-#include "core/minmax.h"
-#include "core/range.h"
+#include "core/minmax_api.h"
+#include "core/range_api.h"
 #include "libgenomethreader/jt.h"
 
 #ifndef NOLICENSEMANAGER
