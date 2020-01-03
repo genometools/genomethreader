@@ -1,4 +1,4 @@
-#include "core/tooldriver.h"
+#include "core/tooldriver_api.h"
 #include "gth/gt_gthbssmprint.h"
 #include "libgenomethreader/gthversionfunc.h"
 

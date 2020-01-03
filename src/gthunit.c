@@ -1,6 +1,6 @@
-#include "core/hashmap.h"
+#include "core/hashmap_api.h"
 #include "core/init_api.h"
-#include "core/unit_testing.h"
+#include "core/unit_testing_api.h"
 #include "core/unused_api.h"
 #include "libgenomethreader/jt.h"
 

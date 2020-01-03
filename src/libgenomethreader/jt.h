@@ -1,7 +1,7 @@
 #ifndef JT_H
 #define JT_H
 
-#include "core/array2dim_sparse.h"
+#include "core/array2dim_sparse_api.h"
 #include "gth/jump_table.h"
 
 typedef struct {

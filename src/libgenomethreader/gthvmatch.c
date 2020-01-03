@@ -1,5 +1,5 @@
 #include "core/assert_api.h"
-#include "core/ma.h"
+#include "core/ma_api.h"
 #include "core/undef_api.h"
 #include "gth/gthdef.h"
 #include "gth/gthoutput.h"
