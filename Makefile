@@ -19,6 +19,7 @@ INCLUDEOPT:=-I$(CURDIR)/../genometools/src \
             -I$(CURDIR)/../genometools/src/external/zlib-1.2.8 \
             -I$(CURDIR)/../genometools/src/external/bzip2-1.0.6 \
             -I$(CURDIR)/../genometools/src/external/expat-2.0.1/lib \
+            -I$(CURDIR)/../genometools/src/external/lua-5.1.5/src \
             -I$(CURDIR)/src -I$(CURDIR)/obj \
 # these variables are exported by the configuration script
 CC:=gcc
@@ -33,7 +34,7 @@ ifneq ($(fpic),no)
 endif
 
 # ...while those starting with GTH_ are for internal purposes only
-GTH_CFLAGS:=-g -Wall -Wunused-parameter -pipe $(FPIC) -Wpointer-arith -fno-stack-protector -Wno-error=misleading-indentation
+GTH_CFLAGS:=-g -Wall -Wunused-parameter -pipe $(FPIC) -Wpointer-arith -fno-stack-protector -Wno-error=misleading-indentation -Wno-unknown-pragmas
 # mkvtree needs -DWITHLCP
 # rnv needs -DUNISTD_H="<unistd.h>" -DEXPAT_H="<expat.h>" -DRNV_VERSION="\"1.7.8\""
 EXT_FLAGS:= -DWITHLCP -DUNISTD_H="<unistd.h>" -DEXPAT_H="<expat.h>" \
@@ -186,7 +187,7 @@ ifeq ($(wrapmemcpy),yes)
   RNVMAIN_OBJ+=../genometools/obj/src/memcpy.o
 endif
 
-LIBGENOMETHREADER_DIRS:= src/libgenomethreader
+LIBGENOMETHREADER_DIRS:= src/libgenomethreader src/gth
 
 # the GenomeThreader library
 LIBGENOMETHREADER_SRC:=$(foreach DIR,$(LIBGENOMETHREADER_DIRS),$(wildcard $(DIR)/*.c))
@@ -201,8 +202,8 @@ patch ?= patch
 
 all: lib/libgenomethreader.a bin/gth bin/gthconsensus bin/gthbssmfileinfo \
      bin/gthbssmbuild bin/gthbssmprint bin/gthbssmrmsd bin/gthbssmtrain \
-     bin/gthfilestat bin/gthsplit bin/gthunit bin/gthgetseq bin/align_dna \
-     bin/rnv
+     bin/gthfilestat bin/gthmkbssmfiles bin/gthsplit bin/gthunit \
+     bin/gthgetseq bin/align_dna bin/rnv
 
 lib/libgenomethreader.a: obj/gth_config.h $(LIBGENOMETHREADER_OBJ)
 	@echo "[link $(@F)]"
@@ -258,6 +259,10 @@ $(eval $(call PROGRAM_template, bin/gthbssmtrain, obj/src/gthbssmtrain.o \
                                 ../genometools/lib/libgenometools.a $(GTHLIBS)))
 
 $(eval $(call PROGRAM_template, bin/gthfilestat, obj/src/gthfilestat.o \
+                                lib/libgenomethreader.a \
+                                $(GTHLIBS) ../genometools/lib/libgenometools.a))
+
+$(eval $(call PROGRAM_template, bin/gthmkbssmfiles, obj/src/gthmkbssmfiles.o \
                                 lib/libgenomethreader.a \
                                 $(GTHLIBS) ../genometools/lib/libgenometools.a))
 
@@ -510,7 +515,7 @@ obj/train: bin/gthbssmbuild
 
 obj/old_train: ../genometools/bin/gt
 	@echo "[write old BSSMs]"
-	@../genometools/bin/gt dev gthmkbssmfiles bin/bssm
+	@bin/gthmkbssmfiles bin/bssm
 	@touch $@
 
 obj/gthdata:
