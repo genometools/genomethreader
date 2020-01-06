@@ -34,7 +34,7 @@ ifneq ($(fpic),no)
 endif
 
 # ...while those starting with GTH_ are for internal purposes only
-GTH_CFLAGS:=-g -Wall -Wunused-parameter -pipe $(FPIC) -Wpointer-arith -fno-stack-protector -Wno-error=misleading-indentation -Wno-unknown-pragmas
+GTH_CFLAGS:=-g -Wall -Wunused-parameter -pipe $(FPIC) -Wpointer-arith -fno-stack-protector -Wno-unknown-pragmas
 # mkvtree needs -DWITHLCP
 # rnv needs -DUNISTD_H="<unistd.h>" -DEXPAT_H="<expat.h>" -DRNV_VERSION="\"1.7.8\""
 EXT_FLAGS:= -DWITHLCP -DUNISTD_H="<unistd.h>" -DEXPAT_H="<expat.h>" \
@@ -77,6 +77,12 @@ ifeq ($(SYSTEM),Windows)
 endif
 ifeq ($(wrapmemcpy),yes)
   GTH_LDFLAGS+=-Wl,--wrap=memcpy
+endif
+
+ifneq ($(SYSTEM),Darwin)
+ifneq ($(MACHINE),ARMv6_hf)
+GTH_CFLAGS+=-Wno-error=misleading-indentation
+endif
 endif
 
 # system specific stuff (concerning 64bit compilation)
