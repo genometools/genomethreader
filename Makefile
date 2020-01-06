@@ -519,7 +519,7 @@ obj/train: bin/gthbssmbuild
                           -gtdonor -agacceptor -gzip
 	@touch $@
 
-obj/old_train: ../genometools/bin/gt
+obj/old_train: bin/gthmkbssmfiles
 	@echo "[write old BSSMs]"
 	@bin/gthmkbssmfiles bin/bssm
 	@touch $@
