@@ -15,12 +15,12 @@
   OR IN CONNECTION WITH THE USE OR PERFORMANCE OF THIS SOFTWARE.
 */
 
-#include "core/mathsupport.h"
-#include "core/md5_seqid.h"
+#include "core/mathsupport_api.h"
+#include "core/md5_seqid_api.h"
 #include "core/safearith_api.h"
 #include "core/undef_api.h"
 #include "core/unused_api.h"
-#include "extended/gff3_escaping.h"
+#include "extended/gff3_escaping_api.h"
 #include "gth/default.h"
 #include "gth/sa.h"
 #include "gth/txt_sa_visitor.h"

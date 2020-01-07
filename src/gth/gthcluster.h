@@ -18,7 +18,7 @@
 #ifndef GTHCLUSTER_H
 #define GTHCLUSTER_H
 
-#include "core/array.h"
+#include "core/array_api.h"
 #include "gth/pgl.h"
 #include "gth/sa_collection.h"
 

@@ -21,7 +21,7 @@
 #include "core/array_api.h"
 #include "core/file_api.h"
 #include "core/range_api.h"
-#include "extended/globalchaining.h"
+#include "extended/globalchaining_api.h"
 #include "gth/jump_table.h"
 #include "gth/stat.h"
 

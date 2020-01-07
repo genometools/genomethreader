@@ -15,8 +15,8 @@
 */
 
 #include "core/ma_api.h"
-#include "core/md5_tab.h"
-#include "core/str_cache.h"
+#include "core/md5_tab_api.h"
+#include "core/str_cache_api.h"
 #include "gth/gthdef.h"
 #include "gth/md5_cache.h"
 

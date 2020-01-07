@@ -15,7 +15,7 @@
   OR IN CONNECTION WITH THE USE OR PERFORMANCE OF THIS SOFTWARE.
 */
 
-#include "core/trans_table.h"
+#include "core/trans_table_api.h"
 #include "core/undef_api.h"
 #include "core/unused_api.h"
 #include "core/warning_api.h"

@@ -16,7 +16,7 @@
 */
 
 #include "core/unused_api.h"
-#include "extended/rbtree.h"
+#include "extended/rbtree_api.h"
 #include "gth/sa_cmp.h"
 #include "gth/sa_collection.h"
 

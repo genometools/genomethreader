@@ -15,10 +15,10 @@
   OR IN CONNECTION WITH THE USE OR PERFORMANCE OF THIS SOFTWARE.
 */
 
-#include "core/parseutils.h"
+#include "core/parseutils_api.h"
 #include "core/undef_api.h"
 #include "core/unused_api.h"
-#include "extended/consensus_sa.h"
+#include "extended/consensus_sa_api.h"
 #include "gth/ags_build.h"
 #include "gth/pgl_collection.h"
 #include "gth/gthcluster.h"

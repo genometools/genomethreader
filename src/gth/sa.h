@@ -18,11 +18,11 @@
 #ifndef SA_H
 #define SA_H
 
-#include "core/array.h"
+#include "core/array_api.h"
 #include "core/error_api.h"
 #include "core/file_api.h"
 #include "core/str_api.h"
-#include "core/strand.h"
+#include "core/strand_api.h"
 #include "gth/backtrace_path.h"
 #include "gth/bssm_param.h"
 #include "gth/gthalphatype.h"

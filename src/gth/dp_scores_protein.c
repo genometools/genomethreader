@@ -15,8 +15,8 @@
 */
 
 #include "core/array2dim_api.h"
-#include "core/array3dim.h"
-#include "core/trans_table.h"
+#include "core/array3dim_api.h"
+#include "core/trans_table_api.h"
 #include "core/unused_api.h"
 #include "gth/align_common.h"
 #include "gth/dp_scores_protein.h"

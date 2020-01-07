@@ -18,7 +18,7 @@
 #ifndef AGS_BUILD_H
 #define AGS_BUILD_H
 
-#include "core/bittab.h"
+#include "core/bittab_api.h"
 #include "gth/ags.h"
 #include "gth/pgl.h"
 

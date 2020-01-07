@@ -14,13 +14,13 @@
   OR IN CONNECTION WITH THE USE OR PERFORMANCE OF THIS SOFTWARE.
 */
 
-#include "core/alphabet.h"
+#include "core/alphabet_api.h"
 #include "core/cstr_api.h"
 #include "core/ma_api.h"
 #include "core/warning_api.h"
 #include "core/xansi_api.h"
 #include "extended/feature_node_iterator_api.h"
-#include "extended/feature_type.h"
+#include "extended/feature_type_api.h"
 #include "extended/node_visitor_api.h"
 #include "extended/reverse_api.h"
 #include "gth/bssm_helper.h"

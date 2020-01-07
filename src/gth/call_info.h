@@ -18,7 +18,7 @@
 #ifndef CALL_INFO_H
 #define CALL_INFO_H
 
-#include "core/array.h"
+#include "core/array_api.h"
 #include "gth/gthoutput.h"
 #include "gth/dp_options_core.h"
 #include "gth/dp_options_est.h"
