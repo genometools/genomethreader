@@ -18,10 +18,10 @@
 #ifndef INPUT_H
 #define INPUT_H
 
-#include "core/array.h"
+#include "core/array_api.h"
 #include "core/range_api.h"
-#include "core/score_matrix.h"
-#include "core/str_array.h"
+#include "core/score_matrix_api.h"
+#include "core/str_array_api.h"
 #include "gth/duplicate_check.h"
 #include "gth/gthoutput.h"
 #include "gth/gthalphatype.h"

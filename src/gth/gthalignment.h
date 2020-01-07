@@ -20,9 +20,9 @@
 #define GTHALIGNMENT_H
 
 #include <stdio.h>
-#include "core/arraydef.h"
+#include "core/arraydef_api.h"
 #include "core/file_api.h"
-#include "core/score_matrix.h"
+#include "core/score_matrix_api.h"
 #include "gth/editoperation.h"
 
 #define CONCRETEINTRONSYMBOL    '.'

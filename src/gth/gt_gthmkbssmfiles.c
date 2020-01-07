@@ -18,7 +18,7 @@
 
 #include "core/compat_api.h"
 #include "core/option_api.h"
-#include "core/versionfunc.h"
+#include "core/versionfunc_api.h"
 #include "gth/bssm_param.h"
 #include "gth/gthspeciestab.h" /* XXX */
 #include "gth/gt_gthmkbssmfiles.h"

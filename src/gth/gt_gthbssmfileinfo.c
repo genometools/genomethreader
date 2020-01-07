@@ -16,7 +16,7 @@
 */
 
 #include "core/option_api.h"
-#include "core/versionfunc.h"
+#include "core/versionfunc_api.h"
 #include "gth/bssm_param.h"
 #include "gth/gt_gthbssmfileinfo.h"
 

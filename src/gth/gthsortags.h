@@ -18,7 +18,7 @@
 #ifndef GTHSORTAGS_H
 #define GTHSORTAGS_H
 
-#include "core/array.h"
+#include "core/array_api.h"
 
 /* The following function sorts the AGSs of every PGL contained in <pgls>
    according to the weighted mean of the average exon score and the average

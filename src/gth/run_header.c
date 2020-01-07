@@ -15,7 +15,7 @@
   OR IN CONNECTION WITH THE USE OR PERFORMANCE OF THIS SOFTWARE.
 */
 
-#include "core/cstr_array.h"
+#include "core/cstr_array_api.h"
 #include "gth/indent.h"
 #include "gth/showbool.h"
 #include "gth/time.h"

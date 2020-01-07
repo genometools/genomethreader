@@ -14,7 +14,7 @@
   OR IN CONNECTION WITH THE USE OR PERFORMANCE OF THIS SOFTWARE.
 */
 
-#include "extended/genome_node.h"
+#include "extended/genome_node_api.h"
 #include "extended/node_stream_api.h"
 #include "gth/bssm_train_stream.h"
 #include "gth/bssm_train_visitor.h"

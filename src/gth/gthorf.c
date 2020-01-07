@@ -16,8 +16,8 @@
 */
 
 #include "core/codon_api.h"
-#include "core/orf.h"
-#include "core/trans_table.h"
+#include "core/orf_api.h"
+#include "core/trans_table_api.h"
 #include "core/unused_api.h"
 #include "gth/gthorf.h"
 #include "gth/gthstopcodon.h"

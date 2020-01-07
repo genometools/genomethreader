@@ -17,8 +17,8 @@
 #ifndef DP_SCORES_PROTEIN_H
 #define DP_SCORES_PROTEIN_H
 
-#include "core/chardef.h"
-#include "core/score_matrix.h"
+#include "core/chardef_api.h"
+#include "core/score_matrix_api.h"
 #include "gth/bssm_param.h"
 
 typedef struct {

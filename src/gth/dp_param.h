@@ -18,7 +18,7 @@
 #ifndef DP_PARAM_H
 #define DP_PARAM_H
 
-#include "core/alphabet.h"
+#include "core/alphabet_api.h"
 #include "gth/gthchain.h"
 #include "gth/splice_site_model.h"
 

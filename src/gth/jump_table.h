@@ -18,7 +18,7 @@
 #define JUMP_TABLE_H
 
 #include "core/range_api.h"
-#include "extended/globalchaining.h"
+#include "extended/globalchaining_api.h"
 
 typedef struct {
   GtRange gen_range,

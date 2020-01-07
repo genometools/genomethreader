@@ -18,7 +18,7 @@
 #include "core/codon_api.h"
 #include "core/codon_iterator_simple_api.h"
 #include "core/translator_api.h"
-#include "core/trans_table.h"
+#include "core/trans_table_api.h"
 #include "core/unused_api.h"
 #include "gth/gthstopcodon.h"
 #include "gth/indent.h"

@@ -18,7 +18,7 @@
 #ifndef AGS_H
 #define AGS_H
 
-#include "core/array.h"
+#include "core/array_api.h"
 #include "core/error_api.h"
 #include "gth/gthoutput.h"
 #include "gth/bssm_param.h"

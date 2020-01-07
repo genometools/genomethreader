@@ -20,7 +20,7 @@
 /* Implements the ``genome visitor'' interface. */
 typedef struct GthBSSMTrainVisitor GthBSSMTrainVisitor;
 
-#include "extended/node_visitor.h"
+#include "extended/node_visitor_api.h"
 #include "extended/region_mapping_api.h"
 #include "gth/bssm_seq_processor.h"
 

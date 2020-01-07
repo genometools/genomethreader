@@ -16,9 +16,9 @@
 */
 
 #include "core/unused_api.h"
-#include "extended/cds_visitor.h"
-#include "extended/feature_type.h"
-#include "extended/genome_node.h"
+#include "extended/cds_visitor_api.h"
+#include "extended/feature_type_api.h"
+#include "extended/genome_node_api.h"
 #include "gth/ags.h"
 #include "gth/gff3_pgl_visitor.h"
 #include "gth/pgl_visitor_rep.h"

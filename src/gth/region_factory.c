@@ -15,11 +15,11 @@
   OR IN CONNECTION WITH THE USE OR PERFORMANCE OF THIS SOFTWARE.
 */
 
-#include "core/cstr_table.h"
+#include "core/cstr_table_api.h"
 #include "core/basename_api.h"
 #include "core/ma_api.h"
 #include "core/hashmap_api.h"
-#include "core/parseutils.h"
+#include "core/parseutils_api.h"
 #include "core/undef_api.h"
 #include "core/unused_api.h"
 #include "gth/region_factory.h"

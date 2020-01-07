@@ -20,7 +20,7 @@
 #include <stdlib.h>
 #include <ctype.h>
 #include <math.h>
-#include "core/chardef.h"
+#include "core/chardef_api.h"
 #include "core/codon_api.h"
 #include "core/minmax_api.h"
 #include "core/translator_api.h"

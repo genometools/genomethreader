@@ -14,7 +14,7 @@
   OR IN CONNECTION WITH THE USE OR PERFORMANCE OF THIS SOFTWARE.
 */
 
-#include "core/alphabet.h"
+#include "core/alphabet_api.h"
 #include "core/grep_api.h"
 #include "gth/bssm_helper.h"
 
