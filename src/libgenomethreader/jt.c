@@ -419,7 +419,7 @@ static GtRowInfo* get_half_row_info(GtRowInfo *ri_full,
     ri_half[i].offset = ri_full[x].offset;
     if (y < full_length) {
       if (ri_full[x].offset == ri_full[y].offset)
-        ri_half[i].length = MAX(ri_full[x].length, ri_full[y].length);
+        ri_half[i].length = GT_MAX(ri_full[x].length, ri_full[y].length);
       else {
         gt_assert(ri_full[x].offset < ri_full[y].offset);
         if (ri_full[x].offset + ri_full[x].length > ri_full[y].offset) {

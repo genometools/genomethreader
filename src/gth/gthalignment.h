@@ -27,8 +27,8 @@
 
 #define CONCRETEINTRONSYMBOL    '.'
 #define CONCRETEGAPSYMBOL       '-'
-#define ABSTRACTINTRONSYMBOL    (SEPARATOR-4) /* the abstract intron symbol */
-#define ABSTRACTGAPSYMBOL       (SEPARATOR-3) /* the abstract gap symbol */
+#define ABSTRACTINTRONSYMBOL    (GT_SEPARATOR-4) /* the abstract intron symbol */
+#define ABSTRACTGAPSYMBOL       (GT_SEPARATOR-3) /* the abstract gap symbol */
 
 /*
   For the display of long introns in short form we need the following

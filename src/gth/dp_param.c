@@ -28,7 +28,7 @@
 
 /* XXX: why A? */
 #define SUBSTITUTEWILDCARDWITHA(C)\
-        if (C ==  WILDCARD)\
+        if (C ==  GT_WILDCARD)\
         {\
           C = gen_alphabet_symbolmap['A'];\
         }

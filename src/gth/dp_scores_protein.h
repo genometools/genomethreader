@@ -33,7 +33,7 @@ static inline GthFlt GTHGETSCORE(GthDPScoresProtein *scores,
   if (n1 == DASH || n2 == DASH || n3 == DASH)
     return scores->score[DASH][aa];
   else if (n1 > 3 || n2 > 3 || n3 > 3)
-    return scores->score[WILDCARD][aa];
+    return scores->score[GT_WILDCARD][aa];
   return scores->score[scores->codon2amino[n1][n2][n3]][aa];
 }
 

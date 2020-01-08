@@ -1298,7 +1298,7 @@ static int show_and_check_sample_sizes(GthBSSMSeqProcessor *bsp, bool verbose,
     printf("%s/F0: "GT_WU" seqs (sampled out of "GT_WU")\n", GT_DIR, len2,
            gt_array_size(bsp->e2_false_don_gt));
     printf("%s/Fi: "GT_WU" seqs (sampled out of "GT_WU")\n", GT_DIR,
-           MAX3(len0, len1, len2),
+           GT_MAX3(len0, len1, len2),
            gt_array_size(bsp->i_false_don_gt));
   }
 
@@ -1312,7 +1312,7 @@ static int show_and_check_sample_sizes(GthBSSMSeqProcessor *bsp, bool verbose,
   gt_file_xprintf(logfp, "%s/F0: "GT_WU" seqs (sampled out of "GT_WU")\n",
                   GT_DIR, len2, gt_array_size(bsp->e2_false_don_gt));
   gt_file_xprintf(logfp, "%s/Fi: "GT_WU" seqs (sampled out of "GT_WU")\n",
-                  GT_DIR, MAX3(len0, len1, len2),
+                  GT_DIR, GT_MAX3(len0, len1, len2),
                   gt_array_size(bsp->i_false_don_gt));
 
   if (bsp->gcdonor) {
@@ -1333,7 +1333,7 @@ static int show_and_check_sample_sizes(GthBSSMSeqProcessor *bsp, bool verbose,
       printf("%s/F0: "GT_WU" seqs (sampled out of "GT_WU")\n", GC_DIR, len2,
              gt_array_size(bsp->e2_false_don_gc));
       printf("%s/Fi: "GT_WU" seqs (sampled out of "GT_WU")\n", GC_DIR,
-             MAX3(len0, len1, len2),
+             GT_MAX3(len0, len1, len2),
              gt_array_size(bsp->i_false_don_gc));
     }
 
@@ -1347,7 +1347,7 @@ static int show_and_check_sample_sizes(GthBSSMSeqProcessor *bsp, bool verbose,
     gt_file_xprintf(logfp, "%s/F0: "GT_WU" seqs (sampled out of "GT_WU")\n",
                     GC_DIR, len2, gt_array_size(bsp->e2_false_don_gc));
     gt_file_xprintf(logfp, "%s/Fi: "GT_WU" seqs (sampled out of "GT_WU")\n",
-                    GC_DIR, MAX3(len0, len1, len2),
+                    GC_DIR, GT_MAX3(len0, len1, len2),
                     gt_array_size(bsp->i_false_don_gc));
   }
 
@@ -1368,7 +1368,7 @@ static int show_and_check_sample_sizes(GthBSSMSeqProcessor *bsp, bool verbose,
     printf("%s/F0: "GT_WU" seqs (sampled out of "GT_WU")\n", AG_DIR, len2,
            gt_array_size(bsp->e2_false_acc));
     printf("%s/Fi: "GT_WU" seqs (sampled out of "GT_WU")\n", AG_DIR,
-           MAX3(len0, len1, len2),
+           GT_MAX3(len0, len1, len2),
            gt_array_size(bsp->i_false_acc));
   }
 
@@ -1382,7 +1382,7 @@ static int show_and_check_sample_sizes(GthBSSMSeqProcessor *bsp, bool verbose,
   gt_file_xprintf(logfp, "%s/F0: "GT_WU" seqs (sampled out of "GT_WU")\n",
                   AG_DIR, len2, gt_array_size(bsp->e2_false_acc));
   gt_file_xprintf(logfp, "%s/Fi: "GT_WU" seqs (sampled out of "GT_WU")\n",
-                  AG_DIR, MAX3(len0, len1, len2),
+                  AG_DIR, GT_MAX3(len0, len1, len2),
                   gt_array_size(bsp->i_false_acc));
 
   if (!site_found) {
@@ -1417,19 +1417,19 @@ int gth_bssm_seq_processor_sample(GthBSSMSeqProcessor *bsp, bool verbose,
   len0 = gt_array_size(bsp->i0_true_don_gt);
   len1 = gt_array_size(bsp->i1_true_don_gt);
   len2 = gt_array_size(bsp->i2_true_don_gt);
-  sample_bssm_seqs(bsp->i_false_don_gt, MAX3(len0, len1, len2));
+  sample_bssm_seqs(bsp->i_false_don_gt, GT_MAX3(len0, len1, len2));
 
   if (bsp->gcdonor) {
     len0 = gt_array_size(bsp->i0_true_don_gc);
     len1 = gt_array_size(bsp->i1_true_don_gc);
     len2 = gt_array_size(bsp->i2_true_don_gc);
-    sample_bssm_seqs(bsp->i_false_don_gc, MAX3(len0, len1, len2));
+    sample_bssm_seqs(bsp->i_false_don_gc, GT_MAX3(len0, len1, len2));
   }
 
   len0 = gt_array_size(bsp->i0_true_acc);
   len1 = gt_array_size(bsp->i1_true_acc);
   len2 = gt_array_size(bsp->i2_true_acc);
-  sample_bssm_seqs(bsp->i_false_acc, MAX3(len0, len1, len2));
+  sample_bssm_seqs(bsp->i_false_acc, GT_MAX3(len0, len1, len2));
 
   return 0;
 }

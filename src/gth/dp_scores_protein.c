@@ -38,7 +38,7 @@ static GthFlt get_score(GtScoreMatrix *score_matrix,
        DNA of lengths 1, 2, or 3, irrespective of indel size */
     rval = scalefactor * indel_penalty;
   }
-  else if (amino != WILDCARD && amino <= CHAR_MAX &&
+  else if (amino != GT_WILDCARD && amino <= CHAR_MAX &&
            gt_alphabet_valid_input(score_matrix_alphabet, amino) &&
            origreferencechar <= CHAR_MAX &&
            gt_alphabet_valid_input(score_matrix_alphabet,
@@ -63,8 +63,8 @@ static GthFlt get_score(GtScoreMatrix *score_matrix,
         wcidx = gt_alphabet_size(score_matrix_alphabet) - 1;
         rval = scalefactor *
                gt_score_matrix_get_score(score_matrix,
-                                         code1 == WILDCARD ? wcidx : code1,
-                                         code2 == WILDCARD ? wcidx : code2);
+                                         code1 == GT_WILDCARD ? wcidx : code1,
+                                         code2 == GT_WILDCARD ? wcidx : code2);
       }
     }
   }

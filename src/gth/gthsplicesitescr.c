@@ -86,7 +86,7 @@ static void calcsplicesitescoreprocmatch(Traversealignmentstate *state,
   if (d->processedalignmentpositions < SPLICE_SITE_SCORE_WINDOW) {
     alignmentpositionsleft = SPLICE_SITE_SCORE_WINDOW -
                              d->processedalignmentpositions;
-    numofmatchestoprocess  = MIN(lengthofeop, alignmentpositionsleft);
+    numofmatchestoprocess  = GT_MIN(lengthofeop, alignmentpositionsleft);
 
     genomicchar   = d->gen_seq_tran[state->genomicptr];
     referencechar = d->ref_seq_tran[state->referenceptr];
