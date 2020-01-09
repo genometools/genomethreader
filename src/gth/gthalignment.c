@@ -461,14 +461,14 @@ static void match_mismatch_genomicproteinline(GtUchar **genomicproteinptr,
 
   if (*processing_intron_with_2_bases_left) {
     *processing_intron_with_2_bases_left = false;
-    gt_assert(*first_base_left != UNDEFCHAR);
-    gt_assert(*second_base_left != UNDEFCHAR);
+    gt_assert(*first_base_left != GT_UNDEFCHAR);
+    gt_assert(*second_base_left != GT_UNDEFCHAR);
     gt_assert(dummyptr != NULL);
     dna[0] = *first_base_left;
     dna[1] = *second_base_left;
     dna[2] = genseqorig[(*genseqindex)++];
-    *first_base_left  = (GtUchar) UNDEFCHAR;
-    *second_base_left = (GtUchar) UNDEFCHAR;
+    *first_base_left  = (GtUchar) GT_UNDEFCHAR;
+    *second_base_left = (GtUchar) GT_UNDEFCHAR;
 
     rval = gt_trans_table_translate_codon(transtable, dna[0], dna[1], dna[2],
                                           &codon, NULL);
@@ -485,9 +485,9 @@ static void match_mismatch_genomicproteinline(GtUchar **genomicproteinptr,
   else {
     if (*processing_intron_with_1_base_left) {
       *processing_intron_with_1_base_left = false;
-      gt_assert(*first_base_left != UNDEFCHAR);
+      gt_assert(*first_base_left != GT_UNDEFCHAR);
       dna[0] = *first_base_left;
-      *first_base_left = (GtUchar) UNDEFCHAR;
+      *first_base_left = (GtUchar) GT_UNDEFCHAR;
     }
     else {
       dna[0] = genseqorig[(*genseqindex)++];
@@ -530,8 +530,8 @@ static GtUword construct_genomic_protein_line(GtUchar *genomicproteinline,
   Eoptype eoptype;
   GtUword eoplength, l,
        i = 0;
-  GtUchar first_base_left    = (GtUchar) UNDEFCHAR,
-        second_base_left   = (GtUchar) UNDEFCHAR,
+  GtUchar first_base_left    = (GtUchar) GT_UNDEFCHAR,
+        second_base_left   = (GtUchar) GT_UNDEFCHAR,
         *dummyptr          = NULL,
         *genomicproteinptr = genomicproteinline;
 #ifndef NDEBUG
@@ -824,7 +824,7 @@ static GtUword filltheproteinlines(GtUchar *genomicdnaline,
 static GtUchar implodewildcard(GtUchar c, bool wildcardimplosion,
                              GtAlphabet *alphabet)
 {
-  if (wildcardimplosion && (gt_alphabet_encode(alphabet, c) == WILDCARD)) {
+  if (wildcardimplosion && (gt_alphabet_encode(alphabet, c) == GT_WILDCARD)) {
     if (islower(c))
       return (GtUchar) tolower(gt_alphabet_wildcard_show(alphabet));
     else
@@ -925,7 +925,7 @@ static void showeditopline(GtFile *outfp,
     acompare = tolower(firstlineorig[i]);
     bcompare = tolower(secondlineorig[i]);
     if (acompare == bcompare && acompare != (GtUchar) CONCRETEGAPSYMBOL &&
-        gt_alphabet_encode(alphabet, acompare) != (GtUchar) WILDCARD)
+        gt_alphabet_encode(alphabet, acompare) != (GtUchar) GT_WILDCARD)
     {
       charinline = true;
       break;
@@ -951,7 +951,7 @@ static void showeditopline(GtFile *outfp,
       acompare = tolower(firstlineorig[i]);
       bcompare = tolower(secondlineorig[i]);
       if (acompare == bcompare && acompare != (GtUchar) CONCRETEGAPSYMBOL &&
-          gt_alphabet_encode(alphabet, acompare) != (GtUchar) WILDCARD)
+          gt_alphabet_encode(alphabet, acompare) != (GtUchar) GT_WILDCARD)
       {
         OUTCHAR('|');
       } else
@@ -1016,8 +1016,8 @@ static void showeditoplineprotein(GtFile *outfp,
       code2 = gt_alphabet_encode(score_matrix_alphabet, refchar);
       wcidx = gt_alphabet_size(score_matrix_alphabet) - 1;
       score = gt_score_matrix_get_score(score_matrix,
-                                        code1 == WILDCARD ? wcidx : code1,
-                                        code2 == WILDCARD ? wcidx : code2);
+                                        code1 == GT_WILDCARD ? wcidx : code1,
+                                        code2 == GT_WILDCARD ? wcidx : code2);
 
       /* output corresponding character depending on score */
       if (score > 0) {
@@ -1260,11 +1260,11 @@ GtUword gthfillthethreealignmentlines(GtUchar **firstline,
 
   /* set the lenght of the three output lines */
   lengthofgenomicdnaline       = genseqlen
-                                 + MIN(indelcount, refseqlen * GT_CODON_LENGTH);
+                                 + GT_MIN(indelcount, refseqlen * GT_CODON_LENGTH);
   lengthofgenomicproteinline   = genseqlen
-                                 + MIN(indelcount, refseqlen * GT_CODON_LENGTH);
+                                 + GT_MIN(indelcount, refseqlen * GT_CODON_LENGTH);
   lengthofreferenceproteinline = refseqlen * GT_CODON_LENGTH
-                                 + MIN(indelcount, genseqlen);
+                                 + GT_MIN(indelcount, genseqlen);
 
   /* alloc space for the three output lines */
   *firstline = gt_malloc(lengthofgenomicdnaline * sizeof (GtUchar));
@@ -1354,8 +1354,8 @@ GtUword gthfillthetwoalignmentlines(GtUchar **firstline,
                                           *shortintroninfo,
                                           GtUword indelcount)
 {
-  *firstline = gt_malloc(ulen + MIN(indelcount, vlen) * sizeof (GtUchar));
-  *secondline = gt_malloc(vlen + MIN(indelcount, ulen) * sizeof (GtUchar));
+  *firstline = gt_malloc(ulen + GT_MIN(indelcount, vlen) * sizeof (GtUchar));
+  *secondline = gt_malloc(vlen + GT_MIN(indelcount, ulen) * sizeof (GtUchar));
 
   return fillthelines(*firstline, *secondline, useq, vseq, alignment, lenalg,
                       linewidth, showintronmaxlen, shortintroninfo);

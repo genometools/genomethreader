@@ -80,9 +80,9 @@ GthPathMatrix* gth_path_matrix_new(GthPath **path,
 {
   GthPathMatrix *pm = gt_malloc(sizeof *pm);
   pm->gen_range.start = btmatrixgenrange->start;
-  pm->gen_range.end   = MIN(btmatrixgenrange->end, gen_dp_length);
+  pm->gen_range.end   = GT_MIN(btmatrixgenrange->end, gen_dp_length);
   pm->ref_range.start = btmatrixrefrange->start;
-  pm->ref_range.end   = MIN(btmatrixrefrange->end, ref_dp_length);
+  pm->ref_range.end   = GT_MIN(btmatrixrefrange->end, ref_dp_length);
   gt_array2dim_calloc(pm->entries, gt_range_length(&pm->gen_range),
                       gt_range_length(&pm->ref_range));
   path_matrix_fill(pm, path, ri);

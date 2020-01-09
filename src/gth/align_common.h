@@ -27,8 +27,8 @@
 
 #define SCORE(T,N,M)       dpm->core.score[T][N][M]
 #define GTH_MINUSINFINITY  ((GthFlt) -99999.0)
-#define DASH               (SEPARATOR-3)
-#define UNSET              (SEPARATOR-4)
+#define DASH               (GT_SEPARATOR-3)
+#define UNSET              (GT_SEPARATOR-4)
 
 /*
   The following updates maxvalue if it is smaller than value.
