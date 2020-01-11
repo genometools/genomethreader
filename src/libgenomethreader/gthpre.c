@@ -11,6 +11,7 @@
 #include "gth/gthdef.h"
 #include "gth/gthoutput.h"
 #include "gth/input.h"
+#include "libgenomethreader/findfile.h"
 #include "libgenomethreader/gthmkvtree.h"
 #include "libgenomethreader/gthpolyafunc.h"
 #include "libgenomethreader/gthpre.h"
@@ -301,49 +302,22 @@ static int maskpolyAtailsandcreateindex(const char *filename,
 
   /* create masked file if necessary */
   if (createmaskedfile) {
+    int rval = 0;
+    GtStr *path = gt_str_new();
+
     sprintf(dnafilename, "%s.%s", POLYA_FASTAFILENAME, DNASUFFIX);
-    /* check if polyatail.dna exists */
-    fp = scanpathsforfile(GTHDATAENVNAME, dnafilename); /* XXX */
-    if (!fp) {
-      gt_error_set(err, "file \"%s\" not found in $%s. Set correctly?",
-                   dnafilename, GTHDATAENVNAME);
-      had_err = -1;
+    had_err = gth_find_file(dnafilename, GTHDATAENVNAME, GTHDATADIRNAME, path,
+                            err);
+    if (!had_err) {
+       rval = snprintf(dnafilename, PATH_MAX+1, "%s", gt_str_get(path));
+       gt_assert(rval < PATH_MAX + 1);
+       /* clip off DNASUFFIX */
+       gt_assert(strlen(dnafilename) > 5);
+       dnafilename[strlen(dnafilename)-4] = '\0';
     }
-    if (!had_err /* XXX */ && DELETEFILEHANDLE(fp)) {
-      fprintf(stderr,"%s\n", messagespace());
-      exit(EXIT_FAILURE);
-    }
+    gt_str_delete(path);
 
     /* call vmatch and save masked file */
-    if (!had_err && !getenv(GTHDATAENVNAME)) {
-      gt_error_set(err, "$%s not defined. Please set correctly",
-                   GTHDATAENVNAME);
-      had_err = -1;
-    }
-
-    if (!had_err) {
-      sprintf(dnafilename, "%s%c%s", getenv(GTHDATAENVNAME), GT_PATH_SEPARATOR,
-              POLYA_FASTAFILENAME);
-    }
-    else {
-      /* check for file relative to binary */
-      GtStr *path;
-      int new_err;
-      path = gt_str_new();
-      new_err = gt_file_find_exec_in_path(path, gt_error_get_progname(err),
-                                          NULL);
-      if (!new_err) {
-        gt_str_append_char(path, GT_PATH_SEPARATOR);
-        gt_str_append_cstr(path, GTHDATADIRNAME);
-        if (gt_file_exists_and_is_dir(gt_str_get(path))) {
-          sprintf(dnafilename, "%s%c%s", gt_str_get(path), GT_PATH_SEPARATOR,
-                  POLYA_FASTAFILENAME);
-          gt_error_unset(err);
-          had_err = 0;
-        }
-      }
-    }
-
     if (!had_err) {
       /* open file pointer for masked reference file */
       fp = gt_fa_xfopen(maskedfilename, "w");

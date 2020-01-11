@@ -30,6 +30,7 @@
 #include "gth/input.h"
 #include "gth/md5_cache.h"
 #include "gth/parse_options.h"
+#include "libgenomethreader/findfile.h"
 
 #define GTHFORWARD  1        /* run program to match forward */
 #define GTHREVERSE  (1 << 1) /* run program to match reverse */
@@ -653,45 +654,14 @@ static GtStr* find_score_matrix_path(const char *scorematrixfile, GtError *err)
 {
   GtStr *path = gt_str_new();
   int had_err = 0;
+
   if (gt_file_exists(scorematrixfile)) {
     gt_str_set(path, scorematrixfile);
     return path;
   }
-  if (strchr(scorematrixfile, GT_PATH_SEPARATOR)) {
-    gt_error_set(err, "filename \"%s\" contains illegal symbol '%c': the path "
-                      "list specified by environment variable \"%s\" cannot be "
-                      "searched for it", scorematrixfile, GT_PATH_SEPARATOR,
-                      GTHDATAENVNAME);
-    had_err = -1;
-  }
-  if (!had_err)
-    had_err = gt_file_find_in_env(path, scorematrixfile, GTHDATAENVNAME, err);
-  if (!had_err && !gt_str_length(path)) {
-    gt_error_set(err, "file \"%s\" not found in directory list specified by "
-                 "environment variable %s", scorematrixfile, GTHDATAENVNAME);
-    had_err = -1;
-  }
-  if (!had_err) {
-    gt_assert(gt_str_length(path));
-    /* path found -> append score matrix file name */
-    gt_str_append_char(path, GT_PATH_SEPARATOR);
-    gt_str_append_cstr(path, scorematrixfile);
-  }
-  else {
-    /* check for file relative to binary */
-    int new_err = gt_file_find_exec_in_path(path, gt_error_get_progname(err),
-                                            NULL);
-    if (!new_err) {
-      gt_str_append_char(path, GT_PATH_SEPARATOR);
-      gt_str_append_cstr(path, GTHDATADIRNAME);
-      gt_str_append_char(path, GT_PATH_SEPARATOR);
-      gt_str_append_cstr(path, scorematrixfile);
-      if (gt_file_exists(gt_str_get(path))) {
-        gt_error_unset(err);
-        had_err = 0;
-      }
-    }
-  }
+
+  had_err = gth_find_file(scorematrixfile, GTHDATAENVNAME, GTHDATADIRNAME, path,
+                          err);
   if (had_err) {
     gt_str_delete(path);
     return NULL;
