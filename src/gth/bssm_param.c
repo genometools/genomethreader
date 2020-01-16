@@ -29,6 +29,7 @@
 #include "gth/gthprobdef.h"
 #include "gth/gthspeciestab.h"
 #include "gth/showbool.h"
+#include "libgenomethreader/findfile.h"
 
 /*
   This is a collection of functions associated with
@@ -451,42 +452,7 @@ GthBSSMParam* gth_bssm_param_load(const char *filename, GtError *err)
   if (gt_file_exists(filename))
     gt_str_append_cstr(path, filename);
   else {
-    if (strchr(filename, GT_PATH_SEPARATOR)) {
-      gt_error_set(err, "filename \"%s\" contains illegal symbol '%c': the "
-                        "path list specified by environment variable \"%s\" "
-                        "cannot be searched for it", filename,
-                        GT_PATH_SEPARATOR, BSSMENVNAME);
-      had_err = -1;
-    }
-    /* check for file path in environment variable */
-    if (!had_err)
-      had_err = gt_file_find_in_env(path, filename, BSSMENVNAME, err);
-    if (!had_err && !gt_str_length(path)) {
-      gt_error_set(err, "file \"%s\" not found in directory list specified "
-                        "by environment variable %s", filename, BSSMENVNAME);
-      had_err = -1;
-    }
-    if (!had_err) {
-      /* path found -> append filename */
-      gt_str_append_char(path, GT_PATH_SEPARATOR);
-      gt_str_append_cstr(path, filename);
-    }
-    else {
-      /* check for file path relative to binary */
-      int new_err = gt_file_find_exec_in_path(path, gt_error_get_progname(err),
-                                              NULL);
-      if (!new_err) {
-        gt_assert(gt_str_length(path));
-        gt_str_append_char(path, GT_PATH_SEPARATOR);
-        gt_str_append_cstr(path, "bssm");
-        gt_str_append_char(path, GT_PATH_SEPARATOR);
-        gt_str_append_cstr(path, filename);
-        if (gt_file_exists(gt_str_get(path))) {
-          gt_error_unset(err);
-          had_err = 0;
-        }
-      }
-    }
+    had_err = gth_find_file(filename, BSSMENVNAME, "bssm", path, err);
   }
 
   if (!had_err) {

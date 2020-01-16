@@ -6,6 +6,7 @@
 #include "core/ma_api.h"
 #include "gth/gthdef.h"
 #include "gth/gthoutput.h"
+#include "libgenomethreader/findfile.h"
 #include "libgenomethreader/gthmkvtree.h"
 #include "types.h"
 #include "virtualdef.h"
@@ -52,39 +53,14 @@ static int setsmapfile(char *smapfile, const char *mapping, GtError *err)
 {
   int rval, had_err = 0;
   gt_error_check(err);
-  if (!getenv(GTHDATAENVNAME)) {
-    gt_error_set(err, "$%s not defined. Please set correctly", GTHDATAENVNAME);
-    had_err = -1;
-  }
+
+  GtStr *path = gt_str_new();
+  had_err = gth_find_file(mapping, GTHDATAENVNAME, GTHDATADIRNAME, path, err);
   if (!had_err) {
-    rval = snprintf(smapfile, PATH_MAX+1, "%s%c%s", getenv(GTHDATAENVNAME),
-                    GT_PATH_SEPARATOR, mapping);
-    gt_assert(rval < PATH_MAX + 1);
-    if (!gt_file_exists(smapfile)) {
-      gt_error_set(err, "cannot open smap file '%s'", smapfile);
-      had_err = -1;
-    }
+   rval = snprintf(smapfile, PATH_MAX+1, "%s", gt_str_get(path));
+   gt_assert(rval < PATH_MAX + 1);
   }
-  if (had_err) {
-    /* check for file relative to binary */
-    GtStr *path;
-    int new_err;
-    path = gt_str_new();
-    new_err = gt_file_find_exec_in_path(path, gt_error_get_progname(err), NULL);
-    if (!new_err) {
-      gt_str_append_char(path, GT_PATH_SEPARATOR);
-      gt_str_append_cstr(path, GTHDATADIRNAME);
-      gt_str_append_char(path, GT_PATH_SEPARATOR);
-      gt_str_append_cstr(path, mapping);
-      if (gt_file_exists(gt_str_get(path))) {
-        rval = snprintf(smapfile, PATH_MAX+1, "%s", gt_str_get(path));
-        gt_assert(rval < PATH_MAX + 1);
-        gt_error_unset(err);
-        had_err = 0;
-      }
-    }
-    gt_str_delete(path);
-  }
+  gt_str_delete(path);
   return had_err;
 }
 
