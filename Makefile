@@ -196,7 +196,7 @@ endif
 LIBGENOMETHREADER_DIRS:= src/libgenomethreader src/gth
 
 # the GenomeThreader library
-LIBGENOMETHREADER_SRC:=$(foreach DIR,$(LIBGENOMETHREADER_DIRS),$(wildcard $(DIR)/*.c))
+LIBGENOMETHREADER_SRC:=$(foreach DIR,$(LIBGENOMETHREADER_DIRS),$(sort $(wildcard $(DIR)/*.c)))
 LIBGENOMETHREADER_OBJ:=$(LIBGENOMETHREADER_SRC:%.c=obj/%.o)
 LIBGENOMETHREADER_DEP:=$(LIBGENOMETHREADER_SRC:%.c=obj/%.d)
 
