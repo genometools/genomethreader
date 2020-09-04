@@ -1,5 +1,5 @@
 #
-# Copyright (c) 2006-2015 Gordon Gremme <gordon@gremme.org>
+# Copyright (c) 2006-2020 Gordon Gremme <gordon@gremme.org>
 # Copyright (c) 2006-2008 Center for Bioinformatics, University of Hamburg
 #
 # Permission to use, copy, modify, and distribute this software for any
@@ -145,8 +145,8 @@ else
   GTH_CPPFLAGS += -DNOLICENSEMANAGER
 endif
 
-SERVER=gordon@genomethreader.org
-WWWBASEDIR=/var/www/servers
+SERVER=stronghold
+WWWBASEDIR=/var/www/htdocs
 
 # process arguments
 ifeq ($(assert),no)
@@ -469,7 +469,7 @@ release:
 
 installwww:
 # install genomethreader.org website
-	rsync -rv www/genomethreader.org/ $(SERVER):$(WWWBASEDIR)/genomethreader.org
+	rsync -rv --delete www/genomethreader.org/htdocs/ $(SERVER):$(WWWBASEDIR)/genomethreader.org
 
 push:
 	git push origin master
