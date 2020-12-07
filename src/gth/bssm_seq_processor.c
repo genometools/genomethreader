@@ -1021,7 +1021,7 @@ static int find_false_sites(GtArray *false_don_0_gt, GtArray *false_don_0_gc,
              (gcdonor &&
              (cseq[j+1] == 'C' || cseq[j+1] == 'c')))) {
           if (!intron->reverse) {
-            if (intron->range.start + j >= 50) {
+            if (intron->range.start + j > 50) {
               don_range.start = intron->range.start + j - 50;
               don_underflow = false;
             }
@@ -1030,7 +1030,7 @@ static int find_false_sites(GtArray *false_don_0_gt, GtArray *false_don_0_gc,
             don_range.end = intron->range.start + j + 51;
           }
           else {
-            if (intron->range.end >= j + 51) {
+            if (intron->range.end > j + 51) {
               don_range.start = intron->range.end - j - 51;
               don_underflow = false;
             }
@@ -1063,7 +1063,7 @@ static int find_false_sites(GtArray *false_don_0_gt, GtArray *false_don_0_gc,
                   (cseq[j]   == 'A' || cseq[j]   == 'a') &&
                   (cseq[j+1] == 'G' || cseq[j+1] == 'g')) {
           if (!intron->reverse) {
-            if (intron->range.start + j >= 50) {
+            if (intron->range.start + j > 50) {
               acc_range.start = intron->range.start + j - 50;
               acc_underflow = false;
             }
@@ -1072,7 +1072,7 @@ static int find_false_sites(GtArray *false_don_0_gt, GtArray *false_don_0_gc,
             acc_range.end = intron->range.start + j + 51;
           }
           else {
-            if (intron->range.end >= j + 51) {
+            if (intron->range.end > j + 51) {
               acc_range.start = intron->range.end - j - 51;
               acc_underflow = false;
             }
