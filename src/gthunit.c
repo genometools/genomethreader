@@ -4,10 +4,6 @@
 #include "core/unused_api.h"
 #include "libgenomethreader/jt.h"
 
-#ifndef NOLICENSEMANAGER
-#include "licensemanager.h"
-#endif
-
 static GtHashmap* gth_unit_tests(void)
 {
   GtHashmap *unit_tests = gt_hashmap_new(GT_HASH_STRING, NULL, NULL);
@@ -23,10 +19,6 @@ int main(GT_UNUSED int argc, GT_UNUSED char *argv[])
   GtHashmap *unit_tests;
   GtError *err;
   gt_lib_init();
-#ifndef NOLICENSEMANAGER
-  if (!(lm_license = lm_license_new(argv[0], "GenomeThreader")))
-    return EXIT_FAILURE;
-#endif
   err = gt_error_new();
   unit_tests = gth_unit_tests();
   had_err = gt_hashmap_foreach_in_key_order(unit_tests, gt_unit_test_run,
@@ -34,9 +26,6 @@ int main(GT_UNUSED int argc, GT_UNUSED char *argv[])
   gt_assert(!had_err); /* cannot happen, gt_unit_test_run() is sane */
   gt_hashmap_delete(unit_tests);
   gt_error_delete(err);
-#ifndef NOLICENSEMANAGER
-  lm_license_delete(lm_license);
-#endif
   if (gt_lib_clean())
     return GT_EXIT_PROGRAMMING_ERROR; /* programmer error */
   if (test_err)

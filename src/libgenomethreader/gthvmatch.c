@@ -12,10 +12,6 @@
 #include "readvirt.pr"
 #include "vmatch.pr"
 
-#ifndef NOLICENSEMANAGER
-#include "licensemanager.h"
-#endif
-
 #define VMATCHARGSIZE  512
 #define QSPEEDUPARG    5
 
@@ -376,9 +372,6 @@ void* gth_vmatch_matcher_arguments_new(bool checksubstrspec,
                                        bool usepolyasuffix,
                                        bool dbmaskmatch)
 {
-#ifndef NOLICENSEMANAGER
-  lm_license_check_c();
-#endif
   return gth_vmatch_info_new(checksubstrspec, input, queryfilename,
                              indexfilename, directmatches, refseqisdna,
                              progname, proteinsmap, exact, edist, hamming,
@@ -390,9 +383,6 @@ void* gth_vmatch_matcher_arguments_new(bool checksubstrspec,
 
 void gth_vmatch_matcher_arguments_delete(void *matcher_arguments)
 {
-#ifndef NOLICENSEMANAGER
-  lm_license_check_d();
-#endif
   gth_vmatch_info_delete(matcher_arguments);
 }
 
@@ -401,9 +391,6 @@ void gth_vmatch_matcher_runner(void *matcher_arguments,
                                GthShowVerboseVM showverboseVM,
                                void *match_processor_info)
 {
-#ifndef NOLICENSEMANAGER
-  lm_license_check_e();
-#endif
   gth_vmatch_runner(matcher_arguments, showverbose, showverboseVM,
                     match_processor_info);
 }

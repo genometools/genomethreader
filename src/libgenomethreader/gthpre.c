@@ -26,10 +26,6 @@
 #include "scanpaths.pr"
 #include "vmatch.pr"
 
-#ifndef NOLICENSEMANAGER
-#include "licensemanager.h"
-#endif
-
 /* copied from readvirt.c */
 #define MAXSUFFIXSIZE 4
 
@@ -726,10 +722,6 @@ int gthpreprocessinputfiles(GthInput *input, bool gthconsensus,
   GtUword overall_maxlength = 0;
 
   gt_error_check(err);
-
-#ifndef NOLICENSEMANAGER
-  lm_license_check_a();
-#endif
 
   if (out->showverbose)
     out->showverbose("make sure all necessary indices exist");

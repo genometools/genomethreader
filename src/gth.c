@@ -9,10 +9,6 @@
 #include "libgenomethreader/jt_align_protein.h"
 #include "libgenomethreader/seq_con_multiseq.h"
 
-#ifndef NOLICENSEMANAGER
-#include "licensemanager.h"
-#endif
-
 static int gth(int argc, const char **argv, GtError *err)
 {
   static const GthPlugins plugins = { gthpreprocessinputfiles,
@@ -34,11 +30,6 @@ static int gth(int argc, const char **argv, GtError *err)
 int main(int argc, char *argv[])
 {
   int rval;
-#ifndef NOLICENSEMANAGER
-  rval = gt_tooldriver_with_license(gth, argc, argv, (GtLicense**) &lm_license,
-                                    lm_license_new_gth, lm_license_delete_gt);
-#else
   rval = gt_tooldriver(gth, argc, argv);
-#endif
   return rval;
 }

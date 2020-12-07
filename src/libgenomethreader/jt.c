@@ -6,10 +6,6 @@
 #include "core/range_api.h"
 #include "libgenomethreader/jt.h"
 
-#ifndef NOLICENSEMANAGER
-#include "licensemanager.h"
-#endif
-
 typedef struct {
   GtRange gen_range,
           ref_range;
@@ -139,9 +135,6 @@ GthJumpTable* gth_jump_table_new(GthJTMatch *matches,
 {
   GthJumpTable *jt;
   gt_assert(matches && num_of_matches);
-#ifndef NOLICENSEMANAGER
-  lm_license_check_f();
-#endif
   jt = gt_malloc(sizeof *jt);
   jt->elems = gt_array_new(sizeof (JTElem));
   proc_matches(jt, matches, num_of_matches, debug);
@@ -190,9 +183,6 @@ GthJumpTable* gth_jump_table_new_reverse(const GthJumpTable *fjt,
 {
   GthJumpTable *rjt;
   gt_assert(fjt && gt_array_size(fjt->elems));
-#ifndef NOLICENSEMANAGER
-  lm_license_check_g();
-#endif
   rjt = gt_malloc(sizeof *rjt);
   rjt->elems = gt_array_new(sizeof (JTElem));
   fill_reverse(rjt, fjt, gen_total_length, gen_offset, ref_total_length,
@@ -203,9 +193,6 @@ GthJumpTable* gth_jump_table_new_reverse(const GthJumpTable *fjt,
 void gth_jump_table_delete(GthJumpTable *jt)
 {
   if (!jt) return;
-#ifndef NOLICENSEMANAGER
-  lm_license_check_h();
-#endif
   gt_array_delete(jt->elems);
   gt_free(jt);
 }
