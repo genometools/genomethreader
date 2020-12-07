@@ -7,10 +7,6 @@
 #include "libgenomethreader/jt.h"
 #include "libgenomethreader/jt_align_dna.h"
 
-#ifndef NOLICENSEMANAGER
-#include "licensemanager.h"
-#endif
-
 /* XXX: duplicated code from GenomeTools: src/gth/align_dna.c */
 /* the following function evaluates state E_1m for indices 1 and <m> and
    stores a backtrace reference */
@@ -183,10 +179,6 @@ void gth_dna_complete_path_matrix_jt(GthDPMatrix *dpm,
 
   gt_assert(dpm->gen_dp_length > 1);
   gt_assert(jump_table);
-
-#ifndef NOLICENSEMANAGER
-  lm_license_check_i();
-#endif
 
   jt = gth_jump_table_make_tab(jump_table, gen_ranges, ref_dp_length,
                                ref_offset, dp_options_core->jtoverlap,

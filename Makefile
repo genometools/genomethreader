@@ -138,13 +138,6 @@ GTHLIBS:=$(VSTREEDIR)/lib/$(CONFIGGUESS)/$(BIT)/libvmatch.a\
 GTH_CPPFLAGS+=-I$(CURDIR)/$(VSTREEDIR)/include \
              -I$(CURDIR)/$(VSTREEDIR)/Vmatch \
 
-ifneq ($(licensemanager),no)
-  GTH_CPPFLAGS += -I../licensemanager/src -I../licensemanager/zlm
-  GTHLIBS += $(CURDIR)/../licensemanager/lib/$(BIT)/liblicensemanager.a
-else
-  GTH_CPPFLAGS += -DNOLICENSEMANAGER
-endif
-
 SERVER=stronghold
 WWWBASEDIR=/var/www/htdocs
 

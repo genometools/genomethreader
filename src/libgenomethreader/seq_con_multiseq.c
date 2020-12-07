@@ -13,10 +13,6 @@
 #include "multiseq.pr"
 #include "multiseq-adv.pr"
 
-#ifndef NOLICENSEMANAGER
-#include "licensemanager.h"
-#endif
-
 struct GthSeqConMultiseq {
   const GthSeqCon parent_instance;
 
@@ -228,10 +224,6 @@ GthSeqCon* gth_seq_con_multiseq_new(const char *indexname, bool assign_rc,
   BOOL rcmindex;
 
   gt_assert(indexname);
-
-#ifndef NOLICENSEMANAGER
-  lm_license_check_b();
-#endif
 
   sc = gth_seq_con_create(gth_seq_con_multiseq_class());
   scm = gth_seq_con_multiseq_cast(sc);
