@@ -1,3 +1,8 @@
+changes in version 1.7.4 (2020-12-07)
+
+- Statically compiled binaries for better compatibility.
+
+
 changes in version 1.7.3 (2020-01-08)
 
 - Include GenomeThreader related code from GenomeTools.
