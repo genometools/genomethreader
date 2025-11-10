@@ -338,7 +338,7 @@ obj/%.o: %.cpp
 	@$(CXX) -c $< -o $(@:.o=.d) $(EXP_CPPFLAGS) $(GTH_CPPFLAGS) -MM -MP \
 	  -MT $@
 
-obj/src/core/versionfunc.o: obj/gth_config.h
+src/libgenomethreader/gthversionfunc.c: obj/gth_config.h
 
 # read dependencies
 -include $(LIBGENOMETHREADER_DEP) \
@@ -512,7 +512,7 @@ obj/train: bin/gthbssmbuild
                           -gtdonor -agacceptor -gzip
 	@touch $@
 
-obj/old_train: bin/gthmkbssmfiles
+obj/old_train: bin/gthmkbssmfiles obj/train
 	@echo "[write old BSSMs]"
 	@bin/gthmkbssmfiles bin/bssm
 	@touch $@
