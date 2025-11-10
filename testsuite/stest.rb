@@ -4,6 +4,13 @@
 
 require 'fileutils'
 
+# Ruby 3.2+ removed File.exists? - add compatibility for all versions
+unless File.respond_to?(:exists?)
+  class << File
+    alias_method :exists?, :exist?
+  end
+end
+
 class TestFailed < Exception
 end
 class TestError < Exception
